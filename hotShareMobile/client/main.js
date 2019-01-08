@@ -141,18 +141,18 @@ if (Meteor.isCordova) {
           // {
               AppRate.preferences.useLanguage = 'zh-Hans';
           // }
-          TAPi18n.setLanguage("zh")
+          TAPi18n.setLanguage("en")
           .done(function () {
-             console.log("zh");
+             console.log("en");
           })
           .fail(function (error_message) {
             // Handle the situation
             console.log(error_message);
           });
         } else {
-          Session.set("display_lang","zh")
-          AppRate.preferences.useLanguage = 'zh-Hans';
-          TAPi18n.setLanguage("zh")
+          Session.set("display_lang","en")
+          AppRate.preferences.useLanguage = 'en';
+          TAPi18n.setLanguage("en")
           .done(function () {
             console.log("en");
           })
@@ -161,7 +161,7 @@ if (Meteor.isCordova) {
             console.log(error_message);
           });
         }
-        TAPi18n.setLanguage("zh")
+        TAPi18n.setLanguage("en")
          //当用户第八次使用该软件时提示评价app
         AppRate.preferences.usesUntilPrompt = 7;
         AppRate.preferences.storeAppURL.ios = '957024953';
