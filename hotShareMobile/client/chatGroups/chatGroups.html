@@ -4,7 +4,7 @@
   {{/if}}
   <div class="chatGroups home">
     <div class="head">
-      <strong>消息</strong>
+      <strong>{{_ "DeepEye_Message_Top"}}</strong>
     </div>
     <div class="content">
     <div class="contentList" id="wrapper" style="overflow: hidden;">
@@ -19,12 +19,12 @@
             <div id="sysBell" class="eachViewer swiperElem" style="position: relative;">
               <div>
                 <img class="icon" src="/sysMessages.png">
-                <span class="groupsName">出现提醒</span>
+                <span class="groupsName">{{_ "Reminder"}}</span>
                 {{#if showRedSpot}}
                   <div class="red_spot" style="width: 14px;height: 14px;line-height: 20px;text-align: center;border-radius: 50%;background-color: red;color: #fff;position: absolute;left: 50px;top: 5px;z-index: 99;"></div>
                 {{/if}}
               </div>
-              <div class="delBtnContent sysDelBtn">删除</div>
+              <div class="delBtnContent sysDelBtn">{{_ "Delete"}}</div>
             </div>
             <div class="line">
                   <span></span>
@@ -100,7 +100,7 @@
   <div class="modaling">
       <div class="syncing">
           <div class="icon"><i class="fa fa-refresh" aria-hidden="true"></i></div>
-          <div class="tip">正在同步离线消息</div>
+          <div class="tip">{{_ "Syncing_offline_messages"}}</div>
       </div>
       
   </div>

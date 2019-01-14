@@ -28,20 +28,20 @@
 
     <ul class="set-up comFadeIn" style="margin-top: 10px;margin-bottom: 10px;border: none;">
       <li class="name bindGroupUser">
-          <label style="position: relative;margin-top: 0px;">群组成员绑定</label>
-          <div class="help-info" style="font-size: 12px;color: #555;">将帐号与对应群组成员绑定，实时查看、更正自己的出现信息</div>
+          <label style="position: relative;margin-top: 0px;">{{_ "Group_member_binding"}}</label>
+          <div class="help-info" style="font-size: 12px;color: #555;">{{_ "Group_member_binding_Description"}}</div>
       </li>
       <li class="name collect">
-          <label style="position: relative;margin-top: 0px;">收藏</label>
-          <div class="help-info" style="font-size: 12px;color: #555;">查看收藏的消息</div>
+          <label style="position: relative;margin-top: 0px;">{{_ "DeepEye_Collection"}}</label>
+          <div class="help-info" style="font-size: 12px;color: #555;">{{_ "DeepEye_Collection_Description"}}</div>
       </li>
 
       <li class="name enable-follow-notify-only">
-          <label style="position: relative;margin-top: 0px;">只通知关注用户</label>
+          <label style="position: relative;margin-top: 0px;">{{_ "Only_notify_interested_users"}}</label>
           <div class="right-btn" style="background: #fff;">
             <input id="report_id" class="switch" style="margin-right:5px;outline:none;" type="checkbox" data-checked={{followedOnly}} {{followedOnly}}>
           </div>
-          <div class="help-info" style="font-size: 12px;color: #555;">只有出现您关注的用户才发推送消息（陌生人仍然通知您）</div>
+          <div class="help-info" style="font-size: 12px;color: #555;">{{_ "Only_notify_interested_users_Description"}}</div>
       </li>
     </ul>
 
@@ -81,36 +81,36 @@
           <i class="fa fa-circle " style="color: #27d496;font-size: 15px;padding: 10px 0;margin: auto;position: absolute;"></i>
           {{#if hasIntime group.in_time}}
           <div  style="display: inline-block;margin-left: 30px;">
-            <div style="color: #868686;font-size: 12px;">上班时间：09:00</div>
-            <div style="font-size: 14px;font-weight: 400;margin-top: 5px;">打卡时间：{{inTime group.in_time group.group_id}}</div>
+            <div style="color: #868686;font-size: 12px;">{{_ "Working_hours"}}：09:00</div>
+            <div style="font-size: 14px;font-weight: 400;margin-top: 5px;">{{_ "Punch_time"}}：{{inTime group.in_time group.group_id}}</div>
           </div>
           <span  class="reReckInTime" style="right: 0;position: absolute;color: #39a8fe;padding: 10px 0;" data-groupid="{{group.group_id}}">
-            更新打卡 <i class="fa fa-angle-right"></i>
+            {{_ "Update_clock"}} <i class="fa fa-angle-right"></i>
           </span>
           {{else}}
           <div  style="display: inline-block;margin-left: 30px;">
-            <div style="color: #868686;font-size: 12px;">上班时间：09:00</div>
-            <div style="font-size: 14px;font-weight: 400;margin-top: 5px;">打卡时间： 未打卡</div>
+            <div style="color: #868686;font-size: 12px;">{{_ "Working_hours"}}：09:00</div>
+            <div style="font-size: 14px;font-weight: 400;margin-top: 5px;">{{_ "Punch_time"}}： {{_ "No_punch_card"}}</div>
           </div>
-          <span class="checkInTime" style="color: #fff;background-color: #3db1fa;padding: 5px 10px;right: 0;margin-top: 5px; border-radius: 5px;position: absolute;" data-groupid="{{group.group_id}}" >上班打卡</span>
+          <span class="checkInTime" style="color: #fff;background-color: #3db1fa;padding: 5px 10px;right: 0;margin-top: 5px; border-radius: 5px;position: absolute;" data-groupid="{{group.group_id}}" >{{_ "Clock_in"}}</span>
           {{/if}}
         </div>
         <div style="position: relative; margin-top: 32px;">
           <i class="fa fa-circle " style="color: #f1b725;font-size: 15px;padding: 10px 0;margin: auto;position: absolute;"></i>
           {{#if hasOutTime group.out_time}}
           <div  style="display: inline-block;margin-left: 30px;">
-            <div style="color: #868686;font-size: 12px;">下班时间:18:00</div>
-            <div style="font-size: 14px;font-weight: 400;margin-top: 5px;">打卡时间：{{outTime group.out_time group.group_id}}</div>
+            <div style="color: #868686;font-size: 12px;">{{_ "Closing_time"}}:18:00</div>
+            <div style="font-size: 14px;font-weight: 400;margin-top: 5px;">{{_ "Punch_time"}}：{{outTime group.out_time group.group_id}}</div>
           </div>
           <span class="reCheckOutTime" style="right: 0;position: absolute;color: #39a8fe;padding: 10px 0;" data-groupid="{{group.group_id}}">
-            更新打卡 <i class="fa fa-angle-right"></i>
+            {{_ "Update_clock"}} <i class="fa fa-angle-right"></i>
           </span>
           {{else}}
           <div  style="display: inline-block;margin-left: 30px;">
-            <div style="color: #868686;font-size: 12px;">下班时间:18:00</div>
-            <div style="font-size: 14px;font-weight: 400;margin-top: 5px;">打卡时间： 未打卡</div>
+            <div style="color: #868686;font-size: 12px;">{{_ "Closing_time"}}:18:00</div>
+            <div style="font-size: 14px;font-weight: 400;margin-top: 5px;">{{_ "Punch_time"}}： {{_ "No_punch_card"}}</div>
           </div>
-          <span class="checkOutTime" style="color: #fff;background-color: #3db1fa;padding: 5px 10px;right: 0;margin-top: 5px; border-radius: 5px;position: absolute;" data-groupid="{{group.group_id}}">下班打卡</span>
+          <span class="checkOutTime" style="color: #fff;background-color: #3db1fa;padding: 5px 10px;right: 0;margin-top: 5px; border-radius: 5px;position: absolute;" data-groupid="{{group.group_id}}">{{_ "Clock_out"}}</span>
           {{/if}}
         </div>
       </div>
@@ -120,7 +120,7 @@
           <p style="word-wrap: break-word;white-space: pre-line; margin: 0;"><strong>{{getShortTime ts group.group_id}}</strong>&nbsp;&nbsp; {{content}}</p>
           {{/each}}
         {{else}}
-          添加今日简述...
+          {{_ "Add_todays_brief"}}...
         {{/if}}
       </div>
     </div>
@@ -141,7 +141,7 @@
                 <span style="color: #868686;padding: 10px 0;right: 60px;position: absolute;">{{inTime in_time group_id}}</span>
                 <span  class="reReckInTime" style="right: 20px;position: absolute;color: #27d496;padding: 10px 0;" data-groupid="{{group_id}}">重打</span>
                 {{else}}
-                <span class="checkInTime" style="color: #fff;background-color: #3db1fa;padding: 5px 10px;right: 30px;margin-top: 5px; border-radius: 5px;position: absolute;" data-groupid="{{group_id}}" >未打卡</span>
+                <span class="checkInTime" style="color: #fff;background-color: #3db1fa;padding: 5px 10px;right: 30px;margin-top: 5px; border-radius: 5px;position: absolute;" data-groupid="{{group_id}}" >{{_ "No_punch_card"}}</span>
                 {{/if}}
             </div>
             <div style="position: relative;padding: 10px 0;">
@@ -153,7 +153,7 @@
                 <span style="color: #868686;padding: 10px 0;right: 60px;position: absolute;">{{outTime out_time group_id}}</span>
                 <span class="reCheckOutTime" style="right: 20px;position: absolute;color: #27d496;padding: 10px 0;" data-groupid="{{group_id}}">重打</span>
                 {{else}}
-                <span class="checkOutTime" style="color: #fff;background-color: #3db1fa;padding: 5px 10px;right: 30px;margin-top: 5px; border-radius: 5px;position: absolute;" data-groupid="{{group_id}}">未打卡</span>
+                <span class="checkOutTime" style="color: #fff;background-color: #3db1fa;padding: 5px 10px;right: 30px;margin-top: 5px; border-radius: 5px;position: absolute;" data-groupid="{{group_id}}">{{_ "No_punch_card"}}</span>
                 {{/if}}
             </div>
           </div>
@@ -174,7 +174,7 @@
                 <span style="color: #868686;padding: 10px 0;right: 60px;position: absolute;">{{inTime}}</span>
                 <span  class="reReckInTime" style="right: 20px;position: absolute;color: #27d496;padding: 10px 0;">重打</span>
                 {{else}}
-                <span class="checkInTime" style="color: #fff;background-color: #3db1fa;padding: 5px 10px;right: 30px;margin-top: 5px; border-radius: 5px;position: absolute;">未打卡</span>
+                <span class="checkInTime" style="color: #fff;background-color: #3db1fa;padding: 5px 10px;right: 30px;margin-top: 5px; border-radius: 5px;position: absolute;">{{_ "No_punch_card"}}</span>
                 {{/if}}
             </div>
             <div style="position: relative;padding: 10px 0;">
@@ -186,7 +186,7 @@
                 <span style="color: #868686;padding: 10px 0;right: 60px;position: absolute;">{{outTime}}</span>
                 <span class="reCheckOutTime" style="right: 20px;position: absolute;color: #27d496;padding: 10px 0;">重打</span>
                 {{else}}
-                <span class="checkOutTime" style="color: #fff;background-color: #3db1fa;padding: 5px 10px;right: 30px;margin-top: 5px; border-radius: 5px;position: absolute;">未打卡</span>
+                <span class="checkOutTime" style="color: #fff;background-color: #3db1fa;padding: 5px 10px;right: 30px;margin-top: 5px; border-radius: 5px;position: absolute;">{{_ "No_punch_card"}}</span>
                 {{/if}}
             </div>
           </div>
@@ -197,7 +197,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="selectDevicesInOutLabel">选择设备</h4>
+            <h4 class="modal-title" id="selectDevicesInOutLabel">{{_ "Select_device"}}</h4>
           </div>
           <div class="modal-body">
             <ul class="set-up comFadeIn">
@@ -208,7 +208,7 @@
                   {{#if name}}
                   <label style="margin-left:48px;">{{name}}</label>
                   {{else}}
-                  <label style="margin-left:48px;">未知设备</label>
+                  <label style="margin-left:48px;">{{_ "Unknown_device"}}</label>
                   {{/if}}
                   <div class="value" style="float:right; margin:10px;">{{in_out}}<i class="fa fa-angle-right"></i></div>
               </li>

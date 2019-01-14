@@ -2,20 +2,20 @@
 {{> _checkGroupDevice}}
 <div class="homePage" style="{{noCompany}}">
   <div class="head">
-    <strong class="top-home-btn active">监控组</strong>
+    <strong class="top-home-btn active">{{_ "DeepEye_Monitoring_group_Title"}}</strong>
     <div class="rightDropMenu dropdown">
       <div class="rightButton dropdown-toggle" id="add-more" data-toggle="dropdown">
         <img src="/add_more.png" height="30" >
       </div>
       <ul class="dropdown-menu" role="menu" aria-labelledby="add-more">
         <!-- <li role="presentation"><a id="joinTestChatGroups" role="menuitem" tabindex="-1" ><i class="fa fa-users add-more-drop-item"></i>加入监控组</a></li> -->
-        <li role="presentation"><a id="createNewChatGroups" role="menuitem" tabindex="-1" ><i class="fa fa-comment add-more-drop-item"></i>创建监控组</a></li>
-        <li role="presentation"><a id="scanbarcode" role="menuitem" tabindex="-1" ><img class="add-more-drop-item" src="/scan_b.png" height="30" style="margin-left: -15px;">扫码加入监控组</a></li>
+        <li role="presentation"><a id="createNewChatGroups" role="menuitem" tabindex="-1" ><i class="fa fa-comment add-more-drop-item"></i>{{_ "Create_a_monitoring_group"}}</a></li>
+        <li role="presentation"><a id="scanbarcode" role="menuitem" tabindex="-1" ><img class="add-more-drop-item" src="/scan_b.png" height="30" style="margin-left: -15px;">{{_ "Scan_code_added_to_the_monitoring_group"}}</a></li>
         {{#if isAndroid}}
-        <li role="presentation"><a id="scanimage" role="menuitem" tabindex="-1" ><img class="add-more-drop-item" src="/scan_b.png" height="30" style="margin-left: -15px;">扫图片</a></li>
+        <li role="presentation"><a id="scanimage" role="menuitem" tabindex="-1" ><img class="add-more-drop-item" src="/scan_b.png" height="30" style="margin-left: -15px;">{{_ "Sweep_picture"}}</a></li>
         {{/if}}
-        <li role="presentation"><a id="qrcodeadddevice" role="menuitem" tabindex="-1" ><img class="add-more-drop-item" src="/scan_b.png" height="30" style="margin-left: -15px;">扫码添加脸脸盒</a></li>
-        <li role="presentation"><a id="scanadddevice" role="menuitem" tabindex="-1" ><img class="add-more-drop-item" src="/addDevice.png" height="30" style="margin-left: -15px;">网络扫描脸脸盒</a></li>
+        <li role="presentation"><a id="qrcodeadddevice" role="menuitem" tabindex="-1" ><img class="add-more-drop-item" src="/scan_b.png" height="30" style="margin-left: -15px;">{{_ "Scan_code_to_add_box"}}</a></li>
+        <li role="presentation"><a id="scanadddevice" role="menuitem" tabindex="-1" ><img class="add-more-drop-item" src="/addDevice.png" height="30" style="margin-left: -15px;">{{_ "Network_scanning_box"}}</a></li>
       </ul>
     </div>
   </div>
@@ -56,37 +56,37 @@
     </li>
     <li class="goGroupProfile" id="{{_id}}">
       <div class="icon"><img src="/group_set.png"/></div>
-      <label>监控组管理</label>
+      <label>{{_ "Monitoring_group_management"}}</label>
       <div class="value"><i class="fa fa-angle-right"></i></div>
     </li>
     <li class="viewWorkStatus">
       <div class="icon"><img src="/check_canlder.png"/></div>
-      <label>今日出现信息</label>
-      <div class="value">已出现 {{getInCount}}人 <i class="fa fa-angle-right"></i></div>
+      <label>{{_ "Show_information_today"}}</label>
+      <div class="value">{{getInCount}}{{_ "XX_people_have_appeared"}} <i class="fa fa-angle-right"></i></div>
     </li>
     <li class="goInstallTest">
       <div class="icon"><img src="/install-test.png"/></div>
-      <label>部署评测</label>
+      <label>{{_ "Deployment_evaluation"}}</label>
       <div class="value"><i class="fa fa-angle-right"></i></div>
     </li>
     <li class="goGroupPerson">
       <div class="icon"><img src="/group_users.png"/></div>
-      <label>成员照片</label>
+      <label>{{_ "Member_photo"}}</label>
       <div class="value"><i class="fa fa-angle-right"></i></div>
     </li>
     <li class="goPersonHistory">
       <div class="icon"><i class="fa fa-history"></i></div>
-      <label>出现记录</label>
+      <label>{{_ "Recording"}}</label>
       <div class="value"><i class="fa fa-angle-right"></i></div>
     </li>
     <li class="goStranger">
       <div class="icon"><img src="/stranger.png"/></div>
-      <label>标注</label>
+      <label>{{_ "Label"}}</label>
       <div class="value"><i class="fa fa-angle-right"></i></div>
     </li>
     <li class="goGroupReporter">
       <div class="icon"><i class="fa fa-compass"></i></div>
-      <label>出现时间报表</label>
+      <label>{{_ "Time_report"}}</label>
       <div class="value"><i class="fa fa-angle-right"></i></div>
     </li>
   </ul>
