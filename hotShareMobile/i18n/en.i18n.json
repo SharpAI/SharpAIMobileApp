@@ -108,7 +108,7 @@
   "store": "存储",
   "edit": "编辑",
   //删除
-  "delete": "delete",
+  "delete": "Remove",
   "saveDraft": "存储草稿",
   "publish": "发表",
   "plsAddImageAndText": "请添加图文",
@@ -339,35 +339,35 @@
 
   //user.html
   //群组成员绑定
-  "Group_member_binding": "Group member binding",
+  "Group_member_binding": "Bind A Group",
   //将帐号与对应群组成员绑定，实时查看、更正自己的出现信息
-  "Group_member_binding_Description": "Bind the account to the corresponding group member to view and correct your presence information in real time.",
+  "Group_member_binding_Description": "Bind your account to a group so you can view and correct your clokc-in/out information. You can bind to only one group.",
   //收藏
   "DeepEye_Collection": "Collection",
   //查看收藏的消息
-  "DeepEye_Collection_Description": "View favorite messages",
+  "DeepEye_Collection_Description": "View Favorite Messages",
   //只通知关注用户
-  "Only_notify_interested_users": "Only notify interested users",
+  "Only_notify_interested_users": "Followed Members Notification",
   //只有出现您关注的用户才发推送消息（陌生人仍然通知您）
-  "Only_notify_interested_users_Description":"Only users who are following your attention will send a message (the stranger still informs you)",
+  "Only_notify_interested_users_Description":"Only Receive Notification for Followed Members.",
   //更新打卡
-  "Update_clock": "Update clock",
+  "Update_clock": "Update Clock-in/Out Time",
   //上班时间
-  "Working_hours": "Working hours",
+  "Working_hours": "Working Hours",
   //打卡时间
-  "Punch_time": "Punch time",
+  "Punch_time": "Clock-In time",
   //未打卡
-  "No_punch_card": "No punch card",
+  "No_punch_card": "Not Clocked-in",
   //上班打卡
-  "Clock_in": "Clock in",
+  "Clock_in": "Clock-in",
   //下班打卡
-  "Clock_out": "Clock out",
+  "Clock_out": "Clock-out",
   //下班时间
-  "Closing_time": "Closing time",
+  "Closing_time": "Off-work Time",
   //添加今日简述
-  "Add_todays_brief": "Add today's brief",
+  "Add_todays_brief": "Add Today's Work Status",
   //选择设备
-  "Select_device": "Select device",
+  "Select_device": "Select Devices",
 
 
   //chatGroups.html
@@ -376,9 +376,9 @@
   //出现提醒
   "Reminder": "Reminder",
   //删除
-  "Delete": "Delete",
+  "Delete": "Remove",
   //正在同步离线消息
-  "Syncing_offline_messages": "Syncing offline messages",
+  "Syncing_offline_messages": "Syncing Offline Messages",
 
 
   //timeline.html
@@ -387,15 +387,15 @@
   //加载中
   "Loading": "Loading",
   //我的设备
-  "My_device": "My device",
+  "My_device": "My Device",
   //未知设备
-  "Unknown_device": "Unknown device",
+  "Unknown_device": "Unknown Device",
   //盒子
   "Box": "Box",
   //摄像头
   "Camera": "Camera",
   //未找到设备
-  "Device_not_found": "Device not found",
+  "Device_not_found": "Device Not Found",
   //离线
   "Offline": "Offline",
   //在线
@@ -405,87 +405,87 @@
   //监控组
   "DeepEye_Monitoring_group_Title": "Group",
   //创建监控组
-  "Create_a_monitoring_group": "Create a monitoring group",
+  "Create_a_monitoring_group": "Create Monitoring Group",
   //扫码加入监控组
-  "Scan_code_added_to_the_monitoring_group": "Scan code added to the monitoring group",
+  "Scan_code_added_to_the_monitoring_group": "Join Group via Scan Group Barcode",
   //扫图片
-  "Sweep_picture": "Sweep picture",
+  "Sweep_picture": "Add Device via Scan Device Barcode ",
   //扫码添加脸脸盒
-  "Scan_code_to_add_box": "Scan code to add 'lianlian' box",
+  "Scan_code_to_add_box": "Add Device via Scan Device Barcode",
   //网络扫描脸脸盒
-  "Network_scanning_box": "Network scanning 'lianlian' box",
+  "Network_scanning_box": "Add Device via Network Scan",
   //监控组管理
-  "Monitoring_group_management": "Monitoring group management",
+  "Monitoring_group_management": "Group Settings",
   //今日出现信息
-  "Show_information_today": "Show information today",
+  "Show_information_today": "Daily Dashboard",
   //已出现XX人
   "XX_people_have_appeared": " people",
   //部署评测
-  "Deployment_evaluation": "Deployment evaluation",
+  "Deployment_evaluation": "Deployment Assistant",
   //成员照片
-  "Member_photo": "Member photo",
+  "Member_photo": "Members Album",
   //出现记录
-  "Recording": "Recording",
+  "Recording": "Daily In/Out Records",
   //标注
   "Label": "Label",
   //出现时间报表
-  "Time_report": "Time report",
+  "Time_report": "Time Report",
 
 
   //groupsProfile.html
   //监控组信息
-  "Monitoring_group_information": "Monitoring group information",
+  "Monitoring_group_information": "Group Information",
   //监控组名称
-  "Monitoring_group_name": "Monitoring group name",
+  "Monitoring_group_name": "Name",
   //监控组二维码
-  "Monitoring_group_QR_code": "Monitoring group QR code",
+  "Monitoring_group_QR_code": "QR Code",
   //监控组设备列表
-  "Monitoring_group_device_list": "Monitoring group device list",
+  "Monitoring_group_device_list": "Devices List",
   //识别列表
-  "Identification_statistics": "Identification statistics",
+  "Identification_statistics": "Daily Counting Report",
   //监控组模板
-  "Monitoring_group_template": "Monitoring group template",
+  "Monitoring_group_template": "Group Template",
   //公告
-  "Announcement": "Announcement",
+  "Announcement": "Notice",
   //复制
   "Copy": "Copy",
   //监控时间设置
-  "Monitoring_time_setting": "Monitoring time setting",
+  "Monitoring_time_setting": "Monitoring Time Setting",
   //聚类挑错
   //不知道怎么翻译  ****************************************
-  "juleitiaocuo": "聚类挑错",
+  "juleitiaocuo": "Clustering",
   //工作相关
-  "Work_related": "Work-related",
+  "Work_related": "Work Status",
   //提醒填写工作安排
-  "Reminder_to_fill_in_the_work_arrangement": "Reminder to fill in the work arrangement",
+  "Reminder_to_fill_in_the_work_arrangement": "Reminder to Fill Work Status",
   //识别规则
-  "Identification_rule": "Identification rule",
+  "Identification_rule": "Recognition Rule",
   //接收未识别成员信息
-  "Receive_unrecognized_member_information": "Receive unrecognized member information",
+  "Receive_unrecognized_member_information": "Unrecognized People Alert",
   //通知管理
-  "Notification_management": "Notification management",
+  "Notification_management": "Notification Management",
   //报告接收邮箱
-  "Report_receiving_mailbox": "Report receiving mailbox",
+  "Report_receiving_mailbox": "Report Receiving Mailbox",
   //清空训练记录
-  "Clear_training_record": "Clear training record",
+  "Clear_training_record": "Clear Training History",
   //暂不接收label消息
   "Temporarily_do_not_receive_the_label_message": "Temporarily do not receive the label message",
   //退出
-  "drop_out": "drop out",
+  "drop_out": "Log Out",
   //查看全部成员
-  "View_all_members": "View all members",
+  "View_all_members": "All Members",
   //保存二维码
-  "Save_QR_code": "Save QR code",
+  "Save_QR_code": "Save QR Code",
   //扫描二维码
-  "Scan_QR_code": "Scan QR code",
+  "Scan_QR_code": "Scan QR Code",
   //返回
   "DeepEye_back": "Back",
   //选择识别准确度
-  "Select_recognition_accuracy": "Select recognition accuracy",
+  "Select_recognition_accuracy": "Select Recognition Accuracy",
   //精确匹配
-  "Exact_match": "Exact match",
+  "Exact_match": "Exact Match",
   //宽松匹配
-  "Loose_match": "Loose match",
+  "Loose_match": "Loose Match",
   //友情提示
   "friendly_reminder": "friendly reminder",
   //当使用严格匹配时，会将部分熟人当作陌生人，需要更多的照片标注来避免此类情况
@@ -493,9 +493,9 @@
   //当使用宽松匹配时，会将部分陌生人识别为熟人。
   "friendly_reminder_Explanation_two": "When a loose match is used, some strangers are identified as acquaintances.",
   //邮箱
-  "mailbox": "mailbox",
+  "mailbox": "Mailbox",
   //添加邮箱
-  "Add_a_mailbox": "Add a mailbox",
+  "Add_a_mailbox": "Add Mailbox",
   //删除邮箱
-  "Delete_mailbox": "Delete mailbox"
+  "Delete_mailbox": "Remove Mailbox"
 }
