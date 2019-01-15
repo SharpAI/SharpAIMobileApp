@@ -16,13 +16,13 @@
       {{#if showMultiSelect}}
         {{#if isMultiSelect}}
           {{#if isFormGroupchat}}
-          <button id="resetSelect">重选</button>
+          <button id="resetSelect">{{_ "Re_election"}}</button>
           {{else}}
-          <button id="cancelSelect">取消</button>
+          <button id="cancelSelect">{{_ "cancel"}}</button>
           {{/if}}
-          <button id="confirmSelect">确定</button>
+          <button id="confirmSelect">{{_ "determine"}}</button>
         {{else}}
-        <button id="multiSelect">多选</button>
+        <button id="multiSelect">{{_ "Multiple_selection"}}</button>
         {{/if}}
       {{/if}}
       <button class="dropdown-toggle" id="btn-more" data-toggle="dropdown">
@@ -36,17 +36,17 @@
       <ul class="dropdown-menu" role="menu" aria-labelledby="btn-more" style="height: 353px;overflow-x:hidden; overflow-y:scroll;">
         <!-- <li role="presentation" id="timeRange"><input type="radio" {{filterTimeRange}}><label>时间范围</label></li> -->
         <li role="presentation checkRecognize" >
-          <h4>识别状态</h4>
+          <h4>{{_ "Identification_status"}}</h4>
           <label id="onlyShowUnknown">
-            <input id="1" type="radio" name="recognize" {{onlyShowUnknown}}><span>未识别</span>
+            <input id="1" type="radio" name="recognize" {{onlyShowUnknown}}><span>{{_ "unrecognized"}}</span>
           </label>
           <label id="clearFilter">
-            <input id="2" type="radio" name="recognize" {{showAll}}><span>已识别</span>
+            <input id="2" type="radio" name="recognize" {{showAll}}><span>{{_ "Identified"}}</span>
           </label>
         </li>
         <li role="separator" class="divider"></li>
         <li id="fuzz-panel" role="presentation">
-          <h4>模糊度</h4>
+          <h4>{{_ "Ambiguity"}}</h4>
           <div id="fuzz-value">
               <label id="fuzz-five"><input type="radio" name="radio" value="5" ><span>5</span></label>
               <label id="fuzz-ten"><input type="radio" name="radio" value="10"><span>10</span></label>
@@ -58,9 +58,9 @@
         </li>
         <li role="separator" class="divider"></li>
         <li id="face-type">
-          <h4>人脸类型</h4>
-          <label id="face-front"><input type="radio" name="face" value="front" {{frontOnlyChecked}}><span>正脸</span></label>
-          <label id="face-all" style="margin-left:10%;" ><input type="radio" name="face" value="all" {{sideAllChecked}}><span>显示全部</span></label>
+          <h4>{{_ "Face_type"}}</h4>
+          <label id="face-front"><input type="radio" name="face" value="front" {{frontOnlyChecked}}><span>{{_ "Positive_face"}}</span></label>
+          <label id="face-all" style="margin-left:10%;" ><input type="radio" name="face" value="all" {{sideAllChecked}}><span>{{_ "display_all"}}</span></label>
         </li>
       </ul>
     </div>
@@ -68,16 +68,16 @@
   <div class="content" style="position: absolute;top: 0;left: 0;bottom: 0;right: 0;overflow-x: hidden;overflow-y: auto;-webkit-overflow-scrolling: touch;">
     {{#if isLoading}}
     <div class="waitForReportIframe" style="position:fixed; width:100%;text-align: center; margin-top:40%; color: black; font-size: 16px;">
-      <img src="/loading.gif" width="24px" height="24px"/> 加载中...
+      <img src="/loading.gif" width="24px" height="24px"/> {{_ "loading"}}...
     </div>
     {{else}}
     {{#if lists}}
     <ul class="timeLine">
-      <div style="color: #FF9800;font-size: 16px;position: relative; top: -10px; text-align: right;"><button id="goHint" style="color:rgb(0, 119, 255); display: inline-block;">标注助手</button></div>
+      <div style="color: #FF9800;font-size: 16px;position: relative; top: -10px; text-align: right;"><button id="goHint" style="color:rgb(0, 119, 255); display: inline-block;">{{_ "Labeling_assistant"}}</button></div>
       {{#if timelinehref}}
-      <div style="color: #FF9800;font-size: 16px;position: relative"> 点击头像，进行标注</div>
+      <div style="color: #FF9800;font-size: 16px;position: relative"> {{_ "Click_on_the_avatar_to_mark"}}</div>
       {{else}}
-      <div style="color: #FF9800;font-size: 16px;position: relative"> 点击头像，调整您的出现时间</div>
+      <div style="color: #FF9800;font-size: 16px;position: relative"> {{_ "Click_on_the_avatar_to_adjust_your_appearance_time"}}</div>
       {{/if}}
       <!--{{#each lists}}
       {{#if isShowTime}}
@@ -115,27 +115,27 @@
           <div class="videos video-click-able"  id="{{person_id}}" data-name="{{person_name}}" data-imgurl="{{video_post}}" data-ts="{{ts}}" data-tsoffset="{{ts_offset}}" data-videosrc="{{video_src}}">
             <img class="lazy" data-original="{{video_post}}" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"/>
             <div class="video-play-tip"><img src="/music_pic_default.png"/> </div>
-            <div class="select-video-enable"  id="{{person_id}}" data-name="{{person_name}}" data-imgurl="{{video_post}}" data-ts="{{ts}}" data-tsoffset="{{ts_offset}}" data-isvideo="true" data-videosrc="{{video_src}}">选择</div>
+            <div class="select-video-enable"  id="{{person_id}}" data-name="{{person_name}}" data-imgurl="{{video_post}}" data-ts="{{ts}}" data-tsoffset="{{ts_offset}}" data-isvideo="true" data-videosrc="{{video_src}}">{{_ "select"}}</div>
             <div class="relations-info">{{relations_info}}</div>
           </div>
           {{else}}
             {{#if mergedImgs}}
               {{#if mergedIsExtend}}
               <div class="images images-no-click" id="{{person_id}}" data-name="{{person_name}}" data-imgurl="{{img_url}}" data-sqlid="{{sqlid}}" data-style="{{style}}" data-ts="{{ts}}">
-                <div class="linked-helper">已选</div>
+                <div class="linked-helper">{{_ "selected"}}</div>
                 {{> timelineAlbumImg}}
                 <div class="person-name">{{showName person_name accuracy label_times}}</div>
               </div>
               {{#each mergedImgs}}
               <div class="images images-no-click" id="{{person_id}}" data-name="{{person_name}}" data-imgurl="{{img_url}}" data-sqlid="{{sqlid}}" data-style="{{style}}" data-ts="{{ts}}">
-                <div class="linked-helper">已选</div>
+                <div class="linked-helper">{{_ "selected"}}</div>
                 {{> timelineAlbumImg}}
                 <div class="person-name">{{showName person_name accuracy label_times}}</div>
               </div>
               {{/each}}
               {{else}}
               <div class="images images-no-click images-merged" id="{{person_id}}" data-name="{{person_name}}" data-imgurl="{{img_url}}" data-sqlid="{{sqlid}}" data-style="{{style}}" data-ts="{{ts}}">
-                <div class="linked-helper">已选</div>
+                <div class="linked-helper">{{_ "selected"}}</div>
                 {{> timelineAlbumImg}}
                 {{#if checkMergedImgsCount mergedImgs}}
                     <div class="merged-count">{{getMergedImgsCount mergedImgs}} 张</div>
@@ -145,7 +145,7 @@
               {{/if}}
             {{else}}
             <div class="images images-no-click" id="{{person_id}}" data-name="{{person_name}}" data-imgurl="{{img_url}}" data-sqlid="{{sqlid}}" data-style="{{style}}" data-ts="{{ts}}">
-              <div class="linked-helper">已选</div>
+              <div class="linked-helper">{{_ "selected"}}</div>
               {{> timelineAlbumImg}}
               <div class="person-name">{{showName person_name accuracy label_times}}</div>
             </div>
@@ -211,7 +211,7 @@
       {{/each}}
     </ul>
     {{else}}
-    <div style="text-align: center;margin-top: 100px;">暂无数据</div>
+    <div style="text-align: center;margin-top: 100px;">{{_ "No_data"}}</div>
     {{/if}}
     {{/if}}
   <!--<div class="loading" style="display:none;text-align:center; margin:10px;"><img src="/loading.gif" width="20">&nbsp;&nbsp;加载中...</div>-->
@@ -224,13 +224,13 @@
     <div class="modal-content">
       <div class="modal-body">
         <div class="form-group">
-          <label for="picturePersonName">添加组员</label>
-          <input type="text" class="form-control" id="picturePersonName" placeholder="请输入姓名">
+          <label for="picturePersonName">{{_ "Add_a_member"}}</label>
+          <input type="text" class="form-control" id="picturePersonName" placeholder="Please type in your name">
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default cancelWhatsUp" data-dismiss="modal">取消</button>
-        <button type="button" id="" class="btn btn-primary confirmPersonName">确定</button>
+        <button type="button" class="btn btn-default cancelWhatsUp" data-dismiss="modal">{{_ "cancel"}}</button>
+        <button type="button" id="" class="btn btn-primary confirmPersonName">{{_ "determine"}}</button>
       </div>
     </div>
   </div>
@@ -252,7 +252,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="selectPersonLabel">将时间记录到</h4>
+          <h4 class="modal-title" id="selectPersonLabel">{{_ "Record_time_to"}}</h4>
         </div>
         <div class="modal-body" style="height: 380px; overflow-y:auto;">
           <ul class="set-up comFadeIn" style="padding-left:0;">
@@ -267,8 +267,8 @@
         </ul>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-          <button type="button" class="btn btn-primary addNewPerson">添加组员</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">{{_ "cancel"}}</button>
+          <button type="button" class="btn btn-primary addNewPerson">{{_ "Add_a_member"}}</button>
         </div>
       </div>
     </div>
@@ -286,7 +286,7 @@
 <template name="zhoushou">
     <div class="zhoushou" style="z-index: 1000;">
         <div class="head">
-          <strong>监控组陌生人</strong>
+          <strong>{{_ "Monitoring_group_stranger"}}</strong>
           <div id="farhint" class="leftButton">
             <i class="fa fa-angle-left fa-fw"></i>
           </div>
@@ -296,10 +296,10 @@
               <img src="/biaozhu.png" width="100%" height="auto">
           </div>
           <div class="describe">
-              <p>“来了吗”自带算法会选择部分照片进行人脸识别。</p>
-              <p>这里展示的是没有被系统选中的照片。</p>
-              <p>更多标识带来更好的识别体验，</p>
-              <p>我们希望您可以继续选择清晰正脸的照片进行标注。</p>
+              <p>{{_ "DeepEye_The_algorithm_will_select_some_photos_for_face_recognition"}}</p>
+              <p>{{_ "Shown_here_are_photos_that_have_not_been_selected_by_the_system"}}</p>
+              <p>{{_ "More_logos_lead_to_a_better_recognition_experience"}}</p>
+              <p>{{_ "We_hope_that_you_can_continue_to_select_a_photo_with_a_clear_face_to_mark_it"}}</p>
           </div>
 
         </div>

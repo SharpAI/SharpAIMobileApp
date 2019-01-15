@@ -2946,9 +2946,9 @@ var onMqttMessage = function(topic, msg, msgKey, mqttCallback) {
           count += 1;
       }
       if (count > 0){
-        setObj.text = 'AI观察到有人在活动(' + count + '次)';
+        setObj.text = TAPi18n.__("AI_observed_that_someone_was_active") + count + TAPi18n.__("Times");
       } else {
-        setObj.text = 'AI观察到有人在活动';
+        setObj.text = TAPi18n.__("AI_observed_that_someone_was_active");
       }
     }
   } else {
@@ -2966,7 +2966,7 @@ var onMqttMessage = function(topic, msg, msgKey, mqttCallback) {
         return insertMsg(msgObj, 'tid相同，但label_name不同');
       }
     }
-    setObj.text = 'AI观察到 '+msgObj.images[0].label + '：';
+    setObj.text = TAPi18n.__("AI_observed")+msgObj.images[0].label + '：';
     if (targetMsg.tid) {
       setObj.wait_lable = msgObj.wait_lable;
       for (var i = 0; i < targetMsg.images.length; i++) {
@@ -3061,7 +3061,7 @@ SimpleChat.onMqttLabelMessage = function(topic, msg) {
             // step2. 重新insert消息
             var msgToInsrtObj = {};
             msgToInsrtObj = $.extend(true,msgToInsrtObj, targetMsg,{
-              text: 'AI观察到 '+ msgObj.setNames[i].name+':',
+              text: TAPi18n.__("AI_observed")+ msgObj.setNames[i].name+':',
               people_id: msgObj.setNames[i].id,
               images: imageLists,
               wait_lable: false,
@@ -3082,7 +3082,7 @@ SimpleChat.onMqttLabelMessage = function(topic, msg) {
     if(msgObj.admin_label_false && targetMsg){
       Messages.update({_id: targetMsg._id},{
         $set:{
-          text: 'AI观察到 '+msgObj.text + ':'
+          text: TAPi18n.__("AI_observed")+msgObj.text + ':'
         }
       },function(){});
     }

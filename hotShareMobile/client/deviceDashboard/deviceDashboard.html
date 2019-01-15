@@ -4,8 +4,8 @@
     <strong style="width: 80px;margin-left: 2.5rem;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;position: absolute;">{{groupName}}</strong>
     <div style="display: inline-block;width: 100%;height: 40px;position: absolute;left: 0px;">
       <div style="width: 10.5rem;height: 40px;margin: auto;font-size: 14px">
-        <div class="SignNo Sign-fa"><span>未出现</span></div>
-        <div class="SignYes Sign-fa"><span>已出现</span></div>
+        <div class="SignNo Sign-fa"><span>{{_ "Not_appearing"}}</span></div>
+        <div class="SignYes Sign-fa"><span>{{_ "Already_appear"}}</span></div>
       </div>   
     </div>
     <!-- {{#if isOut}}
@@ -14,7 +14,7 @@
       <strong style="width: 100%;">{{groupName}}(已出现)</strong>
     {{/if}} -->
     <div class="leftButton back"><i class="fa fa-angle-left fa-fw"></i></div>
-    <div class="rightButton" id="goHint" style="padding-top:0;"><i class="fa fa-fw" style="font-size:14px;width: 86px;">识别错了？</i></div>
+    <div class="rightButton" id="goHint" style="padding-top:0;"><i class="fa fa-fw" style="font-size:14px;width: 86px;">{{_ "Is_the_identification_wrong"}}</i></div>
   </div>
   <div class="date-head" style="display:none">
       <p class="time">{{day_title}}</p>
@@ -40,14 +40,14 @@
   </div>
   {{#if zeroLists}}
   <div style="font-size:16px;text-align:center;padding:50px;">
-    <a style="color:rgb(0, 119, 255);" id="zeroLists">暂无出现记录</a>
+    <a style="color:rgb(0, 119, 255);" id="zeroLists">{{_ "No_record"}}</a>
   </div>
   {{else}}
   <!-- <div style="font-size:16px;text-align:right;padding-right:10px;">
     <a style="color:rgb(0, 119, 255);" id="goHint">识别错了？</a>
   </div> -->
   {{#if isLoading}}
-    <div class="loading"><img src="/loading.gif"/><p>加载中</p></div>
+    <div class="loading"><img src="/loading.gif"/><p>{{_ "loading"}}</p></div>
   {{else}}
   <ul class="lists">
     {{#if isOut}}
@@ -96,9 +96,9 @@
       {{#if showFollowButton}}
         <h2 class="follow" data-userid="{{data.person_id}}" data-following={{isFollowing}}>
         {{#if isFollowing}}
-          取消关注
+          {{_ "Unsubscribe"}}
         {{else}}
-          关注
+          {{_ "Attention"}}
         {{/if}}
         </h2>
       {{/if}}
@@ -107,15 +107,15 @@
     <div class="dd-content">
       <p class="inCompanyTime">{{data.in_company_tlen}}</p>
       {{#if data.in_time}}
-      <p style="text-align: center">上班时间: {{data.in_time}}</p>
+      <p style="text-align: center">{{_ "Working_hours"}}: {{data.in_time}}</p>
       {{/if}}
       {{#if data.out_time}}
-      <p style="text-align: center">最近活动时间: {{data.out_time}}</p>
+      <p style="text-align: center">{{_ "Recent_event_time"}}: {{data.out_time}}</p>
       {{/if}}
     </div>
     <div class="dd-foot">
       <!-- <button id="{{data._id}}" class="resetWorkStatus" style="color: red;">删除</button> -->
-      <button id="{{data._id}}" class="changeWorkStatus" style="color: #00c4ff;">更正</button>
+      <button id="{{data._id}}" class="changeWorkStatus" style="color: #00c4ff;">{{_ "Correct"}}</button>
     </div>
   </div>
 </div>

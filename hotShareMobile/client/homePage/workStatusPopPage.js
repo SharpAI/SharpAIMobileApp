@@ -97,25 +97,25 @@ var parseDate = function(currentDay){
     switch(currentDay.getDay())
     {
     case 0:
-      day = '周日';
+      day = TAPi18n.__("Sunday");
       break;
     case 1:
-      day = '周一';
+      day = TAPi18n.__("Monday");
       break;
     case 2:
-      day = '周二';
+      day = TAPi18n.__("Tuesday");
       break;
     case 3:
-      day = '周三';
+      day = TAPi18n.__("Wednesday");
       break;
     case 4:
-      day = '周四';
+      day = TAPi18n.__("Thursday");
       break;
     case 5:
-      day = '周五';
+      day = TAPi18n.__("Friday");
       break;
     case 6:
-      day = '周六';
+      day = TAPi18n.__("Saturday");
       break;
     default:
       break;

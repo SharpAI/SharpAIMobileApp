@@ -1,17 +1,17 @@
 <template name="groupUserHide">
 <div class="groupUserHide">
   <div class="head">
-    <strong>通知管理</strong>
+    <strong>{{_ "Notification_management"}}</strong>
     <div class="leftButton back"><i class="fa fa-angle-left fa-fw"></i></div>
   </div>
   <div class="content" style="padding-top:40px;">
     <ul class="userHideLists">
-        <li class="sub_head"><p>请选择通知方式</p></li>
+        <li class="sub_head"><p>{{_ "Please_select_a_notification_method"}}</p></li>
         {{#with getConfig 'push'}}
             <li class="userHideItem">
               <img class="icon" src="/push.png" width="40" height="40">
               <div class="right-btn" style="background: #fff;"><input id="push" class="switch" style="margin-top:-3px;outline:none;" type="checkbox" {{checkedIf isShow}}></div>
-              <p class="userName">APP推送通知</p>
+              <p class="userName">{{_ "APP_push_notification"}}</p>
               {{#if getIsShow this}}
               {{/if}}
             </li>
@@ -20,19 +20,19 @@
             <li class="userHideItem">
               <img class="icon" src="/email.png" width="40" height="40">
               <div class="right-btn" style="background: #fff;"><input id="email" class="switch" style="margin-top:-3px;outline:none;" type="checkbox" {{checkedIf isShow}}></div>
-              <p class="userName">邮件通知</p>
+              <p class="userName">{{_ "E-mail_notification"}}</p>
               {{#if getIsShow this}}
               {{/if}}
             </li>
         {{/with}}
-        <li class="sub_head"><p>以下事件发生时，通知您</p></li>
+        <li class="sub_head"><p>{{_ "Notify_you_when_the_following_events_occur"}}</p></li>
         {{#with getConfig 'report'}}
             <li class="userHideItem">
               <img class="icon" src="/active_report.png" width="40" height="40">
               <div class="right-btn" style="background: #fff;">
                 <input id="report_id" class="switch" style="margin-top:-3px;outline:none;" type="checkbox" {{checkedIf isShow}}>
               </div>
-              <p class="userName">动静报告</p>
+              <p class="userName">{{_ "Motion report"}}</p>
               {{#if getIsShow this}}
               {{/if}}
             </li>
@@ -41,7 +41,7 @@
             <li class="userHideItem">
               <img class="icon" src="/user_new.png" width="40" height="40">
               <div class="right-btn" style="background: #fff;"><input id="stranger_id" class="switch" style="margin-top:-3px;outline:none;" type="checkbox" {{checkedIf isShow}}></div>
-              <p class="userName">不熟悉的人</p>
+              <p class="userName">{{_ "unfamiliar_person"}}</p>
               {{#if getIsShow this}}
               {{/if}}
             </li>
@@ -70,7 +70,7 @@
         {{/if}} -->
 
 
-      <li class="sub_head"><p>以下熟人出现时，通知您</p></li>
+      <li class="sub_head"><p>{{_ "Notify_you_when_the_following_acquaintances_appear"}}</p></li>
       {{#each lists}}
       {{#if person_name}}
       <li class="userHideItem">
@@ -86,7 +86,7 @@
       {{/if}}
       {{/each}}
       {{#if isLoading}}
-      <div class="loading"><img src="/loading.gif" width="24" height="24"/> &nbsp;加载中</div>
+      <div class="loading"><img src="/loading.gif" width="24" height="24"/> &nbsp;{{_ "loading"}}</div>
       {{/if}}
     </ul>
 

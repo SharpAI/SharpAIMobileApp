@@ -1,7 +1,7 @@
 <template name="groupInstallTest">
     <div class="groupInstallTest">
         <div class="head">
-            <strong>部署评测</strong>
+            <strong>{{_ "Deployment_evaluation"}}</strong>
             <div class="leftButton back">
                 <i class="fa fa-angle-left fa-fw"></i>
             </div>
@@ -64,38 +64,38 @@
             </div>
         </div>
         <div class="score-box">
-            <label style="display: block">识别分数:&nbsp;&nbsp;&nbsp;{{label_score}}</label>
+            <label style="display: block">{{_ "Recognition_score"}}:&nbsp;&nbsp;&nbsp;{{label_score}}</label>
             {{#if showRes}}
             {{else}}
                 {{#if testres 1}}
-                <label style="color: rgb(15, 180, 15);">产品配置较好，可以正常使用</label>
+                <label style="color: rgb(15, 180, 15);">{{_ "Good_product_configuration"}}</label>
                 {{else}}
                 <div>
-                <label style="color: rgb(228, 62, 62);">标注不够</label>
-                <button style="float: right;" id="goTimeLine">去标注</button>
+                <label style="color: rgb(228, 62, 62);">{{_ "Not_enough_labels"}}</label>
+                <button style="float: right;" id="goTimeLine">{{_ "To_mark"}}</button>
                 </div>
                 {{/if}}
             {{/if}}
         </div>
         <div class="score-box">
-            <label style="display: block">角度分数:&nbsp;&nbsp;&nbsp;{{roate_score}}</label>
+            <label style="display: block">{{_ "Angle_score"}}:&nbsp;&nbsp;&nbsp;{{roate_score}}</label>
             {{#if showRes}}
             {{else}}
                 {{#if testres 2}}
-                <label style="color: rgb(15, 180, 15);">产品部署角度较好，可以正常使用</label>
+                <label style="color: rgb(15, 180, 15);">{{_ "Product_deployment"}}</label>
                 {{else}}
                 <div>
-                <label style="color: rgb(228, 62, 62);">产品部署角度不好</label>
-                <button style="float: right" id="goLink">查看文档</button>
+                <label style="color: rgb(228, 62, 62);">{{_ "Product_deployment_angle_is_not_good"}}</label>
+                <button style="float: right" id="goLink">{{_ "View_document"}}</button>
                 </div>
                 {{/if}}
             {{/if}}
         </div>
         {{#if showBtn}}
-        <button id="restart">重新评测</button>
+        <button id="restart">{{_ "Reevaluate"}}</button>
         {{/if}}
         {{#if showCancel}}
-        <button id="cancel">点击取消</button>
+        <button id="cancel">{{_ "Click_cancel"}}</button>
         {{/if}}
     </div>
 </template>

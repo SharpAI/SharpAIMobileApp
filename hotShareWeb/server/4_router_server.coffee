@@ -375,7 +375,7 @@ if Meteor.isServer
             ]
             to_type: "group"
             type: "text"
-            text: if !name then 'Work AI发现有人在活动' else 'AI观察到 ' + name + ':'
+            text: if !name then TAPi18n.__("Work_AI_found") else TAPi18n.__("AI_observed") + name + ':'
             create_time: create_time
             people_id: id
             people_uuid: uuid

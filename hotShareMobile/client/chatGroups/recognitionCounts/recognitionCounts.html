@@ -6,14 +6,14 @@
       <div id="timeRange" class="rightButton">
         <i class="fa fa-filter fa-fw"></i>
       </div>
-      <strong>识别统计</strong>
+      <strong>{{_ "Identification_statistics"}}</strong>
   </div>
   <div class="content" style="margin-top: 40px;">
-    <div class="line" style="height: 40px;text-align: left;padding-left: 10px;color: #555;line-height: 40px;background: #f3f3f3;">识别次数统计 ({{getRange}})</div>
+    <div class="line" style="height: 40px;text-align: left;padding-left: 10px;color: #555;line-height: 40px;background: #f3f3f3;">{{_ "Number_of_recognition_statistics"}} ({{getRange}})</div>
     <ul class="set-up comFadeIn" style="margin-bottom:0;">
       <li>
-        <label style="color:#555;">姓名</label>
-        <div class="value">识别次数</div>
+        <label style="color:#555;">{{_ "Name"}}</label>
+        <div class="value">{{_ "Number_of_recognition"}}</div>
       </li>
       {{#each counts}}
       <li>
@@ -22,11 +22,11 @@
       </li>
       {{/each}}
     </ul>
-    <div class="line" style="height: 40px;text-align: left;padding-left: 10px;color: #555;line-height: 40px;background: #f3f3f3;">识别记录 ({{getRange}})</div>
+    <div class="line" style="height: 40px;text-align: left;padding-left: 10px;color: #555;line-height: 40px;background: #f3f3f3;">{{_ "Identification_record"}} ({{getRange}})</div>
     <ul class="set-up comFadeIn" style="margin-bottom:0;">
       <li>
-        <label style="color:#555;">姓名</label>
-        <div class="value">识别时间</div>
+        <label style="color:#555;">{{_ "Name"}}</label>
+        <div class="value">{{_ "Recognition_time"}}</div>
       </li>
       {{#each lists}}
       <li>

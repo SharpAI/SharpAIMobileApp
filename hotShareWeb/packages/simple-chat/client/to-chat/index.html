@@ -33,9 +33,9 @@
         {{/if}}
       </div>
       <div class="chat-search">
-        <input type="text" id="searchVal" placeholder="请输入搜索内容">
-        <span class="search-submit">确定</span>
-        <span class="search-cancel">取消</span>
+        <input type="text" id="searchVal" placeholder="Enter search content">
+        <span class="search-submit">{{_ "determine"}}</span>
+        <span class="search-cancel">{{_ "cancel"}}</span>
       </div>
       <div class="box">
         <ul class="group-list">
@@ -48,7 +48,7 @@
         </ul>
         {{#if hasNewMsg}}
         <div class="hasNewMsg">
-          <span>{{newMsgCount}}条新消息</span>
+          <span>{{newMsgCount}}{{_ "Message"}}</span>
         </div>
         {{/if}}
       </div>
@@ -62,14 +62,14 @@
         {{#if isNLPGroup}}
           <div class="btn-box link">
             <i class="fa fa-link" aria-hidden="true"></i>
-            <div>粘贴链接</div>
+            <div>{{_ "Paste_link"}}</div>
           </div>
-          <div class="input"><input class="input-text" type="text" placeholder="粘帖链接，进行训练" /></div>
+          <div class="input"><input class="input-text" type="text" placeholder="Paste Links For Training" /></div>
         {{else}}
           <div class="btn-box image" id="selectfiles"></div>
-          <div class="input"><input class="input-text" type="text" placeholder="说点什么" /></div>
+          <div class="input"><input class="input-text" type="text" placeholder="Say Something" /></div>
         {{/if}}
-        <div class="send-btn"><input class="btn" type="submit" value="发送" style="border-radius: 5px;" /></div>
+        <div class="send-btn"><input class="btn" type="submit" value="Send" style="border-radius: 5px;" /></div>
       </form></div>
     </div>
 
@@ -88,12 +88,12 @@
     <div class="modal-dialog" style="top:30%; left:17.8%; width:64%; height:43%;">
       <div class="modal-content">
         <div class="modal-body" style="margin-top: 10px;">
-          <p style="text-align:center; margin-top: 30px;">建议使用“部署评测”评估当前部署情况。部署后，系统也会根据运行数据提醒您运行“部署评测”。</p>
+          <p style="text-align:center; margin-top: 30px;">{{_ "It_is_recommended_to"}}</p>
         </div>
         <!-- Modal footer -->
         <div class="modal-footer" style="text-align:center;">
-          <button id="btnSkip" type="button" class="btn btn-info" style="margin-right:10px;" >跳过</button>
-          <button id="btnEnter" type="button" class="btn btn-info" style="margin-left:10px;" >进入</button>
+          <button id="btnSkip" type="button" class="btn btn-info" style="margin-right:10px;" >{{_ "jump_over"}}</button>
+          <button id="btnEnter" type="button" class="btn btn-info" style="margin-left:10px;" >{{_ "Enter"}}</button>
         </div>
       </div>
     </div>
@@ -105,12 +105,12 @@
     <div class="modal-dialog" style="top:30%; left:17.8%; width:64%; height:43%;">
       <div class="modal-content">
         <div class="modal-body" style="margin-top: 10px;">
-          <p style="text-align:center; margin-top: 30px;">如果您选择跳过，会影响到识别的准确性，确认跳过吗？</p>
+          <p style="text-align:center; margin-top: 30px;">{{_ "If_you_choose_to_skip"}}</p>
         </div>
         <!-- Modal footer -->
         <div class="modal-footer" style="text-align:center;">
-          <button id="btnSkipConfirm" type="button" class="btn btn-info" style="margin-right:10px;" >确认</button>
-          <button id="btnBack" type="button" class="btn btn-info" style="margin-left:10px;">返回</button>
+          <button id="btnSkipConfirm" type="button" class="btn btn-info" style="margin-right:10px;" >{{_ "Confirm"}}</button>
+          <button id="btnBack" type="button" class="btn btn-info" style="margin-left:10px;">{{_ "DeepEye_back"}}</button>
         </div>
       </div>
     </div>
@@ -122,12 +122,12 @@
     <div class="modal-dialog" style="top:30%; left:17.8%; width:64%; height:43%;">
       <div class="modal-content">
         <div class="modal-body" style="margin-top: 10px;">
-          <p style="text-align:center; margin-top: 30px;">组里暂无设备，请到首页点击+号添加脸脸盒</p>
+          <p style="text-align:center; margin-top: 30px;">{{_ "No_equipment_in_the_group"}}</p>
         </div>
         <!-- Modal footer -->
         <div class="modal-footer" style="text-align:center;">
-          <button id="btnCancel" type="button" class="btn btn-info" style="margin-right:9px;" >取消</button>
-          <button id="btnEnterHome" type="button" class="btn btn-info" style="margin-left:9px;" >去首页</button>
+          <button id="btnCancel" type="button" class="btn btn-info" style="margin-right:9px;" >{{_ "cancel"}}</button>
+          <button id="btnEnterHome" type="button" class="btn btn-info" style="margin-left:9px;" >{{_ "Go_to_the_home"}}</button>
         </div>
       </div>
     </div>
@@ -262,7 +262,7 @@
                 {{#if is_error images}}
                   <div class="imgs-1-box">
                     <div class="imgs-1-item">
-                      <div class="my-btn">对</div>
+                      <div class="my-btn">{{_ "Correct"}}</div>
                       {{#each images}}
                         {{#if error}}
                         {{else}}
@@ -271,7 +271,7 @@
                       {{/each}}
                     </div>
                     <div class="imgs-1-item">
-                      <div class="my-btn">错</div>
+                      <div class="my-btn">{{_ "Wrong"}}</div>
                       {{#each images}}
                         {{#if error}}
                           {{> _simpleChatToChatItemImg}}
@@ -292,7 +292,7 @@
                       </div>
                       {{#if is_remove images}}
                         <div class="imgs-1-item">
-                          <div class="my-btn">删</div>
+                          <div class="my-btn">{{_ "delete"}}</div>
                           {{#each images}}
                             {{#if remove}}
                               {{> _simpleChatToChatItemImg}}
@@ -305,7 +305,7 @@
                 {{/if}}
                 {{#if label_users}}
                   <div class="label_complete">
-                    <div class="remark"><i class="fa fa-check-circle-o"></i>已完成标注</div>
+                    <div class="remark"><i class="fa fa-check-circle-o"></i>{{_ "Completed_labeling"}}</div>
                     <div class="imgs">
                       {{#each label_users}}
                         {{> _simpleChatToChatItemIcon}}
@@ -328,7 +328,7 @@
                     <div class="imgs-1-box">
                       {{#if is_label images}}
                         <div class="imgs-1-item">
-                          <div class="my-btn">标</div>
+                          <div class="my-btn">{{_ "Label"}}</div>
                           {{#each images}}
                             {{#if label}}
                               {{> _simpleChatToChatItemImg}}
@@ -338,7 +338,7 @@
                       {{/if}}
                       {{#if is_remove images}}
                         <div class="imgs-1-item">
-                          <div class="my-btn">删</div>
+                          <div class="my-btn">{{_ "delete"}}</div>
                           {{#each images}}
                             {{#if remove}}
                               {{> _simpleChatToChatItemImg}}
@@ -352,10 +352,10 @@
                     {{#unless hideLabelBtn to.id}}
                     <div class="label-box">
                       <div class="bottom_div">
-                        <div class="wantSelectElse" style="height: auto;">标注新人</div>
+                        <div class="wantSelectElse" style="height: auto;">{{_ "Mark_new_people"}}</div>
                       </div>
                       <!--<div class="top_div">请点击与上图是同一个人的照片</div>-->
-                      <div class="top_div">或点击与上图是同一个人的照片进行标注</div>
+                      <div class="top_div">{{_ "Or_click_on_the"}}</div>
                       <div>
                         {{#each p_ids images}}
                           {{> _simpleChatToChatPItemImg}}
@@ -363,13 +363,13 @@
                       </div>
                       <div class="bottom_div">
                         <!--<div class="wantSelectElse">都不是</div>-->
-                        <div class="determine">确定</div>
+                        <div class="determine">{{_ "determine"}}</div>
                       </div>
                     </div>
                     {{/unless}}
                   {{else}}
                     {{#unless hideLabelBtn to.id}}
-                    <div class="line-label-box crop-lable-box"><div class="check">标记</div><div class="crop">裁剪</div><div class="remove">删除</div></div>
+                    <div class="line-label-box crop-lable-box"><div class="check">{{_ "Label"}}</div><div class="crop">{{_ "Crop"}}</div><div class="remove">{{_ "delete"}}</div></div>
                     {{/unless}}
                   {{/if}}
                 {{else}}
@@ -379,12 +379,12 @@
                     {{/each}}
                   </div>
                   {{#unless hideLabelBtn to.id}}
-                  <div class="line-label-box crop-lable-box"><div class="yes">对</div><div class="no">错</div><div class="no">不确定</div></div>
+                  <div class="line-label-box crop-lable-box"><div class="yes">对</div><div class="no">{{_ "Wrong"}}</div><div class="no">{{_ "Uncertain"}}</div></div>
                   {{/unless}}
                 {{/if}}
                 {{#if label_users}}
                   <div class="label_complete" style="border-top:1px solid #ccc;margin-top: 10px;">
-                    <div class="remark" style="color:#616161;"><i class="fa fa-check-circle-o"></i>标注过的人</div>
+                    <div class="remark" style="color:#616161;"><i class="fa fa-check-circle-o"></i>{{_ "Marked_person"}}</div>
                     <div class="imgs">
                       {{#each label_users}}
                       <!--<img class="lazy" data-original="{{icon}}" />-->
@@ -488,7 +488,7 @@
           {{#each list}}
           <option value="{{this}}">{{this}}</option>
           {{/each}}
-          <option value="">其它</option>
+          <option value="">{{_ "Other"}}</option>
         </select>
         <input style="display: none;" type="text" placeholder="{{tips}}" />
         {{else}}
@@ -507,9 +507,9 @@
 <template name="_simpleChatToChatLabel">
   <div class="simple-chat-label">
     {{#if data.label}}
-    <div class="btn-label">此照片是 {{data.label}} 吗？</div>
+    <div class="btn-label">{{_ "This_photo_is"}} {{data.label}} ？</div>
     {{else}}
-    <div class="btn-label yes">我想标记此照片</div>
+    <div class="btn-label yes">{{_ "I_want_to_tag_this_photo"}}</div>
     {{/if}}
     {{#if data.label}}
     <div class="btn-yes"><i class="fa fa-circle-o" aria-hidden="true"></i><i class="fa fa-check" aria-hidden="true"></i></div>
@@ -545,7 +545,7 @@
       {{/each}}
       <div class="time_box">
         {{#if hadReCheck}}
-        <div>{{is_up_down}}时间：</div>
+        <div>{{is_up_down}}{{_ "Time"}}：</div>
         <div style="margin-left: 10px">
           <div>
             {{#if is_right}}
@@ -569,7 +569,7 @@
     </div>
     {{#if hadReCheck}}
     {{else}}
-    <div class="line-label-box"><div class="is_right">确认</div><div class="is_error">修改</div></div>
+    <div class="line-label-box"><div class="is_right">{{_ "Confirm"}}</div><div class="is_error">{{_ "Modify"}}</div></div>
     {{/if}}
   </div>
   {{/if}}
@@ -579,7 +579,7 @@
 <div class="_checkGroupDevice">
   <div class="_cgd_container">
     <div class="_cgd_header">
-      <h1 class="_cgd_title">选择脸脸盒</h1>
+      <h1 class="_cgd_title">{{_ "Select_face_box"}}</h1>
       <button class="_cgd_close"><i class="fa fa-close fa-fw"></i></button>
     </div>
     <ul class="_cgd_device_lists">

@@ -1,7 +1,7 @@
 <template name='haveStranger'>
     <div class="noStranger-main">
         <div class="head">
-            <strong>标注陌生人</strong>
+            <strong>{{_ "Mark_strangers"}}</strong>
             <div class="leftButton back">
                 <i class="fa fa-angle-left fa-fw"></i>
             </div>
@@ -19,11 +19,11 @@
                                 </div>
                                 <p class='color-time'>{{createTime}}</p>
                                 {{#if isMark}}
-                                <p class="sub-sure">你认识这个人么 ?</p>
+                                <p class="sub-sure">{{_ "Dodyou_know_this_person"}}</p>
                                 {{/if}}
-                                <a id="accept" class="" style="margin-right:90px;background-color:#3BB15B;"><i class="fa" style="color: #ffffff;">认识</i></a>
-                                <a id="reject" class="" style="background-color:#485961;"><i class="fa" style="color: #ffffff;">不认识</i></a>
-                                <div class="skip">点击跳过</div>
+                                <a id="accept" class="" style="margin-right:90px;background-color:#3BB15B;"><i class="fa" style="color: #ffffff;">{{_ "Yes"}}</i></a>
+                                <a id="reject" class="" style="background-color:#485961;"><i class="fa" style="color: #ffffff;">{{_ "No"}}</i></a>
+                                <div class="skip">{{_ "Click_to_skip"}}</div>
                             </li>
                         {{/each}}
                     </ul>
@@ -32,8 +32,8 @@
             </div>
         {{else}}
             <div class='noStranger content'>
-                <p style="text-align: center">暂未发现新的陌生人活动</p>
-                <a href="/message">进入消息页面</a>
+                <p style="text-align: center">{{_ "No_new_stranger"}}</p>
+                <a href="/message">{{_ "Enter_the_message_page"}}</a>
             </div>
 
         {{/if}}

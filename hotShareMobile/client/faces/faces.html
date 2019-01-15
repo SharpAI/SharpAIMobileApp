@@ -1,15 +1,15 @@
 <template name="faces">
 <div class="facesPage">
   <div class="head">
-    <strong class="top-home-btn active">识别</strong>
+    <strong class="top-home-btn active">{{_ "Identification"}}</strong>
   </div>
   <div class="content" style="padding-top: 40px; ">
   {{#if isLoading}}
-    <p style="margin-top: 20%; text-align: center;">加载中...</p>
+    <p style="margin-top: 20%; text-align: center;">{{_ "loading"}}...</p>
   {{else}}
 
     {{#if data}}
-      <h2 class="face-title">发现新人</h2>
+      <h2 class="face-title">{{_ "Discover_new_people"}}</h2>
       <!--{{#if isMultiFaces data}}
         <div class="multiFacesBox">
         {{#each data.faces}}
@@ -23,7 +23,7 @@
         </div>
       <!--{{/if}}-->
     {{else}}
-      <p style="margin-top: 20%; text-align: center;">暂无数据</p>
+      <p style="margin-top: 20%; text-align: center;">{{_ "No_data"}}</p>
     {{/if}}
 
   {{/if}}
@@ -44,15 +44,15 @@
     <p>{{device_name}}</p>
   </div>
   <div class="face-ft">
-    <p>你认识这个人吗？</p>
+    <p>{{_ "Dodyou_know_this_person"}}</p>
     <div class="btn-groups">
       <button class="singleLeft">
         <img src="/icon/close.svg" height="30px;"/>
-        <label>不认识</label>
+        <label>{{_ "No"}}</label>
       </button>
       <button class="singleRight">
         <img src="/icon/right.svg" height="30px;"/>
-        <label>认识</label>
+        <label>{{_ "Yes"}}</label>
       </button>
     </div>
   </div>
@@ -71,15 +71,15 @@
       <p>{{device_name}}</p>
     </div>
     <div class="face-ft">
-      <p>你认识这个人吗？</p>
+      <p>{{_ "Dodyou_know_this_person"}}</p>
       <div class="btn-groups">
         <button class="multiLeft">
           <img src="/icon/close.svg"/>
-          <label>不认识</label>
+          <label>{{_ "No"}}</label>
         </button>
         <button class="multiRight">
           <img src="/icon/right.svg"/>
-          <label>认识</label>
+          <label>{{_ "Yes"}}</label>
         </button>
       </div>
     </div>

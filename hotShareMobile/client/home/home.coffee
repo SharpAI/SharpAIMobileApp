@@ -103,7 +103,7 @@ if Meteor.isClient
         iconClass: 'fa fa-3x fa-hand-o-down',
         iconStyle: 'display: block; position: absolute; bottom: 60px; left: 31%;',
         spanStyle: 'display: block; font-size: 18px; position: absolute; bottom: 110px; left: 20%;',
-        spanContent: '点击时间轴查看设备在线状态'
+        spanContent: TAPi18n.__("Click_on_the_timeline")
       });
       currentTip = 'timeLineTab';
       showScanTipHint.set(true)

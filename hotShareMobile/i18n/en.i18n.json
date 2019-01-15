@@ -54,7 +54,7 @@
   "alreadyAdded": "已添加",
   "acceptInvitation": "接受邀请",
   "alreadySendInvitation": "已发送邀请",
-  "loading": "加载中...",
+  "loading": "Loading...",
   "publishTo": "同读每一篇故事的朋友们都有一个朋友圈",
   "readerUnit": "位读者",
   "noMessages": "暂无任何消息:(",
@@ -102,10 +102,10 @@
   //end
   //addPost.html
   //取消
-  "cancel": "cancel",
+  "cancel": "Cancel",
   //"OK": "完成", duplicate
   "inflateAndDeflate": "缩放和裁剪",
-  "store": "存储",
+  "store": "Save",
   "edit": "编辑",
   //删除
   "delete": "Remove",
@@ -167,7 +167,7 @@
   "recommandUser": "热门作者",
   //end
   //listPosts.html
-  "isLoading": "正在加载中...",
+  "isLoading": "Loading...",
   //"loadFailNotification" :"加载失败，请检查网络设置或稍后重试", duplicate
   //end
   //myPosts.html
@@ -231,20 +231,20 @@
   "setting": "Setting",
   //完成
   "done": "Done",
-  "save": "存储",
+  "save": "Save",
   //电子邮件
   "email": "Email",
   "enterEmail": "输入电子邮件",
   //通知
   "notification": "Notice",
-  "notifiButton": "接收新消息通知",
-  "notifiTips": "如果你要关闭或开启来了吗的新消息通知，请在系统设置中，找到应用程序“来了吗”更改",
-  "notifiTipsIos": "如果你要关闭或开启来了吗的新消息通知，请在“设置”-“通知”功能中，找到应用程序“来了吗”更改。",
+  "notifiButton": "Receive new message notifications",
+  "notifiTips": "If you want to turn off or turn on the new message notification, please find the application 'coming?' change in the system settings.",
+  "notifiTipsIos": "If you want to turn off or turn on a new message notification, please find the application 'coming?' change in the 'Settings' - 'Notification' function.",
   //修改密码
   "changePass": "Change Password",
-  "currentPass": "当前密码",
-  "newPass": "新密码",
-  "confirmPass": "确认",
+  "currentPass": "Current Password",
+  "newPass": "New Password",
+  "confirmPass": "confirm",
   "language": "语言",
   "English": "English",
   "Chinese": "中文",
@@ -256,11 +256,11 @@
   //关于来了吗
   "about": "About DeepEye",
   //开发者模式
-  "devMode": "Developer mode",
+  "devMode": "Developer Mode",
   "aboutTitle": "关于 来了吗",
   "ver": "版本",
   //退出登录
-  "logOut": "LogOut",
+  "logOut": "Log Out",
   "NewFriends": "新朋友",
   "NickName": "昵称",
   "Gender": "性别",
@@ -304,7 +304,7 @@
   "failToGetPicAndTryAgain": "无法获取故事标题图片，请稍后重试！",
   "loginByWechat": "使用微信登录",
   //账号管理
-  "Account": "Account management",
+  "Account": "Account Management",
   "addAccount": "添加帐号",
   "add": "添加",
   //end
@@ -497,5 +497,381 @@
   //添加邮箱
   "Add_a_mailbox": "Add Mailbox",
   //删除邮箱
-  "Delete_mailbox": "Remove Mailbox"
+  "Delete_mailbox": "Remove Mailbox",
+
+
+  //deviceDashboard.html
+  //暂无出现记录
+  "No_record": "No Record",
+  //未出现
+  "Not_appearing": "Appeared",
+  //已出现
+  "Already_appear": "Unappear",
+  //识别错了？
+  "Is_the_identification_wrong": "Wrong?",
+  //最近活动时间
+  "Recent_event_time": "Recent Event Time",
+  //更正
+  "Correct": "Correct",
+  //取消关注
+  "Unsubscribe": "Unsubscribe",
+  //关注
+  "Attention": "Attention",
+
+  //时间翻译
+  "Monday": "Monday",
+  "Tuesday": "Tuesday",
+  "Wednesday": "Wednesday",
+  "Thursday": "Thursday",
+  "Friday": "Friday",
+  "Saturday": "Saturday",
+  "Sunday": "Sunday",
+
+  //groupDevices.html
+  //设备列表
+  "Device_List": "Device List",
+  //自动升级控制
+  "Automatic_upgrade_control": "Automatic Upgrade Control",
+  //设备名
+  "Equipment_name": "Equipment Name",
+  //请输入设备名
+  "Please_enter_the_device_name": "Please Enter The Device Name",
+
+  //recognitionCounts.html
+  //识别统计
+  "Identification_statistics": "Identification Statistics",
+  //识别次数统计
+  "Number_of_recognition_statistics": "Number Of Recognition Statistics",
+  //姓名
+  "Name": "Name",
+  //识别次数
+  "Number_of_recognition": "Number Of Recognition",
+  //识别记录
+  "Identification_record": "Identification Record",
+  //识别时间
+  "Recognition_time": "Recognition Time",
+  //开始时间
+  "Starting_time": "Starting Time",
+  //结束时间
+  "End_Time": "End Time",
+
+  //groupUserHide.html
+  //通知管理
+  "Notification_management": "Notification Management",
+  //请选择通知方式
+  "Please_select_a_notification_method": "Please Select A Notification Method",
+  //APP推送通知
+  "APP_push_notification": "APP Push Notification",
+  //邮件通知
+  "E-mail_notification": "E-mail Notification",
+  //以下事件发生时，通知您
+  "Notify_you_when_the_following_events_occur": "Notify You When The Following Events Occur",
+  //动静报告
+  "Motion_report": "Motion Report",
+  //不熟悉的人
+  "unfamiliar_person": "Unfamiliar Person",
+  //以下熟人出现时，通知您
+  "Notify_you_when_the_following_acquaintances_appear": "Notify you when the following acquaintances appear",
+
+
+  //groupInstallTest.js
+  //设备状态
+  "equipment_status": "Equipment Status",
+  //脸脸盒
+  "lianlian_Box": "lianlian Box",
+  //您的设备未接通，请检查设备连接后再次进行部署评测
+  "Your_device_is_not_connected_Please_check_the_device_connection_and_deploy_again": "Your device is not connected. Please check the device connection and deploy again.",
+  //设备未接通，请查看右上角帮助
+  "Device_not_connected": "The device is not connected, please see the help in the upper right corner",
+  //脸脸盒  直接于js文件中替换，并未实装。*********
+  "Device": "Device",
+  //摄像机  直接于js文件中替换，并未实装。*********
+  "Camera": "Camera",
+  //请在点击开始后，按照摄像头部署方向以正常速度来回走过，检查你的摄像头安装角度和识别率   直接于js文件中替换，并未实装。*********
+  "Please_click_after_starting": "Please click back and follow the camera deployment direction at normal speed, check your camera installation angle and recognition rate.",
+  //开始
+  "Start": "Start",
+  //评测帮助
+  "Evaluation_help": "Evaluation Help",
+  //失败原因   直接于js文件中替换，并未实装。*********
+  "Reason_for_failure": "Reason For Failure",
+  //网络堵塞”可能导致部署评测失败,但是网络堵塞并不会影响来了吗的其它功能。  直接于js文件中替换，并未实装。*********
+  "Network_congestion": "Network congestion can cause deployment evaluations to fail, but network congestion does not affect other features that come.",
+  //如果想得到准确的部署评测分数，您可以根据以下操作来进行调整：    直接于js文件中替换，并未实装。*********
+  "If_you_want_to_get": "If you want to get an accurate deployment evaluation score, you can adjust it as follows:",
+  //先在镜头前行走1-2次后，再点击   直接于js文件中替换，并未实装。*********
+  "Walk_1-2_times": "Walk 1-2 times in front of the camera, then click again",
+  //部署评测  直接于js文件中替换，并未实装。*********
+  "Deployment_evaluation": "Deployment Evaluation",
+  //说明  直接于js文件中替换，并未实装。*********
+  "Description": "Description",
+  //操作过程中，你可以去   直接于js文件中替换，并未实装。*********
+  "During_the_operation": "During the operation, you can go",
+  //时间轴  直接于js文件中替换，并未实装。*********
+  "Timeline": "Timeline",
+  //里观察行人照片出现的时间，参考下列标准检测你的网络堵塞状态  直接于js文件中替换，并未实装。*********
+  "In_the_time_when": "In the time when the pedestrian photo appears, check the network congestion status by referring to the following criteria.",
+  //网络正常  直接于js文件中替换，并未实装。*********
+  "Normal_network": "Normal Network",
+  //网络拥挤  网络堵塞  直接于js文件中替换，并未实装。*********
+  "Network_congestion": "Network Congestion",
+  //确定
+  "determine": "Determine",
+  //放弃
+  "give_up": "Give Up",
+  //部署说明
+  "Deployment_instructions": "Deployment Instructions",
+
+
+  //groupInstallTest.html
+  //识别分数
+  "Recognition_score": "Recognition Score",
+  //产品配置较好，可以正常使用
+  "Good_product_configuration": "Good product configuration, can be used normally",
+  //标注不够
+  "Not_enough_labels": "Not Enough Labels",
+  //去标注
+  "To_mark": "To Mark",
+  //角度分数
+  "Angle_score": "Angle Score",
+  //产品部署角度较好，可以正常使用
+  "Product_deployment": "Product deployment angle is good, can be used normally",
+  //产品部署角度不好
+  "Product_deployment_angle_is_not_good": "Product deployment angle is not good",
+  //查看文档
+  "View_document": "View Document",
+  //重新评测
+  "Reevaluate": "Reevaluate",
+  //点击取消
+  "Click_cancel": "Click Cancel",
+
+  //index.html
+  //条新消息
+  "Message": "Message",
+  //粘贴链接
+  "Paste_link": "Paste Link",
+  //粘帖链接，进行训练  直接于css属性中替换，并未实装。*********
+  "Paste_links_for_training": "Paste Links For Training",
+  //说点什么  直接于css属性中替换，并未实装。*********
+  "Say_something": "Say Something",
+  //发送  直接于css属性中替换，并未实装。*********
+  "Send": "Send",
+  //建议使用“部署评测”评估当前部署情况。部署后，系统也会根据运行数据提醒您运行“部署评测”。
+  "It_is_recommended_to": "It is recommended to use the Deployment Review to evaluate the current deployment. After deployment, the system will also remind you to run the 'Deployment Review' based on the operational data.",
+  //跳过
+  "jump_over": "Jump Over",
+  //进入
+  "Enter": "Enter",
+  //如果您选择跳过，会影响到识别的准确性，确认跳过吗？
+  "If_you_choose_to_skip": "If you choose to skip, it will affect the accuracy of the recognition, confirm skip?",
+  //确认
+  "Confirm": "Confirm",
+  //组里暂无设备，请到首页点击+号添加脸脸盒
+  "No_equipment_in_the_group": "No equipment in the group, please go to the home page and click + to add a face box.",
+  //去首页
+  "Go_to_the_home": "Go To The Home",
+  //对
+  "Correct": "Correct",
+  //错
+  "Wrong": "Wrong",
+  //已完成标注
+  "Completed_labeling": "Completed Labeling",
+  //标注新人
+  "Mark_new_people": "Mark New People",
+  //或点击与上图是同一个人的照片进行标注
+  "Or_click_on_the": "Or click on the photo of the same person as above.",
+  //裁剪
+  "Crop": "Crop",
+  //不确定
+  "Uncertain": "Uncertain",
+  //标注过的人
+  "Marked_person": "Marked Person",
+  //其它
+  "Other": "Other",
+  //此照片是
+  "This_photo_is": "This Photo Is",
+  //我想标记此照片
+  "I_want_to_tag_this_photo": "I Want To Tag This Photo",
+  //时间
+  "Time": "Time",
+  //修改
+  "Modify": "Modify",
+  //选择脸脸盒
+  "Select_face_box": "Select Face Box",
+
+  //groupPerson.html
+  //成员管理
+  "Member_management": "Member Management",
+  //点击头像进行操作
+  "Click_on_the_avatar_to_operate": "Click On The Avatar To Operate",
+
+  //client/chatGroups/groupsProfile/groupPhoto/index.html
+  //未标注
+  "Unlabeled": "Unlabeled",
+  //已标注
+  "Labeled": "Labeled",
+  //请点选照片进行标注或删除.
+  "Please_click_on_the_photo_to_mark_or_delete": "Please click on the photo to mark or delete.",
+  //点击头像进行操作
+  "Click_on_the_avatar_to_operate": "Click On The Avatar To Operate",
+  //张照片
+  "Photo": "Photo",
+  //全选
+  "select_all": "Select All",
+  //全不选
+  "unselect_all": "Unselect All",
+  //请点选标注错的照片进行删除
+  "Please_click_on_the_wrong_photo_to_delete": "Please Click On The Wrong Photo To Delete",
+
+  //timelineAlbum.html
+  //重选
+  "Re_election": "Re-election",
+  //多选
+  "Multiple_selection": "Multiple Selection",
+  //识别状态
+  "Identification_status": "Identification Status",
+  //未识别
+  "unrecognized": "Unrecognized",
+  //已识别
+  "Identified": "Identified",
+  //模糊度
+  "Ambiguity": "Ambiguity",
+  //人脸类型
+  "Face_type": "Face Type",
+  //正脸
+  "Positive_face": "Positive Face",
+  //显示全部
+  "display_all": "Display All",
+  //标注助手
+  "Labeling_assistant": "Labeling Assistant",
+  //点击头像，进行标注
+  "Click_on_the_avatar_to_mark": "Click On The Avatar To Mark",
+  //点击头像，调整您的出现时间
+  "Click_on_the_avatar_to_adjust_your_appearance_time": "Click on the avatar to adjust your appearance time",
+  //选择
+  "select": "Select",
+  //已选
+  "selected": "Selected",
+  //暂无数据
+  "No_data": "No Data",
+  //添加组员
+  "Add_a_member": "Add A Member",
+  //请输入姓名  直接于css属性中替换，并未实装。*********
+  "Please_type_in_your_name": "Please type in your name",
+  //将时间记录到
+  "Record_time_to": "Record Time To",
+  //监控组陌生人
+  "Monitoring_group_stranger": "Monitoring Group Stranger",
+  //“来了吗”自带算法会选择部分照片进行人脸识别。
+  "DeepEye_The_algorithm_will_select_some_photos_for_face_recognition": "'DeepEye' The algorithm will select some photos for face recognition.",
+  //这里展示的是没有被系统选中的照片。
+  "Shown_here_are_photos_that_have_not_been_selected_by_the_system": "Shown here are photos that have not been selected by the system.",
+  //更多标识带来更好的识别体验，
+  "More_logos_lead_to_a_better_recognition_experience.": "More logos lead to a better recognition experience.",
+  //我们希望您可以继续选择清晰正脸的照片进行标注。
+  "We_hope_that_you_can_continue_to_select_a_photo_with_a_clear_face_to_mark_it": "We hope that you can continue to select a photo with a clear face to mark it.",
+
+  //client/companyLists/companyLists.html
+  //您还没有加入任何监控组!
+  "You_have_not_joined_any_monitoring_groups_yet": "You have not joined any monitoring groups yet!",
+  //周报
+  "weekly": "Weekly",
+  //月报
+  "Monthly_report": "Monthly Report",
+
+  //client/homePage/workStatusPopPage.html
+  //查看未标注的人
+  "View_unlabeled_people": "View Unlabeled People",
+  //最近活动
+  "Recent_activity": "Recent Activity",
+  //工作安排：    此条存在问题：未正常显示。 位置：/home/czizic/lailema/hotShare/hotShareMobile/client/homePage/workStatusPopPage.html   *61行  *194行
+  "working_arrangement:": "Working Arrangement:",
+  //暂无工作安排
+  "No_work_arrangement": "No Work Arrangement",
+  //修改上班时间
+  "Modify_working_hours": "Modify Working Hours",
+  //修改最近活动
+  "Edit_recent_activity": "Edit Recent Activity",
+  //编辑今日简述
+  "Editor_brief_today": "Editor's Brief Today",
+  //编辑
+  "Edit": "Edit",
+  //的今日简述
+  "Today_brief": "Today's Brief",
+  //未标注
+  "not_marked": "(Not Marked)",
+
+  ///home/czizic/lailema/hotShare/hotShareMobile/packages/simple-chat/client/router.js
+  //AI观察到有人在活动
+  "AI_observed_that_someone_was_active": "AI observed that someone was active(",
+  //次）
+  "Times": "Times",
+  //AI观察到
+  "AI_observed": "AI Observed ",
+  //'Work AI发现有人在活动'
+  "Work_AI_found": "Work AI found someone at the event",
+
+  ///home/czizic/lailema/hotShare/hotShareMobile/client/autolabel/autolabel.html
+  //自动标注
+  "Automatic_labeling": "Automatic Labeling",
+  //标注陌生人
+  "Mark_strangers": "Mark Strangers",
+  //请输入要标注人的名称
+  "Please_enter_the_name_of_the_person_to_be_tagged": "Please enter the name of the person to be tagged",
+  //开始自动标注
+  "Start_automatic_labeling": "Start Automatic Labeling",
+  //结束自动标注
+  "End_automatic_labeling": "End Automatic Labeling",
+  //标注处理中
+  "Label_processing": "Label Processing",
+  //标注成功
+  "Marked_successfully": "Marked Successfully",
+  //标注失败
+  "Label_failure": "Label Failure",
+
+  ///home/czizic/lailema/hotShare/hotShareMobile/client/faces/faces.html
+  //识别
+  "Identification": "Identification",
+  //发现新人
+  "Discover_new_people": "Discover New People",
+  //你认识这个人吗？
+  "Dodyou_know_this_person": "Do you know this person?",
+  //不认识
+  "No": "No",
+  //认识
+  "Yes": "Yes",
+
+  ///home/czizic/lailema/hotShare/hotShareMobile/client/isHaveStranger/isHaveStranger.html
+  //点击跳过
+  "Click_to_skip": "Click To Skip",
+  //暂未发现新的陌生人活动
+  "No_new_stranger": "No new stranger activities have been discovered yet",
+  //进入消息页面
+  "Enter_the_message_page": "Enter the message page",
+
+  ///home/czizic/lailema/hotShare/hotShareMobile/client/group/add.html
+  //选择成员
+  "Select_member": "Select Member",
+
+  ///home/czizic/lailema/hotShare/hotShareMobile/client/user/dashboard/dashboard.html
+  //第一款开放式深度学习APP，提供手机上所见所得的深度学习训练环境，一点一圈，完成训练；远程对接嵌入式AI深瞳集群，运行结果一目了然；独创多人协作的AI训练群，协同工作，互相激励；灵活可配置的人工智能视觉出现，提高效率，圈住商机。
+  "balabala": "The first open deep learning app provides a deep learning environment that can be seen on mobile phones. It completes training one by one; remotely docks embedded AI deep clusters, and the results are clear at a glance; the original multi-person collaborative AI training group , work together, and encourage each other; flexible and configurable artificial intelligence visual appearance, improve efficiency, and embrace business opportunities.",
+  //来了吗
+  "DeepEye": "DeepEye",
+
+  ///home/czizic/lailema/hotShare/hotShareMobile/client/home/home.coffee
+  //点击时间轴查看设备在线状态
+  "Click_on_the_timeline": "Click on the timeline to view device online status",
+
+  ///home/czizic/lailema/hotShare/hotShareMobile/client/homePage/scanTips/scanTips.js
+  //点击消息查看识别动态
+  "Click_on_the_message": "Click on the message to view the identification dynamics",
+  //点击加号
+  "Click_on_the_plus_sign": "Click on the plus sign",
+  //点击此处扫码添加脸脸盒
+  "Click_here_to_scan_the_code_to_add_a_face_box": "Click here to scan the code to add a face box",
+
+  ///home/czizic/lailema/hotShare/hotShareMobile/client/homePage/homePage.js
+  //点击此处创建监控组
+  "Click_here_to_create_a_monitoring_group": "Click here to create a monitoring group"
 }

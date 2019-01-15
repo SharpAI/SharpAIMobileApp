@@ -3,12 +3,12 @@
     <div class="leftButton back">
         <i class="fa fa-angle-left fa-fw"></i>
     </div>
-    <strong>设备列表</strong>
+    <strong>{{_ "Device_List"}}</strong>
   </div>
   <div class="content groupDevicesList">
     <!-- <div class="line" style="height: 20px; text-align:left; padding-left:10px; color:#555;"></div> -->
     <ul id="deviceList" class="set-up comFadeIn">
-        <li class="title"><b>自动升级控制</b></li>
+        <li class="title"><b>{{_ "Automatic_upgrade_control"}}</b></li>
     {{#each lists}}
       {{#if uuid}}
       <li id="" class="deviceItem swiperElem">
@@ -26,7 +26,7 @@
             <span class="name" style="{{isShow uuid 1}}">{{name}}</span>
             <input class="edit" id="{{getId uuid}}" style="{{isShow uuid 2}}" value="{{name}}">
             {{else}}
-            <span class="name" style="{{isShow uuid 1}}">未知设备</span>
+            <span class="name" style="{{isShow uuid 1}}">{{_ "Unknown_device"}}</span>
             <input class="edit" id="{{getId uuid}}" style="{{isShow uuid 2}}" value="未知设备">
             {{/if}}
 
@@ -35,7 +35,7 @@
           <!-- </span> -->
 
           <!-- <div id="{{uuid}}" class="value goTimelime" style="float:right; margin:10px;">{{in_out}}<i class="fa fa-angle-right"></i></div> -->
-          <div id="{{_id}}" class="delBtnContent" data-uuid="{{uuid}}">删除</div>
+          <div id="{{_id}}" class="delBtnContent" data-uuid="{{uuid}}">{{_ "delete"}}</div>
           <!-- <button class="automatic_update">自动更新</button> -->
           <div class="value-fa">
                 <input id="switch_update" class="switch" type="checkbox" {{isChecked autoUpdate}}>
@@ -77,9 +77,9 @@
   <div class="setGroupname comFadeIn">
       <div class="head" style="position: fixed;">
           <div class="title" style="position:relative;">
-              <div class="left-btn">取消</div>
-              <span class="Contacts">设备名</span>
-              <div class="right-btn">保存</div>
+              <div class="left-btn">{{_ "cancel"}}</div>
+              <span class="Contacts">{{_ "Equipment_name"}}</span>
+              <div class="right-btn">{{_ "Save"}}</div>
           </div>
       </div>
   </div>
@@ -87,7 +87,7 @@
       <li>
           <div class="input">
               <form class="setGroupname-form">
-                  <input class="text" type="text" id="text" placeholder="请输入设备名" value="{{name}}" style="color: black;" />
+                  <input class="text" type="text" id="text" placeholder= {{_ "Please_enter_the_device_name"}} value="{{name}}" style="color: black;" />
               </form>
           </div>
       </li>

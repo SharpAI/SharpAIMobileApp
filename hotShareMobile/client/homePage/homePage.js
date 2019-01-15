@@ -135,7 +135,7 @@ Template.homePage.events({
         iconClass: 'fa fa-3x fa-hand-o-up',
         iconStyle: 'display: block; position: absolute; top: 50px; right: 80px;',
         spanStyle: 'display: block; font-size: 18px; position: absolute; top: 5px; right: 180px;',
-        spanContent: '点击此处创建监控组'
+        spanContent: TAPi18n.__("Click_here_to_create_a_monitoring_group")
       });
       currentTip = 'createCompanyMenu';
       showScanTipHint.set(true);

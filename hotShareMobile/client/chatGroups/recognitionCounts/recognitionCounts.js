@@ -14,9 +14,9 @@ var initTimeRangeSet = function() {
     display: 'bottom',
     controls: ['time'],
     maxWidth: 100,
-    setText: '设置',
-    fromText: '开始时间',
-    toText:'结束时间',
+    setText: TAPi18n.__("setting"),
+    fromText: TAPi18n.__("Starting_time"),
+    toText: TAPi18n.__("End_Time"),
     defaultValue: [
         new Date(range[0]),new Date(range[1])
     ],

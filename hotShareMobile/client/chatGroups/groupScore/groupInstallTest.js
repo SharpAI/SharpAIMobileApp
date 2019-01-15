@@ -47,23 +47,23 @@ Template.groupInstallTest.helpers({
         var dev = Devices.findOne({uuid: Router.current().params.uuid});
         switch(s){
             case 1:
-                content = '请在点击开始后，按照摄像头部署方向以正常速度来回走过，检查你的摄像头安装角度和识别率';
-                btn = '开始';
+                content = TAPi18n.__("Please_click_after_starting");
+                btn = TAPi18n.__("Start");
                 break;
             case 2:
-                content = '设备未接通，请查看右上角帮助';
+                content = TAPi18n.__("Device_not_connected");
                 // btn = '确定';
                 showFoot = 'display:none';
                 break;
             case 3:
-                head = '评测帮助';
-                content = '<p class="title_failure">失败原因</p><p class="failure_info">1.“网络堵塞”可能导致部署评测失败,但是网络堵塞并不会影响来了吗的其它功能。</p><p class="failure_info">2. 如果想得到准确的部署评测分数，您可以根据以下操作来进行调整：' +
-                '</p><p class="perform_perform">操作</p><p class="perform_order">先在镜头前行走1-2次后，再点击<small class="url_review url_fa">部署评测</small></p><p class="perform_order"></p><p class="perform_perform">说明</p><p class="perform_order">操作过程中，你可以去<small class="url_time url_fa">时间轴</small>里观察行人照片出现的时间，参考下列标准检测你的网络堵塞状态</p><p class="perform_order">&lt;=10秒，网络正常；</p>'+
-                '<p class="perform_order">=&gt30秒，网络拥挤；</p><p class="perform_order">=&gt;60秒，网络堵塞；</p>'
-                btn = "确定";
+                head = TAPi18n.__("Evaluation_help");
+                content = '<p class="title_failure">Reason For Failure</p><p class="failure_info">1.“Network congestion can cause deployment evaluations to fail, but network congestion does not affect other features that come.</p><p class="failure_info">2. If you want to get an accurate deployment evaluation score, you can adjust it as follows:' +
+                '</p><p class="perform_perform">操作</p><p class="perform_order">Walk 1-2 times in front of the camera, then click again<small class="url_review url_fa">"Deployment Evaluation</small></p><p class="perform_order"></p><p class="perform_perform">Description</p><p class="perform_order">During the operation, you can go<small class="url_time url_fa">Timeline</small>In the time when the pedestrian photo appears, check the network congestion status by referring to the following criteria.</p><p class="perform_order">&lt;=10秒，Normal Network；</p>'+
+                '<p class="perform_order">=&gt30秒，Network Congestion；</p><p class="perform_order">=&gt;60秒，Network Congestion；</p>'
+                btn = TAPi18n.__("determine");
                 break;
             case 4:
-                head = '设备状态';
+                head = TAPi18n.__("equipment_status");
                 if (dev.online)
                     deviceImg = '/face_box_online.svg';
                 else
@@ -72,10 +72,10 @@ Template.groupInstallTest.helpers({
                     cameraImg = '/camera_online.svg';
                 else
                     cameraImg = '/camera_offline.svg';
-                content = '<div><div style="margin: 10px 20px;">脸脸盒：<img src="' + deviceImg
-                + '" "'+ "width='30' height='20'" +'"></div><div style="margin: 10px 20px;">摄像头：<img src="' + cameraImg 
-                + '" "'+ "width='26' height='22'" +'"></div><p style="margin: 10px 20px; color: red; text-align: center;">您的设备未接通，请检查设备连接后再次进行部署评测</p></div>';
-                btn = "放弃";
+                content = '<div><div style="margin: 10px 20px;">Device：<img src="' + deviceImg
+                + '" "'+ "width='30' height='20'" +'"></div><div style="margin: 10px 20px;">Camera：<img src="' + cameraImg 
+                + '" "'+ "width='26' height='22'" +'"></div><p style="margin: 10px 20px; color: red; text-align: center;">Your device is not connected. Please check the device connection and deploy again.</p></div>';
+                btn = TAPi18n.__("give_up");
                 showClose = 'display: none;';
                 break;
 
@@ -291,7 +291,7 @@ Template.score.events({
             title: {  
                 color: '#000000',  
                 showPageTitle: true,  
-                staticText: '部署说明'  
+                staticText: TAPi18n.__("Deployment_instructions")  
             },  
             closeButton: {  
                 image: 'back',  

@@ -1,7 +1,7 @@
 <template name="chooseLabelType">
     <div class="chooseLabelType">
         <div class="head">
-            <strong>标注</strong>
+            <strong>{{_ "Label"}}</strong>
             <div class="leftButton back">
                 <i class="fa fa-angle-left fa-fw"></i>
             </div>
@@ -12,14 +12,14 @@
                     <div class="circle" style="background: #37a7fe">
                         <img src="/autolabel.png" width="50%">
                     </div>
-                    <p>自动标注</p>
+                    <p>{{_ "Automatic_labeling"}}</p>
                 </div>
         
                 <div id="goLabelstranger">
                     <div class="circle" style="background: #BFADAC">
                         <img src="/label_stranger.png" width="50%">
                     </div>
-                    <p>标注陌生人</p>
+                    <p>{{_ "Mark_strangers"}}</p>
                 </div>
             </div>
         </div>
@@ -28,7 +28,7 @@
 <template name="autolabel">
     <div class="autolabel">
         <div class="head">
-            <strong>标注</strong>
+            <strong>{{_ "Label"}}</strong>
             <div class="leftButton back">
                 <i class="fa fa-angle-left fa-fw"></i>
             </div>
@@ -36,25 +36,25 @@
         <div class="content" style="padding-top: 40px;">
             {{#if isShow 0}}
             <div class="pre-label">
-                <p>请输入要标注人的名称</p>
+                <p>{{_ "Please_enter_the_name_of_the_person_to_be_tagged"}}</p>
                 <div >
                     <input class="input-box" type="text">
                 </div>
                 {{#if btnShow 0}}
                 <button id="start" class="btn-box" style="background: #37a7fe">
-                    开始自动标注
+                    {{_ "Start_automatic_labeling"}}
                 </button>
                 {{/if}}
                 {{#if btnShow 1}}
                 <button id="end" class="btn-box" style="background: #e0312d">
-                    结束自动标注
+                    {{_ "End_automatic_labeling"}}
                 </button>
                 {{/if}}
             </div>
             {{/if}}
             {{#if isShow 1}}
             <div class="labeling">
-                <p>标注处理中</p>
+                <p>{{_ "Label_processing"}}</p>
                 <div class="img-box">
                     <img class="loading" src="/labeling.png">
                 </div>
@@ -62,7 +62,7 @@
             {{/if}}
             {{#if isShow 2}}
             <div class="label-success">
-                    <p>标注成功</p>
+                    <p>{{_ "Marked_successfully"}}</p>
                     <div class="img-box">
                         <img src="/label_success.png">
                     </div>
@@ -70,7 +70,7 @@
             {{/if}}
             {{#if isShow 3}}
             <div class="label-failure">
-                    <p>标注失败</p>
+                    <p>{{_ "Label_failure"}}</p>
                     <div class="img-box">
                         <img src="/label_failure.png">
                     </div>
