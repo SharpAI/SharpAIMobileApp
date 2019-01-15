@@ -76,24 +76,24 @@ Template.loginForm.events
     'submit #login-form':(e,t)->
       e.preventDefault()
       if Meteor.status().connected isnt true
-        PUB.toast '当前为离线状态,请检查网络连接'
+        PUB.toast 'Your device is currently offline...'
         return
       name = t.find('#login-username').value
       Session.set 'userName',name
       pass = t.find('#login-password').value
       if name is ''
-        PUB.toast '请输入用户名！'
+        PUB.toast 'Please input your Username'
         return
       if pass is ''
-        PUB.toast '请输入密码！'
+        PUB.toast 'Please input your Password'
         return
       t.find('#sub-login').disabled = true
-      t.find('#sub-login').innerText = '正在登录...'
+      t.find('#sub-login').innerText = 'Logging in ...'
       Meteor.loginWithPassword name, pass,(error)->
         if error
-          PUB.toast '帐号或密码有误！'
+          PUB.toast 'Incorrect Username or Password'
           t.find('#sub-login').disabled = false
-          t.find('#sub-login').innerText = '登 录'
+          t.find('#sub-login').innerText = 'Login'
         else
           Router.go '/'
           ###
@@ -133,7 +133,7 @@ Template.recoveryForm.events
     'submit #recovery-form':(e,t)->
       e.preventDefault()
       if Meteor.status().connected isnt true
-        PUB.toast '当前为离线状态,请检查网络连接'
+        PUB.toast 'Connection Error. Try again?'
         return
       email = t.find('#recovery-email').value
       if email is ''

@@ -121,29 +121,29 @@ Date.prototype.shortTime = function (time_offset, only_H_S) {
     var DayDiff = now.getDate() - self.getDate();
     var Minutes = self.getHours() * 60 + self.getMinutes();
     if (DayDiff === 0) {
-        result += '今天 '
+        result += 'Today '
     } else if (DayDiff === 1) {
-        result += '昨天 '
+        result += 'Yesterday '
     } else {
         result += self.parseDate('YYYY-MM-DD') + ' ';
     }
     if (Minutes >= 0 && Minutes < 360) {
-        result += '凌晨 ';
+        result += 'Midnight ';
     }
     if (Minutes >= 360 && Minutes < 660) {
-        result += '上午 ';
+        result += 'Morning ';
     }
     if (Minutes >= 660 && Minutes < 780) {
-        result += '中午 ';
+        result += 'Noon ';
     }
     if (Minutes >= 780 && Minutes < 960) {
-        result += '下午 ';
+        result += 'Afternoon ';
     }
     if (Minutes >= 960 && Minutes < 1080) {
-        result += '傍晚 ';
+        result += 'Evening ';
     }
     if (Minutes >= 1080 && Minutes < 1440) {
-        result += '晚上 ';
+        result += 'Night ';
     }
     result += self.parseDate('h:mm');
     if(only_H_S){

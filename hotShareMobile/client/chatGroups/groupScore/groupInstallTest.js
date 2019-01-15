@@ -58,8 +58,8 @@ Template.groupInstallTest.helpers({
             case 3:
                 head = TAPi18n.__("Evaluation_help");
                 content = '<p class="title_failure">Reason For Failure</p><p class="failure_info">1.“Network congestion can cause deployment evaluations to fail, but network congestion does not affect other features that come.</p><p class="failure_info">2. If you want to get an accurate deployment evaluation score, you can adjust it as follows:' +
-                '</p><p class="perform_perform">操作</p><p class="perform_order">Walk 1-2 times in front of the camera, then click again<small class="url_review url_fa">"Deployment Evaluation</small></p><p class="perform_order"></p><p class="perform_perform">Description</p><p class="perform_order">During the operation, you can go<small class="url_time url_fa">Timeline</small>In the time when the pedestrian photo appears, check the network congestion status by referring to the following criteria.</p><p class="perform_order">&lt;=10秒，Normal Network；</p>'+
-                '<p class="perform_order">=&gt30秒，Network Congestion；</p><p class="perform_order">=&gt;60秒，Network Congestion；</p>'
+                '</p><p class="perform_perform">Hint</p><p class="perform_order">Walk 1-2 times in front of the camera, then click again<small class="url_review url_fa">"Deployment Evaluation</small></p><p class="perform_order"></p><p class="perform_perform">Description</p><p class="perform_order">During the operation, you can go<small class="url_time url_fa">Timeline</small>In the time when the pedestrian photo appears, check the network congestion status by referring to the following criteria.</p><p class="perform_order">&lt;=10s，Normal Network；</p>'+
+                '<p class="perform_order">=&gt30s，Network Congestion；</p><p class="perform_order">=&gt;60s，Network Congestion；</p>'
                 btn = TAPi18n.__("determine");
                 break;
             case 4:

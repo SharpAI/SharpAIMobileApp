@@ -45,7 +45,7 @@ Template._simpleChatLabelCrop.crop = function(){
       }
     }
     if (crops.length === 0) {
-      return PUB.toast('至少选择一张照片进行裁剪~');
+      return PUB.toast('At least pick one photo');
     }
     function cropcallback (result){
       var id = new Mongo.ObjectID()._str;
@@ -121,7 +121,7 @@ Template._simpleChatLabelCrop.events({
         else {
           for(var j=0;j<imgs.length;j++){
             if (imgs[j].selected)
-              return PUB.toast('每次只能选择一张进行裁剪哦~');
+              return PUB.toast('You can only pick one photo at a time.');
           }
           imgs[i].selected = true;
         }

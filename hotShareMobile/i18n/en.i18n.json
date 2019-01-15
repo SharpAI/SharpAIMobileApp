@@ -2,7 +2,7 @@
   //authOverlay.html
   "anonymous": "匿名使用",
   "anonymousAgree": "匿名使用表示已经同意",
-  "gstServiceSpec": "《来了吗用户协议》",
+  "gstServiceSpec": "DeepEye Privacy Policy",
   "anonymousWarn": "友情提示:匿名账户的数据在程序卸载后可能会无法继续使用，如需永久保存数据，请注册或登录使用。",
   "kownIt": "知道了",
   "funnyLogin": "很卖萌的登录中~~~",
@@ -60,15 +60,17 @@
   "noMessages": "暂无任何消息:(",
   //end
   //signupForm.html
-  "createAccount": "注册",
-  "signUpMeansWhat": "如果注册就意味着同意了用户协议",
-  "userName": "请输入用户名",
-  "passWord": "请输入密码",
-  "emailAddress": "邮箱",
+  "createAccount": "Sign Up",
+  "signUpMeansWhat": "Sign up means you agreed our privacy policy",
+  "userName": "Username",
+  "passWord": "Password",
+  "emailAddress": "Email ID",
+  "re_enter_passWord":"Re-Enter your password",
+  "signUp":"Sign up Now",
   //end
   //loginForm.html
-  "logIn": "登录",
-  "forgotPassword": "忘了密码?",
+  "logIn": "Log In",
+  "forgotPassword": "Forgot Password?",
   "forgetPwd": "Forgot Password?",
   //end
   //registerFollow.html
@@ -234,12 +236,12 @@
   "save": "Save",
   //电子邮件
   "email": "Email",
-  "enterEmail": "输入电子邮件",
+  "enterEmail": "Enter Email ID",
   //通知
   "notification": "Notice",
   "notifiButton": "Receive new message notifications",
-  "notifiTips": "If you want to turn off or turn on the new message notification, please find the application 'coming?' change in the system settings.",
-  "notifiTipsIos": "If you want to turn off or turn on a new message notification, please find the application 'coming?' change in the 'Settings' - 'Notification' function.",
+  "notifiTips": "If you want to turn off or turn on the new message notification, please find the application 'DeepEye' and change in the system settings.",
+  "notifiTipsIos": "If you want to turn off or turn on a new message notification, please find the application 'DeepEye' and change in the 'Settings' - 'Notification' function.",
   //修改密码
   "changePass": "Change Password",
   "currentPass": "Current Password",
@@ -249,9 +251,9 @@
   "English": "English",
   "Chinese": "中文",
 
-  "version":"新版本检测",
-  "latestversion":"当前已是最新版本",
-  "Newversion":"有新版本",
+  "version":"Version Check",
+  "latestversion":"Latest Version",
+  "Newversion":"Please update to the latest version",
 
   //关于来了吗
   "about": "About DeepEye",
@@ -469,7 +471,7 @@
   //清空训练记录
   "Clear_training_record": "Clear Training History",
   //暂不接收label消息
-  "Temporarily_do_not_receive_the_label_message": "Temporarily do not receive the label message",
+  "Temporarily_do_not_receive_the_label_message": "Temporarily receive the label message",
   //退出
   "drop_out": "Log Out",
   //查看全部成员
@@ -504,9 +506,9 @@
   //暂无出现记录
   "No_record": "No Record",
   //未出现
-  "Not_appearing": "Appeared",
+  "Not_appearing": "Absent",
   //已出现
-  "Already_appear": "Unappear",
+  "Already_appear": "Onsite",
   //识别错了？
   "Is_the_identification_wrong": "Wrong?",
   //最近活动时间
@@ -616,9 +618,9 @@
   //网络拥挤  网络堵塞  直接于js文件中替换，并未实装。*********
   "Network_congestion": "Network Congestion",
   //确定
-  "determine": "Determine",
+  "determine": "OK",
   //放弃
-  "give_up": "Give Up",
+  "give_up": "Cancel",
   //部署说明
   "Deployment_instructions": "Deployment Instructions",
 
@@ -631,7 +633,7 @@
   //标注不够
   "Not_enough_labels": "Not Enough Labels",
   //去标注
-  "To_mark": "To Mark",
+  "To_mark": "To Label",
   //角度分数
   "Angle_score": "Angle Score",
   //产品部署角度较好，可以正常使用
@@ -641,9 +643,9 @@
   //查看文档
   "View_document": "View Document",
   //重新评测
-  "Reevaluate": "Reevaluate",
+  "Reevaluate": "Re-evaluate",
   //点击取消
-  "Click_cancel": "Click Cancel",
+  "Click_cancel": "Cancel",
 
   //index.html
   //条新消息
@@ -659,9 +661,9 @@
   //建议使用“部署评测”评估当前部署情况。部署后，系统也会根据运行数据提醒您运行“部署评测”。
   "It_is_recommended_to": "It is recommended to use the Deployment Review to evaluate the current deployment. After deployment, the system will also remind you to run the 'Deployment Review' based on the operational data.",
   //跳过
-  "jump_over": "Jump Over",
+  "jump_over": "Skip",
   //进入
-  "Enter": "Enter",
+  "Enter": "Envaluate",
   //如果您选择跳过，会影响到识别的准确性，确认跳过吗？
   "If_you_choose_to_skip": "If you choose to skip, it will affect the accuracy of the recognition, confirm skip?",
   //确认
@@ -675,23 +677,23 @@
   //错
   "Wrong": "Wrong",
   //已完成标注
-  "Completed_labeling": "Completed Labeling",
+  "Completed_labeling": "Completed Label",
   //标注新人
-  "Mark_new_people": "Mark New People",
+  "Mark_new_people": "Label New Person",
   //或点击与上图是同一个人的照片进行标注
   "Or_click_on_the": "Or click on the photo of the same person as above.",
   //裁剪
   "Crop": "Crop",
   //不确定
-  "Uncertain": "Uncertain",
+  "Uncertain": "Not Sure",
   //标注过的人
-  "Marked_person": "Marked Person",
+  "Marked_person": "Labeled Person",
   //其它
   "Other": "Other",
   //此照片是
   "This_photo_is": "This Photo Is",
   //我想标记此照片
-  "I_want_to_tag_this_photo": "I Want To Tag This Photo",
+  "I_want_to_tag_this_photo": "I Want To Label This Photo",
   //时间
   "Time": "Time",
   //修改
@@ -725,9 +727,9 @@
 
   //timelineAlbum.html
   //重选
-  "Re_election": "Re-election",
+  "Re_election": "Cancel",
   //多选
-  "Multiple_selection": "Multiple Selection",
+  "Multiple_selection": "Label",
   //识别状态
   "Identification_status": "Identification Status",
   //未识别
@@ -775,9 +777,9 @@
   //您还没有加入任何监控组!
   "You_have_not_joined_any_monitoring_groups_yet": "You have not joined any monitoring groups yet!",
   //周报
-  "weekly": "Weekly",
+  "weekly": "Week",
   //月报
-  "Monthly_report": "Monthly Report",
+  "Monthly_report": "Month",
 
   //client/homePage/workStatusPopPage.html
   //查看未标注的人
