@@ -1,9 +1,9 @@
 moment.defineLocale('zh-cn', {  
-    months : '一月_二月_三月_四月_五月_六月_七月_八月_九月_十月_十一月_十二月'.split('_'),  
-    monthsShort : '1月_2月_3月_4月_5月_6月_7月_8月_9月_10月_11月_12月'.split('_'),  
-    weekdays : '星期日_星期一_星期二_星期三_星期四_星期五_星期六'.split('_'),  
-    weekdaysShort : '周日_周一_周二_周三_周四_周五_周六'.split('_'),  
-    weekdaysMin : '日_一_二_三_四_五_六'.split('_'),  
+    months : 'Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec'.split('_'),  
+    monthsShort : 'Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec'.split('_'),  
+    weekdays : 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_'),  
+    weekdaysShort : 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_'),  
+    weekdaysMin : 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_'),  
     longDateFormat : {  
         LT : 'Ah点mm分',  
         LTS : 'Ah点m分s秒',  
@@ -16,15 +16,15 @@ moment.defineLocale('zh-cn', {
         lll : 'YYYY年MMMD日Ah点mm分',  
         llll : 'YYYY年MMMD日ddddAh点mm分'  
     },  
-    meridiemParse: /凌晨|早上|上午|中午|下午|晚上/,  
+    meridiemParse: /Late night|Morning|Morning|Noon|Afternoon|Night/,  
     meridiemHour: function (hour, meridiem) {  
         if (hour === 12) {  
             hour = 0;  
         }  
-        if (meridiem === '凌晨' || meridiem === '早上' ||  
-                meridiem === '上午') {  
+        if (meridiem === 'Late night' || meridiem === 'Morning' ||  
+                meridiem === 'Morning') {  
             return hour;  
-        } else if (meridiem === '下午' || meridiem === '晚上') {  
+        } else if (meridiem === 'Afternoon' || meridiem === 'Night') {  
             return hour + 12;  
         } else {  
             // '中午'  
@@ -34,73 +34,73 @@ moment.defineLocale('zh-cn', {
     meridiem : function (hour, minute, isLower) {  
         var hm = hour * 100 + minute;  
         if (hm < 600) {  
-            return '凌晨';  
+            return 'Late night ';  
         } else if (hm < 900) {  
-            return '早上';  
+            return 'Morning ';  
         } else if (hm < 1130) {  
-            return '上午';  
+            return 'Morning ';  
         } else if (hm < 1230) {  
-            return '中午';  
+            return 'Noon ';  
         } else if (hm < 1800) {  
-            return '下午';  
+            return 'Afternoon ';  
         } else {  
-            return '晚上';  
+            return 'Night ';  
         }  
     },  
     calendar : {  
         sameDay : function () {  
-            return this.minutes() === 0 ? '[今天]Ah[点整]' : '[今天]LT';  
+            return this.minutes() === 0 ? '[Today]Ah[]' : '[Today]LT';  
         },  
         nextDay : function () {  
-            return this.minutes() === 0 ? '[明天]Ah[点整]' : '[明天]LT';  
+            return this.minutes() === 0 ? '[Tomorrow]Ah[]' : '[Tomorrow]LT';  
         },  
         lastDay : function () {  
-            return this.minutes() === 0 ? '[昨天]Ah[点整]' : '[昨天]LT';  
+            return this.minutes() === 0 ? '[Yesterday]Ah[]' : '[Yesterday]LT';  
         },  
         nextWeek : function () {  
             var startOfWeek, prefix;  
             startOfWeek = moment().startOf('week');  
-            prefix = this.unix() - startOfWeek.unix() >= 7 * 24 * 3600 ? '[下]' : '[本]';  
-            return this.minutes() === 0 ? prefix + 'dddAh点整' : prefix + 'dddAh点mm';  
+            prefix = this.unix() - startOfWeek.unix() >= 7 * 24 * 3600 ? '[Next]' : '[This]';  
+            return this.minutes() === 0 ? prefix + 'dddAh ' : prefix + 'dddAh minutes';  
         },  
         lastWeek : function () {  
             var startOfWeek, prefix;  
             startOfWeek = moment().startOf('week');  
-            prefix = this.unix() < startOfWeek.unix()  ? '[上]' : '[本]';  
-            return this.minutes() === 0 ? prefix + 'dddAh点整' : prefix + 'dddAh点mm';  
+            prefix = this.unix() < startOfWeek.unix()  ? '[Last]' : '[This]';  
+            return this.minutes() === 0 ? prefix + 'dddAh' : prefix + 'dddAh minutes';  
         },  
         sameElse : 'LL'  
     },  
-    ordinalParse: /\d{1,2}(日|月|周)/,  
+    ordinalParse: /\d{1,2}(Day|Month|Week)/,  
     ordinal : function (number, period) {  
         switch (period) {  
         case 'd':  
         case 'D':  
         case 'DDD':  
-            return number + '日';  
+            return number + ' Day';  
         case 'M':  
-            return number + '月';  
+            return number + ' Month';  
         case 'w':  
         case 'W':  
-            return number + '周';  
+            return number + ' Week';  
         default:  
             return number;  
         }  
     },  
     relativeTime : {  
-        future : '%s内',  
-        past : '%s前',  
-        s : '几秒',  
-        m : '1 分钟',  
-        mm : '%d 分钟',  
-        h : '1 小时',  
-        hh : '%d 小时',  
-        d : '1 天',  
-        dd : '%d 天',  
-        M : '1 个月',  
-        MM : '%d 个月',  
-        y : '1 年',  
-        yy : '%d 年'  
+        future : '%s',  
+        past : '%s ago',  
+        s : ' seconds',  
+        m : '1 minute',  
+        mm : '%d minutes',  
+        h : '1 hour',  
+        hh : '%d hours',  
+        d : '1 day',  
+        dd : '%d days',  
+        M : '1 month',  
+        MM : '%d months',  
+        y : '1 year',  
+        yy : '%d years'  
     },  
     week : {  
         // GB/T 7408-1994《数据元和交换格式·信息交换·日期和时间表示法》与ISO 8601:1988等效  
@@ -124,23 +124,23 @@ var hourC =diffValue/hour;
 var minC =diffValue/minute;
 if(monthC>=1){
     if(parseInt(monthC) >= 12)
-        result="1 年前";
+        result="1 year ago";
     else
-        result="" + parseInt(monthC) + " 月前";
+        result="" + parseInt(monthC) + " months ago";
 }
 else if(weekC>=1){
-    result="" + parseInt(weekC) + " 周前";
+    result="" + parseInt(weekC) + " weeks ago";
 }
 else if(dayC>=1){
-    result=""+ parseInt(dayC) +" 天前";
+    result=""+ parseInt(dayC) +" days ago";
 }
 else if(hourC>=1){
-    result=""+ parseInt(hourC) +" 小时前";
+    result=""+ parseInt(hourC) +" hours ago";
 }
 else if(minC>=1){
-    result=""+ parseInt(minC) +" 分钟前";
+    result=""+ parseInt(minC) +" minutes ago";
 }else
-result="刚刚";
+result=" Just ";
 return result;
 };
 
@@ -199,13 +199,13 @@ function getTimeStr(dateTimeStamp){
     if(isToday(dateTimeStamp)){
         return moment(dateTimeStamp).format("ahh:mm");
     }else if(isYesterday(dateTimeStamp)){
-        return '昨天 '+moment(dateTimeStamp).format("ahh:mm");
+        return ' yesterday '+moment(dateTimeStamp).format("ahh:minutes");
     }else if(isWithinAweek(dateTimeStamp)){
         return moment(dateTimeStamp).format('ddd ahh:mm');
     }else if(isCurYear(dateTimeStamp)){
-        return moment(dateTimeStamp).format('MMMD日 ahh:mm');
+        return moment(dateTimeStamp).format('MMMD day ahh:minutes');
     }else {
-        return moment(dateTimeStamp).format('ll ahh:mm');
+        return moment(dateTimeStamp).format('ll ahh:minutes');
     }
     
 }

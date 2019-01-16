@@ -16,13 +16,13 @@ if Meteor.isClient
     $('#groupInOutTime').mobiscroll().range({
       defaultVaule: [new Date(),new Date()],
       theme: 'material',
-      lang: 'zh',
+      lang: 'en',
       display: 'bottom',
       controls: ['time'],
       maxWidth: 100,
-      setText: '设置',
-      fromText: '上班时间',
-      toText:'下班时间',
+      setText: 'Setting',
+      fromText: 'Clock-in Time',
+      toText:'Clock-out Time',
       defaultValue: [
           new Date(new Date().setHours(group_intime[0], group_intime[1], 0, 0)),new Date(new Date().setHours(group_outtime[0], group_outtime[1], 0, 0))
       ],
@@ -37,13 +37,13 @@ if Meteor.isClient
         inMin = Number(inArr[0]) * 60 + Number(inArr[1])
         outMin = Number(outArr[0]) * 60 + Number(outArr[1])
         if(outMin <= inMin)
-          return PUB.toast('下班时间早于上班时间，请重试')
+          return PUB.toast('Invalid clock out time. Please try again.')
         Meteor.call('updateGroupInOutTime',Session.get('groupsId'),group_intime, group_outtime)
     })
   groupDelOrQuitCB = (err,id,isDel)->
-    errMsg = '退出失败，请重试~'
+    errMsg = 'Fail to quit. Please try again.'
     if isDel
-      errMsg = '删除失败，请重试~'
+      errMsg = 'Fail to quit. Please try again.'
     console.log(err)
     if err or !id
       return PUB.toast(errMsg)
@@ -103,9 +103,9 @@ if Meteor.isClient
       if group and group.groupAccuracyType
         groupAccuracyType = group.groupAccuracyType
       if groupAccuracyType is 'accurate'
-        return '精确匹配'
+        return 'Accurate'
       else
-        return '宽松匹配'
+        return 'Loose'
     rejectUnknowMember: ()->
       groupUser = SimpleChat.GroupUsers.findOne({group_id: Session.get('groupsId'), user_id: Meteor.userId()})
       if groupUser and  groupUser.allowUnknowMember
@@ -151,7 +151,7 @@ if Meteor.isClient
       if group and group.name
         return group.name
       else
-        return '[无]'
+        return '[Empty]'
     hasBarCode:()->
       group =  SimpleChat.Groups.findOne({_id:Session.get('groupsId')})
       if  group and group.barcode
@@ -244,13 +244,13 @@ if Meteor.isClient
       Session.set("groupsProfileMenu","groupBarCode")
     'click .deleteAndExit':(event)->
       if event.currentTarget.id is 'delThisGroup'
-        return PUB.confirm('删除后，将不再保留本监控组相关信息',()->
+        return PUB.confirm('Are you sure you want to remove?',()->
           Meteor.call('creator-delete-group',Session.get('groupsId'), Meteor.userId(),(err,id)->
             groupDelOrQuitCB(err,id,true)
           )
         )
 
-      PUB.confirm('退出后，将不再接收本监控组消息',()->
+      PUB.confirm('Are you sure you want to quit?',()->
         Meteor.call('remove-group-user',Session.get('groupsId'),Meteor.userId(),(err,id)->
           groupDelOrQuitCB(err,id, false)
           # console.log(err)
@@ -292,9 +292,9 @@ if Meteor.isClient
           Meteor.call('set-perf-link',Session.get('groupsId'), txtObj, (err, ret)->
             console.log 'set-perf-link, err: ' + err + ', ret: ' + ret
             if err
-              PUB.toast '扫描失败，请重试~'
+              PUB.toast 'Failed. Please try it again.'
               return
-            PUB.toast '扫描成功！可查看绩效~'
+            PUB.toast 'Scan successfully.'
           )
         if (result.cancelled)
           return;
@@ -337,7 +337,7 @@ if Meteor.isClient
           perf_url = 'http://aixd.raidcdn.cn/reporter/f5ZocsFpQn9CApmy8'
       #cordova.InAppBrowser.open(perf_url, '_system')
     'click .emptyMessages':(event)->
-      PUB.confirm('确定要清空训练记录吗？',()->
+      PUB.confirm('Clean history?',()->
         type = Session.get('groupsType')
         to = Session.get('groupsId')
         if type is 'group'
@@ -350,7 +350,7 @@ if Meteor.isClient
             ]
           };
         console.log('where:', where);
-        window.plugins.toast.showLongCenter('请稍候~')
+        window.plugins.toast.showLongCenter('Hold on ...')
         try
           SimpleChat.Messages.remove(where);
           Meteor.setTimeout(()->
@@ -464,8 +464,8 @@ if Meteor.isClient
   Template.setGroupname.helpers
     placeholderText:()->
       if Session.equals('fromCreateNewGroups',true)
-         return '输入监控组名称'
-      return '输入新的监控组名称'
+         return 'Your Group Name'
+      return 'Your Group Name'
     groupName:()->
       if Session.equals('fromCreateNewGroups',true)
          return Session.get('AI_Group_Name') || ''
@@ -498,7 +498,7 @@ if Meteor.isClient
 
         Session.set("groupsProfileMenu","groupInformation")
       else
-        PUB.toast '监控组名称不能为空~'
+        PUB.toast 'Please input a goup name.'
       false
 
   Template.groupBarCode.helpers
@@ -525,11 +525,11 @@ if Meteor.isClient
       group = SimpleChat.Groups.findOne({_id:Session.get('groupsId')});
       cordova.plugins.barcodeScanner.saveBarCodeToPhotoAlum group.barcode, ((result) ->
         console.log 'res:' + result
-        PUB.toast '保存成功！'
+        PUB.toast 'Save Successfully.'
         return
       ), (error) ->
         console.log 'error:' + error
-        PUB.toast '保存失败！'
+        PUB.toast 'Fail to save.'
         return
     'click #scanbarcode':(event)->
       ScanBarcodeByBarcodeScanner()
@@ -574,7 +574,7 @@ if Meteor.isClient
       ss = $(".inpEmail").val()
       ret = ss.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)
       if not ret
-        PUB.toast '无效邮箱地址!'
+        PUB.toast 'Invilid Email ID!'
         return
       groupId = Session.get 'groupsId'
       user_id = Meteor.userId()
@@ -582,7 +582,7 @@ if Meteor.isClient
       if groupUser.report_emails
         arr = groupUser.report_emails.split(',')
         if _.contains(arr,ss)
-          PUB.toast '此邮箱已添加'
+          PUB.toast 'This email ID has been registered before.'
           return
         report_emails = groupUser.report_emails + ',' + ss
       else

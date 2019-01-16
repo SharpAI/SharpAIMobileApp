@@ -4,7 +4,7 @@ SimpleChat.simple_chat_page_stack = simple_chat_page_stack;
 var list_limit_val = 5;
 var is_loading = new ReactiveVar(false);
 var list_limit = new ReactiveVar(list_limit_val);
-var page_title = new ReactiveVar('公司');
+var page_title = new ReactiveVar('Group');
 var page_data = null;
 var $box = null;
 var $box_ul = null;
@@ -78,8 +78,8 @@ Template._simpleChatToChat.helpers({
         return;
       }
       //陌生人标红
-      if(doc.text && doc.text.indexOf('陌生人')!=-1 && doc.type == 'text'){
-        doc.text = doc.text.replace('陌生人','<span style="color:red">陌生人</span>')
+      if(doc.text && doc.text.indexOf('Stanger')!=-1 && doc.type == 'text'){
+        doc.text = doc.text.replace('Stanger','<span style="color:red">Stanger</span>')
       }
       //消息类型不是system和url则先判断 images,如果是空数组则不显示item
       //解决有些chat item为空白,待验证
@@ -547,7 +547,7 @@ Template._simpleChatToChat.onRendered(function(){
           _id: new Mongo.ObjectID()._str,
           form: {
             id: '',
-            name: '系统',
+            name: 'System ',
             icon: ''
           },
           to: {
@@ -558,7 +558,7 @@ Template._simpleChatToChat.onRendered(function(){
           images: [],
           to_type: "group",
           type: "system",
-          text: '欢迎加入'+page_data.title(),
+          text: 'Welcome to '+page_data.title(),
           create_time: new Date(),
           is_read: false
         };
@@ -644,10 +644,10 @@ Template._simpleChatToChat.onRendered(function(){
               return;
             }
             else {
-              return PUB.toast("粘贴板内容为空~");
+              return PUB.toast("Empty paste");
             }
           }, function() {
-            return PUB.toast("无法获得粘贴板数据，请手动粘贴\n点击输入框，长按进行粘贴");
+            return PUB.toast("Please copy and paste again!");
           });
         }
         else{
@@ -752,21 +752,21 @@ var onFixName = function(id, uuid, his_id, url, to, value, type){
 
   switch(type){
     case 'label':
-      msg.text = '这是"' + value + '" ~';
+      msg.text = 'This is "' + value + '" .';
       Messages.insert(msg);
       sendMqttGroupMessage(msg.to.id, msg);
       // sendMqttMessage('workai', msg);
       // sendMqttMessage('trainset', {url: url, person_id: '', device_id: uuid, face_id: id});
       break;
     case 'check':
-      msg.text = '这是"' + value + '" ~';
+      msg.text = 'This is "' + value + '" .';
       Messages.insert(msg);
       sendMqttGroupMessage(msg.to.id, msg);
       // sendMqttMessage('workai', msg);
       // sendMqttMessage('trainset', {url: url, person_id: '', device_id: uuid, face_id: id});
       break;
     case 'remove':
-      msg.text = '删除这条信息: ' + value;
+      msg.text = 'Remove this message: ' + value;
       Messages.insert(msg);
       sendMqttGroupMessage(msg.to.id, msg);
       // sendMqttMessage('workai', msg);
@@ -791,7 +791,7 @@ var showBox = function(title, btns, list, tips, callback){
     Blaze.remove(showBoxView);
   showBoxView = Blaze.renderWithData(Template._simpleChatToChatLabelBox, {
     title: title,
-    btns: btns || ['知道了'],
+    btns: btns || ['I Got it!'],
     list: list,
     tips: tips,
     callback: callback || function(){},
@@ -1171,7 +1171,7 @@ Template._simpleChatToChatLabel.events({
     show_label(data.to.id, function(name){
       Meteor.call('get-id-by-name1', data.people_uuid, name, data.to.id, function(err, res){
         if(err)
-          return PUB.toast('标记失败，请重试~');
+          return PUB.toast('Fail to label. Please try again.');
 
         console.log(res);
         PeopleHis.update({_id: data.people_his_id}, {
@@ -1186,7 +1186,7 @@ Template._simpleChatToChatLabel.events({
           }}
         }, function(err, num){
           if(err || num <= 0){
-            return PUB.toast('标记失败，请重试~');
+            return PUB.toast('Fail to label. Please try agian.');
           }
 
           Messages.update({_id: data.msg_id, 'images.url': $img.attr('src')}, {
@@ -1202,7 +1202,7 @@ Template._simpleChatToChatLabel.events({
 
           onFixName(data.people_id, data.people_uuid, data.people_his_id, $img.attr('src'), data.to, name, 'label');
           sendMqttMessage('trainset', {url: $img.attr('src'), person_id: res.id ? res.id : '', device_id: data.people_uuid, face_id: res ? res.faceId : data.people_id, drop: false, img_type: imgtype});
-          PUB.toast('标记成功~');
+          PUB.toast('Successfully Labeled!');
         });
       });
     });
@@ -1214,7 +1214,7 @@ Template._simpleChatToChatLabel.events({
 
     Meteor.call('get-id-by-name1', data.people_uuid, name, data.to.id, function(err, res){
       if(err)
-        return PUB.toast('标记失败，请重试~');
+        return PUB.toast('Fail to label. Please try again.');
 
       PeopleHis.update({_id: data.people_his_id}, {
         $set: {fix_name: name, msg_to: data.to},
@@ -1228,7 +1228,7 @@ Template._simpleChatToChatLabel.events({
         }}
       }, function(err, num){
         if(err || num <= 0){
-          return PUB.toast('标记失败，请重试~');
+          return PUB.toast('Fail to label. Please try agian.');
         }
 
         Messages.update({_id: data.msg_id, 'images.url': $img.attr('src')}, {
@@ -1244,7 +1244,7 @@ Template._simpleChatToChatLabel.events({
 
         onFixName(data.people_id, data.people_uuid, data.people_his_id, $img.attr('src'), data.to, name, 'label');
         sendMqttMessage('trainset', {url: $img.attr('src'), person_id: res.id ? res.id : '', device_id: data.people_uuid, face_id: res ? res.faceId : data.people_id, drop: false, img_type: imgtype});
-        PUB.toast('标记成功~');
+        PUB.toast('Successfully labeled.');
       });
     });
   },
@@ -1254,12 +1254,12 @@ Template._simpleChatToChatLabel.events({
     var name = Session.get('SimpleChatToChatLabelImage').label;
     var names = get_people_names();
 
-    showBox('提示', ['重新标记', '删除'], null, '重新标记还是删除？', function(index){
+    showBox('Notice', ['Relabel', 'Remove'], null, 'Relabel or Remove?', function(index){
       if(index === 0)
         show_label(data.to.id, function(name){
           Meteor.call('get-id-by-name1', data.people_uuid, name, data.to.id, function(err, res){
             if(err)
-              return PUB.toast('标记失败，请重试~');
+              return PUB.toast('Fail to label. Please try again.');
 
             PeopleHis.update({_id: data.people_his_id}, {
               $set: {fix_name: name, msg_to: data.to},
@@ -1273,7 +1273,7 @@ Template._simpleChatToChatLabel.events({
               }}
             }, function(err, num){
               if(err || num <= 0){
-                return PUB.toast('标记失败，请重试~');
+                return PUB.toast('Fail to label. Please try again.');
               }
 
               Messages.update({_id: data.msg_id, 'images.url': $img.attr('src')}, {
@@ -1289,7 +1289,7 @@ Template._simpleChatToChatLabel.events({
 
               onFixName(data.people_id, data.people_uuid, data.people_his_id, $img.attr('src'), data.to, name, 'label');
               sendMqttMessage('trainset', {url: $img.attr('src'), person_id: res.id ? res.id : '', device_id: data.people_uuid, face_id: res ? res.faceId : data.people_id, drop: false, img_type: imgtype});
-              PUB.toast('标记成功~');
+              PUB.toast('Successfully labeled.');
             });
           });
         });
@@ -1309,7 +1309,7 @@ Template._simpleChatToChatLabel.events({
           }, function(err, num){
             if(err || num <= 0){
               console.log(err);
-              return PUB.toast('删除失败，请重试~');
+              return PUB.toast('Fail to remove. Please try again.');
             }
 
             Messages.update({_id: data.msg_id, 'images.url': $img.attr('src')}, {
@@ -1319,7 +1319,7 @@ Template._simpleChatToChatLabel.events({
             });
 
             onFixName(data.people_id, data.people_uuid, data.people_his_id, $img.attr('src'), data.to, text, 'remove');
-            PUB.toast('删除成功~');
+            PUB.toast('Successully Removed!');
           });
         });
     });
@@ -1550,7 +1550,7 @@ Template._checkGroupDevice.helpers({
 Template._checkGroupDevice.events({
   'click ._cgd_device_item': function(e) {
     if (this.uuid == '') {
-        PUB.toast('访问设备故障，请重新添加该设备。');
+        PUB.toast('Device error. Please add this device again.');
         return ;
     }
     $('._checkGroupDevice').fadeOut();
@@ -1634,7 +1634,7 @@ Template._simpleChatToChat.events({
           return;
         }
       }
-      return PUB.toast('该公司下暂无脸脸盒');
+      return PUB.toast('Please add a device to proceed!');
     });
   },
   'click #btnSkipConfirm': function(event) {
@@ -1663,7 +1663,7 @@ Template._simpleChatToChat.events({
         return $('._checkGroupDevice').fadeIn();
       }
     }
-    return PUB.toast('该公司下暂无脸脸盒');
+    return PUB.toast('Please add a device to proceed!');
   },
   'click .scriptsItem': function(e){
     $('.scriptsLayer').fadeOut();
@@ -2010,9 +2010,9 @@ Template._simpleChatToChatItem.onRendered(function(){
           break;
         case 'sending':
           window.plugins.actionsheet.show({
-            title: '消息发送中，请选择？',
-            buttonLabels: ['取消发送'],
-            addCancelButtonWithLabel: '返回',
+            title: 'Sendinging',
+            buttonLabels: ['Cancel'],
+            addCancelButtonWithLabel: 'Back',
             androidEnableCancelButton: true
           }, function(index){
             if (index === 1)
@@ -2553,15 +2553,15 @@ SimpleChat.onMqttMessage = function(topic, msg, msgKey, mqttCallback) {
         function callback(){
           Meteor.call('set-perf-link',msgObj.group_id,msgObj.perf_info,function(error,res){
             if (error) {
-               return PUB.toast('绑定异常~');
+               return PUB.toast('Fail to add.');
             }
-            PUB.toast('绑定成功！');
+            PUB.toast('Add Successfully!');
           });
         }
         try{
           navigator.notification.confirm(msgObj.text,function
                 (index){if(index == 2){callback()}},
-                '提示',['暂不','绑定']);
+                'Notice',['No','Yes']);
         }
         catch (error){
           if(confirm(msgObj.text)){
@@ -2573,7 +2573,7 @@ SimpleChat.onMqttMessage = function(topic, msg, msgKey, mqttCallback) {
         try{
           navigator.notification.alert(msgObj.text,function
                 (index){},
-                '提示','我知道了');
+                'Notice','OK');
         }
         catch (error){
           alert(msgObj.text);
@@ -2609,7 +2609,7 @@ SimpleChat.onMqttMessage = function(topic, msg, msgKey, mqttCallback) {
     }
     //ta 被我拉黑
     if(BlackList.find({blackBy: Meteor.userId(), blacker:{$in: [msgObj.form.id]}}).count() > 0){
-      console.log(msgObj.to.id+'被我拉黑');
+      console.log(msgObj.to.id+'is blocked');
       rmMsgKey(msgKey, '#2166');
       return;
     }
@@ -2739,7 +2739,7 @@ var onMqttMessage = function(topic, msg, msgKey, mqttCallback) {
   var msgObj = JSON.parse(msg);
 
   if (msgObj.to_type == 'group' && msgObj.type == 'remove_error_img'){
-    removeErrorImage(msgObj, '移除错误识别的照片');
+    removeErrorImage(msgObj, 'Remove mis-recognized people.');
     rmMsgKey(msgKey, '#2256');
     return;
   }
@@ -2880,7 +2880,7 @@ var onMqttMessage = function(topic, msg, msgKey, mqttCallback) {
             }
           }
           if (!is_last_msg) {
-            return insertMsg(msgObj, '不是最后一条消息');
+            return insertMsg(msgObj, 'Not the last message.');
           }
       }
   }

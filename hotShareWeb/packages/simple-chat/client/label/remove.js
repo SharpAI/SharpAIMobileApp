@@ -102,9 +102,9 @@ Template._simpleChatLabelRemove.events({
         count += 1;
     }
     if (count > 0)
-      msgObj.text = count + ' 张照片需要标注';
+      msgObj.text = count + ' need to be labled';
     else
-      msgObj.text =  msgObj.images.length + ' 张照片已标注';
+      msgObj.text =  msgObj.images.length + ' have labeled';
 
     if (count <= 0)
       updateObj.label_complete = true;
@@ -146,7 +146,7 @@ Template._simpleChatLabelRemove.events({
         to: msgObj.to,
         to_type: "group",
         type: "text",
-        text: '删除了 '+selectedCount+' 张照片',
+        text: 'Removed '+selectedCount+' photos',
         create_time: new Date(),
         is_read: false
       };

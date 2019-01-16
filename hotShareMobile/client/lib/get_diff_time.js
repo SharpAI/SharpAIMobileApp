@@ -65,22 +65,22 @@ get_diff_time = function(dateTimeStamp){
     var minC =diffValue/minute;
     if(monthC>=1){
         if(parseInt(monthC) >= 12)
-            result="1 年前";
+            result="1 year ago";
         else
-            result="" + parseInt(monthC) + " 月前";
+            result="" + parseInt(monthC) + " month ago";
     }
     else if(weekC>=1){
-        result="" + parseInt(weekC) + " 周前";
+        result="" + parseInt(weekC) + " week ago";
     }
     else if(dayC>=1){
-        result=""+ parseInt(dayC) +" 天前";
+        result=""+ parseInt(dayC) +" day ago";
     }
     else if(hourC>=1){
-        result=""+ parseInt(hourC) +" 小时前";
+        result=""+ parseInt(hourC) +" hour ago";
     }
     else if(minC>=1){
-        result=""+ parseInt(minC) +" 分钟前";
+        result=""+ parseInt(minC) +" minutes ago";
     }else
-    result="刚刚";
+    result="seconds ago";
     return result;
 };
