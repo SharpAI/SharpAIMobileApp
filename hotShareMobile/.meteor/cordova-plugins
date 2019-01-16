@@ -22,7 +22,7 @@ cordova-plugin-keyboard@1.1.5
 cordova-plugin-media@https://github.com/PluginCordova/media/tarball/2d158b0ef7173cad2b2f84c05c62727932635f8e
 cordova-plugin-meteor-webapp@https://github.com/panter/cordova-plugin-meteor-webapp.git#7bb095ce393d17f662cc6bb596ce91acf743d17a
 cordova-plugin-network-information@1.2.0
-cordova-plugin-splashscreen@https://github.com/PluginCordova/sharpAiSplashScreen/tarball/d23b8a319c67a2ebcf858806bf9800224fd7deb3
+cordova-plugin-splashscreen@https://github.com/zisanjie/sharpAiSplashScreen/tarball/355c0ee9913644cd4e8bbe09b2b3afebff1f2545
 cordova-plugin-statusbar@https://github.com/PluginCordova/cordova-plugin-statusbar/tarball/995e4fdf9de78609ff0fb30bab2610b9e5293410
 cordova-plugin-themeablebrowser@https://github.com/PluginCordova/cordova-plugin-themeablebrowser/tarball/12117b16548e0ad309280c2a4b8c82cf313e2693
 cordova-plugin-wkwebview-engine@1.1.0
