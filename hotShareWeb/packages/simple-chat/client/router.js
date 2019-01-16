@@ -2985,7 +2985,7 @@ var onMqttMessage = function(topic, msg, msgKey, mqttCallback) {
       $push: {msg_ids: {id: msgObj._id}}
     }, function(err, num){
       if (err || num <= 0)
-        insertMsg(msgObj, 'update 失败');
+        insertMsg(msgObj, 'Fail to update');
     });
 
     rmMsgKey(msgKey, '#2491');
@@ -2996,7 +2996,7 @@ var onMqttMessage = function(topic, msg, msgKey, mqttCallback) {
     $push: {images: {$each: msgObj.images}, msg_ids: {id: msgObj._id}}
   }, function(err, num){
     if (err || num <= 0)
-      insertMsg(msgObj, 'update 失败');
+      insertMsg(msgObj, 'Fail to update');
   });
 
   rmMsgKey(msgKey, '#2502');
@@ -3194,7 +3194,7 @@ Template._simpleChatToChatLabelName.onRendered(function(){
         var length = $(e.currentTarget).val().length;
         if (length === 0) {
           label_name_text.set('');
-          $(e.currentTarget).attr('placeholder','请选择或输入名字~');
+          $(e.currentTarget).attr('placeholder','Please input name');
         }
     });
   label_name_text.set('');
@@ -3318,15 +3318,15 @@ Template._simpleChatToChatLabelName.events({
         var userName = listName[i];
         if (userName == inputName) {
           return true;
-        }
+        
       }
       return false;
     }
     if (!$('#label-input-name').val())
-      return PUB.toast('请选择或输入名字~');
+      return PUB.toast('Please input name');
     if (sameName(listName))
       // return PUB.toast('该名字已有同名录入，如不是同一人请添加识别后缀。例：张三-人事经理');
-      return PUB.confirm('是否为此人照片，如存在同名情况请点击"取消"，并在输入时添加识别后缀。\n例：张三-人事经理',function () {
+      return PUB.confirm('If their are same name, please use some tag to differ them. \nExample：Mike-HR Manager',function () {
         console.log("不是同名，操作已录入此人相册内")
         t.data.callback && t.data.callback($('#label-input-name').val());
         Blaze.remove(label_view);
@@ -3358,7 +3358,7 @@ Template._simpleChatToChatLabelRemove.onRendered(function(){
   this.$("#label-input-name").bind("input propertychange",function (e) {
         var length = $(e.currentTarget).val().length;
         if (length === 0) {
-          $(e.currentTarget).attr('placeholder','请输入删除照片的原因~');
+          $(e.currentTarget).attr('placeholder','Please input the reason you remove this photo.');
         }
     });
 
@@ -3378,7 +3378,7 @@ Template._simpleChatToChatLabelRemove.events({
   },
   'click .rightButton': function(e, t){
     if (!$('#label-input-name').val())
-      return PUB.toast('请输入删除信息的原因~');
+      return PUB.toast('Please input the reason you remove this photo.');
     t.data.callback && t.data.callback($('#label-input-name').val());
     Blaze.remove(remove_view);
     simple_chat_page_stack.pop();

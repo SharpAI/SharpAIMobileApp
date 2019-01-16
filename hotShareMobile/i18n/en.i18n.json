@@ -805,13 +805,13 @@
 
   ///home/czizic/lailema/hotShare/hotShareMobile/packages/simple-chat/client/router.js
   //AI观察到有人在活动
-  "AI_observed_that_someone_was_active": "AI observed that someone was active(",
+  "AI_observed_that_someone_was_active": "DeepEye found someone activity",
   //次）
   "Times": "Times",
   //AI观察到
-  "AI_observed": "AI Observed ",
+  "AI_observed": "DeepEye Saw ",
   //'Work AI发现有人在活动'
-  "Work_AI_found": "Work AI found someone at the event",
+  "Work_AI_found": "DeepEye found someone at the event",
 
   ///home/czizic/lailema/hotShare/hotShareMobile/client/autolabel/autolabel.html
   //自动标注
