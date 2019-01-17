@@ -32,7 +32,7 @@ var addDeviceToGroup = function(group_id, group_name) {
 
   var uuid = d.uuid;
   console.log(d);
-  PUB.showWaitLoading('正在添加设备');
+  PUB.showWaitLoading(TAPi18n.__("Adding_device"));
   Meteor.subscribe('devices-by-uuid',uuid, function() {
     if ( Devices.find({uuid: uuid}).count() > 0 ) {
       PUB.hideWaitLoading()
@@ -50,7 +50,7 @@ var addDeviceToGroup = function(group_id, group_name) {
         PUB.hideWaitLoading();
         if(error){
           console.log(error);
-          return PUB.toast('添加设备失败~');
+          return PUB.toast(TAPi18n.__("Adding_device_failed"));
         }
         cb && cb();
         //$.post("http://workaihost.tiegushi.com/restapi/workai-join-group", {uuid: uuid, group_id: group_id, name: uuid, in_out: "in"}, function(data) {
@@ -65,7 +65,7 @@ var addDeviceToGroup = function(group_id, group_name) {
         });
         SELECT_CREATE_GROUP.close();
         //return PUB.toast('添加设备成功');
-        $('#addDeviceResultText').html('添加设备成功');
+        $('#addDeviceResultText').html(TAPi18n.__("Add_device_successfully"));
         $('#addDeviceResult').modal('show');
       });
     }
@@ -73,7 +73,7 @@ var addDeviceToGroup = function(group_id, group_name) {
 };
 
 var changeDeviceGroup = function(group_id,group_name){
-  PUB.showWaitLoading('正在处理');
+  PUB.showWaitLoading(TAPi18n.__("Processing"));
   var uuid = (d.txtRecord && d.txtRecord.uuid) ? d.txtRecord.uuid:'';
   console.log("d._id="+d._id+", uuid="+uuid);
   Devices.update({_id:d._id}, {
@@ -86,7 +86,7 @@ var changeDeviceGroup = function(group_id,group_name){
     PUB.hideWaitLoading();
     if(error){
       console.log(error);
-      return PUB.toast('请重试~');
+      return PUB.toast(TAPi18n.__("Please_try_again"));
     }
     cb && cb();
 
@@ -101,7 +101,7 @@ var changeDeviceGroup = function(group_id,group_name){
     //});
     SELECT_CREATE_GROUP.close();
     //return PUB.toast('群组已更改');
-    $('#addDeviceResultText').html('添加设备成功');
+    $('#addDeviceResultText').html(TAPi18n.__("Add_device_successfully"));
     $('#addDeviceResult').modal('show');
   })
 }
@@ -135,7 +135,7 @@ Template.selectCreateGroup.events({
   'submit .setGroupname-form': function(e) {
     e.preventDefault();
     if (e.target.text.value == '') {
-      return PUB.toast('请输入群组名');
+      return PUB.toast(TAPi18n.__("Please_enter_a_group_name"));
     }
     var name = e.target.text.value;
     var offsetTimeZone = (new Date().getTimezoneOffset())/-60;
@@ -161,7 +161,7 @@ Template.selectCreateGroup.events({
     }, function(error, result){
       if(error) {
         console.log(error);
-        return PUB.toast('创建群组失败');
+        return PUB.toast(TAPi18n.__("Failed_to_create_group"));
       }
       SimpleChat.GroupUsers.insert({
         group_id: id,

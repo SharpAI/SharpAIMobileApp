@@ -3318,7 +3318,7 @@ Template._simpleChatToChatLabelName.events({
         var userName = listName[i];
         if (userName == inputName) {
           return true;
-        
+        }
       }
       return false;
     }

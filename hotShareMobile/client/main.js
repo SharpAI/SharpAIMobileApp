@@ -22,7 +22,7 @@ if (Meteor.isCordova) {
     Deps.autorun(function(){
       if( Session.get('persistentLoginStatus') && !Meteor.userId() && !Meteor.loggingIn()){
         Session.setPersistent('persistentLoginStatus',false);
-        window.plugins.toast.showLongCenter("登录超时，需要重新登录~");
+        window.plugins.toast.showLongCenter(TAPi18n.__("Login_timed_out"));
 
         var pages = ['/user', '/bell', '/search'];
         if(pages.indexOf(location.pathname) != -1)
@@ -54,7 +54,7 @@ if (Meteor.isCordova) {
         var hasShow = Session.get('notificationConfim');
 
         if (!data.isEnabled && !hasShow) {
-          navigator.notification.confirm('能及时收到出现提醒',function(index){
+          navigator.notification.confirm(TAPi18n.__("Can_receive_reminders_in_time"),function(index){
               Session.set('notificationConfim','showed');
               if (index == 2) {
                 if (device.platform === 'iOS') {
@@ -64,7 +64,7 @@ if (Meteor.isCordova) {
                   window.plugins.jPushPlugin.goToSet();
                 }
               }
-          },'开启推送',['以后再说','马上开启']);
+          },TAPi18n.__("Open_push"),[TAPi18n.__("talk_about_it_later"),TAPi18n.__("Open_now")]);
         }
         else if (data.isEnabled){
           Session.set('notificationConfim',null);

@@ -42,7 +42,7 @@ var parseQueryResults = function(query_task_id,obj) {
     if(error) {
       return console.log('update query task error');
     } 
-    PUB.toast('查询成功');
+    PUB.toast(TAPi18n.__("search_successful"));
     return PUB.page('/dvaDetail/'+query_task_id);
   });
 
@@ -75,7 +75,7 @@ var sendSearchFunc = function() {
     createdAt: new Date()
   }, function(error, res){
     if(error) {
-      return PUB.toast('创建失败~');
+      return PUB.toast(TAPi18n.__("Creation_failed"));
     }
     
     var query_task_id = res;
@@ -103,7 +103,7 @@ var sendSearchFunc = function() {
           selectedPicture.set(null);
         } catch (error) {}
         DVA_QueueLists.remove({_id: query_task_id});
-        PUB.toast('查询失败，请重试');
+        PUB.toast(TAPi18n.__("The_query_failed_please_try_again"));
       },
       success: function (response, status, xhr) {
         console.log(response)
@@ -155,15 +155,15 @@ Template.dvaSearch.events({
     var self = this;
     console.log('DVA_server is :', dvaServer.get());
     if (!dvaServer.get()){
-      navigator.notification.confirm('您还没有绑定设备！',function(buttonIndex){
+      navigator.notification.confirm(TAPi18n.__("You_have_not_bound_your_device_yet"),function(buttonIndex){
         if(buttonIndex == 2) {
           Session.set('DVA_Index_Foot','dvaDevices');
         }
-      },'提示',['稍后','绑定设备']);
+      },TAPi18n.__("prompt"),[TAPi18n.__("Later"),TAPi18n.__("Binding_device")]);
     }
     var options = {
-      title: '拍摄照片或从相册选择图片',
-      buttonLabels: ['拍照','从相册选择'],
+      title: TAPi18n.__("Take_a_photo_or_select_an_image_from_an_album"),
+      buttonLabels: [TAPi18n.__("Take_a_photo"),TAPi18n.__("Choose_from_album")],
       addCancelButtonWithLabel: '取消',
       androidEnableCancelButton: true
     };
@@ -204,7 +204,7 @@ Template.dvaSearch.events({
   // start query task
   'click #startQuery': function (e) {
     var picObj = selectedPicture.get();
-    PUB.showWaitLoading('正在查询');
+    PUB.showWaitLoading(TAPi18n.__("querying"));
     return sendSearchFunc();
 
     var createQueryQueue = function(imgUrl) {

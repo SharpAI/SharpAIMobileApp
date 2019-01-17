@@ -38,7 +38,7 @@ Template.messageDialog.helpers
         else
           return "@" + session.toGroupName
       else
-        '正在聊天'
+        TAPi18n.__("Chatting")
   isMe: (obj)->
     obj.userId is Meteor.userId() and obj.sesType isnt 'chatNotify'
     
@@ -209,7 +209,7 @@ Template.messageDialogInput.events
             insert
             (err, _id)->
               if err
-                PUB.toast('发送失败，请重试.^_^.')
+                PUB.toast(TAPi18n.__("Send_failed"))
               else
                 e.target.text.value = ''
                 document.body.scrollTop = document.body.scrollHeight
@@ -248,11 +248,11 @@ Template.messageDialogInputForm.events
     $(".message-dialog-input-form").submit()
   'submit .message-dialog-input-form': (e)->
     if e.target.text.value is ''
-      PUB.toast('你不想说点什么.^_^.')
+      PUB.toast(TAPi18n.__("You_dont_want"))
       return false
     
     if Meteor.user() is null
-      PUB.toast('你还没有登录.^_^.')
+      PUB.toast(TAPi18n.__("You_have_not_logged"))
       return false
     
     to = Session.get("messageDialog_to") || {}
@@ -319,7 +319,7 @@ Template.messageDialogInputForm.events
       insert
       (err, _id)->
         if err
-          PUB.toast('发送失败，请重试.^_^.')
+          PUB.toast(TAPi18n.__("Send_failed"))
         else
           Session.set("Social.LevelOne.Menu", 'messageDialog')
     )

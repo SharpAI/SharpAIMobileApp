@@ -52,7 +52,7 @@
   </style>
   <div class="homePage">
       <div class="head">
-        <strong class="top-home-btn active">主页</strong>
+        <strong class="top-home-btn active">{{_ "Homepage"}}</strong>
         <!--<div class="date_select">
           {{#if has_day_before}}
           <span class="day_before select_btn">前一天</span>
@@ -106,10 +106,10 @@
           <table class="table table-bordered table-condensed">
             <thead>
                 <tr role="row">
-                  <th>姓名</th>
-                  <th style="width: 60px;text-align: center;">状态</th>
-                  <th>进</th>
-                  <th>出</th>
+                  <th>{{_ "Name"}}</th>
+                  <th style="width: 60px;text-align: center;">{{_ "Status"}}</th>
+                  <th>{{_ "in"}}</th>
+                  <th>{{_ "out"}}</th>
                   <!--<th>今日简述</th>-->
                 </tr>
               </thead>
@@ -239,7 +239,7 @@
                           <p style="white-space: pre-wrap;"><strong>{{person_name}}</strong>[{{getShortTime ts ../group_id}}]: {{content}}</p>
                           {{/each}}
                       {{else}}
-                          <i class="fa fa-pencil" style="color:gray; font-size:14px;">今天还没有工作安排...</i>
+                          <i class="fa fa-pencil" style="color:gray; font-size:14px;">{{_ "There_is_no_work_arrangement_today"}}...</i>
                       {{/if}}
                   </td>
                   <!--
@@ -257,7 +257,7 @@
               </tbody>
           </table>
           {{else}}
-          <div style="margin-top:60px; text-align:center;">暂无记录</div>
+          <div style="margin-top:60px; text-align:center;">{{_ "No_records"}}</div>
           {{/if}}
         {{/if}}
         </div>
@@ -268,42 +268,42 @@
             <tbody>
               <tr>
                 <td style="text-align:center;"><i class="fa fa-map-marker" style="color:green;"></i></td>
-                <td>在监控组</td>
+                <td>{{_ "In_the_monitoring_group"}}</td>
                 <td style="text-align:center;"><i class="fa fa-map-marker" style="color:gray;"></i></td>
-                <td>不在监控组</td>
+                <td>{{_ "Not_in_the_monitoring_group"}}</td>
               </tr>
               <tr>
                 <td style="text-align:center;"><i class="fa fa-user" style="color:green;"></i></td>
-                <td>已绑定App</td>
+                <td>{{_ "Bound_App"}}</td>
                 <td style="text-align:center;"><i class="fa fa-user" style="color:gray;"></i></td>
-                <td>未绑定App</td>
+                <td>{{_ "Unbound_App"}}</td>
               </tr>
               <tr>
                 <td style="text-align:center;"><i class="fa fa-bell" style="color:green;"></i></td>
-                <td>允许通知</td>
+                <td>{{_ "Allow_notification"}}</td>
                 <td style="text-align:center;"><i class="fa fa-bell" style="color:gray;"></i></td>
-                <td>关闭通知</td>
+                <td>{{_ "Close_notification"}}</td>
               </tr>
               <tr>
                 <td style="text-align:center;">
                   <!--<i class="fa fa-pencil fa-as-btn" style="color:green;"></i>-->
                   <img src="/img/home_clock_green.png" width="30" height="30"/>
                 </td>
-                <td colspan="3">出现时间大于8小时 或 9:00am前出现</td>
+                <td colspan="3">{{_ "Appears_for_more_than"}}</td>
               </tr>
               <tr>
                 <td style="text-align:center;">
                   <!--<i class="fa fa-pencil fa-as-btn" style="color:orangered;"></i>-->
                   <img src="/img/home_clock_orangered.png" width="30" height="30"/>
                 </td>
-                <td colspan="3">出现时间小于8小时 或 9:00am后出现</td>
+                <td colspan="3">{{_ "Appears_after_less"}}</td>
               </tr>
               <tr>
                 <td style="text-align:center;">
                   <!--<i class="fa fa-pencil fa-as-btn" style="color:red;"></i>-->
                   <img src="/img/home_clock_red.png" width="30" height="30"/>
                 </td>
-                <td colspan="3">记录到出但没记录到进 或 记录到两次进但没记录到出</td>
+                <td colspan="3">{{_ "Recorded_out_but_not"}}</td>
               </tr>
             </tbody>
           </table>
@@ -311,7 +311,7 @@
         {{else}}
           <div class="workstatusLoading">
             <img src="/loadError.png"/>
-            <div style="color: #888;font-size: 14px;">暂无报告，快去<span class="check_in_out" style="color: #37a7fe">打卡</span>吧！</div>
+            <div style="color: #888;font-size: 14px;">{{_ "No_report_yet_go_quickly"}}<span class="check_in_out" style="color: #37a7fe">{{_ "Punch"}}</span></div>
           </div>
         {{/if}}
       {{/if}}
@@ -324,18 +324,18 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">编辑今日简述</h4>
+        <h4 class="modal-title" id="myModalLabel">{{_ "Editor_brief_today"}}</h4>
       </div>
       <div class="modal-body">
         <form>
         <div class="form-group">
-          <textarea id="EditorWhatsUp" rows="5"  class="form-control" placeholder="编辑今日简述" style="height: auto !important;resize: none;"></textarea>
+          <textarea id="EditorWhatsUp" rows="5"  class="form-control" placeholder="Editor's Brief Today" style="height: auto !important;resize: none;"></textarea>
         </div>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default cancelWhatsUp" data-dismiss="modal">取消</button>
-        <button type="button" id="" class="btn btn-primary saveWhatsUp">保存</button>
+        <button type="button" class="btn btn-default cancelWhatsUp" data-dismiss="modal">{{_ "cancel"}}</button>
+        <button type="button" id="" class="btn btn-primary saveWhatsUp">{{_ "Save"}}</button>
       </div>
     </div>
   </div>
@@ -346,7 +346,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="selectDevicesInOutLabel">选择设备</h4>
+        <h4 class="modal-title" id="selectDevicesInOutLabel">{{_ "Select_device"}}</h4>
       </div>
       <div class="modal-body">
         <ul class="set-up comFadeIn">
@@ -357,7 +357,7 @@
               {{#if name}}
               <label style="margin-left:48px;">{{name}}</label>
               {{else}}
-              <label style="margin-left:48px;">未知设备</label>
+              <label style="margin-left:48px;">{{_ "Unknown_device"}}</label>
               {{/if}}
               <div class="value" style="float:right; margin:10px;">{{in_out}}<i class="fa fa-angle-right"></i></div>
           </li>

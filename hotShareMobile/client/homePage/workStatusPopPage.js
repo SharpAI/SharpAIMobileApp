@@ -60,7 +60,7 @@ var modifyStatusFun = function(group_id,in_out,taId){
     console.log(group_id);
     console.log(deviceCount);
     if(deviceCount === 0){
-      return PUB.toast('未找到该群组下，方向为"'+in_out+'"的设备');
+      return PUB.toast(TAPi18n.__("The_group_was_not_found_the_direction_is")+in_out+TAPi18n.__("device_of"));
     }
     if(deviceCount === 1){
       workStatusPopPage.close();
@@ -239,7 +239,7 @@ Template.workStatusPopPage.helpers({
         time_offset = _group.offsetTimeZone;
       }
       var fomatDate = date.shortTime(time_offset);
-      var isToday = fomatDate.indexOf('今天') > -1 ? true : false;
+      var isToday = fomatDate.indexOf(TAPi18n.__("Nowadays")) > -1 ? true : false;
       if (!isToday) {
         return 'bg-gray';
       }
@@ -304,7 +304,7 @@ Template.workStatusPopPage.helpers({
     if(this.whats_up && this.whats_up.length > 0){
       return this.whats_up[0];
     }
-    return '今天还没有工作安排...';
+    return TAPi18n.__("There_is_no_work_arrangement_today");
   },
   whatsup: function(){
     return whatsup.get();
@@ -358,7 +358,7 @@ Template.workStatusPopPage.events({
         return;
       }
     }
-    return PUB.toast('该监控组下暂无脸脸盒');
+    return PUB.toast(TAPi18n.__("No_face_box_under_the_monitoring_group"));
   },
   'click #closeStausPop': function(){
     return workStatusPopPage.close();
@@ -401,7 +401,7 @@ Template.workStatusPopPage.events({
       $set:{whats_up:whats_up}
     },function(err,num){
       if(err){
-        return PUB.toast('请重试');
+        return PUB.toast(TAPi18n.__("Please_try_again"));
       }
       var _group = group.get();
       var user = Meteor.user();
@@ -419,7 +419,7 @@ Template.workStatusPopPage.events({
         },
         to_type: 'group',
         type: 'text',
-        text: '更新了今日简述：\r\n'+content,
+        text: TAPi18n.__("Updated_today")+'\r\n'+content,
         create_time: new Date(),
         is_read: false,
         // send_status: 'sending'
@@ -657,7 +657,7 @@ Template.clusterWorkStatusPopPage.helpers({
         time_offset = _group.offsetTimeZone;
       }
       var fomatDate = date.shortTime(time_offset);
-      var isToday = fomatDate.indexOf('今天') > -1 ? true : false;
+      var isToday = fomatDate.indexOf(TAPi18n.__("Nowadays")) > -1 ? true : false;
       if (!isToday) {
         return 'bg-gray';
       }
@@ -715,7 +715,7 @@ Template.clusterWorkStatusPopPage.helpers({
     if(this.whats_up && this.whats_up.length > 0){
       return this.whats_up[0];
     }
-    return '今天还没有工作安排...';
+    return TAPi18n.__("There_is_no_work_arrangement_today");
   },
   whatsup: function(){
     return whatsup.get();

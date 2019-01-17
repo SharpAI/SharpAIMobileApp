@@ -7,19 +7,19 @@ loginFn = (id)->
     Session.set("searchContent","")
     #PostsSearch.cleanHistory()
     if err is 'RESET_LOGIN'
-      return navigator.notification.confirm('切换帐号失败~'
+      return navigator.notification.confirm(TAPi18n.__("Switching_account_failed")
         (index)->
           if index is 1 then loginFn id
-        '提示', ['知道了', '重新切换']
+        TAPi18n.__("prompt"), [TAPi18n.__("Got_it"), TAPi18n.__("Switch_back")]
       )
     else if err is 'NOT_LOGIN'
-      return navigator.notification.confirm('切换帐号时发生异常，需要重新登录您的帐号！'
+      return navigator.notification.confirm(TAPi18n.__("An_exception_occurred")
         ()->
           return Router.go '/loginForm'
-        '提示', ['重新登录']
+        TAPi18n.__("prompt"), [TAPi18n.__("re_register")]
       )
     else if err is 'WAIT_TIME'
-      return navigator.notification.confirm '切换帐号太频繁了（间隔至少10秒），请稍后再试！', null, '提示', ['知道了']
+      return navigator.notification.confirm TAPi18n.__("Switch_accounts_too_often"), null, TAPi18n.__("prompt"), [TAPi18n.__("Got_it")]
 
     window.plugins.userinfo.setUserInfo(
       Meteor.userId()
@@ -39,7 +39,7 @@ loginFn = (id)->
       Session.setPersistent('myFollowToCount',Counts.get('myEmailFollowerCount'))
 
     is_loading.set([])
-    navigator.notification.confirm '切换帐号成功~', null, '提示', ['知道了']
+    navigator.notification.confirm '切换帐号成功~', null, TAPi18n.__("prompt"), [TAPi18n.__("Got_it")]
 
 Template.accounts_management.rendered=->
   is_loading = new ReactiveVar([])
@@ -87,7 +87,7 @@ Template.accounts_management.helpers
 Template.accounts_management.events
   'click dl.my_account': ->
     if is_loading.get().length > 0
-      return navigator.notification.confirm '正在切换中，请稍后在试~', null, '提示', ['知道了']
+      return navigator.notification.confirm TAPi18n.__("Switching_please_try_later"), null, TAPi18n.__("prompt"), [TAPi18n.__("Got_it")]
     slef = this
     unless Meteor.status().connected
       is_loading.set([@toUserId])
@@ -108,7 +108,7 @@ Template.accounts_management.events
     #console.log(this._id)
     #console.log(e.currentTarget)
     PUB.confirm(
-      '确定要删除吗？'
+      TAPi18n.__("You_sure_you_want_to_delete_it")
       ()->
         Meteor.call(
           'removeAssociatedUserNew'
@@ -144,15 +144,15 @@ Template.accounts_management_addnew.events
       $(e.target).find('input[type=submit]').removeAttr('disabled').addClass('active').val('添加')
       if data and data.status is 'ERROR'
         if data.message is 'Invalid Username'
-          PUB.toast('用户不存在')
+          PUB.toast(TAPi18n.__("User_does_not_exist"))
         else if data.message is 'Can not add their own'
-          PUB.toast('不能添加自己')
+          PUB.toast(TAPi18n.__("Cant_add_yourself"))
         else if data.message is 'Exist Associate User'
-          PUB.toast('该用户已关联')
+          PUB.toast(TAPi18n.__("The_user_is_already_associated"))
         else if data.message is 'Invalid Password'
-          PUB.toast('密码不正确')
+          PUB.toast(TAPi18n.__("The_password_is_incorrect"))
         else
-          PUB.toast('用户名或密码不正确')
+          PUB.toast(TAPi18n.__("Username_or_password_is_incorrect"))
       else
         Router.go '/my_accounts_management'
     );

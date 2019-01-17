@@ -8,7 +8,7 @@ Template.groupDevices.helpers({
     if(firmwareVersion){
       return firmwareVersion
     } else {
-      return '未知'
+      return TAPi18n.__("unknown")
     }
   },
   isChecked: function(autoUpdate){
@@ -52,7 +52,7 @@ Template.groupDevices.helpers({
 
 Template.groupDevices.events({
   'click .latest_update': function(e,t){
-    PUB.toast('您的脸脸安全盒当前是最新版本');
+    PUB.toast(TAPi18n.__("Your_face_security_box_is_currently_the_latest_version"));
     return
   },
   'click #switch_update': function(e,t){
@@ -108,7 +108,7 @@ Template.groupDevices.events({
     Meteor.call('change_device_name', this._id, this.uuid, this.groupId, newName, function (err) {
       if (err) {
         console.log(err);
-        PUB.toast('修改失败，请重试');
+        PUB.toast(TAPi18n.__("The_modification_failed_please_try_again"));
       }else{
         Session.set('isEditing',null);
       }
@@ -124,7 +124,7 @@ Template.groupDevices.events({
         console.log(err);
         return;
       }
-      PUB.toast('删除成功');
+      PUB.toast(TAPi18n.__("successfully_deleted"));
     })
   },
   'click .back': function(){
@@ -138,7 +138,7 @@ Template.groupDevices.events({
   'click .goEdit':function(){
     var self = this;
     if(!self.name){
-      self.name = '未知设备';
+      self.name = TAPi18n.__("Unknown_device");
     }
     Session.set('curDevice',self);
     var group_id = Router.current().params._id;
@@ -157,17 +157,17 @@ Template.setDevicename.events({
     e.preventDefault();
     var newName = e.target.text.value;
     if(newName == ''){
-      PUB.toast('请输入设备名');
+      PUB.toast(TAPi18n.__("Please_enter_the_device_name"));
       return;
     }
     if(newName == this.name){
-      PUB.toast('设备名没有修改');
+      PUB.toast(TAPi18n.__("Device_name_has_not_been_modified"));
       return;
     }
     Meteor.call('change_device_name',this._id,this.uuid,this.groupId,newName,function(err){
       if(err){
         console.log(err);
-        PUB.toast('修改失败，请重试');
+        PUB.toast(TAPi18n.__("The_modification_failed_please_try_again"));
       }else{
         return PUB.back();
       }

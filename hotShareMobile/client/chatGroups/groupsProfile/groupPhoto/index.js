@@ -96,7 +96,7 @@ Template.groupPhoto.helpers({
     return arrEnglish;
   },
   conMainStyle: function(){
-    if(type.get() === '未标注'){
+    if(type.get() === TAPi18n.__("Unlabeled")){
       if(selected.get().length > 0){
         return 'bottom: 100px;';
       } else {
@@ -126,7 +126,7 @@ Template.groupPhoto.events({
       var localTask = [];
       var wait_labels = [];
 
-      $(e.currentTarget).html('处理中...');
+      $(e.currentTarget).html(TAPi18n.__("Processing"));
       var select = selected.get();
       select.map(function(item){
         var ids = item.split('|');
@@ -164,11 +164,11 @@ Template.groupPhoto.events({
       console.log('local task:', localTask);
 
       Meteor.call('upLabels', t.data.id, nameOrReason, wait_labels,type, function(err, res){
-        var flag = type === 'label' ? '标注' : '删除';
+        var flag = type === 'label' ? TAPi18n.__("Label") : TAPi18n.__("delete");
         if (err || !res){
           $(e.currentTarget).html(flag);
           $('.btn-default').show();
-          return alert(flag + '失败~');
+          return alert(flag + TAPi18n.__("Failure"));
         }
 
         localTask.map(function(task){
@@ -177,7 +177,7 @@ Template.groupPhoto.events({
           SimpleChat.Messages.update({_id: task._id}, {$set: $set}, function(err, num){
             if (err || num <= 0)
               return;
-            var flag_label = type === 'label' ? nameOrReason : '已删';
+            var flag_label = type === 'label' ? nameOrReason : TAPi18n.__("Deleted");
             var is_delete = type === 'label' ? false : true;
             // 生成群相册的标注信息（一张照片一条）
             SimpleChat.GroupPhotoLabel.insert({
@@ -240,7 +240,7 @@ Template.groupPhoto.events({
         $(e.currentTarget).html(flag);
         $('.btn-default').show();
         selected.set([]);
-        alert(flag+'完成~');
+        alert(flag+TAPi18n.__("done"));
         loadMoreImg();
       });
 
@@ -273,7 +273,7 @@ Template.groupPhoto.events({
       Meteor.call('remove-person-face',lists, function(err, res){
         if(err){
           console.log('groupPhoto labeled del Err:'+err);
-          return PUB.toast('删除失败，请重试!');
+          return PUB.toast(TAPi18n.__("The_deletion_failed_please_try_again"));
         }
         for(var i=0; i < lists.length; i++) {
           // 告诉平板， 这不是a
@@ -315,7 +315,7 @@ var loadMoreImg = function(){
 }
 
 // lazyload
-var lazyloadInitTimeout = {'未标注': null, '已标注': null,'labelDataset':null};
+var lazyloadInitTimeout = {'TAPi18n.__("Unlabeled")': null, 'TAPi18n.__("Labeled")': null,'labelDataset':null};
 var lazyloadInit = function($ul, type){
   lazyloadInitTimeout[type] && Meteor.clearTimeout(lazyloadInitTimeout[type]);
   lazyloadInitTimeout[type] = Meteor.setTimeout(function(){
@@ -345,7 +345,7 @@ Template.groupPhoto.onRendered(function(){
       var top = $(this).scrollTop();
       if ($(this).scrollTop() <= 0){
         var limit = 0;
-        if (type.get() === '未标注'){
+        if (type.get() === TAPi18n.__("Unlabeled")){
           limit = limit1.get() + limitSetp;
           limit1.set(limit);
           SimpleChat.withMessageHisEnable && SimpleChat.loadMoreMesage({is_people: true, 'to.id': data.id,admin_label: {$ne: true}}, {limit: limit, sort: {create_time: -1}}, limit);
@@ -354,13 +354,13 @@ Template.groupPhoto.onRendered(function(){
           limit2.set(limit);
           Meteor.subscribe('group_person',group_id, limit2.get());
         }
-        console.log('==已经滚动到顶部了 '+type.get()+' ==');
+        console.log('=='+ TAPi18n.__("Already_scrolled_to_the_top")+type.get()+' ==');
       } else if (height-top <= $(this).height() -20){
-        if (type.get() === '未标注')
+        if (type.get() === TAPi18n.__("Unlabeled")
           limit1.set(limit1.get()+limitSetp);
         else
           limit2.set(limit2.get()+50);
-        console.log('==已经滚动到底部了 '+type.get()+' ==');
+        console.log('=='+ TAPi18n.__("Already_scrolled_to_the_bottom")+type.get()+' ==');
       }
     });
   });
@@ -396,7 +396,7 @@ Template.groupPhotoImg.helpers({
 
 Template.groupPhotoImg.events({
   'click li': function(e, t){
-    if (type.get() != '未标注')
+    if (type.get() != TAPi18n.__("Unlabeled"))
       return;
 
     var id = e.currentTarget.id + '|' + this._id;
@@ -413,14 +413,14 @@ Template.groupPhotoImg.events({
 
 Template.groupPhoto.open = function(id){
   view && Blaze.remove(view);
-  type.set('未标注');
+  type.set(TAPi18n.__("Unlabeled"));
   limit1.set(limitSetp);
   limit2.set(50);
   selected.set([]);
 
   var data = {
     id: id,
-    limit: type.get() === '未标注' ? limit1.get() : limit2.get(),
+    limit: type.get() === TAPi18n.__("Unlabeled") ? limit1.get() : limit2.get(),
     // list1: SimpleChat.Messages.find({is_people: true, 'to.id': id}, {limit: limit1.get(), sort: {create_time: 1}}),
     // list2: SimpleChat.Messages.find({is_people: true, 'to.id': id}, {limit: limit1.get(), sort: {create_time: 1}}),
     type: type.get()
@@ -481,7 +481,7 @@ Template.groupPhotoImg1.events({
         return $('._checkGroupDevice').fadeIn();
       }
     }
-    return PUB.toast('该监控组下暂无脸脸盒');
+    return PUB.toast(TAPi18n.__("No_face_box_under_the_monitoring_group"));
 
   },
   'click li': function(e){
@@ -489,9 +489,9 @@ Template.groupPhotoImg1.events({
     
     // remove or reName Person
     var options = {
-      title: '请选择',
-      buttonLabels: ['查看此人的全部照片','删除此人','重命名此人'],
-      addCancelButtonWithLabel: '取消',
+      title: TAPi18n.__("please_choose"),
+      buttonLabels: [TAPi18n.__("View_all_photos_of_this_person"),TAPi18n.__("Delete_this_person"),TAPi18n.__("Rename_this_person")],
+      addCancelButtonWithLabel: TAPi18n.__("cancel"),
       androidEnableCancelButton: true
     };
 
@@ -501,12 +501,12 @@ Template.groupPhotoImg1.events({
           return Template.person_labelDataset.open(self.group_id,self.name);
           break;
         case 2:
-          var confirmTitle = '要删除「'+self.name+'」吗?';
+          var confirmTitle = TAPi18n.__("To_delete")+self.name+'」?';
           PUB.confirm(confirmTitle, function() {
             Meteor.call('removePersonById', self._id, function(error, result) {
               if (error) {
                 console.log(error);
-                return PUB.toast('删除失败，请重试！');
+                return PUB.toast(TAPi18n.__("The_deletion_failed_please_try_again"));
               }
               var trainsetObj = {
                 group_id: self.group_id,
@@ -517,29 +517,29 @@ Template.groupPhotoImg1.events({
               sendMqttMessage('/device/'+self.group_id, trainsetObj);
               //重新训练
               retrain(self.group_id);
-              return PUB.toast('已删除');
+              return PUB.toast(TAPi18n.__("Deleted"));
             });
           });
           break;
         case 3:
-          var promptTip = '输入一个新的姓名以重命名此Person';
-          var promptTitle = '重命名「'+self.name+'」';
+          var promptTip = TAPi18n.__("Enter_a_new_name_to_rename_this_Person");
+          var promptTitle = TAPi18n.__("Rename")「'+self.name+'」';
           navigator.notification.prompt(promptTip, function(results) {
             var newName = results.input1;
             newName = newName.replace(/(^\s*)|(\s*$)/g,"");
             if (results.buttonIndex == 2) {
               if (!newName) {
-                return PUB.toast('请输入姓名');
+                return PUB.toast(TAPi18n.__("Please_type_in_your_name"));
               }
               Meteor.call('renamePerson',self._id, newName,function(err, res) {
                 if (err) {
                   console.log('==sr==,error = '+err);
-                  return PUB.toast('重命名失败')
+                  return PUB.toast(TAPi18n.__("Rename_failed"))
                 }
-                return PUB.toast('已将「'+self.name+'」重命名为「'+newName+'」');
+                return PUB.toast(TAPi18n.__("Has_been")+self.name+TAPi18n.__("Renamed_to")+newName+'」');
               });
             }
-          }, promptTitle, ['取消','重命名'], '');
+          }, promptTitle, [TAPi18n.__("cancel"),TAPi18n.__("Rename_this_person")], '');
           break;
         default:
           break;
@@ -710,7 +710,7 @@ Template.person_labelDataset.events({
       Meteor.call('remove-person-face',lists, function(err, res){
         if(err){
           console.log('groupPhoto labeled del Err:'+err);
-          return PUB.toast('删除失败，请重试!');
+          return PUB.toast(TAPi18n.__("The_deletion_failed_please_try_again"));
         }
         for(var i=0; i < lists.length; i++) {
           // 告诉平板， 这不是a

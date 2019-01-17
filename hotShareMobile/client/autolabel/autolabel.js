@@ -43,7 +43,7 @@ Template.autolabel.events({
         var person_name = t.find('.input-box').value;
         console.log(person_name);
         if(!person_name){
-            return PUB.toast('请输入标注人名称');
+            return PUB.toast(TAPi18n.__("Please_enter_the_name_of_the_caller"));
         }
         btn_pro.set(1);
         //记录时间

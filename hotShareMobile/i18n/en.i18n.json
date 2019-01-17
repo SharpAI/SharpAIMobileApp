@@ -875,5 +875,485 @@
 
   ///home/czizic/lailema/hotShare/hotShareMobile/client/homePage/homePage.js
   //点击此处创建监控组
-  "Click_here_to_create_a_monitoring_group": "Click here to create a monitoring group"
+  "Click_here_to_create_a_monitoring_group": "Click here to create a monitoring group",
+
+  ///home/czizic/lailema/hotShare/hotShareMobile/client/main.js
+  //登录超时，需要重新登录~
+  "Login_timed_out": "Login timed out, need to log in again~",
+  //能及时收到出现提醒
+  "Can_receive_reminders_in_time": "Can Receive Reminders In Time",
+  //开启推送
+  "Open_push": "Open push",
+  //以后再说
+  "talk_about_it_later": "Talk About It Later",
+  //马上开启
+  "Open_now": "Open Now",
+
+  ///home/czizic/lailema/hotShare/hotShareMobile/client/public.coffee
+  //提示
+  "prompt": "Prompt",
+
+  ///home/czizic/lailema/hotShare/hotShareMobile/client/registration/signupForm/deal.html
+  //【首部及导言】
+  "First_and_Introduction": "[First And Introduction]",
+  //欢迎您使用来了吗手机应用！
+  "Welcome_to_use_the_mobile_app!": "Welcome To Use The Mobile App!",
+  //来了吗手机应用（以下简称
+  "Is_it_a_mobile_app": "Is it a mobile app (hereafter referred to as",
+  //本服务
+  "This_service": "This Service",
+  //您应当阅读并遵守《来了吗服务告知》（以下简称
+  "You_should_read_and_abide": "You should read and abide by 'Where is the service notification' (hereinafter referred to as",
+  //本告知
+  "This_notice": "This Notice",
+  //。请您务必审慎阅读、充分理解各条款内容，特别是限制或免除责任的相应条款，以及开通或使用某项服务的单独文件，并选择接受或不接受。限制或免除责任条款可能以加粗形式提示您注意。
+  "Please_be_sure_to_read": ". Please be sure to read carefully and fully understand the terms and conditions, especially the corresponding terms of limitation or exemption, as well as separate documents for opening or using a service, and choose to accept or not accept. Restrictions or exemptions from liability may prompt you to pay attention in bold form.",
+  //除非您已阅读并接受本告知所有条款，否则您无权使用本服务。您对本服务的登陆、查看、发布信息等行为即视为您已阅读并同意受本告知的约束。
+  "You_are_not_authorized": "You are not authorized to use the Service unless you have read and accepted all the terms of this notice. Your access to, viewing, and posting of the Service is deemed to have been read and agreed to be bound by this notice.",
+  //如果您未满
+  "If_you_are_not_full": "If you are not full",
+  //周岁，请在法定监护人的陪同下阅读本告知，并特别注意未成年人使用条款。
+  "At_the_age_of_one": "At the age of one, please read this notice accompanied by a legal guardian and pay special attention to the terms of use for minors.",
+  //一、【告知的范围】
+  "the_scope_of_the_notification": "First, [the scope of the notification]",
+  //本告知内容为您与来了吗之间关于使用本服务所应遵守的事宜。
+  "The_content_of_this_notice": "The content of this notice is between you and the company about the use of this service.",
+  //二、【用户个人信息保护】
+  "user_personal_information_protection": "Second, [user personal information protection]",
+  //您在申请本服务过程中，需要填写一些必要的信息，请保持这些信息的及时更新，以便来了吗向您提供服务。若国家法律法规有特殊规定的，您需要填写真实的身份信息。若您填写的信息不完整或不准确，则可能无法使用服务或在使用过程中受到限制。
+  "In_the_process_of_applying": "In the process of applying for this service, you need to fill in some necessary information, please keep this information updated in time so that you can come to provide services to you. If the national laws and regulations have special provisions, you need to fill in the real identity information. If the information you fill out is incomplete or inaccurate, you may not be able to use the service or be restricted during use.",
+  //本服务与用户一同致力于个人信息的保护，保护用户个人信息是的一项基本原则。未经您的同意，来了吗不会向来了吗平台商户、来了吗以外的任何监控组、组织和个人披露您的个人信息，但您违反本告知约定导致他人投诉或者主管机关追究责任，以及法律法规另有规定的除外。
+  "This_service_is_dedicated": "This service is dedicated to the protection of personal information and the protection of personal information of users is a basic principle. If you come, without your consent, will you not disclose your personal information to any monitoring group, organization or individual other than the platform merchants, who have come, but you violate the provisions of this notice to cause others to complain or the competent authorities to investigate the responsibility, Except as otherwise provided by laws and regulations.",
+  //您理解并同意：鉴于本服务为网络信息服务，为改善用户体验，来了吗可以：
+  "You_understand_and_agree": "You understand and agree that in view of the fact that this service is a network information service, to improve the user experience, is it possible to:",
+  //对您提交的信息进行使用，该使用结果可能不准确，请您在使用相关服务时谨慎独立判断；
+  "The_use_of_the_information": "The use of the information submitted by you may not be accurate. Please use your own discretion when using the relevant services;",
+  //）对您的昵称、头像以及在本服务中的相关操作信息等信息进行使用，并可通过来了吗服务或来了吗服务中的第三方提供的服务向您本人、其他用户展示。
+  "Use_your_nickname": ") Use your nickname, avatar, and related information about the operation of the service, and can you come by the service or come? The service provided by the third party in the service is displayed to you and other users.",
+  //为更好的保护您的个人信息，您应尽快、充分了解本服务的相关功能、规则和设置，同时，您应合理设定您的个人信息的公开范围。
+  "In_order_to_better_protect_your": "In order to better protect your personal information, you should fully understand the relevant functions, rules and settings of this service as soon as possible, and you should reasonably set the disclosure scope of your personal information.",
+  //您理解并同意：为改善用户体验，来了吗可能会将您的个人信息的公开范围默认设置为公开，该默认设置会导致他人接触或获取您的个人信息；如您希望变更默认设置，请您在相关服务页面予以变更。
+  "You_understand_and_agree_that_in": "You understand and agree that in order to improve the user experience, it may be that the publicity of your personal information may be set to public by default, which may lead to contact or access to your personal information; if you wish to change the default settings, please You change it on the relevant service page.",
+  //您应对通过本服务了解、接收或可接触到的包括但不限于其他用户在内的任何人的个人信息予以充分尊重，您不应以搜集、复制、存储、传播或以其他任何方式使用其他用户的个人信息，否则，由此产生的后果由您自行承担。
+  "You_should_fully_respect": "You should fully respect the personal information of anyone, including but not limited to other users, who are aware of, received or accessible through the Service, and you should not collect, copy, store, transmit or otherwise use other users. Personal information, otherwise, the consequences are at your own risk.",
+  //三、【使用规范】
+  "usage_of_use": "Third, [usage of use]",
+  //本服务仅供您个人以非商业目的使用，除非经来了吗书面许可，您不得进行以下行为：
+  "This_service_is_for": "This service is for your personal, non-commercial use only, and you may not:",
+  //为实现恶意（包括但不限于超出正常的好友沟通、交流等非法、不正当目的）传播推广、骚扰等任何信息的目的，通过自己添加或诱导他人添加等任何方式使自己与其他用户形成好友关系（好友关系包括但不限于单向好友关系和双向好友关系，下同）；
+  "In_order_to_achieve_malicious": "In order to achieve malicious, (including but not limited to, illegal, improper or inappropriate purposes such as communication, communication, etc.), to spread or harass any information, you can make friends with other users by adding or inducing others to add. (Friend relationship includes but not limited to one-way friend relationship and two-way friend relationship, the same below);",
+  //以发送邮件、连锁邮件、短信、即时消息、日志等任何方式或利用本服务的评论、个人动态、访客、赞等任何功能，发布、传播包含广告、宣传、促销等内容的信息；
+  "Publish_and_disseminate": "Publish and disseminate information including advertisements, advertisements, promotions, etc. in any way, such as sending emails, chain mails, text messages, instant messages, logs, etc., or by using any of the services' comments, personal updates, visitors, praises, etc.",
+  //将本服务再次许可他人使用；
+  "the_service_to_others": "Re-license the service to others;",
+  //其他未经来了吗书面许可的行为。
+  "Other_acts_that_have_not_come": "Other acts that have not come, written permission.",
+  //四、【第三方产品和服务】
+  "third_party_products_and_services": "Fourth, [third-party products and services]",
+  //本服务可能包含第三方提供的产品或服务。当您使用第三方提供的产品或服务时，可能会另有相关的协议或规则，您同样应当认真阅读并遵守。
+  "This_service_may_include_products": "This service may include products or services offered by third parties. When you use a product or service provided by a third party, there may be other relevant agreements or rules that you should read and follow.",
+  //如您在使用第三方产品或服务时发生任何纠纷的，请您与第三方直接联系，来了吗不承担任何责任，但可根据需要会依法提供必要的协助。
+  "If_you_have_any_disputes_when": "If you have any disputes when using third-party products or services, please contact the third party directly. If you come, do not assume any responsibility, but you can provide necessary assistance according to law.",
+  //五、【数据的储存】
+  "Storage_of_data": "V. [Storage of data]",
+  //来了吗不对您在本服务中相关数据的删除或储存失败负责，您应对重要数据在本服务之外自行进行备份。
+  "Is_it_not_responsible_for": "Is it not responsible for the deletion or storage failure of your data in this service? You should back up important data outside the service.",
+  //来了吗有权根据实际情况自行决定在服务器上对您在本服务中的数据的最长储存期限、为单个用户分配的最大存储使用空间等。您可根据自己的需要自行备份本服务中的相关数据。
+  "The_right_to_decide": "Is it right? The right to decide on the server the maximum storage period of your data in the service, the maximum storage space allocated for a single user, etc. according to the actual situation. You can back up the relevant data in this service according to your own needs.",
+  //如果您的服务被终止或取消，来了吗可以从服务器上永久地删除您的数据。服务终止或取消后，来了吗没有义务向您返还或恢复任何数据。
+  "If_your_service_is_terminated": "If your service is terminated or canceled, you can permanently delete your data from the server. After the service is terminated or cancelled, is it not obligated to return or restore any data to you?",
+  //六、【用户发布的内容】
+  "user_published_content": "Sixth, [user-published content]",
+  //您可以在本服务平台上发布和共享信息，但您应当保证拥有这些信息的合法权利或已经得到权利人的授权。
+  "You_may_post_and_share": "You may post and share information on the Service Platform, but you warrant that you have the legal rights to do so or have been authorized by the right holder.",
+  //在本服务中，您若将所发布的内容设置为允许转发、评论或回复等，即表明您同意向他人公开并许可他人对您所发布的内容有复制和传播的权利。
+  "In_the_Service_if_you_set": "In the Service, if you set the content to be forwarded, commented or replied, you agree to disclose and permit others to copy and distribute the content you post.",
+  //您的设置将导致您发布的内容在更多地方展示并被更多人浏览，您可以通过改变相关设置来变更您的许可。
+  "Your_settings_will_cause": "Your settings will cause your published content to be displayed in more places and viewed by more people, and you can change your license by changing the settings.",
+  //您应当清楚如您发布的内容曾经设置为允许转发、评论或回复等，该内容被他人进行前述操作后您将无法控制其传播。
+  "You_should_be_aware_that": "You should be aware that if your content has been set up to allow forwarding, comments, or replies, you will not be able to control the content after it has been previously manipulated by others.",
+  //来了吗特别提醒您注意，鉴于本服务的社交服务特性及用户的社交需求，您发布的部分内容的公开范围，本服务可能默认设置为公开。该默认设置，会允许使用本服务的其他用户浏览、转发、评论等，若您想改变该默认设置，请您在相关设置中进行改变。
+  "Are_you_here_to_remind": "Are you here to remind you that due to the social service features of the service and the social needs of users, the scope of the content of some of your published content may be set to be public by default. This default setting allows other users of the service to browse, forward, comment, etc. If you want to change this default setting, please make changes in the relevant settings.",
+  //七、【用户行为规范】
+  "user_behavior_specification": "Seven, [user behavior specification]",
+  //您在使用本服务时不得利用本服务从事以下行为，包括但不限于：
+  "You_may_not_use_the_Service": "You may not use the Service to perform the following actions while using the Service, including but not limited to:",
+  //发布、传送、传播、储存违反国家法律、危害国家安全统一、社会稳定、公序良俗、社会公德以及侮辱、诽谤、淫秽、暴力的内容；
+  "Publish_transmit_disseminate": "Publish, transmit, disseminate, and store content that violates national laws, endangers national security, social stability, public order, social morality, and insults, defamation, obscenity, and violence;",
+  //发布、传送、传播、储存侵害他人名誉权、肖像权、知识产权、商业秘密等合法权利的内容；
+  "Publish_transmit_disseminate_and": "Publish, transmit, disseminate, and store content that infringes on the legal rights of others, such as the right to reputation, the right to portrait, intellectual property, and trade secrets;",
+  //虚构事实、隐瞒真相，误导、欺骗他人；
+  "Fictional_facts": "Fictional facts, concealing the truth, misleading, deceiving others;",
+  //发表、传送、传播广告信息及垃圾信息；
+  "Publish_transmit_and_disseminate": "Publish, transmit, and disseminate advertising information and spam;",
+  //从事其他违反法律法规、政策及公序良俗、社会公德等的行为。
+  "Engage_in_other": "Engage in other acts that violate laws, regulations, policies, public order, and social morality.",
+  //如果来了吗发现或收到他人举报您发布的信息违反本告知约定的，来了吗有权进行独立判断并采取技术手段予以删除、屏蔽或断开链接。同时，来了吗有权视用户的行为性质，采取包括但不限于限制、暂停或终止您使用本服务的全部或部分功能，追究法律责任等措施。
+  "If_you_come_find_or": "If you come, find or receive reports from others that you have violated this notice, you have the right to make independent judgments and take technical measures to delete, block or disconnect. At the same time, if you come, you have the right to take measures including, but not limited to, restricting, suspending or terminating all or part of your use of the service, and pursuing legal liability, depending on the nature of the user's behavior.",
+  //若您违反本告知及本服务相关协议、规则或相关法规政策，被投诉多次的，来了吗有权不经您同意而直接解除您的好友关系。
+  "If_you_have_violated_this": "If you have violated this notice and the relevant agreements, rules or related laws and regulations of this service, and have been complained many times, have come to have the right to directly cancel your friendship without your consent.",
+  //您理解并同意，若您的单向或双向好友
+  "You_understand_and": "You understand and agree that if you are a one-way or two-way friend",
+  //简称
+  "Abbreviation": "Abbreviation",
+  //违规用户
+  "Violating_users": "Violating Users",
+  //违反《来了吗服务告知》或相关法规政策的，来了吗将依照相关文件、规则对违规用户进行处理，由此可能影响您与违规用户之间的信息交流、好友关系、好友动态等数据或您对本服务的使用。
+  "Is_it_service_notification": "Violation of 'Is it service notification' or related regulations and policies, will it be processed according to relevant documents and rules, which may affect the information exchange between you and the users who violate the rules, friends, friends and other data Or your use of the Service.",
+  //您理解并同意这是来了吗监控组为了维护健康良好的网络环境而采取的必要措施，若由于来了吗按照前述约定对违规用户采取措施而对您产生影响或任何损失的，您同意不追究来了吗的任何责任或不向来了吗主张任何权利。
+  "Do_you_understand_and_agree_that": "Do you understand and agree that this is the case? The monitoring group has taken the necessary measures to maintain a healthy and healthy network environment. If it is due to the above-mentioned agreement to take measures against the users in violation of the foregoing, it will affect you or any loss, you agree not to Have you been held accountable for any responsibility or not to claim any rights?",
+  //您违反本条约定，导致任何第三方损害的，您应当独立承担责任；来了吗因此遭受损失的，您也应当一并赔偿。
+  "If_you_violate_any_of": "If you violate any of the provisions of this article and cause damage to any third party, you shall be solely responsible; if you have suffered losses, you shall also compensate them.",
+  //八、【风险与免责】
+  "risk_and_exemption": "Eight, [risk and exemption]",
+  //基于互联网的开放性和社交网络服务的传播特殊性，来了吗特别提醒您谨慎注意以下风险：
+  "Internet_based_openness": "Internet-based openness and the specificity of the spread of social networking services, especially to remind you to pay attention to the following risks:",
+  //本服务仅提供一个在线资讯服务及社交的平台，您应当对其他用户使用本服务所发布的内容进行独立判断并承担因依赖该内容而引起的所有风险，包括但不限于因对内容的正确性、完整性或实用性的依赖而产生的风险以及因您个人信息被其他用户获知而带来的风险。您了解并确认，来了吗不对本服务用户之间的纠纷承担任何责任。
+  "This_service_provides_only_one": "This service provides only one online information service and social platform. You should independently judge the content published by other users using the service and assume all risks arising from relying on the content, including but not limited to the correctness of the content. Risks arising from the reliance on integrity, or utility, and the risks associated with your personal information being known to other users. You understand and confirm that it is here and will not be responsible for any disputes between users of this service.",
+  //您在使用本服务过程中所发布的内容有可能会被第三方复制、转载、修改或做其他用途，脱离您的预期和控制，您必须充分意识此类风险的存在，来了吗对由此产生的纠纷不予负责。
+  "Your_content_posted_during": "Your content posted during the use of the Service may be copied, reproduced, modified or otherwise used by third parties. From your expectations and control, you must be fully aware of the existence of such risks. The resulting dispute is not responsible.",
+  //请您切勿在使用本服务时透露任何涉及财产、本服务帐户及密码等重要信息，否则，由此带来的损失由您自行承担。
+  "Please_do_not_disclose_any": "Please do not disclose any important information related to property, service account and password when using this service. Otherwise, the losses will be borne by you.",
+  //由于您或其他用户违反本服务相关规则导致被来了吗依约处理的，可能会对您在本服务中的发布信息、好友信息等数据造成影响。
+  "If_you_or_another_user_violates": "If you or another user violates the rules of this service and is caused by the contract, it may affect your posting information, friend information and other data in the service.",
+  //来了吗不能对用户发表的文章和评论的正确性进行保证。用户在来了吗发表的内容仅表明其个人的立场和观点，并不代表来了吗的立场或观点。作为内容的发表者，需自行对所发表内容负责，因所发表内容引发的一切纠纷，由该内容的发表者承担全部法律及连带责任。来了吗不承担任何法律及连带责任。
+  "It_is_impossible_to_guarantee": "Is it coming? It is impossible to guarantee the correctness of articles and comments published by users. The content that the user is presenting only indicates his or her personal position and opinion, and does not represent the position or viewpoint of the coming. As the content publisher, it is the responsibility of the content to be published. All the disputes arising from the published content shall be the legal and joint responsibility of the publisher of the content. Have you come to take on any legal and joint responsibility?",
+  //来了吗不保证网络服务一定能满足用户的要求，也不保证网络服务不会中断，对网络服务的及时性、安全性、准确性也都不作保证。
+  "It_does_not_guarantee_that_the": "Is it coming? It does not guarantee that the network service will meet the requirements of the users, nor does it guarantee that the network services will not be interrupted, and the timeliness, security and accuracy of the network services are not guaranteed.",
+  //九、【本服务的软件形式】
+  "software_form_of_this_service": "Nine, [software form of this service]",
+  //来了吗和您还应遵守本条款的以下约定。
+  "Are_you_here_and_you_should": "Are you here and you should also abide by the following conventions of this clause?",
+  //来了吗可能为不同的终端设备开发不同的软件版本，您应当根据实际情况选择下载合适的版本进行安装。
+  "Is_it_possible_to_develop_different": "Is it possible to develop different software versions for different terminal devices? You should choose to download the appropriate version for installation according to the actual situation.",
+  //您可以直接从来了吗的网站上获取软件，也可以从得到来了吗授权的第三方获取。如果您从未经来了吗授权的第三方获取软件或与软件名称相同的安装程序，来了吗无法保证该软件能够正常使用，并对因此给您造成的损失不予负责。
+  "You_can_get_the_software_directly": "You can get the software directly from the website you have obtained, or you can get it from a third party who has obtained it. If you obtain software or an installation program with the same name as the software from a third party that has not been authorized, it is not guaranteed that the software will work properly and will not be liable for any damage caused.",
+  //为了增进用户体验、完善服务内容，来了吗将不时提供软件更新版本升级。
+  "In_order_to_enhance_the_user": "In order to enhance the user experience and improve the service content, will you come to provide software update version upgrade from time to time.",
+  //为了改善用户体验，并保证服务的安全性和功能的一致性，来了吗有权不经向您特别通知而对软件进行更新，或者对软件的部分功能效果进行改变或限制。
+  "In_order_to_improve_the_use": "In order to improve the user experience and ensure the security and consistency of the service, you have the right to update the software without special notice to you, or to change or limit some of the software's functional effects.",
+  //软件新版本发布后，旧版软件可能无法使用。来了吗不保证旧版软件继续可用及相应的客户服务，请您随时核对并下载最新版本。
+  "Older_versions_of_the_software": "Older versions of the software may not be available after the new version of the software is released. Is there any guarantee that the old software will continue to be available and the corresponding customer service? Please check and download the latest version at any time.",
+  //除非法律允许或来了吗书面许可，您不得从事下列行为：
+  "You_may_not_engage_in": "You may not engage in the following acts unless permitted by law or by permission in writing:",
+  //删除软件及其副本上关于著作权的信息；
+  "Remove_information_about": "Remove information about copyright on the software and its copies;",
+  //对软件进行反向工程、反向汇编、反向编译，或者以其他方式尝试发现软件的源代码；
+  "Reverse_engineering_reverse": "Reverse engineering, reverse assembling, decompiling, or otherwise attempting to discover the source code of the software;",
+  //对来了吗拥有知识产权的内容进行使用、出租、出借、复制、修改、链接、转载、汇编、发表、出版、建立镜像站点等；
+  "create_mirror_sites_for": "Use, rent, lend, copy, modify, link, reproduce, compile, publish, publish, and create mirror sites for content that has intellectual property rights;",
+  //对软件或者软件运行过程中释放到任何终端内存中的数据、软件运行过程中客户端与服务器端的交互数据，以及软件运行所必需的系统数据，进行复制、修改、增加、删除、挂接运行或创作任何衍生作品，形式包括但不限于使用插件、外挂或非经来了吗授权的第三方工具
+  "running_the_data_released": "Copying, modifying, adding, deleting, attaching or running the data released to the memory of any terminal during the running of the software or software, the interaction data between the client and the server during the running of the software, and the system data necessary for the software to run. Create any derivative work, including but not limited to third-party tools that use plug-ins, plug-ins, or non-commissioned licenses.",
+  //服务接入软件和相关系统；
+  "Service_access_software_and_related_systems;": "Service access software and related systems;",
+  //通过修改或伪造软件运行中的指令、数据，增加、删减、变动软件的功能或运行效果，或者将用于上述用途的软件、方法进行运营或向公众传播，无论这些行为是否为商业目的；
+  "By_modifying_or_forging_instructions": "By modifying or forging instructions or data in the running of software, adding, deleting, changing the function or operational effect of the software, or operating or transmitting the software or methods used for the above purposes, whether or not the conduct is for commercial purposes;",
+  //通过非来了吗开发、授权的第三方软件、插件、外挂、系统，登录或使用来了吗软件及服务，或制作、发布、传播上述工具；
+  "Did_you_come_to_develop": "Did you come to develop, license third-party software, plug-ins, plug-ins, systems, logins or use of software and services, or to produce, publish, and disseminate the above tools;",
+  //其他未经来了吗明示授权的行为
+  "Others_that_have_not": "Others that have not come yet?",
+  //如果您实施了前款约定的行为，来了吗将保留依法追究法律责任的权利。
+  "If_you_implement_the_behavior": "If you implement the behavior agreed in the preceding paragraph, will you retain the right to pursue legal responsibility according to law?",
+  //十、【其他】
+  "Ten_other": "Ten, [other]",
+  //您使用本服务即视为您已阅读并同意受本告知的约束。来了吗有权在必要时修改本告知条款。您可以在相关页面中查阅最新的协议条款。本告知条款变更后，如果您继续使用本服务，即视为您已接受修改后的协议。如果您不接受修改后的协议，应当停止使用本服务。
+  "Your_use_of_the_Service_is": "Your use of the Service is deemed to have been read and agreed to be bound by this notice. Is there any right to amend the terms of this notice if necessary? You can check the latest agreement terms on the relevant pages. After you change the terms of this notice, if you continue to use the service, you are deemed to have accepted the revised agreement. If you do not accept the revised agreement, you should stop using the service.",
+  //来了吗可能不断发布的关于本服务的相关协议、业务规则等内容。上述内容一经正式发布，即为本告知不可分割的组成部分，您同样应当遵守。
+  "Is_there_any_relevant_agreement": "Is there any relevant agreement, business rules, etc. about the service that may be released continuously? Once the above content is officially released, it is an integral part of the notice and you should also abide by it.",
+  //本告知的成立、生效、履行、解释及纠纷解决，适用中华人民共和国大陆地区法律（不包括冲突法）。
+  "The_establishment": "The establishment, entry into force, performance, interpretation and dispute resolution of this notice shall be governed by the laws of the mainland of the People's Republic of China (excluding the conflict of laws).",
+  //若您在使用本告知所涉服务过程中发生任何纠纷或争议，首先应友好协商解决；协商不成的，您同意将纠纷或争议提交有管辖权的人民法院管辖。
+  "If_any_dispute_or_dispute": "If any dispute or dispute arises during the use of the service covered by this notice, it shall first be settled through friendly negotiation; if the negotiation fails, you agree to submit the dispute or dispute to the jurisdiction of the people's court with jurisdiction.",
+  //本告知所有条款的标题仅为阅读方便，本身并无实际涵义，不能作为本告知涵义解释的依据。
+  "The_headings_of_all_the": "The headings of all the terms of this notice are for convenience of reading only and have no actual meaning and cannot be used as a basis for interpretation of the meaning of this notice.",
+  //本告知条款无论因何种原因部分无效或不可执行，其余条款仍有效，对双方具有约束力。
+  "The_terms_of_this_notice_are": "The terms of this notice are partially invalid or unenforceable for any reason, and the remaining terms are still valid and binding on both parties.",
+  //本人已知悉并认可上述告知内容，并承诺会遵守告知内容。
+  "I_understand_and_acknowledge": "I understand and acknowledge the above notice and promise to follow the notice.",
+
+  ///home/czizic/lailema/hotShare/hotShareMobile/client/social/messageDialog.coffee
+  //正在聊天
+  "Chatting": "Chatting",
+  //发送失败，请重试.^_^.
+  "Send_failed": "Send failed. Please try again.^_^",
+  //'你不想说点什么.^_^.'
+  "You_dont_want": "You don't want to say anything. ^_^.",
+  //'你还没有登录.^_^.'
+  "You_have_not_logged": "You have not logged in yet. ^_^.",
+  //'发送失败，请重试.^_^.'
+  "Send_failed": "Send failed, please try again.^_^.",
+
+  ///home/czizic/lailema/hotShare/hotShareMobile/client/user/dashboard/dashboard.coffee
+  //正在退出登录...
+  "Logging_out": "Logging out...",
+  //无效邮箱地址!
+  "Invalid_email_address": "Invalid email address!",
+  //邮箱地址未修改！
+  "The_email_address": "The email address has not been modified!",
+  //邮箱地址已存在！
+  "The_email_address_already_exists": "The email address already exists!",
+  //邮箱修改成功！
+  "The_mailbox_has_been_modified_successfully": "The mailbox has been modified successfully!",
+  //两次填写的密码不一致!
+  "The_passwords_filled_in_twice_are_inconsistent": "The passwords filled in twice are inconsistent!",
+  //密码至少要6位
+  "Password_must_be_at_least_6_digits": "Password must be at least 6 digits",
+  //输入密码有误，请重试!
+  "The_password_is_incorrect_Please_try_again": "The password is incorrect. Please try again!",
+  //修改密码并重新登录!
+  "Change_your_password_and_log_in_again": "Change your password and log in again!",
+  //密码不能为空!
+  "password_can_not_be_blank": "password can not be blank!",
+  //从黑名单中移除
+  "Remove_from_blacklist": "Remove from blacklist",
+
+  ///home/czizic/lailema/hotShare/hotShareMobile/client/user/management/management.coffee
+  //切换帐号失败~
+  "Switching_account_failed": "Switching account failed~",
+  //知道了
+  "Got_it": "Got It",
+  //重新切换
+  "Switch_back": "Switch Back",
+  //切换帐号时发生异常，需要重新登录您的帐号！
+  "An_exception_occurred": "An exception occurred while switching accounts. You need to log in again to your account!",
+  //重新登录
+  "re_register": "Re-Register",
+  //切换帐号太频繁了（间隔至少10秒），请稍后再试！
+  "Switch_accounts_too_often": "Switch accounts too often (at least 10 seconds apart), please try again later!",
+  //正在切换中，请稍后在试~
+  "Switching_please_try_later": "Switching, please try later~",
+  //确定要删除吗？
+  "You_sure_you_want_to_delete_it": "You sure you want to delete it?",
+  //用户不存在
+  "User_does_not_exist": "User does not exist",
+  //不能添加自己
+  "Cant_add_yourself": "Can't add yourself",
+  //该用户已关联
+  "The_user_is_already_associated": "The user is already associated",
+  //密码不正确
+  "The_password_is_incorrect": "The password is incorrect",
+  //用户名或密码不正确
+  "Username_or_password_is_incorrect": "Username or password is incorrect",
+
+  ///home/czizic/lailema/hotShare/hotShareMobile/client/registration/loginForm/loginForm.coffee
+  //忘记密码
+  "forget_password": "Forget Password?",
+  //联系客服
+  "Contact_Customer_Service": "Contact Customer Service",
+  //用户
+  "user": "User",
+  //需要人工客服！
+  "Need_manual_customer_service": "Need manual customer service!",
+  //请输入正确的QQ号或Email
+  "Please_enter_the_correct_QQ_number_or_email": "Please enter the correct QQ number or email",
+  //请说明申诉原因。
+  "Please_explain_the_reason_for_the_appeal": "Please explain the reason for the appeal.",
+  //邮件已经发送，请等待客服与您联系。
+  "The_email_has_been_sent": "The email has been sent, please wait for the customer service to contact you.",
+  //密码重置邮件已发送到您的注册邮箱,请查收邮件后继续操作。
+  "A_password_reset_emai": "A password reset email has been sent to your registered email address. Please check your email and continue.",
+  //未检测到与您输入邮箱匹配的帐号,请检查输入的邮箱。
+  "If_the_account_matching": "If the account matching your email address is not detected, please check the entered email address.",
+  //正在重设...
+  "Resetting": "Resetting...",
+  //需要重置密码！
+  "Need_to_reset_your_password": "Need to reset your password!",
+  //来了吗APP收到新的重置密码申请，请尽快处理!
+  "APP_has_received": "Is it coming? APP has received a new reset password request, please handle it as soon as possible!",
+  //申请信息
+  "Application_Information": "Application Information",
+  //用户账户邮箱：
+  "User_account_email": "User Account Email:",
+  //本邮件为系统自动发送，请不要直接回复，谢谢！
+  "This_email_is_automatically": "This email is automatically sent by the system, please do not reply directly, thank you!",
+  //重置密码请求已经提交客服，请等待客服与您联系。
+  "The_password_reset_request": "The password reset request has been submitted to the customer service, please wait for the customer service to contact you.",
+
+  ///home/czizic/lailema/hotShare/hotShareMobile/client/chatGroups/groupsProfile/groupCheckInOutInfo/groupCheckInoutInfo.html
+  //状态
+  "Status": "Status",
+  //进
+  "in": "In",
+  //出
+  "out": "Out",
+  //今天还没有工作安排
+  "There_is_no_work_arrangement_today": "There is no work arrangement today.",
+  //暂无记录
+  "No_records": "No Records",
+
+  ///home/czizic/lailema/hotShare/hotShareMobile/client/homePage/homePage_bak.html
+  //主页
+  "Homepage": "Home Page",
+  //在监控组
+  "In_the_monitoring_group": "In The Monitoring Group",
+  //不在监控组
+  "Not_in_the_monitoring_group": "Not in the monitoring group",
+  //已绑定App
+  "Bound_App": "Bound App",
+  //未绑定App
+  "Unbound_App": "Unbound App",
+  //允许通知
+  "Allow_notification": "Allow notification",
+  //关闭通知
+  "Close_notification": "Close Notification",
+  //出现时间大于8小时 或 9:00am前出现
+  "Appears_for_more_than": "Appears for more than 8 hours or before 9:00am",
+  //出现时间小于8小时 或 9:00am后出现
+  "Appears_after_less": "Appears after less than 8 hours or after 9:00am",
+  //记录到出但没记录到进 或 记录到两次进但没记录到出
+  "Recorded_out_but_not": "Recorded out but not recorded in or recorded twice but not recorded",
+  //暂无报告，快去
+  "No_report_yet_go_quickly": "No report yet, go quickly",
+  //打卡
+  "Punch": "Punch",
+
+  ///home/czizic/lailema/hotShare/hotShareMobile/client/homePage/workStatusPopPage.js
+  //未找到该群组下，方向为
+  "The_group_was_not_found_the_direction_is": "The group was not found, the direction is",
+  //的设备
+  "device_of": "Device",
+  //今天
+  "Nowadays": "Nowadays",
+  //该监控组下暂无脸脸盒
+  "No_face_box_under_the_monitoring_group": "No face box under the monitoring group",
+  //请重试
+  "Please_try_again": "Please Try Again",
+  //更新了今日简述：
+  "Updated_today": "Updated today's brief:",
+  
+  ///home/czizic/lailema/hotShare/hotShareMobile/client/timeline/timelineAlbum.js
+  //正在处理
+  "Processing": "Processing",
+  //已记录到每日出勤报告
+  "Daily_attendance_report_has_been_recorded": "Daily attendance report has been recorded",
+  //多选模式下，只能选择图片
+  "In_multi_select_mode": "In multi-select mode, only pictures can be selected",
+  //」提醒你：
+  "remind_you": "」Remind You:",
+  //您的上班时间是 
+  "Your_working_hours_are": "Your working hours are",
+  //您的下班时间是 
+  "Your_off_duty_time_is": "Your off-duty time is",
+  //是否将时间记录到「
+  "Whether_to_record_the_time_to": "Whether to record the time to「",
+  //记录失败，请重试
+  "Record_failed_please_try_again": "Record failed, please try again",
+  //已记录
+  "Recorded": "Recorded",
+  //是否将该时间记录到每日出勤报告？
+  "Is_this_time_recorded_to_the_daily_attendance_report": "Is this time recorded to the daily attendance report?",
+  //」每日出勤报告？
+  "Daily_attendance_report": "」Daily attendance report?",
+  //是否将该时间记录到「
+  "Whether_to_record_this_time_to": "Whether to record this time to「",
+  //视频
+  "video": "Video",
+  //照片
+  "photo": "Photo",
+  //是否选择此
+  "Choose_this": "Choose This",
+  //此
+  "this": "This",
+  //是：「
+  "is": "Is「",
+  //」，是否选择？
+  "choose": "」, choose?",
+  //请至少选择一张照片
+  "Please_select_at_least_one_photo": "Please select at least one photo",
+  //标注失败，请重试
+  "Label_failed_please_try_again": "Label failed, please try again",
+
+  ///home/czizic/lailema/hotShare/hotShareMobile/packages/video-analysis/client/template/search.js
+  //查询成功
+  "search_successful": "Search Successful",
+  //创建失败~
+  "Creation_failed": "Creation Failed~",
+  //查询失败，请重试
+  "The_query_failed_please_try_again": "The query failed, please try again",
+  //您还没有绑定设备！
+  "You_have_not_bound_your_device_yet": "You have not bound your device yet!",
+  //稍后
+  "Later": "Later",
+  //绑定设备
+  "Binding_device": "Binding Device",
+  //拍摄照片或从相册选择图片
+  "Take_a_photo_or_select_an_image_from_an_album": "Take a photo or select an image from an album",
+  //拍照
+  "Take_a_photo": "Take A Photo",
+  //从相册选择
+  "Choose_from_album": "Choose From Album",
+  //正在查询
+  "querying": "Querying",
+  
+  ///home/czizic/lailema/hotShare/hotShareMobile/client/autolabel/autolabel.js
+  //请输入标注人名称
+  "Please_enter_the_name_of_the_caller": "Please enter the name of the caller",
+
+  ///home/czizic/lailema/hotShare/hotShareMobile/client/chatGroups/groupDevices/groupDevices.js
+  //未知
+  "unknown": "Unknown",
+  //您的脸脸安全盒当前是最新版本
+  "Your_face_security_box_is_currently_the_latest_version": "Your face security box is currently the latest version",
+  //修改失败，请重试
+  "The_modification_failed_please_try_again": "The modification failed, please try again",
+  //删除成功
+  "successfully_deleted": "Successfully Deleted",
+  //设备名没有修改
+  "Device_name_has_not_been_modified": "Device name has not been modified",
+
+  ///home/czizic/lailema/hotShare/hotShareMobile/client/chatGroups/groupsProfile/groupPhoto/index.js
+  //处理中...
+  "Processing": "Processing...",
+  //失败~
+  "Failure": "Failure~",
+  //已删
+  "Deleted": "Deleted",
+  //删除失败，请重试!
+  "The_deletion_failed_please_try_again": "The deletion failed, please try again!",
+  //已经滚动到顶部了 
+  "Already_scrolled_to_the_top": "Already scrolled to the top",
+  //已经滚动到底部了 
+  "Already_scrolled_to_the_bottom": "Already scrolled to the bottom",
+  //请选择
+  "please_choose": "Please Choose",
+  //查看此人的全部照片
+  "View_all_photos_of_this_person": "View all photos of this person",
+  //删除此人
+  "Delete_this_person": "Delete This Person",
+  //重命名此人
+  "Rename_this_person": "Rename This Person",
+  //要删除「
+  "To_delete": "To Delete 「",
+  //删除失败，请重试！
+  //"The_deletion_failed_please_try_again": "The deletion failed, please try again!",
+  //输入一个新的姓名以重命名此Person
+  "Enter_a_new_name_to_rename_this_Person": "Enter a new name to rename this Person",
+  //重命名
+  "Rename": "Rename",
+  //重命名失败
+  "Rename_failed": "Rename Failed",
+  //已将「
+  "Has_been": "Has Been「",
+  //」重命名为「
+  "Renamed_to": "」Renamed to 「",
+
+  ///home/czizic/lailema/hotShare/hotShareMobile/client/registration/loginForm/loginForm.html
+  //联系来了吗客服
+  "Contact_is_coming_Customer_service": "Contact is coming? Customer service",
+  //邮箱地址用于人工客服与您联系，请正确填写
+  "Email_address_is_used": "Email address is used for manual customer service to contact you, please fill in correctly",
+
+  ///home/czizic/lailema/hotShare/hotShareMobile/client/scannerAddDevice/selectCreateGroup.js
+  //正在添加设备
+  "Adding_device": "Adding Device",
+  //添加设备失败~
+  "Adding_device_failed": "Adding Device Failed~",
+  //添加设备成功
+  "Add_device_successfully": "Add Device Successfully",
+  //请重试~
+  "Please_try_again": "Please Try Again~",
+  //请输入群组名
+  "Please_enter_a_group_name": "Please Enter A Group Name",
+  //创建群组失败
+  "Failed_to_create_group": "Failed To Create Group",
 }

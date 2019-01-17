@@ -34,18 +34,18 @@
     <div class="customerServiceBackground"></div>
     <div class="customerService">
         <div class="customerService-head">
-          <h5 class="title">联系来了吗客服</h5>
+          <h5 class="title">{{_ "Contact_is_coming_Customer_service"}}</h5>
           <div class="btnClose">&times;</div>
         </div>
         <div class="customer-email">
-          <input id="customerEmail" type="text" placeholder="请输入邮箱地址" value="{{oldMail}}">
+          <input id="customerEmail" type="text" placeholder="Please input the email address" value="{{oldMail}}">
         </div>
-        <div class="alert-email" style="padding-left: 10px; padding-top: 10px;">邮箱地址用于人工客服与您联系，请正确填写</div>
+        <div class="alert-email" style="padding-left: 10px; padding-top: 10px;">{{_ "Email_address_is_used"}}</div>
         <div class="content">
-          <textarea id="sendContent" cols="10" rows="2" placeholder="请输入您要申诉的内容，以便客服与您沟通。"></textarea>
+          <textarea id="sendContent" cols="10" rows="2" placeholder="Please enter the content you want to appeal so that the customer service can communicate with you."></textarea>
         </div>
         <div class="btn-banner">
-          <span id="sendEmailBtn" class="send-email-btn ripple-btn">发送</span>
+          <span id="sendEmailBtn" class="send-email-btn ripple-btn">{{_ "Send"}}</span>
         </div>
     </div>
 </div>

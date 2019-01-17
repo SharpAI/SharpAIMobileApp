@@ -103,7 +103,7 @@ if Meteor.isClient
     'click .back' :->
       Router.go '/user'
     'click .logout':(e)->
-      e.target.innerText="正在退出登录..."
+      e.target.innerText=TAPi18n.__("Logging_out")
       thisUser = Meteor.user()
       Meteor.call('updatePushToken' ,{type: thisUser.type, token: thisUser.token,userId:''});
 #      Meteor.users.update({_id: thisUser._id}, {$set: {type: '', token: ''}})
@@ -123,21 +123,21 @@ if Meteor.isClient
       my_edit_email = $('#my_edit_email').val()
       ret = my_edit_email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)
       if not ret
-        PUB.toast '无效邮箱地址!'
+        PUB.toast TAPi18n.__("Invalid_email_address")
         return
       new_email = [{address: $('#my_edit_email').val(), verified: false}]
       Meteor.subscribe('allUsers');
       userExist = Users.find({emails: new_email}).fetch()[0]
       if userExist != undefined
-        PUB.toast "邮箱地址未修改！"
+        PUB.toast TAPi18n.__("The_email_address")
 #        PUB.toast "邮箱地址已存在！"
       else
         Users.update {_id: Meteor.user()._id}, {$set: {emails: new_email}},  (error, result) ->
           if error
-            PUB.toast "邮箱地址已存在！"
+            PUB.toast TAPi18n.__("The_email_address_already_exists")
             return
           else
-            PUB.toast "邮箱修改成功！"
+            PUB.toast TAPi18n.__("The_mailbox_has_been_modified_successfully")
             Router.go '/dashboard'
 
     'click #btn_back' :->
@@ -176,11 +176,11 @@ if Meteor.isClient
       new_pass_confirm = $("#my_edit_password_confirm").val()
       if new_pass != new_pass_confirm
         Session.set('changePasswordSaveBtnClicked', false)
-        PUB.toast "两次填写的密码不一致!"
+        PUB.toast TAPi18n.__("The_passwords_filled_in_twice_are_inconsistent")
         return
       else if new_pass.length<6
         Session.set('changePasswordSaveBtnClicked', false)
-        PUB.toast "密码至少要6位";
+        PUB.toast TAPi18n.__("Password_must_be_at_least_6_digits");
         return
       if new_pass
         navigator.notification.confirm('', (r)->
@@ -193,7 +193,7 @@ if Meteor.isClient
                 Meteor.setTimeout ()->
                   Session.set('changePasswordSaveBtnClicked', false)
                 ,5000
-                PUB.toast '输入密码有误，请重试!'
+                PUB.toast TAPi18n.__("The_password_is_incorrect_Please_try_again")
               else
                 Session.set('changePasswordSaveBtnClicked', false)
                 $('.afterchangepassword').fadeOut 300
@@ -210,10 +210,10 @@ if Meteor.isClient
             #     PUB.toast '修改密码成功!'
             #     Router.go '/authOverlay'
             #   return
-        , '修改密码并重新登录!', ['确定']);
+        , TAPi18n.__("Change_your_password_and_log_in_again"), [TAPi18n.__("determine")]);
       else
         Session.set('changePasswordSaveBtnClicked', false)
-        PUB.toast "密码不能为空!"
+        PUB.toast TAPi18n.__("password_can_not_be_blank")
     'click #pass_btn_back' :->
       Session.set('changePasswordSaveBtnClicked', false)
       Router.go '/dashboard'
@@ -279,7 +279,7 @@ if Meteor.isClient
     'click .remove' :(e)->
       id = this.toString()
       blackId = BlackList.findOne({blackBy: Meteor.userId()})._id
-      menus = ['从黑名单中移除']
+      menus = [TAPi18n.__("Remove_from_blacklist")]
       menuTitle = ''
       callback = (buttonIndex)->
         if buttonIndex is 1

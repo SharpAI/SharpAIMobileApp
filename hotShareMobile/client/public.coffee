@@ -65,7 +65,7 @@ pages = ['/user', '/bell', '/search']
     # 该方法实现页面切换
     'page':(pageName)->
         if Session.get('persistentLoginStatus') and !Meteor.userId() and !Meteor.loggingIn() and pages.indexOf(pageName) isnt -1
-            window.plugins.toast.showLongCenter("登录超时，需要重新登录~");
+            window.plugins.toast.showLongCenter(TAPi18n.__("Login_timed_out"));
             return Router.go('/')
 
         history = Session.get("history_view")
@@ -187,8 +187,8 @@ pages = ['/user', '/bell', '/search']
             navigator.notification.alert(
                 msg
                 callback
-                '提示'
-                '确定'
+                TAPi18n.__("prompt")
+                TAPi18n.__("determine")
             )
         catch error
             alert(msg)
@@ -200,8 +200,8 @@ pages = ['/user', '/bell', '/search']
                 (index)->
                     if index is 2
                        callback()
-                '提示'
-                ['取消','确定']
+                TAPi18n.__("prompt")
+                [TAPi18n.__("cancel"),TAPi18n.__("determine")]
             )
         catch error
             if confirm(msg)

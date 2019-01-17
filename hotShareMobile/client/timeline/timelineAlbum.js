@@ -23,9 +23,9 @@ var initTimeRangeSet = function() {
     display: 'bottom',
     controls: ['calendar', 'time'],
     maxWidth: 100,
-    setText: '设置',
-    fromText: '开始时间',
-    toText:'结束时间',
+    setText: TAPi18n.__("setting"),
+    fromText: TAPi18n.__("Starting_time"),
+    toText:TAPi18n.__("End_Time"),
     defaultValue: [
         new Date(now.getFullYear(),now.getMonth(), now.getDate() - 7),new Date()
     ],
@@ -163,7 +163,7 @@ var checkInOutWithOutName = function(type,name,taId,taName){
   }
 
   console.log(data);
-  PUB.showWaitLoading('正在处理');
+  PUB.showWaitLoading(TAPi18n.__("Processing"));
   console.log('data is 2', JSON.stringify(data))
   Meteor.call('ai-checkin-out',data,function(err,res){
     PUB.hideWaitLoading();
@@ -176,12 +176,12 @@ var checkInOutWithOutName = function(type,name,taId,taName){
     $('body').removeClass('modal-open');
     $('.modal-backdrop').remove();
     if(err){
-      PUB.toast('请重试');
+      PUB.toast(TAPi18n.__("Please_try_again"));
       console.log('ai-checkin-out error:' + err);
       return;
     }
     if(res && res.result == 'succ'){
-      PUB.toast('已记录到每日出勤报告');
+      PUB.toast(TAPi18n.__("Daily_attendance_report_has_been_recorded"));
       // 发送代Ta 出现成功通知
       if(taId){
         console.log(msgObj)
@@ -194,7 +194,7 @@ var checkInOutWithOutName = function(type,name,taId,taName){
     } else {
       return navigator.notification.confirm(res.text,function(index){
 
-      },res.reason,['知道了']);
+      },res.reason,[TAPi18n.__("Got_it")]);
     }
   });
 };
@@ -350,7 +350,7 @@ var treatAsTrainData = function(name, data) {
   var setNames = [];
   Meteor.call('get-id-by-name1', uuid, name, group_id, function(err, res){
     if (err || !res){
-      return PUB.toast('标注失败');
+      return PUB.toast(TAPi18n.__("Label_failure"));
     }
 
     var faceId = null;
@@ -767,7 +767,7 @@ Template.timelineAlbum.events({
       var index = ids.indexOf(this._id);
       // 多选模式, 不选择video
       if(this.img_type == 'video') {
-        return PUB.toast('多选模式下，只能选择图片');
+        return PUB.toast(TAPi18n.__("In_multi_select_mode"));
       }
 
       if(index < 0) { // 还没有被选择
@@ -831,7 +831,7 @@ Template.timelineAlbum.events({
       person_info: person_info
     };
 
-    var msgText = '「' + device.name + '」提醒你：';
+    var msgText = '「' + device.name + TAPi18n.__("remind_you");
 
     var date = new Date($(e.currentTarget).data('ts'));
     date = date.shortTime(time_offset);
@@ -842,11 +842,11 @@ Template.timelineAlbum.events({
     if(device.in_out && device.in_out == 'in'){
       data.checkin_time =  new Date( $(e.currentTarget).data('ts')).getTime()
       data.checkin_image = $(e.currentTarget).data('imgurl');
-      msgText = "您的上班时间是 " + date;
+      msgText = TAPi18n.__("Your_working_hours_are") + date;
     } else {
       data.checkout_time =  new Date( $(e.currentTarget).data('ts')).getTime()
       data.checkout_image = $(e.currentTarget).data('imgurl');
-      msgText = "您的下班时间是 " + date;
+      msgText = TAPi18n.__("Your_off_duty_time_is") + date;
     }
     data.wantModify = Session.get('wantModify');
 
@@ -864,22 +864,22 @@ Template.timelineAlbum.events({
       data.wantModify = true;
       data.person_info = person_info;
 
-      PUB.confirm('是否将时间记录到「'+ person_name +'」?',function(){
+      PUB.confirm(TAPi18n.__("Whether_to_record_the_time_to")+ person_name +'」?',function(){
         Meteor.call('ai-checkin-out',data,function(err, res){
           PUB.hideWaitLoading();
           if(err){
-            PUB.toast('记录失败，请重试');
+            PUB.toast(TAPi18n.__("Record_failed_please_try_again"));
             console.log('ai-checkin-out error:' + err);
             return;
           }
 
           if(res && res.result == 'succ'){
-            PUB.toast('已记录');
+            PUB.toast(TAPi18n.__("Recorded"));
             return PUB.back();
           } else {
             return navigator.notification.confirm(res.text,function(index){
 
-            },res.reason,['知道了']);
+            },res.reason,[TAPi18n.__("Got_it")]);
           }
         });
         Session.get('modifyMyStatus_person_name', null);
@@ -947,24 +947,24 @@ Template.timelineAlbum.events({
       return $('#selectPerson').modal('show');
     }
     if(relations || taName ){ // 标识过
-      confirm_text = '是否将该时间记录到每日出勤报告？';
+      confirm_text = TAPi18n.__("Is_this_time_recorded_to_the_daily_attendance_report");
       person_name = relations ? relations.person_name : taName;
       if(person_name){
-        confirm_text = '是否将该时间记录到「'+ person_name +'」每日出勤报告？'
+        confirm_text = TAPi18n.__("Whether_to_record_this_time_to")+ person_name +TAPi18n.__("Daily_attendance_report")
       }
       PUB.confirm(confirm_text,function(){
-        PUB.showWaitLoading('正在处理');
+        PUB.showWaitLoading(TAPi18n.__("Processing"));
         console.log('data is 3', JSON.stringify(data))
         Meteor.call('ai-checkin-out',data,function(err, res){
           PUB.hideWaitLoading();
           if(err){
-            PUB.toast('记录失败，请重试');
+            PUB.toast(TAPi18n.__("Record_failed_please_try_again"));
             console.log('ai-checkin-out error:' + err);
             return;
           }
 
           if(res && res.result == 'succ'){
-            PUB.toast('已记录到每日出勤报告');
+            PUB.toast(TAPi18n.__("Daily_attendance_report_has_been_recorded"));
             // 发送代Ta 出现成功通知
             if(taId){
               console.log(msgObj)
@@ -980,15 +980,15 @@ Template.timelineAlbum.events({
           } else {
             return navigator.notification.confirm(res.text,function(index){
 
-            },res.reason,['知道了']);
+            },res.reason,[TAPi18n.__("Got_it")]);
           }
         });
       });
     } else {
-      var tips = is_video ? '视频' : '照片';
-      confirm_text = '是否选择此' + tips +'？';
+      var tips = is_video ? TAPi18n.__("video") : TAPi18n.__("photo");
+      confirm_text = TAPi18n.__("Choose_this") + tips +'？';
       if(person_name){
-        confirm_text = '此' + tips +'是：「'+person_name+'」，是否选择？';
+        confirm_text = TAPi18n.__("this") + tips +TAPi18n.__("is")+person_name+TAPi18n.__("choose");
       }
       else{
         data.msgText = msgText;
@@ -1013,18 +1013,18 @@ Template.timelineAlbum.events({
         // }
       }
       PUB.confirm(confirm_text,function(){
-        PUB.showWaitLoading('正在处理');
+        PUB.showWaitLoading(TAPi18n.__("Processing"));
         console.log('data is 1', JSON.stringify(data))
         Meteor.call('ai-checkin-out',data,function(err,res){
           PUB.hideWaitLoading();
           if(err){
-            PUB.toast('请重试');
+            PUB.toast(TAPi18n.__("Please_try_again"));
             console.log('ai-checkin-out error:' + err);
             return;
           }
 
           if(res && res.result == 'succ'){
-            PUB.toast('已记录到每日出勤报告');
+            PUB.toast(TAPi18n.__("Daily_attendance_report_has_been_recorded"));
             // 发送代Ta 出现成功通知
             if(taId){
               console.log(msgObj)
@@ -1034,7 +1034,7 @@ Template.timelineAlbum.events({
           } else {
             return navigator.notification.confirm(res.text,function(index){
 
-            },res.reason,['知道了']);
+            },res.reason,[TAPi18n.__("Got_it")]);
           }
         });
       });
@@ -1043,7 +1043,7 @@ Template.timelineAlbum.events({
   'click .confirmPersonName': function(e){
     var name = $('#picturePersonName').val();
     if(!name || name.length < 1){
-      PUB.toast('请输入姓名');
+      PUB.toast(TAPi18n.__("Please_type_in_your_name"));
       return $('#picturePersonName').focus();
     }
     return checkInOutWithOutName('confirmPersonName',name);
@@ -1176,7 +1176,7 @@ Template.timelineAlbum.events({
     }
     var _lists = multiSelectLists.get();
     if(_lists.length == 0 ) {
-      return PUB.toast('请至少选择一张照片');
+      return PUB.toast(TAPi18n.__("Please_select_at_least_one_photo"));
     }
     multiSelectIds.set([]);
     multiSelectLists.set([]);
@@ -1192,11 +1192,11 @@ Template.timelineAlbum.events({
         return;
       }
 
-      PUB.showWaitLoading('处理中');
+      PUB.showWaitLoading(TAPi18n.__("Processing"));
       var setNames = [];
       Meteor.call('get-id-by-name1', uuid, name, group_id, function(err, res){
         if (err || !res){
-          return PUB.toast('标注失败，请重试');
+          return PUB.toast(TAPi18n.__("Label_failed_please_try_again"));
         }
 
         var faceId = null;

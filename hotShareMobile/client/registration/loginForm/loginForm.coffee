@@ -30,7 +30,7 @@ Template.loginForm.events
       # $('.recovery').css('display',"none")
 #      $('.authOverlay').css('-webkit-filter',"none")
     'click .forgetPwdBtn': (e)->
-      menus = ['忘记密码？','联系客服']
+      menus = [TAPi18n.__("forget_password"),TAPi18n.__("Contact_Customer_Service")]
       menuTitle = ''
       callback = (buttonIndex)->
         if buttonIndex is 1
@@ -51,18 +51,18 @@ Template.loginForm.events
       content = t.find('#sendContent').value
       qqValueReg = RegExp(/^[1-9][0-9]{4,9}$/)
       mailValueReg = RegExp(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/) 
-      subject = '用户' + mailAddress + '需要人工客服！'
+      subject = TAPi18n.__("user") + mailAddress + TAPi18n.__("Need_manual_customer_service")
       if !mailValueReg.test(mailAddress) and !qqValueReg.test(mailAddress)
-        PUB.toast('请输入正确的QQ号或Email')
+        PUB.toast(TAPi18n.__("Please_enter_the_correct_QQ_number_or_email"))
         return false
       if qqValueReg.test(mailAddress)
         mailAddress += '@qq.com'
       if content is ''
-        PUB.toast('请说明申诉原因。')
+        PUB.toast(TAPi18n.__("Please_explain_the_reason_for_the_appeal"))
         return false
       $("#sendContent").val('')
       Meteor.call('sendEmailToAdmin', mailAddress,subject ,content)
-      PUB.toast('邮件已经发送，请等待客服与您联系。')
+      PUB.toast(TAPi18n.__("The_email_has_been_sent"))
       $('.customerService,.customerServiceBackground').hide()
     'click .forgetPassword' :->
       # $('.login').css('display',"none")
@@ -141,7 +141,7 @@ Template.recoveryForm.events
       qqValueReg = RegExp(/^[1-9][0-9]{4,9}$/)
       mailValueReg = RegExp(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/) 
       if !mailValueReg.test(email) and !qqValueReg.test(email)
-        PUB.toast('请输入正确的QQ号或Email')
+        PUB.toast(TAPi18n.__("Please_enter_the_correct_QQ_number_or_email"))
         return false
       if qqValueReg.test(email)
         email += '@qq.com'
@@ -151,19 +151,19 @@ Template.recoveryForm.events
         if result isnt undefined and result isnt null
           Meteor.call('sendResetPasswordEmail', result._id, result.emails[0].address)
           console.log result
-          PUB.toast('密码重置邮件已发送到您的注册邮箱,请查收邮件后继续操作。')
+          PUB.toast(TAPi18n.__("A_password_reset_emai"))
           Router.go '/loginForm'
         else
-          PUB.toast('未检测到与您输入邮箱匹配的帐号,请检查输入的邮箱。')
+          PUB.toast(TAPi18n.__("If_the_account_matching"))
         );
       return
 
       t.find('#sub-recovery').disabled = true
-      t.find('#sub-recovery').innerText = '正在重设...'
-      subject = '用户' + email + '需要重置密码！'
-      content = "来了吗APP收到新的重置密码申请，请尽快处理!\n\n申请信息――\n\n用户账户邮箱：" + email + "\n\n\n本邮件为系统自动发送，请不要直接回复，谢谢！"
+      t.find('#sub-recovery').innerText = TAPi18n.__("Resetting")
+      subject = TAPi18n.__("user") + email + TAPi18n.__("Need_to_reset_your_password")
+      content = "TAPi18n.__('APP_has_received')\n\nTAPi18n.__('Application_Information')――\n\nTAPi18n.__('User_account_email')" + email + "\n\n\nTAPi18n.__('This_email_is_automatically')"
       Meteor.call('sendEmailToAdmin', email,subject ,content)
-      PUB.toast('重置密码请求已经提交客服，请等待客服与您联系。')
+      PUB.toast(TAPi18n.__("The_password_reset_request"))
       Router.go '/loginForm'
 
 ###
