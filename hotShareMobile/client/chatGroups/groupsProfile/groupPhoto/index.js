@@ -356,7 +356,7 @@ Template.groupPhoto.onRendered(function(){
         }
         console.log('=='+ TAPi18n.__("Already_scrolled_to_the_top")+type.get()+' ==');
       } else if (height-top <= $(this).height() -20){
-        if (type.get() === TAPi18n.__("Unlabeled")
+        if (type.get() === TAPi18n.__("Unlabeled"))
           limit1.set(limit1.get()+limitSetp);
         else
           limit2.set(limit2.get()+50);
@@ -523,7 +523,7 @@ Template.groupPhotoImg1.events({
           break;
         case 3:
           var promptTip = TAPi18n.__("Enter_a_new_name_to_rename_this_Person");
-          var promptTitle = TAPi18n.__("Rename")「'+self.name+'」';
+          var promptTitle = TAPi18n.__("Rename")+self.name+'」';
           navigator.notification.prompt(promptTip, function(results) {
             var newName = results.input1;
             newName = newName.replace(/(^\s*)|(\s*$)/g,"");
