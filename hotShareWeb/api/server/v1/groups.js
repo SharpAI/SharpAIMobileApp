@@ -97,6 +97,45 @@ function checkFaceData(face) {
   }
 }
 
+Api.addRoute('groups/:groupId/devices/:uuid/visitors/label', {
+  authRequired: false,
+}, {
+  post: function() {
+    try {
+      var groupId = this.urlParams.groupId && this.urlParams.groupId.trim();
+      var uuid = this.urlParams.uuid && this.urlParams.uuid.trim();
+  
+      var name = this.bodyParams.name && this.bodyParams.name.trim();
+      var imgs = this.bodyParams.imgs;
+
+      if (!name) {
+        throw new Meteor.Error('error-groups-strangers-param-not-provided', 'The parameter "name" is required');
+      }
+
+      var items = [];
+      _.each(imgs, function(img) {
+        items.push({
+          uuid:     uuid,
+          faceId:   img.person_id,
+          imgUrl:   img.img_url,
+          name:     name,
+          sqlid:    img.sqlid,
+          style:    img.style,
+          type:     'face',
+        });
+      });
+
+      Meteor.setTimeout(function() { 
+        label(groupId, items, 'visitor-api');
+      }, 100);
+      
+      return api.success();
+    } catch (e) {
+      return api.failure(e.message, e.error);
+    }
+  }
+})
+
 Api.addRoute('groups/:groupId/strangers/:strangerId/label', {
   authRequired: false,
 }, {
