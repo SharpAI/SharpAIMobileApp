@@ -4,7 +4,7 @@ rm -rf .meteor/local/cordova-build
 rm -rf .meteor/local/build
 rm -rf .meteor/local/bundler-cache
 rm -rf .meteor/local/plugin-cache
-meteor build ~/build-sharpai --server=http://workaihost.tiegushi.com
+meteor build ~/build-sharpai --server=$API_SERVER_ADDRESS
 #测试版
 #meteor build ~/build-sharpai --server=http://testworkai.tiegushi.com
 # No IOS build for now
