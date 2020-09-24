@@ -7,6 +7,7 @@ rm -rf .meteor/local/plugin-cache
 meteor build ~/build-sharpai --server=http://workaihost.tiegushi.com
 #测试版
 #meteor build ~/build-sharpai --server=http://testworkai.tiegushi.com
-rm -rf ~/build-sharpai/ios/project/sharpai/Images.xcassets/*
-cp -rf ../WorkAI_Assets/* ~/build-sharpai/ios/project/sharpai/Images.xcassets/
+# No IOS build for now
+#rm -rf ~/build-sharpai/ios/project/sharpai/Images.xcassets/*
+#cp -rf ../WorkAI_Assets/* ~/build-sharpai/ios/project/sharpai/Images.xcassets/
 
