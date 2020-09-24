@@ -2,7 +2,7 @@
 
 cd ~/build-sharpai/android/project
 
-PROJ_DIR=$HOME/workspace/sharpai
+PROJ_DIR=$HOME/mobile_app_server
 cp $PROJ_DIR/ShareExtension/Android/MainActivity.java ./src/org/sharpai/everywhere/
 cp $PROJ_DIR/sharpai-buildfiles/AndroidManifest.xml ./
 # change the version number
@@ -18,12 +18,16 @@ cp $PROJ_DIR/sharpai-buildfiles/gradle.properties ./gradle.properties
 cp $PROJ_DIR/sharpai-buildfiles/strings.xml ./res/values/strings.xml
 #cp $PROJ_DIR/hotShareMobile/android.build.gradle ./build.gradle
 
-ANDROID_HOME=~/Library/Android/sdk gradle wrapper
-ANDROID_HOME=~/Library/Android/sdk/ ./gradlew assembleRelease -Pandroid.injected.signing.store.file=$PROJ_DIR/hotShareMobile/keystore -Pandroid.injected.signing.store.password=actiontec -Pandroid.injected.signing.key.alias="wifi whiteboard" -Pandroid.injected.signing.key.password=actiontec
+#ANDROID_HOME=~/Library/Android/sdk gradle wrapper
+#ANDROID_HOME=~/Library/Android/sdk/ ./gradlew assembleRelease -Pandroid.injected.signing.store.file=$PROJ_DIR/hotShareMobile/keystore -Pandroid.injected.signing.store.password=actiontec -Pandroid.injected.signing.key.alias="wifi whiteboard" -Pandroid.injected.signing.key.password=actiontec
+
+gradle wrapper
+./gradlew assembleRelease -Pandroid.injected.signing.store.file=$PROJ_DIR/hotShareMobile/keystore -Pandroid.injected.signing.store.password=actiontec -Pandroid.injected.signing.key.alias="wifi whiteboard" -Pandroid.injected.signing.key.password=actiontec
+
 
 TIMESTAMP=`date "+%Y%m%d%H%M%S"`
 # DESTFILE="$HOME/sharpai-$VER-$TIMESTAMP.apk"
-DESTFILE="$HOME/.jenkins/userContent/sharpai/sharpai-$VER-$TIMESTAMP.apk"
-cp ./build/outputs/apk/project-release.apk $DESTFILE
+#DESTFILE="$HOME/.jenkins/userContent/sharpai/sharpai-$VER-$TIMESTAMP.apk"
+#cp ./build/outputs/apk/project-release.apk $DESTFILE
 
-cd -
+#cd -
