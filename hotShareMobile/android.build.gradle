@@ -26,6 +26,8 @@ buildscript {
         mavenCentral()
     }
 
+    System.properties['com.android.build.gradle.overrideVersionCheck'] = 'true'
+
     // Switch the Android Gradle plugin version requirement depending on the
     // installed version of Gradle. This dependency is documented at
     // http://tools.android.com/tech-docs/new-build-system/version-compatibility
