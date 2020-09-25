@@ -16,7 +16,7 @@ sed -i.bak "s/android:versionCode=\"10069\"/android:versionCode=\"$VERCODE\"/g" 
 
 cp $PROJ_DIR/sharpai-buildfiles/gradle.properties ./gradle.properties
 cp $PROJ_DIR/sharpai-buildfiles/strings.xml ./res/values/strings.xml
-#cp $PROJ_DIR/hotShareMobile/android.build.gradle ./build.gradle
+cp $PROJ_DIR/hotShareMobile/android.build.gradle ./build.gradle
 
 #ANDROID_HOME=~/Library/Android/sdk gradle wrapper
 #ANDROID_HOME=~/Library/Android/sdk/ ./gradlew assembleRelease -Pandroid.injected.signing.store.file=$PROJ_DIR/hotShareMobile/keystore -Pandroid.injected.signing.store.password=actiontec -Pandroid.injected.signing.key.alias="wifi whiteboard" -Pandroid.injected.signing.key.password=actiontec
