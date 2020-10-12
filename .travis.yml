@@ -38,6 +38,8 @@ before_script:
 - curl https://install.meteor.com?release=1.4.1.2 | /bin/sh
 - export PATH=$HOME/.meteor:$PATH
 - meteor npm install
+- cd $TRAVIS_BUILD_DIR/../
+- git clone https://github.com/SharpAI/ApiServer
 script:
 - cd $TRAVIS_BUILD_DIR/hotShareMobile && ./cleanbuild.sh
 - meteor build $HOME --server=$API_SERVER_ADDRESS
