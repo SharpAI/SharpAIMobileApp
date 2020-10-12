@@ -1,9 +1,7 @@
-# HotShare
-### App Server API
-click [here](https://github.com/SharpAI/mobile_app_server/tree/master/hotShareWeb/api/server)
+# SharpAI mobile application
+
 ### How to use SharpAI app
-#### 1. Download sharpAI app called '来了吗' from Appstore or Android app market(search lailema)
-![install](app_intro/appstore.png)
+#### 1. Installation (Doc WIP)
 
 #### 2. Sign up
 ![sign_up](app_intro/login.png) 
