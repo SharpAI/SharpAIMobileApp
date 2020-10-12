@@ -17,7 +17,7 @@ addons:
     packages:
     - g++-4.8
 before_install:
-- openssl aes-256-cbc -K $encrypted_7aeb965aa3bd_key -iv $encrypted_7aeb965aa3bd_iv
+- openssl aes-256-cbc -K $encrypted_66e97601dc46_key -iv $encrypted_66e97601dc46_iv
   -in .keystore.enc -out .keystore -d
 - touch $HOME/.android/repositories.cfg
 - yes | sdkmanager "platforms;android-28"
@@ -38,15 +38,17 @@ before_script:
 - curl https://install.meteor.com?release=1.4.1.2 | /bin/sh
 - export PATH=$HOME/.meteor:$PATH
 - meteor npm install
+- cd $TRAVIS_BUILD_DIR/../
+- git clone https://github.com/SharpAI/ApiServer
 script:
-- cd $TRAVIS_BUILD_DIR/hotShareMobile && ./cleanbuild.sh
+- cd $TRAVIS_BUILD_DIR/
 - meteor build $HOME --server=$API_SERVER_ADDRESS
 services:
 - mongodb
 before_deploy:
 - cp $TRAVIS_BUILD_DIR/.keystore $HOME
 - jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 $HOME/android/release-unsigned.apk
-  sharpai-app -keystore $HOME/.keystore -storepass $storepass -keypass $keypass
+  sharpai-mobile -keystore $HOME/.keystore -storepass $storepass -keypass $keypass
 - "${ANDROID_HOME}/build-tools/28.0.3/zipalign 4 $HOME/android/release-unsigned.apk
   $HOME/android/sharpai-app.apk"
 deploy:
@@ -58,5 +60,5 @@ deploy:
     tags: true
 env:
   global:
-  - secure: TzFw7l+MZwYLjpe8ly7pO+BDtsSX27k8jZLf92rym43X8Q2V4oKhqPhsnKekG5pECWaUFhq0wWfsgzp/bp1ScMqrAtK9ODBcGYWlT2R+jMEa+XoVC0yNs5T4yUc6TC/3+qKdTNj5+VcjrCtCJDvR+7C4wFB0YuTM0aIs/j6Nx/GkXFZKLhCG7koy4F35Xyrhvlu6EAwCN0UERmYX8xJEAbExJNEKu1HSzXPUU/07VOB+EAtxqeMDmPaRW3s0hXnIypRPJ0c+6TMdkUcxmTk+3i45oBwYA4Of1eU3SL5w3NuX+zYFpbC4qXRhD88IiAsgHzqXHaAl5nOXpy/r2xMvMfzVLKHBbazyD6dJIFmQD1ZAtdwf04/D0LolESguEDdq/F+AFFV3QXbmhbziQgCtbVjPwIxuAiCTpDlH35LPl2/LvfItKAASI67CgaMeuFD9L9RBnIDiSiD0g1J4xPH+7OFvmZc1uLiZl1d+3++RTVMiNXCveBNNZldxwtVjLVZNfUMcUK2spCKxQvQoEO6awCfesxDZe9VVgndVaq70OctTr60Id4gdm7ozTpkHGN0RTS5aNRUrrmsHDSR5vfYEgXc6M+vxMjMpV/6B3tb/EFOZp8hSptPjhkU7GyUgjX0YD8WzdctlNT3n9gt3IvM053q+iejC0Udhl+bX50rpJL0=
-  - secure: Piq4s+W1lRvHmM6XQg59gLgBW+qpZAEPgtv2Bjd8q3QyE0t3ihrHIvgb4nk9GrFbofXnYnLc1XE/iPxic5DOk+9hb6TQK8lSjZV/pHuKW42FengzQ17ccEbtW9LGm0SNtnO03YDFcDDTIfx8DyXIrlp63lXZFHagCFTr0t7+EH4YcoyMkRvKA4BI+Dvf+lHCakJvtv2Qah8PjXulv3ZCo+LlWqjMCtxbFvcas+v0rj25TEFvuJQPC66IbrxiwEwmhZMr9/f5MzKvV0gzkq9yGGyl3ZQRb5EyMB/FMPCYvpW7M+Qx3AOifLCqppdBTMYon77uZNDcuREyP1uF6KzkXcvvIHWlqe7lkbduK5eLaacUtTl7c5IPivcfKF+2be+VQTV4pTEfHOin/1QGhn6vsEISs/79/ukLRHb4vkP7H86BMAZbbTLeB1A7JESkIc57jmma5ClLS/RcCh/tKL6StCplxOEPeW1TDnUfNSQx3TpC8KcbV15sl2OxI+Ppce77dTP6Uy4CcEhV01MgPnWTBRoVHbaw/XDFvqzJ4mhM7vfXVHHSjo1xKom1czSscwfea31Pj5cQ81jN8FdfYN3Sin0jGQpQKv05eHNgrY7Uy3E7rTz7IFvd+ngZR6yXHqJH4TldcYP+wj1zsQhTswvrT1fvptb8jytqMDKoEtmyrcw=
+  - secure: lQW341zlQe19AotwPw6cTifFGFpNnHrIyzoPNkGKxTmsxU3NYay9EkpExUOvcxRjF+dAP5DA0B8KzQGQzCZGIIOH06ztJte1eKTb/joERq9WhQrIHNNk+KzKSBbpmquAxlpo+Q+PwPfK2KO7zCRG3gNKyQ/BPQ4gRMhISIQN/zbkaxoUR0hmAaV3Z3H+DfcD5iP/xkZ8yeJYya8spbEKq2T4Vv7sjkjNQFBVkkAy1MAbT6dZdjxytUrFrViOcL0vvUi9yiT3b3U/bIapkqILmSPydEUOLVSRfiGNK6BE4pmEneEjSL0uc94a/kP9d6tsaj4MncaowjABB+cKdQLJNBqqfRv5eySuswHk7ArDAKiC4dDRbUljXji2mO5hR0TPyUm9n43w9Q8a2BtbUCKRxbnf2KXjrciJS2pUqoYF4C9XESRSkvi5xHSKwhC66wi5SPu+WrwQ5c9DFVCaT0vQ9aYxi19MvZekhbjus2ssIiI6xyEVJb5TukXfLvgTGWtCK8myHSrI8KEJQyQ2FeguBepA3afQpHbXSoPAKoS6sXdYejLZ04C8hB9YaHOcrqhruqRXhEy7ysrDSFi/LpidUcDldXV7GWo1Ak/+qC/HHkp/fBSMtdmr01KmPIlchtBets+7KZR14El8UTyHZdhoiVCEnt4k3nsZ2NShhb0XRtM=
+  - secure: nn9epx9j9CobAS7wejgUcyNxWD46W7u9opIhjiQgOV+9TUfCeyKPKtEmoNJdLsd+9MLhiUzQjjuV7+zkAsSh+/ycPxIvQfbUIVjSimATwK6NFuWod0DnQ89JFN4XHKXnumN/MUHpPqsJe6+hsdIg+dxkyhcbY1X3huB2Gywkxl96sOK6YvHq9SrdEteGjJhT4CPgtdGC/CSIslmvdSLYGUAgBed3qTOH81F5HSOMjH5JWhXt/ToJshzbVFONVhG3SnbDbFocx3tQ/gUB5kGGmFesMmFUP0CgYV/oAUgSTB/bfe0LBzJMF1YF/jfbYvlbTcplChBjy/JGU2N5WzbEnkIJ7MNG/SZ3MupWnMKIrjlwZB6Hu3KC5otWI93l0AOSeKy5ZhLFkWZQFyuZJSvGmiwa8c9AnfxomeD0e6QOqowiyzWhp0CROGn3RIHq3XuEHyv5vk7gCeN2BBBtmfqy2Gj8O6CPP0e+AOrF3m6i0j/XAFAq2e5DqhjAl+3KLyb49v8Sjldw7wl7I8E2k4rUSW0QAuP17Ha++qpBSG8t+As1pXsNpch7EKFdjlpwYPVK7Qwkqdgwdh83wsBWwaU47vWeQNU0WMlrZWwGc753kYXrYlTCRd8eebEGCxyPDb/cDnpjbnUmKnXGAj9zI8zOMgrM8HjRZGx/hNGr2pMijGE=
