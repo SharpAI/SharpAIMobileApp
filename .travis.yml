@@ -39,7 +39,8 @@ before_script:
 - export PATH=$HOME/.meteor:$PATH
 - meteor npm install
 - cd $TRAVIS_BUILD_DIR/../
-- git clone https://github.com/SharpAI/ApiServer
+- git clone https://github.com/SharpAI/ApiServer.git
+- git clone https://github.com/SharpAI/SharpAIPlugins.git
 script:
 - cd $TRAVIS_BUILD_DIR/
 - meteor build $HOME --server=$API_SERVER_ADDRESS

@@ -260,7 +260,7 @@ if Meteor.isClient
             groupDelOrQuitCB(err,id,true)
             initGroupIndex(Meteor.userId())
           )
-        )     
+        )
 
       PUB.confirm('退出后，将不再接收本监控组消息',()->
         Meteor.call('remove-group-user',Session.get('groupsId'),Meteor.userId(),(err,id)->
@@ -288,7 +288,7 @@ if Meteor.isClient
           #   PUB.back()
           # ,100)
         )
-        
+
         return PUB.page '/'
       )
     'click .groupPhoto':(event)->
@@ -350,7 +350,6 @@ if Meteor.isClient
       if perf_url is null
           console.log "perf url is null, browser: " + perf_url
           perf_url = 'http://aixd.raidcdn.cn/reporter/f5ZocsFpQn9CApmy8'
-      #cordova.InAppBrowser.open(perf_url, '_system')
     'click .emptyMessages':(event)->
       PUB.confirm('确定要清空训练记录吗？',()->
         type = Session.get('groupsType')
