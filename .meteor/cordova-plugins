@@ -6,7 +6,7 @@ com.verso.cordova.clipboard@file://../SharpAIPlugins/PluginCordova-clipboard-5ca
 com.wordsbaking.cordova.tts@file://../SharpAIPlugins/PluginCordova-cordova-plugin-tts-2d556f1
 cordova-plugin-actionsheet@file://../SharpAIPlugins/PluginCordova-cordova-plugin-actionsheet-e57d0e8
 cordova-plugin-globalization@file://../SharpAIPlugins/cordova-plugin-globalization
-cordova-plugin-apprate@file://../SharpAIPlugins/cordova-plugin-apprate-b318cab
+cordova-plugin-apprate@file://../SharpAIPlugins/PluginCordova-apprate-b318cab
 cordova-plugin-compat@file://../SharpAIPlugins/PluginCordova-apprate-b318cab
 cordova-plugin-camera@file://../SharpAIPlugins/PluginCordova-cordova-plugin-camera-394a5b1
 cordova-plugin-crop@file://../SharpAIPlugins/PluginCordova-cordova-plugin-crop-dfa8471
