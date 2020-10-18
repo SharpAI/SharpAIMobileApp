@@ -7,7 +7,7 @@ com.wordsbaking.cordova.tts@file://../SharpAIPlugins/PluginCordova-cordova-plugi
 cordova-plugin-actionsheet@file://../SharpAIPlugins/PluginCordova-cordova-plugin-actionsheet-e57d0e8
 cordova-plugin-globalization@file://../SharpAIPlugins/cordova-plugin-globalization
 cordova-plugin-apprate@file://../SharpAIPlugins/PluginCordova-apprate-b318cab
-cordova-plugin-compat@file://../SharpAIPlugins/PluginCordova-apprate-b318cab
+cordova-plugin-compat@file://../SharpAIPlugins/cordova-plugin-compat-1.1.0
 cordova-plugin-camera@file://../SharpAIPlugins/PluginCordova-cordova-plugin-camera-394a5b1
 cordova-plugin-crop@file://../SharpAIPlugins/PluginCordova-cordova-plugin-crop-dfa8471
 cordova-plugin-device@file://../SharpAIPlugins/cordova-plugin-device
