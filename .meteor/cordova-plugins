@@ -39,7 +39,6 @@ org.hotshare.customDialog@file://../SharpAIPlugins/PluginCordova-customDialog-3f
 org.hotshare.shareExtension@file://../SharpAIPlugins/PluginCordova-share-extension-2cde17f
 org.hotshare.userinfo@file://../SharpAIPlugins/PluginCordova-userInfo-1f7cee2
 org.sharpai.everywhere.appsetup@file://../SharpAIPlugins/PluginCordova-sharpAiAppSetUp-35463af
-org.zy.yuancheng.qq@file://../SharpAIPlugins/PluginCordova-qq-9fccd8e
 phonegap-plugin-barcodescanner@file://../SharpAIPlugins/PluginCordova-phonegap-plugin-barcodescanner-a2bcdec
 phonegap-plugin-push@file://../SharpAIPlugins/phonegap-plugin-push-1.8.2
 cordova-plugin-add-swift-support@file://../SharpAIPlugins/cordova-plugin-add-swift-support
