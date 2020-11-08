@@ -7,7 +7,7 @@ if (Meteor.isClient) {
           "Format: " + result.format + "\n" +
           "Cancelled: " + result.cancelled);
         var gotoPage = '/';
-        //var  requiredStr = rest_api_url+'/simple-chat/to/group?id=' 
+        //var  requiredStr = rest_api_url+'/simple-chat/to/group?id='
         if (result.text) {
           if (Session.get('addHomeAIBox') === true) {
             Router.go('/scanFailPrompt');
@@ -223,9 +223,9 @@ if (Meteor.isClient) {
       if (Accounts._resetPasswordToken) {
           Session.set('resetPassword', Accounts._resetPasswordToken);
       }
-       WechatShare.isWXAppInstalled(function(result){
-        Session.set('isWXAppInstalled', result);
-      }, function(){});
+       //WechatShare.isWXAppInstalled(function(result){
+        //  Session.set('isWXAppInstalled', result);
+        //}, function(){});
   });
   Template.authOverlay.onRendered(function () {
     // StatusBar.backgroundColorByHexString("#ffffff");

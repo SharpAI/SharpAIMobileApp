@@ -65,9 +65,9 @@ App.configurePlugin('com.leon.cordova.wechat', {
     APP_ID: 'wx637c7894a6f687b8',
     QQ_APP_ID: '1106023181'
 });
-App.configurePlugin('com.share.wechatShare', {
-    APP_ID: 'wx637c7894a6f687b8',
-});
+//App.configurePlugin('com.share.wechatShare', {
+//    APP_ID: 'wx637c7894a6f687b8',
+//});
 
 App.configurePlugin('org.zy.yuancheng.qq', {
     QQ_APP_ID: '1106023181'
