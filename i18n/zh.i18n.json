@@ -287,6 +287,35 @@
   "readFollowTips": "阅读超过3次后提示读者关注",
   // end
 
+  // introductoryPage.html
+  "joinGroup":"加入监控组",
+  "createGroup":"创建监控组",
+  "skipToHome":"下次再说，进入主页",
+  "scanQRCode":"扫描二维码",
+  "scanFromAlbum":"相册载入二维码",
+  "quickDemo":"快速体验",
+  // end
+
+  // homePage.html
+  "headMonitorGroup":"监控组",
+  // end
+
+  // footer.html
+  "monitorGroup":"监控组",
+  "timeLine":"时间轴",
+  "message":"消息",
+  "profile":"我的",
+  // end
+
+  "myDevices":"我的设备",
+  "offline":"离线",
+  "online":"在线",
+  "unknownDevice":"未知设备",
+  "box":"盒子",
+  "camera":"摄像头",
+  "noDevice":"未找到设备",
+
+  // TAPi18n.__()
   //dynamic js file contents
   "hotShareQQZoneShare": "来了吗分享QQ空间",
   "wechatNotInstalled": "未安装微信客户端，分享失败",
@@ -298,6 +327,12 @@
   "Account": "帐号管理",
   "addAccount": "添加帐号",
   "add": "添加",
+  "registing":"正在提交信息...",
+  "noConnection":"当前为离线状态,请检查网络连接",
+  "userNamePlease":"请输入用户名！",
+  "passwordPlease":"请输入密码！",
+  "incorrectUsernameOrPassword":"帐号或密码有误！",
+  "contactUs":"联系客服",
   //end
 
   "readMore": "继续阅读",

@@ -30,7 +30,7 @@ Template.loginForm.events
       # $('.recovery').css('display',"none")
 #      $('.authOverlay').css('-webkit-filter',"none")
     'click .forgetPwdBtn': (e)->
-      menus = ['忘记密码？','联系客服']
+      menus = [TAPi18n.__("forgotPassword"),TAPi18n.__("contactUs")]
       menuTitle = ''
       callback = (buttonIndex)->
         if buttonIndex is 1
@@ -50,7 +50,7 @@ Template.loginForm.events
       mailAddress = t.find('#customerEmail').value
       content = t.find('#sendContent').value
       qqValueReg = RegExp(/^[1-9][0-9]{4,9}$/)
-      mailValueReg = RegExp(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/) 
+      mailValueReg = RegExp(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/)
       subject = '用户' + mailAddress + '需要人工客服！'
       if !mailValueReg.test(mailAddress) and !qqValueReg.test(mailAddress)
         PUB.toast('请输入正确的QQ号或Email')
@@ -76,24 +76,24 @@ Template.loginForm.events
     'submit #login-form':(e,t)->
       e.preventDefault()
       if Meteor.status().connected isnt true
-        PUB.toast '当前为离线状态,请检查网络连接'
+        PUB.toast TAPi18n.__("noConnection")
         return
       name = t.find('#login-username').value
       Session.set 'userName',name
       pass = t.find('#login-password').value
       if name is ''
-        PUB.toast '请输入用户名！'
+        PUB.toast TAPi18n.__("userNamePlease")
         return
       if pass is ''
-        PUB.toast '请输入密码！'
+        PUB.toast TAPi18n.__("passwordPlease")
         return
       t.find('#sub-login').disabled = true
-      t.find('#sub-login').innerText = '正在登录...'
+      t.find('#sub-login').innerText = TAPi18n.__("funnyLogin")
       Meteor.loginWithPassword name, pass,(error)->
         if error
-          PUB.toast '帐号或密码有误！'
+          PUB.toast TAPi18n.__("incorrectUsernameOrPassword")
           t.find('#sub-login').disabled = false
-          t.find('#sub-login').innerText = '登 录'
+          t.find('#sub-login').innerText = TAPi18n.__("logIn")
         else
           Router.go '/'
           ###
@@ -112,7 +112,7 @@ Template.loginForm.events
           ###
           checkShareUrl()
           return
-      false 
+      false
 Template.recoveryForm.events
     'focus input':(e,t)->
       Meteor.setTimeout ->
@@ -133,13 +133,13 @@ Template.recoveryForm.events
     'submit #recovery-form':(e,t)->
       e.preventDefault()
       if Meteor.status().connected isnt true
-        PUB.toast '当前为离线状态,请检查网络连接'
+        PUB.toast TAPi18n.__("noConnection")
         return
       email = t.find('#recovery-email').value
       if email is ''
         return
       qqValueReg = RegExp(/^[1-9][0-9]{4,9}$/)
-      mailValueReg = RegExp(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/) 
+      mailValueReg = RegExp(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/)
       if !mailValueReg.test(email) and !qqValueReg.test(email)
         PUB.toast('请输入正确的QQ号或Email')
         return false

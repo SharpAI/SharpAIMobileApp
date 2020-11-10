@@ -100,7 +100,7 @@ Template.signupForm.events
       PUB.toast '密码至少要6位！'
     else
       t.find('#sub-registered').disabled = true
-      t.find('#sub-registered').innerText = '正在提交信息...'
+      t.find('#sub-registered').innerText = TAPi18n.__("registing")
       Accounts.createUser
         username:Session.get('userName')
         email:email
@@ -140,4 +140,3 @@ Template.signupForm.events
                   Router.go('/introductoryPage')
             return
     false
-
