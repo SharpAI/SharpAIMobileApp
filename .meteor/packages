@@ -73,3 +73,4 @@ jparker:crypto-md5
 jparker:crypto-sha256
 jparker:crypto-hmac
 vsivsi:job-collection
+crapthings:switch-root-url

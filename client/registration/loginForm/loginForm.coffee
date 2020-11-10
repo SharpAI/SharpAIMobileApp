@@ -1,5 +1,10 @@
 # id1 = null
 # id2 = null
+Template.loginForm.helpers
+    serverAddress: ()->
+      if window.localStorage.getItem('Meteor.rootUrl')
+        return window.localStorage.getItem('Meteor.rootUrl')
+      return __meteor_runtime_config__.DDP_DEFAULT_CONNECTION_URL
 Template.loginForm.events
     'click #toSignup':(e,t)->
       return PUB.page('/signupForm');
