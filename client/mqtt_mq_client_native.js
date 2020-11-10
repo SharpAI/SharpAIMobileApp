@@ -24,7 +24,7 @@ if (Meteor.isClient && withNativeMQTTLIB) {
     var noMessageTimer = null;
     Session.set('history_message', false);
     Session.set('offlineMsgOverflow', false);
-    
+
     //mqtt_connected = false;
     function check_if_message_sent_byself(message) {
       if (Meteor.userId() && message && message.form && message.form.id) {
@@ -40,7 +40,7 @@ if (Meteor.isClient && withNativeMQTTLIB) {
           console.log(err);
           return;
         }
-  
+
         if (result && result['mqueue_len'] > 1999) {
           Session.set('offlineMsgOverflow', true);
         }
@@ -61,8 +61,8 @@ if (Meteor.isClient && withNativeMQTTLIB) {
       var mqttOptions = {
         username: clientId,
         password: localStorage.getItem('Meteor.loginToken'),
-        host: 'mq.tiegushi.com',
-        port: 8080,
+        host: '165.232.62.29',
+        port: 1883,
         timeout: 30,
         keepAlive: 10,
         cleanSession: false,
