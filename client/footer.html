@@ -5,19 +5,19 @@
             <div class="btn-group">
               <a id="homePage" class="foot-btn btn btn-default {{focus_style 'home'}}">
                 <i class="fa fa-home" style="font-size: 26px;"></i>
-                <div class="footerName">监控组</div>
+                <div class="footerName">{{_ "monitorGroup"}}</div>
               </a>
             </div>
             <div class="btn-group">
               <a id="timeline" class="foot-btn btn btn-default {{focus_style 'timeline'}}">
                 <i class="fa fa-tablet" style="font-size: 26px;"></i>
-                <div class="footerName">时间轴</div>
+                <div class="footerName">{{_ "timeLine"}}</div>
               </a>
             </div>
             <div class="btn-group">
               <a id="message" class="foot-btn btn btn-default {{focus_style 'message'}}">
                 <i class="fa fa-comment" style="font-size: 24px;"></i>
-                <div class="footerName">消息</div>
+                <div class="footerName">{{_ "message"}}</div>
                 {{#if hasNewLabelMsg}}
                 <div style="height:14px; width:14px; background-color:red; position:absolute; top: 10px; right: 25px; border-radius: 50%;"></div>
                 {{/if}}
@@ -51,7 +51,7 @@
             <div class="btn-group">
               <a id="user" class="foot-btn btn btn-default {{focus_style 'user'}}">
                 <i class="fa fa-user" style="font-size: 24px;"></i>
-                <div class="footerName">我的</div>
+                <div class="footerName">{{_ "profile"}}</div>
               </a>
             </div>
         </div>

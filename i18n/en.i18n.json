@@ -280,6 +280,36 @@
   "readFollowTips": "阅读超过3次后提示读者关注",
   // end
 
+  // introductoryPage.html
+  "joinGroup":"Join Group",
+  "createGroup":"Create Group",
+  "skipToHome":"Skip to Home",
+  "scanQRCode":"Scan QRCode",
+  "scanFromAlbum":"Scan Album",
+  "quickDemo":"Quick Demo",
+  // end
+
+  // homePage.html
+  "headMonitorGroup":"Groups",
+  // end
+
+  // footer.html
+  "monitorGroup":"Groups",
+  "timeLine":"Timeline",
+  "message":"Message",
+  "profile":"Profile",
+  // end
+
+
+  "myDevices":"My Devices",
+  "offline":"Offline",
+  "online":"Online",
+  "unknownDevice":"Unknown Device",
+  "box":"Box",
+  "camera":"Camera",
+  "noDevice":"No Device",
+
+  // TAPi18n.__()
   //dynamic js file contents
   "hotShareQQZoneShare": "Share to QQZone from hotShare",
   "shareStoryGroup": "Share to Story Group",
@@ -292,6 +322,11 @@
   "Account": "Account",
   "addAccount": "Add Account",
   "add": "Add",
+  "registing":"Signing up",
+  "noConnection":"No network connection, please check your configuration.",
+  "userNamePlease":"Please input username",
+  "incorrectUsernameOrPassword":"Username or password is not the same as in record.",
+  "contactUs":"Contact us",
   //end
 
   "readMore": "Read More",
