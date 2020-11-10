@@ -308,6 +308,8 @@
   "box":"Box",
   "camera":"Camera",
   "noDevice":"No Device",
+  "setServer":"Set Server Address",
+  "currentAddress":"Current Server Address:",
 
   // TAPi18n.__()
   //dynamic js file contents
