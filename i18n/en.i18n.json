@@ -66,7 +66,8 @@
   "forgotPassword": "Forgot your password?",
   "forgetPwd": "Forgot password?",
   "noAccount": "No account yet?",
-  "registNow": "Register now",
+  "registNow": "Sign up now",
+  "passwordAgain": "Confirm password",
   //end
    //registerFollow.html
   "chooseAtLeast": "Choose at least ",

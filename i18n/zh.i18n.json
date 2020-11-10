@@ -64,6 +64,7 @@
   "signUpMeansWhat": "如果注册就意味着同意了用户协议",
   "userName": "请输入用户名",
   "passWord": "请输入密码",
+  "passwordAgain": "再次确认密码",
   "emailAddress": "邮箱",
   //end
   //loginForm.html
