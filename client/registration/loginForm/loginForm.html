@@ -11,7 +11,16 @@
             <img width="80%" src="/icon-2.png">
         </div>
     </div>
+
     <form  class="loginBody" id="login-form">
+        <span class="server-prefix">{{_ "currentAddress"}}</span>
+        <div class="input-group margin-bottom-sm server-box">
+            <!--<span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>-->
+
+            <input style="" type="text" id="server-address" class="form-control" value={{serverAddress}} />
+            <button id="set-server" class="ripple-btn" style="color: #fff; border: none;outline: none;">{{_ "setServer"}}</button><br />
+        </div>
+
         <div class="input-group margin-bottom-sm">
             <!--<span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>-->
             <input style="" type="text" id="login-username" class="form-control newinput" placeholder={{_ "userName"}} /><br />
@@ -25,13 +34,6 @@
         <button type="submit" id="sub-login" class="ripple-btn" style="color: #fff; border: none;outline: none;">{{_ "logIn"}}</button>
         <div class="noRegister">{{_ "noAccount"}}<span id="toSignup" class="signup-text">{{_ "registNow"}}</span></div>
 
-
-        <div class="input-group margin-bottom-sm server-box">
-            <!--<span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>-->
-
-            <span class="server-prefix">{{_ "currentAddress"}}</span><input style="" type="text" id="server-address" class="form-control newinput" placeholder={{serverAddress}} /><br />
-        </div>
-        <button id="set-server" class="ripple-btn" style="color: #fff; border: none;outline: none;">{{_ "setServer"}}</button>
         <!-- <div class="forgetPassword">{{_ "forgotPassword"}}</div> -->
     </form>
     <!-- <div class="company">{{_ "kmxdkj"}}</div> -->

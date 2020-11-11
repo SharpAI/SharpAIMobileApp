@@ -78,6 +78,12 @@ Template.loginForm.events
       # $('.agreeDeal').css('display',"none")
       $('body').height($('body')[0].clientHeight);
       Router.go '/recoveryForm'
+    'click #set-server':(e,t)->
+      e.preventDefault()
+      newAddress = t.find('#server-address').value
+      PUB.toast TAPi18n.__("switchServerURL")+newAddress
+      Meteor.switchRootUrl(newAddress)
+
     'submit #login-form':(e,t)->
       e.preventDefault()
       if Meteor.status().connected isnt true
