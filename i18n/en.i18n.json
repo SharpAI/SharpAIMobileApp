@@ -291,6 +291,11 @@
 
   // homePage.html
   "headMonitorGroup":"Groups",
+  "createGroup":"Create Group",
+  "joinGroup":"Scan QR code to join group",
+  "scanPicture":"Scan picture to join group",
+  "scanToAddDevice":"Scan QR code to add device",
+  "scanNetworkToAddDevice":"Scan network to add device",
   // end
 
   // footer.html
@@ -308,8 +313,9 @@
   "box":"Box",
   "camera":"Camera",
   "noDevice":"No Device",
-  "setServer":"Set Server Address",
+  "setServer":"Set",
   "currentAddress":"Current Server Address:",
+  "switchServerURL":"Changing to new server address:",
 
   // TAPi18n.__()
   //dynamic js file contents
@@ -329,6 +335,7 @@
   "userNamePlease":"Please input username",
   "incorrectUsernameOrPassword":"Username or password is not the same as in record.",
   "contactUs":"Contact us",
+  "exiting":"Exiting",
   //end
 
   "readMore": "Read More",

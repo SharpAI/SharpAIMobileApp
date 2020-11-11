@@ -103,7 +103,7 @@ if Meteor.isClient
     'click .back' :->
       Router.go '/user'
     'click .logout':(e)->
-      e.target.innerText="正在退出登录..."
+      e.target.innerText=TAPi18n.__("exiting")
       thisUser = Meteor.user()
       Meteor.call('updatePushToken' ,{type: thisUser.type, token: thisUser.token,userId:''});
 #      Meteor.users.update({_id: thisUser._id}, {$set: {type: '', token: ''}})

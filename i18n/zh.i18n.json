@@ -298,6 +298,11 @@
 
   // homePage.html
   "headMonitorGroup":"监控组",
+  "createGroup":"创建监控组",
+  "joinGroup":"扫码加入监控组",
+  "scanPicture":"扫图片",
+  "scanToAddDevice":"扫码添加脸脸盒",
+  "scanNetworkToAddDevice":"网络扫描脸脸盒",
   // end
 
   // footer.html
@@ -314,8 +319,9 @@
   "box":"盒子",
   "camera":"摄像头",
   "noDevice":"未找到设备",
-  "setServer":"设置服务器地址",
+  "setServer":"设置",
   "currentAddress":"当前服务器地址",
+  "switchServerURL":"正在切换到新服务器地址：",
 
   // TAPi18n.__()
   //dynamic js file contents
@@ -335,6 +341,7 @@
   "passwordPlease":"请输入密码！",
   "incorrectUsernameOrPassword":"帐号或密码有误！",
   "contactUs":"联系客服",
+  "exiting":"正在退出登录...",
   //end
 
   "readMore": "继续阅读",
