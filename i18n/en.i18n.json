@@ -316,6 +316,14 @@
   "setServer":"Set",
   "currentAddress":"Current Server Address:",
   "switchServerURL":"Changing to new server address:",
+  "detailBindFaceID":"Bind your account to Face ID of group to check your appearence",
+  "favoriteDetail":"Check your favorite messages",
+  "followedOnlyPushNotification":"Subscribe only followed users",
+  "detealFollowedOnlyPushNotification":"Subscribe only followed users' push notification(will notify you unknown person's notification)",
+
+  // user.html
+  "bindFaceID":"Bind to Group Face ID",
+  //
 
   // TAPi18n.__()
   //dynamic js file contents
