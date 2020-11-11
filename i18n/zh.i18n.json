@@ -323,6 +323,14 @@
   "currentAddress":"当前服务器地址",
   "switchServerURL":"正在切换到新服务器地址：",
 
+  // user.html
+  "bindFaceID":"群组Face ID绑定",
+  "detailBindFaceID":"将帐号与对应群组成员绑定，实时查看、更正自己的出现信息",
+  "favoriteDetail":"查看收藏的消息",
+  "followedOnlyPushNotification":"只通知关注用户",
+  "detealFollowedOnlyPushNotification":"只有出现您关注的用户才发推送消息（陌生人仍然通知您）",
+  //
+
   // TAPi18n.__()
   //dynamic js file contents
   "hotShareQQZoneShare": "来了吗分享QQ空间",

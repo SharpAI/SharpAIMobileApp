@@ -28,20 +28,20 @@
 
     <ul class="set-up comFadeIn" style="margin-top: 10px;margin-bottom: 10px;border: none;">
       <li class="name bindGroupUser">
-          <label style="position: relative;margin-top: 0px;">群组成员绑定</label>
-          <div class="help-info" style="font-size: 12px;color: #555;">将帐号与对应群组成员绑定，实时查看、更正自己的出现信息</div>
+          <label style="position: relative;margin-top: 0px;">{{_ "bindFaceID"}}</label>
+          <div class="help-info" style="font-size: 12px;color: #555;">{{_ "detailBindFaceID"}}</div>
       </li>
       <li class="name collect">
-          <label style="position: relative;margin-top: 0px;">收藏</label>
-          <div class="help-info" style="font-size: 12px;color: #555;">查看收藏的消息</div>
+          <label style="position: relative;margin-top: 0px;">{{_ "favorite"}}</label>
+          <div class="help-info" style="font-size: 12px;color: #555;">{{_ "favoriteDetail"}}</div>
       </li>
 
       <li class="name enable-follow-notify-only">
-          <label style="position: relative;margin-top: 0px;">只通知关注用户</label>
+          <label style="position: relative;margin-top: 0px;">{{_ "followedOnlyPushNotification"}}</label>
           <div class="right-btn" style="background: #fff;">
             <input id="report_id" class="switch" style="margin-right:5px;outline:none;" type="checkbox" data-checked={{followedOnly}} {{followedOnly}}>
           </div>
-          <div class="help-info" style="font-size: 12px;color: #555;">只有出现您关注的用户才发推送消息（陌生人仍然通知您）</div>
+          <div class="help-info" style="font-size: 12px;color: #555;">{{_ "detealFollowedOnlyPushNotification"}}</div>
       </li>
     </ul>
 
