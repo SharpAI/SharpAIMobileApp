@@ -5,14 +5,14 @@
       <span class="Contacts">监控组</span>
     </div>
     </div></div>
-  
-  <div class="chatContent">    
+
+  <div class="chatContent">
     <div id="addNewFriends" class="eachViewer create">
       <img class="icon" src="/userPlus.png" width="30" height="30">
       <span class="userName">创建监控组</span>
     </div>
     <div class="showPostsLine"></div>
-    
+
     {{#each groups}}
       <div id="{{_id}}" class="eachViewer group">
         <img class="icon" src="/usersChat.jpg" width="30" height="30">
@@ -27,16 +27,16 @@
   <div class="contactsList">
     <div class="head" style="display:block;">
       <div class="socialTitle">
-        <div class="left-btn">取消</div>
+        <div class="left-btn">{{_ "cancel"}}</div>
         <span class="Contacts">选择好友</span>
         {{#if exist}}
-        <div class="right-btn">确定</div>
+        <div class="right-btn">{{_ "confirm"}}</div>
         {{else}}
-        <div class="right-btn disable">确定</div>
+        <div class="right-btn disable">{{_ "confirm"}}</div>
         {{/if}}
       </div>
     </div>
-    
+
     {{#each follower}}
       <div id="{{followerId}}" class="eachViewer userProfile">
         <img class="icon" src="{{followerIcon}}" width="30" height="30">
@@ -67,9 +67,9 @@
 <template name="messageGroupCreateName">
   <div class="messageGroupCreateName">
     <div class="head">
-      <div class="left-btn">&lt;取消</div>
-      监控组名称
-      <div class="right-btn">确定</div>
+      <div class="left-btn">&lt;{{_ "cancel"}}</div>
+      {{_ "theGroupName"}}
+      <div class="right-btn">{{_ "confirm"}}</div>
     </div>
 
     <form class="message-group-create-name-form">

@@ -88,7 +88,7 @@ if Meteor.isClient
       cordova.InAppBrowser.open('https://itunes.apple.com/app/gu-shi-tie/id957024953', '_system')
     else
       cordova.InAppBrowser.open('http://a.app.qq.com/o/simple.jsp?pkgname=org.hotshare.everywhere', '_system')
-  
+
   Template.home.onRendered ()->
     # 首页数据直接在首页订阅，不需要等mqtt连接成功，提升首页打开速度
     Meteor.subscribe 'get-my-group', Meteor.userId()
@@ -106,7 +106,7 @@ if Meteor.isClient
         iconClass: 'fa fa-3x fa-hand-o-down',
         iconStyle: 'display: block; position: absolute; bottom: 60px; left: 31%;',
         spanStyle: 'display: block; font-size: 18px; position: absolute; bottom: 110px; left: 20%;',
-        spanContent: '点击时间轴查看设备在线状态'
+        spanContent: TAPi18n.__("hintTimeline")
       })
 
       currentTip = 'timeLineTab'

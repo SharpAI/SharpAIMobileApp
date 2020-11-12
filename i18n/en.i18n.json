@@ -316,14 +316,48 @@
   "setServer":"Set",
   "currentAddress":"Current Server Address:",
   "switchServerURL":"Changing to new server address:",
+
+  // user.html
+  "bindFaceID":"Bind to Group Face ID",
   "detailBindFaceID":"Bind your account to Face ID of group to check your appearence",
   "favoriteDetail":"Check your favorite messages",
   "followedOnlyPushNotification":"Subscribe only followed users",
   "detealFollowedOnlyPushNotification":"Subscribe only followed users' push notification(will notify you unknown person's notification)",
+  // end
 
-  // user.html
-  "bindFaceID":"Bind to Group Face ID",
-  //
+  // messageGroup.html
+  "theGroupName":"Group Name",
+  "inputGroupName":"Please input group name",
+  "inputNewGroupName":"Please input new group name",
+  // end
+
+  // groupsProfile.html
+  "groupManagement":"Manage Group",
+  // end
+
+  // homePage.html
+  "checkIns":"Check-in of Today",
+  "checkInsPrefix":"",
+  "checkInsPerson":"",
+  "evaluateDeployment":"Evaluate Deployment",
+  "memberManagement":"Manage Members",
+  "checkInRecords":"Check-in History",
+  "label":"Name Unknown",
+  "tabelAppearance":"Check-in Report Table",
+  // end
+
+  "groupInfo":"Group Informationn",
+  "groupQRCode":"Group QRCode",
+  "groupDeviceList":"Group Device List",
+  "recognitionCounts":"Recognition Status",
+  "checkInDuration":"Check-in Duration",
+  "notifyToFillSchedule":"Notify to Fill in Daily Schedule",
+  "unknownNotification":"Notify You When See Unknown Person",
+  "manageNotification":"Manage Notification Rules",
+  "groupReportEmail":"Email to Receive Status Report",
+  "cleanUpTrainingRecord":"Cleanup Training Dataset",
+  "exit":"Exit",
+  "showAllMembers":"Show All Members",
 
   // TAPi18n.__()
   //dynamic js file contents
@@ -344,6 +378,11 @@
   "incorrectUsernameOrPassword":"Username or password is not the same as in record.",
   "contactUs":"Contact us",
   "exiting":"Exiting",
+  "hintTimeline":"Tap on TIMELINE to show online devices",
+  "hintMessage":"Tap on MESSAGE to show recognition results",
+  "hintAdding":"Tap to manage groups/devices",
+  "hintToCreateGroup":"Tap to create group",
+  "hintToAddDevice":"Tap to add device",
   //end
 
   "readMore": "Read More",
