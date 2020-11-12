@@ -77,6 +77,10 @@ if Meteor.isClient
       PUB.back()
     ,100)
   Session.setDefault("groupsProfileMenu",'groupInformation')
+  Meteor.startup ()->
+    UI.registerHelper('checkedIf',(val)->
+      return if val then 'checked' else ''
+    )
   Template.groupsProfile.helpers
     whichOne:()->
       Session.get("groupsProfileMenu")
@@ -87,13 +91,11 @@ if Meteor.isClient
       onReady:()->
         initGroupInOutTimeSet()
       onError:()->
-        initGroupInOutTimeSet
+        initGroupInOutTimeSet()
     })
     Meteor.subscribe('group-user-counter',groupid)
     Meteor.subscribe('loginuser-in-group',groupid, Meteor.userId())
-  UI.registerHelper('checkedIf',(val)->
-    return if val then 'checked' else ''
-  )
+
   Template.groupInformation.helpers
     userTypeIsAdmin:()->
       user = Meteor.user()
@@ -169,11 +171,8 @@ if Meteor.isClient
         return true
       else
         return false
-
     barcodeUrl:()->
-      group =  SimpleChat.Groups.findOne({_id:Session.get('groupsId')})
-      if  group and group.barcode
-        return group.barcode
+      return Meteor.getRootUrl()+'/restapi/workai-group-qrcode?group_id=' + Session.get('groupsId')
     hasTemplate:()->
       group =  SimpleChat.Groups.findOne({_id:Session.get('groupsId')})
       if  group and group.template and group.template._id
@@ -221,7 +220,6 @@ if Meteor.isClient
       if groupUser and groupUser.isGroupAdmin
         return true
       return false
-
   Template.groupInformation.events
     'click #recognitionCounts': (event)->
       group_id = Session.get('groupsId')
@@ -478,8 +476,8 @@ if Meteor.isClient
   Template.setGroupname.helpers
     placeholderText:()->
       if Session.equals('fromCreateNewGroups',true)
-         return '输入监控组名称'
-      return '输入新的监控组名称'
+         return TAPi18n.__("inputGroupName")
+      return TAPi18n.__("inputNewGroupName")
     groupName:()->
       if Session.equals('fromCreateNewGroups',true)
          return Session.get('AI_Group_Name') || ''

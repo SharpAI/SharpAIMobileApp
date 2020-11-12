@@ -10,7 +10,7 @@ maskDescription = new ReactiveVar({
   iconClass: 'fa fa-3x fa-hand-o-right',
   iconStyle: 'display: block;',
   spanStyle: 'display: block; position: relative; left: -10px;',
-  spanContent: '点击加号'
+  spanContent: TAPi18n.__("hintAdding")
 });
 currentTip = 'timeLineTab';
 
@@ -40,7 +40,7 @@ function hideScanTipLayer(){
       iconClass: 'fa fa-3x fa-hand-o-down',
       iconStyle: 'display: block; position: absolute; bottom: 60px; left: 59%;',
       spanStyle: 'display: block; font-size: 18px; white-space: nowrap; position: absolute; bottom: 110px; left: 59%; transform: translateX(-50%);',
-      spanContent: '点击消息查看识别动态'
+      spanContent: TAPi18n.__("hintMessage")
     });
     currentTip = 'messageTab';
     showScanTipHint.set(true);
@@ -65,7 +65,7 @@ function hideScanTipLayer(){
   }
   else if (currentTip == 'plusMark') {
     localStorage.setItem('scantipFlag',true);
-  } 
+  }
   else if (currentTip == 'createCompanyMenu') {
     maskDescription.set({
       maskEllipse: false,
@@ -79,7 +79,7 @@ function hideScanTipLayer(){
       iconClass: 'fa fa-3x fa-hand-o-up',
       iconStyle: 'display: block; position: absolute; top: 50px; right: 100px;',
       spanStyle: 'display: block; font-size: 18px; position: absolute; top: 5px; right: 200px;',
-      spanContent: '点击此处扫码添加脸脸盒'
+      spanContent: TAPi18n.__("hintToAddDevice")
     });
     currentTip = 'scanFaceBox';
     showScanTipHint.set(true);

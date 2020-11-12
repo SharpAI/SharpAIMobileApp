@@ -329,7 +329,43 @@
   "favoriteDetail":"查看收藏的消息",
   "followedOnlyPushNotification":"只通知关注用户",
   "detealFollowedOnlyPushNotification":"只有出现您关注的用户才发推送消息（陌生人仍然通知您）",
-  //
+  // end
+
+  // messageGroup.html
+  "theGroupName":"监控组名称",
+  "inputGroupName":"输入监控组名称",
+  "inputNewGroupName":"输入新的监控组名称",
+  // end
+
+  // groupsProfile.html
+  "groupManagement":"监控组管理",
+  // end
+
+
+  // homePage.html
+  "checkIns":"今日出现信息",
+
+  "checkInsPrefix":"已出现",
+  "checkInsPerson":"人",
+  "evaluateDeployment":"部署评测",
+  "checkInRecords":"出现记录",
+  "memberManagement":"成员管理",
+  "label":"标注",
+  "tabelAppearance":"出现时间报表",
+  // end
+
+  "groupInfo":"监控组信息",
+  "groupQRCode":"监控组二维码",
+  "groupDeviceList":"监控组设备列表",
+  "recognitionCounts":"识别统计",
+  "checkInDuration":"监控时间设置",
+  "notifyToFillSchedule":"提醒填写工作安排",
+  "unknownNotification":"接收未识别成员信息",
+  "manageNotification":"通知管理",
+  "groupReportEmail":"报告接收邮箱",
+  "cleanUpTrainingRecord":"清空训练记录",
+  "exit":"退出",
+  "showAllMembers":"查看全部成员",
 
   // TAPi18n.__()
   //dynamic js file contents
@@ -350,6 +386,11 @@
   "incorrectUsernameOrPassword":"帐号或密码有误！",
   "contactUs":"联系客服",
   "exiting":"正在退出登录...",
+  "hintTimeline":"点击时间轴查看设备在线状态",
+  "hintMessage":"点击消息查看识别动态",
+  "hintAdding":"点击加号",
+  "hintToCreateGroup":"点击此处创建监控组",
+  "hintToAddDevice":"点击此处扫码添加脸脸盒",
   //end
 
   "readMore": "继续阅读",

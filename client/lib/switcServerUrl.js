@@ -43,3 +43,13 @@ Meteor.switchRootUrl = function (opt) {
     ? setRootUrl(opt)
     : window.location.replace(opt)
 }
+Meteor.getRootUrl = function(){
+  if (Meteor.isCordova) {
+    var ROOT_URL = window.localStorage.getItem('Meteor.rootUrl')
+    if (ROOT_URL){
+      return ROOT_URL
+    }
+  }
+
+  return  __meteor_runtime_config__.DDP_DEFAULT_CONNECTION_URL
+}

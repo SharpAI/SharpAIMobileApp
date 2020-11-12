@@ -9,7 +9,7 @@
             <div id="groupsProfilePageback" class="leftButton back">
                 <i class="fa fa-angle-left fa-fw"></i>
             </div>
-            <strong>监控组管理</strong>
+            <strong>{{_ "groupManagement"}}</strong>
         </div>
         <div class="content">
             <div id="wrapper">
@@ -18,33 +18,33 @@
                 <span>分享监控组</span>
             </div> -->
                 <div class="line" style="height: 12px;"></div>
-                <div class="line" style="height: 20px;text-align:left;padding-left:10px;color:#555;">监控组信息</div>
+                <!--<div class="line" style="height: 20px;text-align:left;padding-left:10px;color:#555;">{{_ "groupInfo"}}</div>-->
                 {{#if isGroup}}
                 <ul class="set-up comFadeIn" style="margin-top: 0px;margin-bottom: 10px;">
                     <!-- {{#if isGroupCreator}} -->
                     {{#if isGroupAdmin}}
                     <li class="name editName">
-                        <label>监控组名称</label>
+                        <label>{{_ "theGroupName"}}</label>
                         <div class="value">{{groupName}}<i class="fa fa-angle-right"></i></div>
                     </li>
                     {{else}}
                     <li class="name">
-                        <label>监控组名称</label>
+                        <label>{{_ "theGroupName"}}</label>
                         <div class="value">{{groupName}}<i class="fa fa-angle-right"></i></div>
                     </li>
                     {{/if}}
                     {{#if hasBarCode}}
                     <li class="barcode">
-                        <label>监控组二维码</label>
+                        <label>{{_ "groupQRCode"}}</label>
                         <div class="value"><img src="{{barcodeUrl}}"><i class="fa fa-angle-right"></i></div>
                     </li>
                     {{/if}}
                     <li id="groupDevice">
-                        <label>监控组设备列表</label>
+                        <label>{{_ "groupDeviceList"}}</label>
                         <div class="value"><i class="fa fa-angle-right"></i></div>
                     </li>
                     <li id="recognitionCounts">
-                        <label>识别统计</label>
+                        <label>{{_ "recognitionCounts"}}</label>
                         <div class="value"><i class="fa fa-angle-right"></i></div>
                     </li>
                     {{#if hasTemplate}}
@@ -80,7 +80,7 @@
                     {{/if}}
                     {{#if isGroupAdmin}}
                     <li id="groupInOutTime">
-                        <label>监控时间设置</label>
+                        <label>{{_ "checkInDuration"}}</label>
                         <div class="value">{{getGroupInOutTime}}<i class="fa fa-angle-right"></i></div>
                     </li>
                     {{/if}}
@@ -93,10 +93,10 @@
                 </ul>
 
                 {{#if isGroupAdmin}}
-                <div class="line" style="height: 20px;text-align:left;padding-left:10px;color:#555;">工作相关</div>
+                <!--<div class="line" style="height: 20px;text-align:left;padding-left:10px;color:#555;">工作相关</div>-->
                 <ul class="set-up comFadeIn" style="margin-top: 0px;margin-bottom: 10px;">
                     <li class="">
-                        <label>提醒填写工作安排</label>
+                        <label>{{_ "notifyToFillSchedule"}}</label>
                         <div class="value"><input id="switch_whats_up_send" class="switch" style="margin-top:-6px;outline:none;" type="checkbox" {{checkedIf whats_up_send}}></div>
                     </li>
                 </ul>
@@ -105,10 +105,10 @@
                 <div>
                     {{> groupCheckInoutInfo}}
                 </div>-->
-                <div class="line" style="height: 20px;text-align:left;padding-left:10px;color:#555;">识别规则</div>
+                <!--<div class="line" style="height: 20px;text-align:left;padding-left:10px;color:#555;">识别规则</div>-->
                 <ul class="set-up comFadeIn" style="margin-top: 0px;margin-bottom: 10px;">
                     <li class="">
-                        <label>接收未识别成员信息</label>
+                        <label>{{_ "unknownNotification"}}</label>
                         <div class="value"><input id="switchRejectUnknowMember" class="switch" style="margin-top:-6px;outline:none;" type="checkbox" {{checkedIf rejectUnknowMember}}></div>
                     </li>
                     <!-- <li class="groupAccuracy">
@@ -130,7 +130,7 @@
                 <!-- {{#if isGroupAdmin}} -->
                 <ul class="set-up comFadeIn" style="margin-top: 0px;margin-bottom: 10px;">
                     <li class="groupUserHide">
-                        <label>通知管理</label>
+                        <label>{{_ "manageNotification"}}</label>
                         <div class="value"><i class="fa fa-angle-right"></i></div>
                     </li>
                 </ul>
@@ -140,9 +140,9 @@
                 <!--div class="scanPerfBarcode">扫描绩效二维码</div-->
                 <!--div class="checkPerf">查看绩效</div-->
                 {{/if}}
-                 <div class="groupEmail">报告接收邮箱</div>
+                 <div class="groupEmail">{{_ "groupReportEmail"}}</div>
                 {{#if isGroupAdmin}}
-                <div class="emptyMessages">清空训练记录</div>
+                <div class="emptyMessages">{{_ "cleanUpTrainingRecord"}}</div>
                 {{/if}}
                 <div class="line" style="height: 12px;"></div>
                 {{#if userIsAdmin}}
@@ -156,9 +156,9 @@
                 {{/if}}
                 {{#if isGroup}}
                     {{#if isGroupCreator}}
-                    <div class="deleteAndExit" id="delThisGroup">删除</div>
+                    <div class="deleteAndExit" id="delThisGroup">{{_ "delete"}}</div>
                     {{else}}
-                    <div class="deleteAndExit" id="quitThisGroup">退出</div>
+                    <div class="deleteAndExit" id="quitThisGroup">{{_ "exit"}}</div>
                     {{/if}}
                 {{/if}}
             </div>
@@ -209,7 +209,7 @@
             </ul>
             {{#if moreResults}}
             <div id="showAllResults">
-                <span class="showAllResults">查看全部成员</span>
+                <span class="showAllResults">{{_ "showAllMembers"}}</span>
             </div>
             {{/if}}
         </div>
@@ -221,9 +221,9 @@
     <div class="setGroupname comFadeIn">
         <div class="head" style="position: fixed;">
             <div class="title" style="position:relative;">
-                <div class="left-btn">取消</div>
-                <span class="Contacts">监控组名称</span>
-                <div class="right-btn">保存</div>
+                <div class="left-btn">{{_ "cancel"}}</div>
+                <span class="Contacts">{{_ "groupName"}}</span>
+                <div class="right-btn">{{_ "save"}}</div>
             </div>
         </div>
     </div>
