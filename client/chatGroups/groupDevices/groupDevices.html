@@ -3,12 +3,12 @@
     <div class="leftButton back">
         <i class="fa fa-angle-left fa-fw"></i>
     </div>
-    <strong>设备列表</strong>
+    <strong>{{_ "deviceList"}}</strong>
   </div>
   <div class="content groupDevicesList">
     <!-- <div class="line" style="height: 20px; text-align:left; padding-left:10px; color:#555;"></div> -->
     <ul id="deviceList" class="set-up comFadeIn">
-        <li class="title"><b>自动升级控制</b></li>
+        <li class="title"><b>{{_ "updateConfiguration"}}</b></li>
     {{#each lists}}
       {{#if uuid}}
       <li id="" class="deviceItem swiperElem">
@@ -26,18 +26,18 @@
             <span class="name" style="{{isShow uuid 1}}">{{name}}</span>
             <input class="edit" id="{{getId uuid}}" style="{{isShow uuid 2}}" value="{{name}}">
             {{else}}
-            <span class="name" style="{{isShow uuid 1}}">未知设备</span>
-            <input class="edit" id="{{getId uuid}}" style="{{isShow uuid 2}}" value="未知设备">
+            <span class="name" style="{{isShow uuid 1}}">{{_ "unknownDevice"}}</span>
+            <input class="edit" id="{{getId uuid}}" style="{{isShow uuid 2}}" value='{{_ "unknownDevice"}}'>
             {{/if}}
 
             <div class="set-camera">
-                <span class="set-size">摄像头配置</span>
+                <span class="set-size">{{_ "cameraConfiguration"}}</span>
             </div>
           <!-- {{/if}} -->
           <!-- </span> -->
 
           <!-- <div id="{{uuid}}" class="value goTimelime" style="float:right; margin:10px;">{{in_out}}<i class="fa fa-angle-right"></i></div> -->
-          <div id="{{_id}}" class="delBtnContent" data-uuid="{{uuid}}">删除</div>
+          <div id="{{_id}}" class="delBtnContent" data-uuid="{{uuid}}">{{_ "delete"}}</div>
           <!-- <button class="automatic_update">自动更新</button> -->
           <div class="value-fa">
                 <input id="switch_update" class="switch" type="checkbox" {{isChecked autoUpdate}}>
@@ -80,21 +80,21 @@
         <div class="modal-content">
             <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="false" style="font-size:35px;">&times;</span></button>
-            <h3 class="modal-title" id="myModalLabel">摄像头配置</h3>
+            <h3 class="modal-title" id="myModalLabel">{{_ "cameraConfiguration"}}</h3>
             </div>
             <div class="modal-body">
             <form>
             <div class="form-group">
-                <label for="rtspurl">摄像头RTSP URL：</label>
+                <label for="rtspurl">RTSP URL：</label>
                 <input type="text" class="form-control" id="rtspurl">
             </div>
             </form>
             </div>
             <div class="modal-footer">
-                <div class="pull-left" style="text-align:center; display: inline-block; margin-top: 8px;">设置完成后，大约15秒后生效</div>
+                <div class="pull-left" style="text-align:center; display: inline-block; margin-top: 8px;">{{_ "hitSetupCamera"}}</div>
                 <div class="pull-right" style="width:130px; margin-right:8px;">
-                    <button type="button" class="btn btn-default cancelCameraSettings" data-dismiss="modal">取消</button>
-                    <button type="button" id="" class="btn btn-primary saveCameraSettings">保存</button>
+                    <button type="button" class="btn btn-default cancelCameraSettings" data-dismiss="modal">{{_ "cancel"}}</button>
+                    <button type="button" id="" class="btn btn-primary saveCameraSettings">{{_ "save"}}</button>
                 </div>
             </div>
         </div>
@@ -107,9 +107,9 @@
   <div class="setGroupname comFadeIn">
       <div class="head" style="position: fixed;">
           <div class="title" style="position:relative;">
-              <div class="left-btn">取消</div>
-              <span class="Contacts">设备名</span>
-              <div class="right-btn">保存</div>
+              <div class="left-btn">{{_ "cancel"}}</div>
+              <span class="Contacts">{{_ "deviceName"}}</span>
+              <div class="right-btn">{{_ "save"}}</div>
           </div>
       </div>
   </div>
@@ -117,7 +117,7 @@
       <li>
           <div class="input">
               <form class="setGroupname-form">
-                  <input class="text" type="text" id="text" placeholder="请输入设备名" value="{{name}}" style="color: black;" />
+                  <input class="text" type="text" id="text" placeholder="{{_ 'inputDeviceName'}}" value="{{name}}" style="color: black;" />
               </form>
           </div>
       </li>
