@@ -110,6 +110,9 @@ if Meteor.isClient
       Meteor.logout (msg)->
         Session.setPersistent('persistentLoginStatus',false)
       Router.go '/loginForm'
+      window.localStorage.removeItem('Meteor.loginToken');
+      window.localStorage.removeItem('Meteor.loginTokenExpires');
+      window.localStorage.removeItem('Meteor.userId');
   Template.my_email.rendered=->
     $('.dashboard').css 'min-height', $(window).height()
     return
