@@ -6,17 +6,14 @@ var personCounts = new ReactiveVar({});
 
 var initTimeRangeSet = function() {
   var range = timeRange.get();
-  
+
   $('#timeRange').mobiscroll().range({
     defaultVaule: [new Date(),new Date()],
     theme: 'material',
-    lang: 'zh',
+    lang: 'en',
     display: 'bottom',
     controls: ['time'],
     maxWidth: 100,
-    setText: '设置',
-    fromText: '开始时间',
-    toText:'结束时间',
     defaultValue: [
         new Date(range[0]),new Date(range[1])
     ],
@@ -30,9 +27,9 @@ var initTimeRangeSet = function() {
       var now = new Date();
 
       var range = timeRange.get();
-      range[0] = new Date(now.getFullYear(),now.getMonth(), now.getDate() , 
+      range[0] = new Date(now.getFullYear(),now.getMonth(), now.getDate() ,
       Number(startArr[0]), Number(startArr[1]), 0, 0);
-      range[1] = new Date(now.getFullYear(),now.getMonth(), now.getDate() , 
+      range[1] = new Date(now.getFullYear(),now.getMonth(), now.getDate() ,
       Number(endArr[0]), Number(endArr[1]), 0, 0);
 
       timeRange.set(range);
@@ -46,11 +43,11 @@ Template.recognitionCounts.onRendered(function(){
 
   var now = new Date();
   var range = [];
-  range[0] = new Date(now.getFullYear(),now.getMonth(), now.getDate() , 
+  range[0] = new Date(now.getFullYear(),now.getMonth(), now.getDate() ,
       0, 0, 0, 0);
-  range[1] = new Date(now.getFullYear(),now.getMonth(), now.getDate() , 
+  range[1] = new Date(now.getFullYear(),now.getMonth(), now.getDate() ,
       23, 59, 59, 0);
-  
+
   timeRange.set(range);
   initTimeRangeSet();
   Meteor.subscribe('group-device-timeline', group_id.get(),range, function() {

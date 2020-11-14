@@ -16,13 +16,12 @@ if Meteor.isClient
     $('#groupInOutTime').mobiscroll().range({
       defaultVaule: [new Date(),new Date()],
       theme: 'material',
-      lang: 'zh',
+      lang: 'en',
       display: 'bottom',
       controls: ['time'],
       maxWidth: 100,
-      setText: '设置',
-      fromText: '上班时间',
-      toText:'下班时间',
+      fromText: TAPi18n.__("fromTextCheckin"),
+      toText: TAPi18n.__("toTextCheckin"),
       defaultValue: [
           new Date(new Date().setHours(group_intime[0], group_intime[1], 0, 0)),new Date(new Date().setHours(group_outtime[0], group_outtime[1], 0, 0))
       ],
@@ -37,7 +36,7 @@ if Meteor.isClient
         inMin = Number(inArr[0]) * 60 + Number(inArr[1])
         outMin = Number(outArr[0]) * 60 + Number(outArr[1])
         if(outMin <= inMin)
-          return PUB.toast('下班时间早于上班时间，请重试')
+          return PUB.toast(TAPi18n.__("hintEndStart"))
         Meteor.call('updateGroupInOutTime',Session.get('groupsId'),group_intime, group_outtime)
     })
   initGroupIndex = (user_id)->
