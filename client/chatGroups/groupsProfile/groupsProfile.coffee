@@ -527,9 +527,7 @@ if Meteor.isClient
       else
         return ''
     barcodeUrl:()->
-      group =  SimpleChat.Groups.findOne({_id:Session.get('groupsId')})
-      if  group and group.barcode
-        return group.barcode
+       Meteor.getRootUrl()+'/restapi/workai-group-qrcode?group_id=' + Session.get('groupsId')
   Template.groupBarCode.events
     'click #groupBarCodePageback':(event)->
       Session.set("groupsProfileMenu","groupInformation")
