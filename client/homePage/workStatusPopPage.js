@@ -14,7 +14,7 @@ var curTime = new ReactiveVar(null);
  //前7天加入dateList
 var _dateList = [];
 for(var i=7;i>-1;i--){
-   var t = moment().subtract(i, 'day');
+   var t = moment().locale("en").subtract(i, 'day');
    var weekStr = t.format('ddd');
    var d = t.format('MM/DD');
    var utc = Date.UTC(t.year(),t.month(),t.date(),0,0,0,0);
@@ -143,7 +143,7 @@ Template.workStatusPopPage.onRendered(function(){
       Meteor.subscribe('group_workstatus', group.get()._id, _curTime.utc, {
         onReady:function(){
           isLoading.set(false);
-        }  
+        }
       });
       // alert(s.clickedIndex);
       $('#'+curTime.get().id).removeClass('selected');
@@ -155,7 +155,7 @@ Template.workStatusPopPage.onRendered(function(){
   curTime.set(dateList.get()[7]);
   $('#'+curTime.get().id).addClass('selected');
   var displayDate = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime();
-  var date = Date.UTC(now.getFullYear(),now.getMonth(), now.getDate() , 
+  var date = Date.UTC(now.getFullYear(),now.getMonth(), now.getDate() ,
       0, 0, 0, 0);
 
   theCurrentDay.set(date); // UTC日期
@@ -166,7 +166,7 @@ Template.workStatusPopPage.onRendered(function(){
   Meteor.subscribe('group_workstatus',data._id, curTime.get().utc,{
     onReady:function(){
       isLoading.set(false);
-    } 
+    }
   });
 });
 Template.workStatusPopPage.helpers({
@@ -211,9 +211,9 @@ Template.workStatusPopPage.helpers({
             frList.splice(i,1)
           }
         }
-      }	     
+      }
     });
-    
+
     // var lists = [];
     // WorkStatus.find({group_id: group.get()._id,date: curTime.get().utc}).forEach( function (item) {
     //   if (item.in_time || item.out_time) {
@@ -249,7 +249,7 @@ Template.workStatusPopPage.helpers({
     return 'text-gray';
   },
   getInOutStatus: function(){
-    if (this.in_time > 0) { // 不是今天一律算 out 
+    if (this.in_time > 0) { // 不是今天一律算 out
       var date = new Date(this.in_time);
       var time_offset = 8
       var _group = group.get();
@@ -364,9 +364,9 @@ Template.workStatusPopPage.events({
     if (deviceLists && deviceLists.length > 0) {
       if(deviceLists.length == 1 && deviceLists[0].uuid) {
         console.log("enter this device timeline")
-        workStatusPopPage.close();       
+        workStatusPopPage.close();
         return PUB.page('/timelineAlbum/'+deviceLists[0].uuid+'?from=groupchat');
-      } else {       
+      } else {
         console.log("select a device")
         Session.set('_groupChatDeviceLists',deviceLists);
         //workStatusPopPage.close();
@@ -414,7 +414,7 @@ Template.workStatusPopPage.events({
       content: content,
       ts: Date.now()
     });
-     
+
     WorkStatus.update({_id:_whatsup._id},{
       $set:{whats_up:whats_up}
     },function(err,num){
@@ -433,7 +433,7 @@ Template.workStatusPopPage.events({
         to: {
           id:   _group._id,
           name: _group.name,
-          icon: _group.icon 
+          icon: _group.icon
         },
         to_type: 'group',
         type: 'text',
@@ -457,7 +457,7 @@ Template.workStatusPopPage.events({
     if( this.app_user_id && this.app_user_id == Meteor.userId() ){
       isMyself = true;
     }
-    
+
     var group_id = group.get()._id;
 
     // var currentDay = theDisplayDay.get(); //当前显示的日期
@@ -480,9 +480,9 @@ Template.workStatusPopPage.events({
     if( this.app_user_id && this.app_user_id == Meteor.userId() ){
       isMyself = true;
     }
-    
+
     var group_id = group.get()._id;
-    
+
     // var currentDay = theDisplayDay.get(); //当前显示的日期
     // currentDay = new Date(currentDay);
     // currentDay.setHours(23);
@@ -506,7 +506,7 @@ Template.workStatusPopPage.events({
 
     var displayDay = theDisplayDay.get() + 24 * 60 * 60 * 1000;
     theDisplayDay.set(displayDay);
-    
+
     isLoading.set(true);
     Meteor.subscribe('group_workstatus', group.get()._id, theCurrentDay.get(), function() {
       isLoading.set(false);
@@ -517,10 +517,10 @@ Template.workStatusPopPage.events({
     e.stopImmediatePropagation();
     var currentDay = theCurrentDay.get() - 24 * 60 * 60 * 1000;
     theCurrentDay.set(currentDay);
-    
+
     var displayDay = theDisplayDay.get() - 24 * 60 * 60 * 1000;
     theDisplayDay.set(displayDay);
-    
+
     isLoading.set(true);
     Meteor.subscribe('group_workstatus',group.get()._id, theCurrentDay.get(), function() {
       isLoading.set(false);

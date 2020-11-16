@@ -348,7 +348,7 @@ if Meteor.isClient
           console.log "perf url is null, browser: " + perf_url
           perf_url = 'http://aixd.raidcdn.cn/reporter/f5ZocsFpQn9CApmy8'
     'click .emptyMessages':(event)->
-      PUB.confirm('确定要清空训练记录吗？',()->
+      PUB.confirm(TAPi18n.__("confirmToDeleteDatasets"),()->
         type = Session.get('groupsType')
         to = Session.get('groupsId')
         if type is 'group'

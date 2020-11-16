@@ -15,7 +15,7 @@ var curTime = new ReactiveVar(null);
  //前7天加入dateList
 var _dateList = [];
 for(var i=7;i>-2;i--){
-   var t = moment().subtract(i, 'day');
+   var t = moment().locale("en").subtract(i, 'day');
    var weekStr = t.format('ddd');
    var d = t.format('MM/DD');
    var utc = Date.UTC(t.year(),t.month(),t.date(),0,0,0,0);
@@ -44,25 +44,25 @@ var parseDate = function(currentDay){
     switch(currentDay.getDay())
     {
     case 0:
-      day = '周日';
+      day = TAPi18n.__("Sun");
       break;
     case 1:
-      day = '周一';
+      day = TAPi18n.__("Mon");
       break;
     case 2:
-      day = '周二';
+      day = TAPi18n.__("Tue");
       break;
     case 3:
-      day = '周三';
+      day = TAPi18n.__("Wed");
       break;
     case 4:
-      day = '周四';
+      day = TAPi18n.__("Thu");
       break;
     case 5:
-      day = '周五';
+      day = TAPi18n.__("Fri");
       break;
     case 6:
-      day = '周六';
+      day = TAPi18n.__("Sat");
       break;
     default:
       break;
@@ -142,7 +142,7 @@ Template.deviceDashboard.onRendered(function () {
       console.log(err);
     }
   });
-  
+
 });
 
 Template.deviceDashboard.helpers({
@@ -438,7 +438,7 @@ Template.deviceDashPoppage.events({
     //2.删除出现记录
     Meteor.call('resetMemberWorkStatus', e.currentTarget.id, personId, function (error, result) {
       if (error) {
-        return PUB.toast('请重试~');
+        return PUB.toast(TAPi18n.__("tryAgain"));
       }
       $('.deviceDashPoppage').fadeOut();
 
@@ -452,7 +452,7 @@ Template.deviceDashPoppage.events({
         var setNames = [];
         Meteor.call('get-id-by-name1', uuid, name, group_id, function (err, res) {
           if (err || !res) {
-            return PUB.toast('标注失败，请重试~');
+            return PUB.toast(TAPi18n.__("tryAgain"));
           }
           var faceId = null;
           if (res && res.faceId) {
