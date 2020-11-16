@@ -3,7 +3,7 @@
 <div class="workStatusPopPage">
   <div class="head">
       <!-- <strong style="width: 100%;">{{name}}</strong> -->
-      <strong style="width: 100%;">出现记录</strong>
+      <strong style="width: 100%;">{{_ "checkInRecords"}}</strong>
       <div class="leftButton back"><i class="fa fa-angle-left fa-fw"></i></div>
   </div>
   <div class="swiper-container date-head" id="slideDate2" style="padding:0px;background-color:#4682B4;width:auto;height:auto">
@@ -33,12 +33,12 @@
     </ul>
   </div>
   <div class="swichToCluster" align="right" style="color:blue; padding-right:20px;padding-top:5px">
-    <button id="switch" type="button">查看未标注的人</button>
+    <button id="switch" type="button">{{_ "switchToUnknownPerson"}}</button>
     {{#if _checkGroupDevice_status}}
     {{/if}}
   </div>
   {{#if isLoading}}
-    <div class="loading"><img src="/img/company-loading.gif"/><p>加载中</p></div>
+    <div class="loading"><img src="/img/company-loading.gif"/><p>{{_ "loading"}}</p></div>
   {{else}}
     {{#if hasWorkStatus}}
     <ul class="employeeLists">
@@ -55,22 +55,22 @@
             </div>
           </div>
           <h2><span class="in-out-status {{getInOutStatus}}"></span> {{person_name}} </h2>
-          <p><span class="in-out-status {{getStatus 'in'}}"></span> 上班时间: {{getTime 'in'}}</p>
-          <p><span class="in-out-status {{getStatus 'out'}}"></span> 最近活动: {{getTime 'out'}}</p>
+          <p><span class="in-out-status {{getStatus 'in'}}"></span> {{_ "checkIn"}}: {{getTime 'in'}}</p>
+          <p><span class="in-out-status {{getStatus 'out'}}"></span> {{_ "latestActivity"}}: {{getTime 'out'}}</p>
           <div class="whats-up">
             <p>
-              工作安排： 
+              {{_ "workItems"}}
               <span class="toggle" data-toggle="collapse" data-target="#collapse_{{_id}}" aria-expanded="false" aria-controls="collapse_{{_id}}">
                 <i class="fa fa-angle-down" aria-hidden="true"></i>
               </span>
             </p>
-            <div class="collapse editWhatsup" id="collapse_{{_id}}">            
+            <div class="collapse editWhatsup" id="collapse_{{_id}}">
               {{#if whats_up}}
                 {{#each whats_up}}
                 <p style="white-space: pre-wrap;"><strong>{{person_name}}</strong>[{{getShortTime}}]: {{content}}</p>
                 {{/each}}
               {{else}}
-              暂无工作安排...
+                {{_ "noItemYet"}}...
               {{/if}}
             </div>
           </div>
@@ -80,17 +80,17 @@
             <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
           </span>
           <ul class="dropdown-menu" aria-labelledby="dropdown_{{_id}}">
-            <li class="editInTime"><a href="javascript:void(0);">修改上班时间</a></li>
-            <li class="editOutTime"><a href="javascript:void(0);">修改最近活动</a></li>
+            <li class="editInTime"><a href="javascript:void(0);">{{_ "changeCheckInTime"}}</a></li>
+            <li class="editOutTime"><a href="javascript:void(0);">{{_ "changeLatestTime"}}</a></li>
             <li role="separator" class="divider"></li>
-            <li class="editWhatsup"><a href="javascript:void(0);">编辑今日简述</a></li>
+            <li class="editWhatsup"><a href="javascript:void(0);">{{_ "editWorkItem"}}</a></li>
           </ul>
         </div>
       </li>
       {{/each}}
     </ul>
     {{else}}
-    <div class="noData"><img src="/img/company-nodata.png"/><p style="text-align: center;">暂无数据</p></div>
+    <div class="noData"><img src="/img/company-nodata.png"/><p style="text-align: center;">{{_ "noInformationYet"}}</p></div>
     {{/if}}
   {{/if}}
   <!-- <div id="closeStausPop"><i class="fa fa-close fa-fw"></i></div> -->
@@ -147,7 +147,7 @@
       </div>
     </div>
   </div>
-  
+
   <!-- Modal selectDevicesInOut End -->
 </div>
 </template>
@@ -192,12 +192,12 @@
               <p><span class="in-out-status {{getStatus 'out'}}"></span> 最近活动: {{getTime 'out'}}</p>
               <div class="whats-up">
                 <p>
-                  工作安排： 
+                  工作安排：
                   <span class="toggle" data-toggle="collapse" data-target="#collapse_{{_id}}" aria-expanded="false" aria-controls="collapse_{{_id}}">
                     <i class="fa fa-angle-down" aria-hidden="true"></i>
                   </span>
                 </p>
-                <div class="collapse editWhatsup" id="collapse_{{_id}}">            
+                <div class="collapse editWhatsup" id="collapse_{{_id}}">
                   {{#if whats_up}}
                     {{#each whats_up}}
                     <p style="white-space: pre-wrap;"><strong>{{name}}</strong>[{{getShortTime}}]: {{content}}</p>
@@ -280,7 +280,7 @@
           </div>
         </div>
       </div>
-      
+
       <!-- Modal selectDevicesInOut End -->
     </div>
 </template>

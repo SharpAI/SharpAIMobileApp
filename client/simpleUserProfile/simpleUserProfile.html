@@ -26,11 +26,11 @@
                       <li role="presentation"><a id="deleteUser" role="menuitem" tabindex="-1" >删除</a></li>
                     {{/if}}-->
                     {{#if userIsGroupAdmin}}
-                    <li role="presentation"><a id="unSetGroupAdmin" role="menuitem" tabindex="-1">取消管理权限</a></li>
+                    <li role="presentation"><a id="unSetGroupAdmin" role="menuitem" tabindex="-1">{{_ "removeFromAdmin"}}</a></li>
                     {{else}}
-                    <li role="presentation"><a id="setAsGroupAdmin" role="menuitem" tabindex="-1">设置为管理员</a></li>
+                    <li role="presentation"><a id="setAsGroupAdmin" role="menuitem" tabindex="-1">{{_ "setToAdmin"}}</a></li>
                     {{/if}}
-                    <li role="presentation"><a id="removeFormGroup" role="menuitem" tabindex="-1">移除该成员</a></li>
+                    <li role="presentation"><a id="removeFormGroup" role="menuitem" tabindex="-1">{{_ "removeFromGroup"}}</a></li>
                   </ul>
               </div>
               {{/if}}
@@ -78,10 +78,10 @@
           {{/if}}
         </div>
         -->
-        
+
         <div class="showPostsLine"></div>
         <div class="userProfileBottom">
-          <div class="sendMesssage botton_btn">发消息</div>
+          <div class="sendMesssage botton_btn">{{_ "sendMessage"}}</div>
           <!-- {{#if isFollowed}}
             <div class="sendMesssage botton_btn">发消息</div>
           {{else}}
@@ -95,4 +95,3 @@
       {{>favoritePosts}} -->
     </div>
 </template>
-

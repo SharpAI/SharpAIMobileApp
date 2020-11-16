@@ -65,7 +65,7 @@ pages = ['/user', '/bell', '/search']
     # 该方法实现页面切换
     'page':(pageName)->
         if Session.get('persistentLoginStatus') and !Meteor.userId() and !Meteor.loggingIn() and pages.indexOf(pageName) isnt -1
-            window.plugins.toast.showLongCenter("登录超时，需要重新登录~");
+            window.plugins.toast.showLongCenter(TAPi18n.__("hintLoginTimeout"));
             return Router.go('/')
 
         history = Session.get("history_view")
@@ -187,8 +187,8 @@ pages = ['/user', '/bell', '/search']
             navigator.notification.alert(
                 msg
                 callback
-                '提示'
-                '确定'
+                TAPi18n.__("hint")
+                TAPi18n.__("confirm")
             )
         catch error
             alert(msg)
@@ -200,8 +200,8 @@ pages = ['/user', '/bell', '/search']
                 (index)->
                     if index is 2
                        callback()
-                '提示'
-                ['取消','确定']
+                TAPi18n.__("hint")
+                [TAPi18n.__("cancel"),TAPi18n.__("confirm")]
             )
         catch error
             if confirm(msg)
@@ -252,7 +252,7 @@ pages = ['/user', '/bell', '/search']
                   'buttonLabels': menuArray,
                   'androidEnableCancelButton' : true,
                   'winphoneEnableCancelButton' : true,
-                  'addCancelButtonWithLabel': '取消',
+                  'addCancelButtonWithLabel': TAPi18n.__("cancel"),
                   'position': [20, 40]
               }
             else
@@ -261,7 +261,7 @@ pages = ['/user', '/bell', '/search']
                   'buttonLabels': menuArray,
                   'androidEnableCancelButton' : true,
                   'winphoneEnableCancelButton' : true,
-                  'addCancelButtonWithLabel': '取消',
+                  'addCancelButtonWithLabel': TAPi18n.__("cancel"),
                   'position': [20, 40]
               }
             window.plugins.actionsheet.show(options,callback)
