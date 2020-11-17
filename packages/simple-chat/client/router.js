@@ -3283,9 +3283,9 @@ var onMqttMessage = function (topic, msg, msgKey, mqttCallback) {
           count += 1;
       }
       if (count > 0) {
-        setObj.text = 'AI观察到有人在活动(' + count + '次)';
+        setObj.text = TAPi18n.__('aiSawSomeone') + '(' + count + TAPi18n.__('times')+')';
       } else {
-        setObj.text = 'AI观察到有人在活动';
+        setObj.text = TAPi18n.__('aiSawSomeone');
       }
     }
   } else {
@@ -3303,7 +3303,7 @@ var onMqttMessage = function (topic, msg, msgKey, mqttCallback) {
         return insertMsg(msgObj, 'tid相同，但label_name不同');
       }
     }
-    setObj.text = 'AI观察到 ' + msgObj.images[0].label + '：';
+    setObj.text = TAPi18n.__("aiSaw")+' '+ msgObj.images[0].label + '：';
     if (targetMsg.tid) {
       setObj.wait_lable = msgObj.wait_lable;
       for (var i = 0; i < targetMsg.images.length; i++) {
@@ -3839,7 +3839,7 @@ Template._showImgOne.events({
           sqlid:this_data.images[i].sqlid,
           style:this_data.images[i].style
 
-        }, 
+        },
         this_data.to.id,
         function(err){
           if (err)

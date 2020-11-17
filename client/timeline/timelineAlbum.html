@@ -16,13 +16,13 @@
       {{#if showMultiSelect}}
         {{#if isMultiSelect}}
           {{#if isFormGroupchat}}
-          <button id="resetSelect">重选</button>
+          <button id="resetSelect">{{_ "reselect"}}</button>
           {{else}}
-          <button id="cancelSelect">取消</button>
+          <button id="cancelSelect">{{_ "cancel"}}</button>
           {{/if}}
-          <button id="confirmSelect">确定</button>
+          <button id="confirmSelect">{{_ "done"}}</button>
         {{else}}
-        <button id="multiSelect">多选</button>
+        <button id="multiSelect">{{_ "multiSelection"}}</button>
         {{/if}}
       {{/if}}
       <button class="dropdown-toggle" id="btn-more" data-toggle="dropdown">
@@ -36,17 +36,17 @@
       <ul class="dropdown-menu" role="menu" aria-labelledby="btn-more" style="height: 353px;overflow-x:hidden; overflow-y:scroll;">
         <!-- <li role="presentation" id="timeRange"><input type="radio" {{filterTimeRange}}><label>时间范围</label></li> -->
         <li role="presentation checkRecognize" >
-          <h4>识别状态</h4>
+          <h4>{{_ "recogStatus"}}</h4>
           <label id="onlyShowUnknown">
-            <input id="1" type="radio" name="recognize" {{onlyShowUnknown}}><span>未识别</span>
+            <input id="1" type="radio" name="recognize" {{onlyShowUnknown}}><span>{{_ "unknownFacesStatus"}}</span>
           </label>
           <label id="clearFilter">
-            <input id="2" type="radio" name="recognize" {{showAll}}><span>已识别</span>
+            <input id="2" type="radio" name="recognize" {{showAll}}><span>{{_ "knownFacesStatus"}}</span>
           </label>
         </li>
         <li role="separator" class="divider"></li>
         <li id="fuzz-panel" role="presentation">
-          <h4>模糊度</h4>
+          <h4>{{_ "blury"}}</h4>
           <div id="fuzz-value">
               <label id="fuzz-five"><input type="radio" name="radio" value="5" ><span>5</span></label>
               <label id="fuzz-ten"><input type="radio" name="radio" value="10"><span>10</span></label>
@@ -58,9 +58,9 @@
         </li>
         <li role="separator" class="divider"></li>
         <li id="face-type">
-          <h4>人脸类型</h4>
-          <label id="face-front"><input type="radio" name="face" value="front" {{frontOnlyChecked}}><span>正脸</span></label>
-          <label id="face-all" style="margin-left:10%;" ><input type="radio" name="face" value="all" {{sideAllChecked}}><span>显示全部</span></label>
+          <h4>{{_ "faceType"}}</h4>
+          <label id="face-front"><input type="radio" name="face" value="front" {{frontOnlyChecked}}><span>{{_ "front"}}</span></label>
+          <label id="face-all" style="margin-left:10%;" ><input type="radio" name="face" value="all" {{sideAllChecked}}><span>{{_ "showAll"}}</span></label>
         </li>
       </ul>
     </div>
@@ -68,16 +68,16 @@
   <div class="content" style="position: absolute;top: 0;left: 0;bottom: 0;right: 0;overflow-x: hidden;overflow-y: auto;-webkit-overflow-scrolling: touch;">
     {{#if isLoading}}
     <div class="waitForReportIframe" style="position:fixed; width:100%;text-align: center; margin-top:40%; color: black; font-size: 16px;">
-      <img src="/loading.gif" width="24px" height="24px"/> 加载中...
+      <img src="/loading.gif" width="24px" height="24px"/> {{_ "loading"}}
     </div>
     {{else}}
     {{#if lists}}
     <ul class="timeLine">
       <div style="color: #FF9800;font-size: 16px;position: relative; top: -10px; text-align: right;"><button id="goHint" style="color:rgb(0, 119, 255); display: inline-block;">标注助手</button></div>
       {{#if timelinehref}}
-      <div style="color: #FF9800;font-size: 16px;position: relative"> 点击头像，进行标注</div>
+      <div style="color: #FF9800;font-size: 16px;position: relative">{{_ "tapToLabelHints"}}</div>
       {{else}}
-      <div style="color: #FF9800;font-size: 16px;position: relative"> 点击头像，调整您的出现时间</div>
+      <div style="color: #FF9800;font-size: 16px;position: relative">{{_ "tapToCheck-InHints"}}</div>
       {{/if}}
       <!--{{#each lists}}
       {{#if isShowTime}}
