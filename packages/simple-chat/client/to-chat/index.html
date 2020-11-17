@@ -33,9 +33,9 @@
         {{/if}}
       </div>
       <div class="chat-search">
-        <input type="text" id="searchVal" placeholder="请输入搜索内容">
-        <span class="search-submit">确定</span>
-        <span class="search-cancel">取消</span>
+        <input type="text" id="searchVal" placeholder="{{_ 'whatToSearch'}}">
+        <span class="search-submit">{{_ "ok"}}</span>
+        <span class="search-cancel">{{_ "back"}}</span>
       </div>
       <div class="box">
         <ul class="group-list">
@@ -48,7 +48,7 @@
         </ul>
         {{#if hasNewMsg}}
         <div class="hasNewMsg">
-          <span>{{newMsgCount}}条新消息</span>
+          <span>{{newMsgCount}}{{_ "messageCounts"}}</span>
         </div>
         {{/if}}
       </div>
@@ -67,9 +67,9 @@
           <div class="input"><input class="input-text" type="text" placeholder="粘帖链接，进行训练" /></div>
         {{else}}
           <!-- <div class="btn-box image" id="selectfiles"></div> -->
-          <div class="input"><input class="input-text" type="text" placeholder="说点什么" /></div>
+          <div class="input"><input class="input-text" type="text" placeholder='{{_ "saySomething"}}' /></div>
         {{/if}}
-        <div class="send-btn"><input class="btn" type="submit" value="发送" style="border-radius: 5px;" /></div>
+        <div class="send-btn"><input class="btn" type="submit" value="{{_ 'send'}}" style="border-radius: 5px;" /></div>
       </form></div>
     </div>
 
@@ -109,8 +109,8 @@
         </div>
         <!-- Modal footer -->
         <div class="modal-footer" style="text-align:center;">
-          <button id="btnSkipConfirm" type="button" class="btn btn-info" style="margin-right:10px;" >确认</button>
-          <button id="btnBack" type="button" class="btn btn-info" style="margin-left:10px;">返回</button>
+          <button id="btnSkipConfirm" type="button" class="btn btn-info" style="margin-right:10px;" >{{_ "confirm"}}</button>
+          <button id="btnBack" type="button" class="btn btn-info" style="margin-left:10px;">{{_ "back"}}</button>
         </div>
       </div>
     </div>
@@ -122,12 +122,12 @@
     <div class="modal-dialog" style="top:30%; left:17.8%; width:64%; height:43%;">
       <div class="modal-content">
         <div class="modal-body" style="margin-top: 10px;">
-          <p style="text-align:center; margin-top: 30px;">组里暂无设备，请到首页点击+号添加脸脸盒</p>
+          <p style="text-align:center; margin-top: 30px;">{{_ "noDeviceToFrontPage"}}</p>
         </div>
         <!-- Modal footer -->
         <div class="modal-footer" style="text-align:center;">
-          <button id="btnCancel" type="button" class="btn btn-info" style="margin-right:9px;" >取消</button>
-          <button id="btnEnterHome" type="button" class="btn btn-info" style="margin-left:9px;" >去首页</button>
+          <button id="btnCancel" type="button" class="btn btn-info" style="margin-right:9px;" >{{_ "cancel"}}</button>
+          <button id="btnEnterHome" type="button" class="btn btn-info" style="margin-left:9px;" >{{_ "toFrontPage"}}</button>
         </div>
       </div>
     </div>
