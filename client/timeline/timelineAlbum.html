@@ -138,7 +138,7 @@
                 <div class="linked-helper">{{_ "selected"}}</div>
                 {{> timelineAlbumImg}}
                 {{#if checkMergedImgsCount mergedImgs}}
-                    <div class="merged-count">{{getMergedImgsCount mergedImgs}} 张</div>
+                    <div class="merged-count">{{getMergedImgsCount mergedImgs}} {{_ "pics"}}</div>
                 {{/if}}
                 <div class="person-name">{{showName person_name accuracy label_times}}</div>
               </div>
@@ -188,7 +188,7 @@
               <div class="images images-click-able images-merged" id="{{person_id}}" data-name="{{person_name}}" data-imgurl="{{img_url}}" data-sqlid="{{sqlid}}" data-style="{{style}}" data-ts="{{ts}}">
                 {{> timelineAlbumImg}}
                 {{#if checkMergedImgsCount mergedImgs}}
-                  <div class="merged-count">{{getMergedImgsCount mergedImgs}} 张</div>
+                  <div class="merged-count">{{getMergedImgsCount mergedImgs}} {{_ "pics"}}</div>
                 {{/if}}
                 <div class="person-name">{{showName person_name accuracy label_times}}</div>
               </div>
@@ -211,7 +211,7 @@
       {{/each}}
     </ul>
     {{else}}
-    <div style="text-align: center;margin-top: 100px;">暂无数据</div>
+    <div style="text-align: center;margin-top: 100px;">{{_ "noDataForNow"}}</div>
     {{/if}}
     {{/if}}
   <!--<div class="loading" style="display:none;text-align:center; margin:10px;"><img src="/loading.gif" width="20">&nbsp;&nbsp;加载中...</div>-->
@@ -224,13 +224,13 @@
     <div class="modal-content">
       <div class="modal-body">
         <div class="form-group">
-          <label for="picturePersonName">添加组员</label>
-          <input type="text" class="form-control" id="picturePersonName" placeholder="请输入姓名">
+          <label for="picturePersonName">{{_ "addMember"}}</label>
+          <input type="text" class="form-control" id="picturePersonName" placeholder="{{_ 'inputName'}}">
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default cancelWhatsUp" data-dismiss="modal">取消</button>
-        <button type="button" id="" class="btn btn-primary confirmPersonName">确定</button>
+        <button type="button" class="btn btn-default cancelWhatsUp" data-dismiss="modal">{{_ "cancel"}}</button>
+        <button type="button" id="" class="btn btn-primary confirmPersonName">{{_ "confirm"}}</button>
       </div>
     </div>
   </div>

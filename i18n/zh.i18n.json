@@ -454,9 +454,15 @@
   "workItemSuffix":"』的今日简述",
   "editWorkItem":"编辑今日简述",
   "unknownDevice":"未知设备",
+  "pics":"张",
+  "inputName":"请输入姓名",
+  "addMember":"添加组员",
 
   // TAPi18n.__()
   //dynamic js file contents
+  "addSuccess":"已记录到每日出勤报告",
+  "processing":"处理中",
+  "atLeastOne":"请至少选择一张照片",
   "addPersonFailed":"照片添加失败,请查看网络状态~",
   "addPersonToAlbum":"已将照片添加至成员相册~",
   "today":"今天",
@@ -467,7 +473,7 @@
   "afternoon":"下午",
   "earlyEvening":"傍晚",
   "evening":"晚上",
-  "labelFailed":"标注失败",
+  "labelFailed":"标注失败,请重试",
   "restartAPPAfterMqttSetup":"MQTT Broker信息设置成功，您需要重新启动APP使设置生效",
   "savedToCheckInRecords":"已记录到每日出勤报告",
   "justNow":"刚刚",

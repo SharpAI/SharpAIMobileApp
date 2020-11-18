@@ -1016,18 +1016,18 @@ Template.timelineAlbum.events({
         // }
       }
       PUB.confirm(confirm_text,function(){
-        PUB.showWaitLoading('正在处理');
+        PUB.showWaitLoading(TAPi18n.__('processing'));
         console.log('data is 1', JSON.stringify(data))
         Meteor.call('ai-checkin-out',data,function(err,res){
           PUB.hideWaitLoading();
           if(err){
-            PUB.toast('请重试');
+            PUB.toast(TAPi18n.__('tryAgain'));
             console.log('ai-checkin-out error:' + err);
             return;
           }
 
           if(res && res.result == 'succ'){
-            PUB.toast('已记录到每日出勤报告');
+            PUB.toast(TAPi18n.__('addSuccess'));
             // 发送代Ta 出现成功通知
             if(taId){
               console.log(msgObj)
@@ -1037,7 +1037,7 @@ Template.timelineAlbum.events({
           } else {
             return navigator.notification.confirm(res.text,function(index){
 
-            },res.reason,['知道了']);
+            },res.reason,[TAPi18n.__('kownIt')]);
           }
         });
       });
@@ -1046,7 +1046,7 @@ Template.timelineAlbum.events({
   'click .confirmPersonName': function(e){
     var name = $('#picturePersonName').val();
     if(!name || name.length < 1){
-      PUB.toast('请输入姓名');
+      PUB.toast(TAPi18n.__('inputName'));
       return $('#picturePersonName').focus();
     }
     return checkInOutWithOutName('confirmPersonName',name);
@@ -1081,7 +1081,7 @@ Template.timelineAlbum.events({
       };
     }
     console.log(data);
-    PUB.showWaitLoading('正在处理');
+    PUB.showWaitLoading(TAPi18n.__('processing'));
     console.log('data is 4', JSON.stringify(data))
     Meteor.call('ai-checkin-out',data,function(err,res){
       PUB.hideWaitLoading();
@@ -1095,7 +1095,7 @@ Template.timelineAlbum.events({
       }
 
       if(res && res.result == 'succ'){
-        PUB.toast('已记录到每日出勤报告');
+        PUB.toast(TAPi18n.__('addSuccess'));
         // 发送代Ta 出现成功通知
         if(taId){
           console.log(msgObj)
@@ -1105,7 +1105,7 @@ Template.timelineAlbum.events({
       } else {
         return navigator.notification.confirm(res.text,function(index){
 
-        },res.reason,['知道了']);
+        },res.reason,[TAPi18n.__('kownIt')]);
       }
     });
   },
@@ -1179,7 +1179,7 @@ Template.timelineAlbum.events({
     }
     var _lists = multiSelectLists.get();
     if(_lists.length == 0 ) {
-      return PUB.toast('请至少选择一张照片');
+      return PUB.toast(TAPi18n.__('atLeastOne'));
     }
     multiSelectIds.set([]);
     multiSelectLists.set([]);
@@ -1195,11 +1195,11 @@ Template.timelineAlbum.events({
         return;
       }
 
-      PUB.showWaitLoading('处理中');
+      PUB.showWaitLoading(TAPi18n.__('processing'));
       var setNames = [];
       Meteor.call('get-id-by-name1', uuid, name, group_id, function(err, res){
         if (err || !res){
-          return PUB.toast('标注失败，请重试');
+          return PUB.toast(TAPi18n.__('labelFailed'));
         }
 
         var faceId = null;
