@@ -446,7 +446,17 @@
 
   // TAPi18n.__()
   //dynamic js file contents
+  "today":"今天",
+  "yesterday":"昨天",
+  "earlyMorning":"凌晨",
+  "morning":"上午",
+  "noon":"中午",
+  "afternoon":"下午",
+  "earlyEvening":"傍晚",
+  "evening":"晚上",
+  "labelFailed":"标注失败",
   "restartAPPAfterMqttSetup":"MQTT Broker信息设置成功，您需要重新启动APP使设置生效",
+  "savedToCheckInRecords":"已记录到每日出勤报告",
   "justNow":"刚刚",
   "minAgo":"分钟前",
   "minsAgo":"分钟前",

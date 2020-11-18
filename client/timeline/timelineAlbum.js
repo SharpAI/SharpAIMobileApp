@@ -19,13 +19,13 @@ var initTimeRangeSet = function() {
   $('#timeRange').mobiscroll().range({
     defaultVaule: [new Date(),new Date()],
     theme: 'material',
-    lang: 'zh',
+    lang: 'en',
     display: 'bottom',
     controls: ['calendar', 'time'],
     maxWidth: 100,
-    setText: '设置',
-    fromText: '开始时间',
-    toText:'结束时间',
+    //setText: '设置',
+    //fromText: '开始时间',
+    //toText:'结束时间',
     defaultValue: [
         new Date(now.getFullYear(),now.getMonth(), now.getDate() - 7),new Date()
     ],
@@ -163,7 +163,7 @@ var checkInOutWithOutName = function(type,name,taId,taName){
   }
 
   console.log(data);
-  PUB.showWaitLoading('正在处理');
+  PUB.showWaitLoading(TAPi18n.__('loading'));
   console.log('data is 2', JSON.stringify(data))
   Meteor.call('ai-checkin-out',data,function(err,res){
     PUB.hideWaitLoading();
@@ -176,12 +176,12 @@ var checkInOutWithOutName = function(type,name,taId,taName){
     $('body').removeClass('modal-open');
     $('.modal-backdrop').remove();
     if(err){
-      PUB.toast('请重试');
+      PUB.toast(TAPi18n.__('tryAgain'));
       console.log('ai-checkin-out error:' + err);
       return;
     }
     if(res && res.result == 'succ'){
-      PUB.toast('已记录到每日出勤报告');
+      PUB.toast(TAPi18n.__('savedToCheckInRecords'));
       // 发送代Ta 出现成功通知
       if(taId){
         console.log(msgObj)
@@ -194,7 +194,7 @@ var checkInOutWithOutName = function(type,name,taId,taName){
     } else {
       return navigator.notification.confirm(res.text,function(index){
 
-      },res.reason,['知道了']);
+      },res.reason,[TAPi18n.__('kownIt')]);
     }
   });
 };
@@ -350,7 +350,7 @@ var treatAsTrainData = function(name, data) {
   var setNames = [];
   Meteor.call('get-id-by-name1', uuid, name, group_id, function(err, res){
     if (err || !res){
-      return PUB.toast('标注失败');
+      return PUB.toast(TAPi18n.__('labelFailed'));
     }
 
     var faceId = null;
@@ -1194,7 +1194,7 @@ Template.timelineAlbum.events({
       if (!name) {
         return;
       }
-      
+
       PUB.showWaitLoading('处理中');
       var setNames = [];
       Meteor.call('get-id-by-name1', uuid, name, group_id, function(err, res){
@@ -1236,7 +1236,7 @@ Template.timelineAlbum.events({
             style: item.style
           });
         });
-        
+
         if (setNames.length > 0){
           Meteor.call('set-person-names', group_id, setNames);
         }
