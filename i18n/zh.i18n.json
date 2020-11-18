@@ -427,10 +427,19 @@
   "faceType":"人脸类型",
   "front":"正脸",
   "showAll":"显示全部",
-
+  "apiServer":"API服务器",
+  "mqttBroker":"MQTT Broker",
+  "mqttBrokerSetup":"设置MQTT Broker",
+  "apiServerSetup":"设置API服务器地址",
+  "serverIP":"服务器地址",
+  "serverPort":"服务器端口",
+  "enterIP":"输入地址",
+  "enterPort":"输入端口",
+  "serverURL":"服务器URL",
 
   // TAPi18n.__()
   //dynamic js file contents
+  "restartAPPAfterMqttSetup":"MQTT Broker信息设置成功，您需要重新启动APP使设置生效",
   "justNow":"刚刚",
   "minAgo":"分钟前",
   "minsAgo":"分钟前",

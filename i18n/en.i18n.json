@@ -418,9 +418,19 @@
   "faceType":"Face Type",
   "front":"Front",
   "showAll":"Show All",
+  "apiServer":"API Server",
+  "mqttBroker":"MQTT Broker",
+  "mqttBrokerSetup":"Setup MQTT Broker",
+  "apiServerSetup":"Setup API Server",
+  "serverIP":"Server IP",
+  "serverPort":"Server Port",
+  "enterIP":"Input IP",
+  "enterPort":"Input Port",
+  "serverURL":"Server URL",
 
   // TAPi18n.__()
   //dynamic js file contents
+  "restartAPPAfterMqttSetup":"MQTT Broker setup successfully, please researt APP to take effect",
   "justNow":"Just Now",
   "minAgo":"Min Ago",
   "minsAgo":"Mins Ago",

@@ -15,6 +15,10 @@
         {{/unless}}
         <!--<div class="blacklist boxTitle ripple-label">{{_ "blacklist"}}<span><i class="fa fa-angle-right fa-fw"></i></span></div>-->
       </div>
+      <div class="serverSetting box">
+        <div class='apiServerAddress bottomBorder boxTitle ripple-label'>{{_ "apiServer"}}<span>{{apiServerAddress}}<i class="fa fa-angle-right fa-fw"></i></span></div>
+        <div class='mqttServerAddress bottomBorder boxTitle ripple-label'>{{_ "mqttBroker"}}<span>{{mqttBrokerAddress}}<i class="fa fa-angle-right fa-fw"></i></span></div>
+      </div>
       <div class="appSetting box">
         <!-- <div class="readFollowTips  bottomBorder boxTitle">{{_ "readFollowTips"}}
           <span class="right" style="margin-right: 18px;color: #a1a1a1;">
@@ -136,6 +140,38 @@
     <div class="changePwdInfoBackground show-change-userinfo" style="background: rgba(0, 0, 0, 0.5);"></div>
   </div>
 
+</template>
+
+<template name="api_server_setup">
+  <div class="dashboard">
+    <div class="head">
+      <div>{{_ "apiServerSetup"}}</div>
+      <div id="btn_back" class="leftButton"><i class="fa fa-angle-left fa-fw"></i></div>
+      <div id="btn_save" class="rightButton" style="margin-top:0px;">{{_ "save"}}</div>
+    </div>
+    <div class="content">
+      <div class="box">
+        <div class='boxTitle'>{{_ "serverURL"}}<span class="input"><input type="text" id="api_server_address" placeholder="{{_ 'enterIP'}}" value="{{apiServerIP}}"/></span></div>
+        <!--input type="password" id="my_edit_password" placeholder="输入密码" style="width:95%;border-top:0px;margin-left:5px;height:25px;"/-->
+      </div>
+    </div>
+  </div>
+</template>
+<template name="mqtt_server_setup">
+  <div class="dashboard">
+    <div class="head">
+      <div>{{_ "mqttBrokerSetup"}}</div>
+      <div id="btn_back" class="leftButton"><i class="fa fa-angle-left fa-fw"></i></div>
+      <div id="btn_save" class="rightButton" style="margin-top:0px;">{{_ "save"}}</div>
+    </div>
+    <div class="content">
+      <div class="box">
+        <div class='boxTitle'>{{_ "serverIP"}}<span class="input"><input type="text" id="mqtt_broker_ip" placeholder="{{_ 'enterIP'}}" value="{{serverIP}}"/></span></div>
+        <div class='boxTitle'>{{_ "serverPort"}}<span class="input"><input type="text" id="mqtt_broker_port" placeholder="{{_ 'enterPort'}}" value="{{serverPort}}"/></span></div>
+        <!--input type="password" id="my_edit_password" placeholder="输入密码" style="width:95%;border-top:0px;margin-left:5px;height:25px;"/-->
+      </div>
+    </div>
+  </div>
 </template>
 <template name="my_notice">
   <div class="dashboard">
