@@ -442,6 +442,10 @@
   "labelConfirmHint":"If the picture belong to same name but someone else please select \"Cancel\", then input different name \nFor example：Joe-HR",
   "weeklyReport":"Weekly",
   "monthlyReport":"Monthly",
+  "workItemPrefix":"Edit work item of ",
+  "workItemSuffix":"",
+  "editWorkItem":"Input work item",
+  "unknownDevice":"Unknown Device",
 
   // TAPi18n.__()
   //dynamic js file contents
