@@ -14,14 +14,14 @@ GetTime0 = function(dateM){
     //计算相差秒数
     var leave3=leave2%(MinMilli);      //计算分钟数后剩余的毫秒数
     var seconds=Math.round(leave3/1000);
-    
+
     var prefix;
     if(Session.equals('display-lang','en')){
       if(dateM > DyMilli)
           prefix = days+" Days";
       else if (dateM > HrMilli)
           prefix = hours+" Hours";
-      else if (dateM > MinMilli)                         
+      else if (dateM > MinMilli)
           prefix = minutes+" Minutes";
       else if (dateM <= MinMilli){
           if (seconds <= 0)
@@ -36,7 +36,7 @@ GetTime0 = function(dateM){
           prefix = days+"天 前";
       else if (dateM > HrMilli)
           prefix = hours+"小时 前";
-      else if (dateM > MinMilli)                         
+      else if (dateM > MinMilli)
           prefix = minutes+"分钟 前";
       else if (dateM <= MinMilli){
           if (seconds <= 0)
@@ -63,24 +63,41 @@ get_diff_time = function(dateTimeStamp){
     var dayC =diffValue/day;
     var hourC =diffValue/hour;
     var minC =diffValue/minute;
-    if(monthC>=1){
+    if(monthC==1){
+        result="" + parseInt(monthC) +" "+TAPi18n.__("monthAgo");
+    }
+    else if(monthC>1){
         if(parseInt(monthC) >= 12)
-            result="1 年前";
+            result="1 " +TAPi18n.__("yearAgo");
         else
-            result="" + parseInt(monthC) + " 月前";
+            result="" + parseInt(monthC) +" "+TAPi18n.__("monthsAgo");
     }
-    else if(weekC>=1){
-        result="" + parseInt(weekC) + " 周前";
+    else if(weekC==1){
+        result="" + parseInt(weekC) +" "+TAPi18n.__("weekAgo");
     }
-    else if(dayC>=1){
-        result=""+ parseInt(dayC) +" 天前";
+    else if(weekC>1){
+        result="" + parseInt(weekC) +" "+TAPi18n.__("weeksAgo");
     }
-    else if(hourC>=1){
-        result=""+ parseInt(hourC) +" 小时前";
+    else if(dayC==1){
+        result=""+ parseInt(dayC) +" "+TAPi18n.__("dayAgo");
     }
-    else if(minC>=1){
-        result=""+ parseInt(minC) +" 分钟前";
-    }else
-    result="刚刚";
+    else if(dayC>1){
+        result=""+ parseInt(dayC) +" "+TAPi18n.__("daysAgo");
+    }
+    else if(hourC==1){
+        result=""+ parseInt(hourC) +" "+TAPi18n.__("hourAgo");
+    }
+    else if(hourC>1){
+        result=""+ parseInt(hourC) +" "+TAPi18n.__("hoursAgo");
+    }
+    else if(minC==1){
+        result=""+ parseInt(minC) +" "+TAPi18n.__("minAgo");
+    }
+    else if(minC>1){
+        result=""+ parseInt(minC) +" "+TAPi18n.__("minsAgo");
+    }
+    else{
+      result=TAPi18n.__("justNow");
+    }
     return result;
 };

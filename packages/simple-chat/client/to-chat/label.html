@@ -8,7 +8,7 @@
             <i class="fa fa-angle-left fa-fw"></i>
           </div>
           {{/if}}
-          <strong>这是谁？</strong>
+          <strong>{{_ "whoIsThis"}}</strong>
           {{#if notLoading}}
           <div id="groupsProfilePageback" class="rightButton back">
             <i class="fa fa-check"></i>
@@ -25,27 +25,27 @@
                     <img src="{{wait_lable_img}}"/>
                   </div>
                   <div class="label-input-content" style="padding-left:80px;">
-                    <input id="label-input-name" type="text" placeholder="请选择或输入名字~" style="font-size:16px;height: 40px;line-height: 40px;padding: 0px 10px;width: 100%; border: 1px solid #515151; margin-bottom: 10px;" />
+                    <input id="label-input-name" type="text" placeholder="{{_ 'pleaseSelectOrInputName'}}" style="font-size:16px;height: 40px;line-height: 40px;padding: 0px 10px;width: 100%; border: 1px solid #515151; margin-bottom: 10px;" />
                     <p></p>
                     <table>
                       <tr>
                         <td style="float: left;">Tips: </td>
                         <td style="font-size:12px;padding-top: 3px;">
-                          1.中文名字小于6位，英文名字小于12位（效果更佳）
+                          {{_ "labelTips1"}}
                         </td>
                       </tr>
                       <tr>
                         <td></td>
                         <td style="font-size:12px;">
-                            2.如果照片中的人已经被标记过， 可直接下面的列表中选择。
+                            {{_ "labelTips2"}}
                         </td>
                       </tr>
                     </table>
-                    
-                    
+
+
                   </div>
                 </div>
-                
+
                 <ul style="padding: 0 0 30px 0;margin-top:141px; background: #eee;">
                   {{#each names}}
                   <li>
@@ -60,7 +60,7 @@
         </div>
         {{else}}
         <div class="labelNamesLoading" style="position:fixed; width:100%;text-align: center; margin-top:40%; color: black; font-size: 16px;">
-          <img src="/loading.gif" width="24px" height="24px"/> 加载中...
+          <img src="/loading.gif" width="24px" height="24px"/> {{_ "loading"}}
         </div>
         {{/if}}
     </div>
