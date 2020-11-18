@@ -434,6 +434,11 @@
   "choiceDevice":"Choice Device",
   "labelHints":"Hints",
   "selected":"Selected",
+  "whoIsThis":"Who is this?",
+  "pleaseSelectOrInputName":"Please select or input name",
+  "labelTips1":"1.Short name will be better on mobile GUI",
+  "labelTips2":"2.Select existing name below if same person",
+  "labelConfirmHint":"If the picture belong to same name but someone else please select \"Cancel\", then input different name \nFor example：Joe-HR",
 
   // TAPi18n.__()
   //dynamic js file contents

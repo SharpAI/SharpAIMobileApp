@@ -3703,10 +3703,10 @@ Template._simpleChatToChatLabelName.events({
       return false;
     }
     if (!$('#label-input-name').val())
-      return PUB.toast('请选择或输入名字~');
+      return PUB.toast(TAPi18n.__('pleaseSelectOrInputName'));
     if (sameName(listName))
       // return PUB.toast('该名字已有同名录入，如不是同一人请添加识别后缀。例：张三-人事经理');
-      return PUB.confirm('是否为此人照片，如存在同名情况请点击"取消"，并在输入时添加识别后缀。\n例：张三-人事经理', function () {
+      return PUB.confirm(TAPi18n.__('labelConfirmHint'), function () {
         console.log('不是同名，操作已录入此人相册内');
         t.data.callback && t.data.callback($('#label-input-name').val());
         Blaze.remove(label_view);

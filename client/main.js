@@ -161,6 +161,7 @@ if (Meteor.isCordova) {
             console.log(error_message);
           });
         }
+        Session.set("display_lang","en")
         TAPi18n.setLanguage("en")
          //当用户第八次使用该软件时提示评价app
         AppRate.preferences.usesUntilPrompt = 7;
