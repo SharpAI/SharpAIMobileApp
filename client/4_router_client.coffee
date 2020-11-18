@@ -559,6 +559,16 @@ if Meteor.isClient
         this.render 'my_password'
         Session.set 'channel','my_password'
         return
+    Router.route '/api_server_setup',()->
+      if Meteor.isCordova is true
+        this.render 'api_server_setup'
+        Session.set 'channel','api_server_setup'
+        return
+    Router.route '/mqtt_server_setup',()->
+      if Meteor.isCordova is true
+        this.render 'mqtt_server_setup'
+        Session.set 'channel','mqtt_server_setup'
+        return
     Router.route '/my_notice',()->
       if Meteor.isCordova is true
         this.render 'my_notice'
