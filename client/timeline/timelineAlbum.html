@@ -73,7 +73,7 @@
     {{else}}
     {{#if lists}}
     <ul class="timeLine">
-      <div style="color: #FF9800;font-size: 16px;position: relative; top: -10px; text-align: right;"><button id="goHint" style="color:rgb(0, 119, 255); display: inline-block;">标注助手</button></div>
+      <div style="color: #FF9800;font-size: 16px;position: relative; top: -10px; text-align: right;"><button id="goHint" style="color:rgb(0, 119, 255); display: inline-block;">{{_ "labelHints"}}</button></div>
       {{#if timelinehref}}
       <div style="color: #FF9800;font-size: 16px;position: relative">{{_ "tapToLabelHints"}}</div>
       {{else}}
@@ -122,20 +122,20 @@
             {{#if mergedImgs}}
               {{#if mergedIsExtend}}
               <div class="images images-no-click" id="{{person_id}}" data-name="{{person_name}}" data-imgurl="{{img_url}}" data-sqlid="{{sqlid}}" data-style="{{style}}" data-ts="{{ts}}">
-                <div class="linked-helper">已选</div>
+                <div class="linked-helper">{{_ "selected"}}</div>
                 {{> timelineAlbumImg}}
                 <div class="person-name">{{showName person_name accuracy label_times}}</div>
               </div>
               {{#each mergedImgs}}
               <div class="images images-no-click" id="{{person_id}}" data-name="{{person_name}}" data-imgurl="{{img_url}}" data-sqlid="{{sqlid}}" data-style="{{style}}" data-ts="{{ts}}">
-                <div class="linked-helper">已选</div>
+                <div class="linked-helper">{{_ "selected"}}</div>
                 {{> timelineAlbumImg}}
                 <div class="person-name">{{showName person_name accuracy label_times}}</div>
               </div>
               {{/each}}
               {{else}}
               <div class="images images-no-click images-merged" id="{{person_id}}" data-name="{{person_name}}" data-imgurl="{{img_url}}" data-sqlid="{{sqlid}}" data-style="{{style}}" data-ts="{{ts}}">
-                <div class="linked-helper">已选</div>
+                <div class="linked-helper">{{_ "selected"}}</div>
                 {{> timelineAlbumImg}}
                 {{#if checkMergedImgsCount mergedImgs}}
                     <div class="merged-count">{{getMergedImgsCount mergedImgs}} 张</div>
@@ -145,7 +145,7 @@
               {{/if}}
             {{else}}
             <div class="images images-no-click" id="{{person_id}}" data-name="{{person_name}}" data-imgurl="{{img_url}}" data-sqlid="{{sqlid}}" data-style="{{style}}" data-ts="{{ts}}">
-              <div class="linked-helper">已选</div>
+              <div class="linked-helper">{{_ "selected"}}</div>
               {{> timelineAlbumImg}}
               <div class="person-name">{{showName person_name accuracy label_times}}</div>
             </div>

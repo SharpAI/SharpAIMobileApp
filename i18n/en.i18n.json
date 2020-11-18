@@ -427,6 +427,13 @@
   "enterIP":"Input IP",
   "enterPort":"Input Port",
   "serverURL":"Server URL",
+  "isThis":"Is this",
+  "ma":"",
+  "yes":"Yes",
+  "no":"No",
+  "choiceDevice":"Choice Device",
+  "labelHints":"Hints",
+  "selected":"Selected",
 
   // TAPi18n.__()
   //dynamic js file contents

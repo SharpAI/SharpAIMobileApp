@@ -288,9 +288,9 @@ Template.mqtt_server_setup.events
   'click #btn_save' :->
     mqtt_broker_ip = $('#mqtt_broker_ip').val()
     mqtt_broker_port = $('#mqtt_broker_port').val()
-    if not mqtt_broker_ip
+    if mqtt_broker_ip
       window.localStorage.setItem('Meteor.mqttAddress', mqtt_broker_ip)
-    if not mqtt_broker_port
+    if mqtt_broker_port
       window.localStorage.setItem('Meteor.mqttPort', mqtt_broker_port)
 
     PUB.toast TAPi18n.__("restartAPPAfterMqttSetup")

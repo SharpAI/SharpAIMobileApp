@@ -201,15 +201,15 @@
 <!--对和错的弹框-->
 <template name="_showImgOne">
    <div id="label_check">
-      <div class="label_cancel">取消</div>
+      <div class="label_cancel">{{_ "cancel"}}</div>
       <div class="with_me">
         <div class="top_img">
           <img class="img-responsive center-block show_imgage" src="{{label_img}}">
         </div>
         <div class="bottom_btn">
-          <div class="user_name_show">这是 <span class="user_name">{{label_name}}</span> 吗？</div>
-          <button type="button" class="btn btn-default label_wrong">错</button>
-          <button type="button" class="btn btn-default label_right">对</button>
+          <div class="user_name_show">{{_ "isThis"}} <span class="user_name">{{label_name}}</span> {{_ "ma"}}?</div>
+          <button type="button" class="btn btn-default label_wrong">{{_ "no"}}</button>
+          <button type="button" class="btn btn-default label_right">{{_ "yes"}}</button>
         </div>
       </div>
     </div>
@@ -599,7 +599,7 @@
 <div class="_checkGroupDevice">
   <div class="_cgd_container">
     <div class="_cgd_header">
-      <h1 class="_cgd_title">选择脸脸盒</h1>
+      <h1 class="_cgd_title">{{_ "choiceDevice"}}</h1>
       <button class="_cgd_close"><i class="fa fa-close fa-fw"></i></button>
     </div>
     <ul class="_cgd_device_lists">
