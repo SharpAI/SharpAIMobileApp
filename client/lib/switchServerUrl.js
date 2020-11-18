@@ -4,6 +4,9 @@
 var START_WITH_HTTPs = /^https?:/
 var END_WITH_SLASH = /\/$/
 
+var MQTT_ADDRESS = '10.168.1.221'
+var MQTT_PORT = 1883
+
 function ensureDDPRawURL(){
   if (Meteor.isCordova) {
     var ROOT_URL = window.localStorage.getItem('Meteor.rootUrl')
@@ -22,7 +25,19 @@ function ensureDDPRawURL(){
   }
 }
 
+function ensureMQTTAddress(){
+  var mqttAddress = window.localStorage.getItem('Meteor.mqttAddress')
+  var mqttPort = window.localStorage.getItem('Meteor.mqttPort')
+  if(!mqttAddress){
+    window.localStorage.setItem('Meteor.mqttAddress', MQTT_ADDRESS)
+  }
+  if(!mqttPort){
+    window.localStorage.setItem('Meteor.mqttPort', MQTT_PORT)
+  }
+}
+
 ensureDDPRawURL()
+ensureMQTTAddress()
 
 function checkRootUrl(opt) {
   if (!START_WITH_HTTPs.test(opt))

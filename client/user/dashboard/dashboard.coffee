@@ -58,7 +58,7 @@ if Meteor.isClient
     mqttBrokerAddress :->
       mqttAddress = window.localStorage.getItem('Meteor.mqttAddress')
       mqttPort = window.localStorage.getItem('Meteor.mqttPort')
-      return mqttAddress+':'+mqttPort
+      return 'mqtt://'+mqttAddress+':'+mqttPort
   addDashboardIntoHistory = ()->
     history = []
     history.push {
