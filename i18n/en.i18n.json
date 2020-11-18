@@ -446,9 +446,15 @@
   "workItemSuffix":"",
   "editWorkItem":"Input work item",
   "unknownDevice":"Unknown Device",
+  "pics":"pics",
+  "inputName":"Please Input Name",
+  "addMember":"Add Member",
 
   // TAPi18n.__()
   //dynamic js file contents
+  "addSuccess":"Added to CheckIn History",
+  "processing":"Processing...",
+  "atLeastOne":"Please choice one picture at least",
   "addPersonFailed":"Failed, please check your network and try again.",
   "addPersonToAlbum":"Already added to time line album",
   "today":"Today",
