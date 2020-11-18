@@ -436,6 +436,13 @@
   "enterIP":"输入地址",
   "enterPort":"输入端口",
   "serverURL":"服务器URL",
+  "isThis":"这是",
+  "ma":"吗",
+  "yes":"对",
+  "no":"错",
+  "choiceDevice":"选择设备",
+  "labelHints":"标注助手",
+  "selected":"已选",
 
   // TAPi18n.__()
   //dynamic js file contents
