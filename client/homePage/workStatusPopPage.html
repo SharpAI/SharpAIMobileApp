@@ -101,18 +101,18 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">编辑『{{whatsup.name}}』的今日简述</h4>
+          <h4 class="modal-title" id="myModalLabel">{{_ "workItemPrefix"}}{{whatsup.name}}{{_ "workItemSuffix"}}</h4>
         </div>
         <div class="modal-body">
           <form>
           <div class="form-group">
-            <textarea id="EditorWhatsUp" rows="5"  class="form-control" placeholder="编辑今日简述" style="height: auto !important;resize: none;"></textarea>
+            <textarea id="EditorWhatsUp" rows="5"  class="form-control" placeholder="{{_ 'editWorkItem'}}" style="height: auto !important;resize: none;"></textarea>
           </div>
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default cancelWhatsUp" data-dismiss="modal">取消</button>
-          <button type="button" id="" class="btn btn-primary saveWhatsUp">保存</button>
+          <button type="button" class="btn btn-default cancelWhatsUp" data-dismiss="modal">{{_ "cancel"}}</button>
+          <button type="button" id="" class="btn btn-primary saveWhatsUp">{{_ "save"}}</button>
         </div>
       </div>
     </div>
@@ -125,7 +125,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="selectDevicesInOutLabel">选择设备</h4>
+          <h4 class="modal-title" id="selectDevicesInOutLabel">{{_ "choiceDevice"}}</h4>
         </div>
         <div class="modal-body">
           <ul class="set-up comFadeIn">
@@ -136,7 +136,7 @@
                 {{#if name}}
                 <label style="margin-left:48px;">{{name}}</label>
                 {{else}}
-                <label style="margin-left:48px;">未知设备</label>
+                <label style="margin-left:48px;">{{_ "unknownDevice"}}</label>
                 {{/if}}
                 <div class="value" style="float:right; margin:10px;">{{in_out}}<i class="fa fa-angle-right"></i></div>
             </li>
@@ -171,7 +171,7 @@
         </ul>
       </div>
       {{#if isLoading}}
-        <div class="loading"><img src="/img/company-loading.gif"/><p>加载中</p></div>
+        <div class="loading"><img src="/img/company-loading.gif"/><p>{{_ "loading"}}</p></div>
       {{else}}
         {{#if hasWorkStatus}}
         <ul class="employeeLists">
@@ -188,11 +188,11 @@
                 </div>
               </div>
               <h2><span class="in-out-status {{getInOutStatus}}"></span> {{name}} </h2>
-              <p><span class="in-out-status {{getStatus 'in'}}"></span> 上班时间: {{getTime 'in'}}</p>
-              <p><span class="in-out-status {{getStatus 'out'}}"></span> 最近活动: {{getTime 'out'}}</p>
+              <p><span class="in-out-status {{getStatus 'in'}}"></span> {{_ "checkIn"}}: {{getTime 'in'}}</p>
+              <p><span class="in-out-status {{getStatus 'out'}}"></span> {{_ "latestActivity"}}: {{getTime 'out'}}</p>
               <div class="whats-up">
                 <p>
-                  工作安排：
+                  {{_ "workItems"}}:
                   <span class="toggle" data-toggle="collapse" data-target="#collapse_{{_id}}" aria-expanded="false" aria-controls="collapse_{{_id}}">
                     <i class="fa fa-angle-down" aria-hidden="true"></i>
                   </span>

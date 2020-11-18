@@ -450,6 +450,10 @@
   "labelConfirmHint":"是否为此人照片，如存在同名情况请点击\"取消\"，并在输入时添加识别后缀。\n例：张三-人事经理",
   "weeklyReport":"周报",
   "monthlyReport":"月报",
+  "workItemPrefix":"编辑『",
+  "workItemSuffix":"』的今日简述",
+  "editWorkItem":"编辑今日简述",
+  "unknownDevice":"未知设备",
 
   // TAPi18n.__()
   //dynamic js file contents
