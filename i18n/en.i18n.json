@@ -437,6 +437,16 @@
 
   // TAPi18n.__()
   //dynamic js file contents
+  "today":"Today",
+  "yesterday":"Yesterday",
+  "earlyMorning":"Morning",
+  "morning":"Morning",
+  "noon":"Noon",
+  "afternoon":"Afternoon",
+  "earlyEvening":"Afternoon",
+  "evening":"Evening",
+  "labelFailed":"Label Failed",
+  "savedToCheckInRecords":"Saved to check-in records",
   "restartAPPAfterMqttSetup":"MQTT Broker setup successfully, please researt APP to take effect",
   "justNow":"Just Now",
   "minAgo":"Min Ago",
