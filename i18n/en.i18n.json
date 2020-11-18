@@ -388,6 +388,7 @@
   "wrongRecognition":"Hints",
   "noDataForNow":"No Records For Now",
   "checkIn":"Checked In:",
+  "latestActivity":"Last Seen:",
   "shape":"Shape",
   "face":"Face",
   "labelHints":"Tap on face to label",
@@ -439,9 +440,13 @@
   "labelTips1":"1.Short name will be better on mobile GUI",
   "labelTips2":"2.Select existing name below if same person",
   "labelConfirmHint":"If the picture belong to same name but someone else please select \"Cancel\", then input different name \nFor example：Joe-HR",
+  "weeklyReport":"Weekly",
+  "monthlyReport":"Monthly",
 
   // TAPi18n.__()
   //dynamic js file contents
+  "addPersonFailed":"Failed, please check your network and try again.",
+  "addPersonToAlbum":"Already added to time line album",
   "today":"Today",
   "yesterday":"Yesterday",
   "earlyMorning":"Morning",

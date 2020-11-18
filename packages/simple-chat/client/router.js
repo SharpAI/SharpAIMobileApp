@@ -3843,8 +3843,8 @@ Template._showImgOne.events({
         this_data.to.id,
         function(err){
           if (err)
-            return PUB.toast('照片添加失败,请查看网络状态~');
-          return PUB.toast('已将照片添加至成员相册~');
+            return PUB.toast(TAPi18n.__('addPersonFailed'));
+          return PUB.toast(TAPi18n.__('addPersonToAlbum'));
         }
       )
       var trainsetObj = {

@@ -312,7 +312,7 @@ Template.workStatusPopPage.helpers({
     if(time){
       // time = new Date(time);
       // time = time.shortTime(time_offset)
-      time = moment(time).utcOffset(time_offset).format('ahh:mm');
+      time = moment(time).locale('en').utcOffset(time_offset).format('hh:mm A');
     } else {
       time = '--:--';
     }

@@ -448,9 +448,13 @@
   "labelTips1":"1.中文名字小于6位，英文名字小于12位（效果更佳）",
   "labelTips2":"2.如果照片中的人已经被标记过， 可直接下面的列表中选择。",
   "labelConfirmHint":"是否为此人照片，如存在同名情况请点击\"取消\"，并在输入时添加识别后缀。\n例：张三-人事经理",
+  "weeklyReport":"周报",
+  "monthlyReport":"月报",
 
   // TAPi18n.__()
   //dynamic js file contents
+  "addPersonFailed":"照片添加失败,请查看网络状态~",
+  "addPersonToAlbum":"已将照片添加至成员相册~",
   "today":"今天",
   "yesterday":"昨天",
   "earlyMorning":"凌晨",
