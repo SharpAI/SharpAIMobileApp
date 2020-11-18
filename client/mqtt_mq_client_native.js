@@ -57,18 +57,19 @@ if (Meteor.isClient && withNativeMQTTLIB) {
         //}
         return;
       }
-
       var mqttOptions = {
         username: clientId,
         password: localStorage.getItem('Meteor.loginToken'),
-        host: '165.232.62.29',
-        port: 1883,
+        //host: '165.232.62.29',
+        host: window.localStorage.getItem('Meteor.mqttAddress'),
+        port: window.localStorage.getItem('Meteor.mqttPort'),
         timeout: 30,
         keepAlive: 10,
         cleanSession: false,
         qos: 1,
         clientId: clientId
       };
+      console.log('mqtt host is: '+window.localStorage.getItem('Meteor.mqttAddress'));
       //mqtt_connection=new Paho.MQTT.Client('mq.tiegushi.com', Number(80), clientId);
 
       //if(mqtt.isOnline()){

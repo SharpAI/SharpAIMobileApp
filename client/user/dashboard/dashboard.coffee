@@ -51,6 +51,14 @@ if Meteor.isClient
         return false
       else
         return true
+    apiServerAddress :->
+      if window.localStorage.getItem('Meteor.rootUrl')
+        return window.localStorage.getItem('Meteor.rootUrl')
+      return __meteor_runtime_config__.DDP_DEFAULT_CONNECTION_URL
+    mqttBrokerAddress :->
+      mqttAddress = window.localStorage.getItem('Meteor.mqttAddress')
+      mqttPort = window.localStorage.getItem('Meteor.mqttPort')
+      return mqttAddress+':'+mqttPort
   addDashboardIntoHistory = ()->
     history = []
     history.push {
@@ -70,6 +78,12 @@ if Meteor.isClient
     'click .accounts-management' :->
       addDashboardIntoHistory()
       Router.go '/my_accounts_management'
+    'click .apiServerAddress' :->
+      addDashboardIntoHistory()
+      Router.go '/api_server_setup'
+    'click .mqttServerAddress' :->
+      addDashboardIntoHistory()
+      Router.go '/mqtt_server_setup'
     'click .changePasswd' :->
       addDashboardIntoHistory()
       Router.go '/my_password'
@@ -244,6 +258,45 @@ if Meteor.isClient
             console.log 'setUserInfo was Error!'
             return
         Router.go '/loginForm'
+
+Template.api_server_setup.rendered=->
+  $('.dashboard').css 'min-height', $(window).height()
+  return
+Template.api_server_setup.helpers
+  apiServerIP :->
+    if window.localStorage.getItem('Meteor.rootUrl')
+      return window.localStorage.getItem('Meteor.rootUrl')
+    return __meteor_runtime_config__.DDP_DEFAULT_CONNECTION_URL
+Template.api_server_setup.events
+  'click #btn_save' :(e)->
+    e.preventDefault()
+    newAddress = $('#api_server_address').val()
+    PUB.toast TAPi18n.__("switchServerURL")+newAddress
+    Meteor.switchRootUrl(newAddress)
+    Router.go '/dashboard'
+  'click #btn_back' :->
+    Router.go '/dashboard'
+Template.mqtt_server_setup.rendered=->
+  $('.dashboard').css 'min-height', $(window).height()
+  return
+Template.mqtt_server_setup.helpers
+  serverIP :->
+    window.localStorage.getItem('Meteor.mqttAddress')
+  serverPort :->
+    window.localStorage.getItem('Meteor.mqttPort')
+Template.mqtt_server_setup.events
+  'click #btn_save' :->
+    mqtt_broker_ip = $('#mqtt_broker_ip').val()
+    mqtt_broker_port = $('#mqtt_broker_port').val()
+    if not mqtt_broker_ip
+      window.localStorage.setItem('Meteor.mqttAddress', mqtt_broker_ip)
+    if not mqtt_broker_port
+      window.localStorage.setItem('Meteor.mqttPort', mqtt_broker_port)
+
+    PUB.toast TAPi18n.__("restartAPPAfterMqttSetup")
+
+  'click #btn_back' :->
+    Router.go '/dashboard'
 
   Template.my_notice.rendered=->
     $('.dashboard').css 'min-height', $(window).height()
