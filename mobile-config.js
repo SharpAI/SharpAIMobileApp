@@ -1,6 +1,6 @@
 App.info({
   id: 'org.sharpai.everywhere',
-  version: '2.0.2',
+  version: '3.0.0',
   name: 'sharpai',
   description: 'Share everything with everyone',
   author: 'hotShare Design Team',
@@ -19,6 +19,7 @@ App.setPreference('StatusBarStyle','lightcontent');
 App.setPreference('AutoHideSplashScreen', false);
 App.setPreference('AndroidPersistentFileLocation','Internal');
 App.setPreference('iosPersistentFileLocation','Library');
+App.setPreference('ScrollEnabled', true);
 App.accessRule('*');
 App.accessRule('http://*');
 App.accessRule('https://*');
