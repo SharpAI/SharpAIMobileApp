@@ -500,7 +500,7 @@ Template.groupPhotoImg1.events({
         return $('._checkGroupDevice').fadeIn();
       }
     }
-    return PUB.toast('该监控组下暂无脸脸盒');
+    return PUB.toast(TAPi18n.__('noDevice'));
 
   },
   'click li': function(e){
@@ -520,12 +520,12 @@ Template.groupPhotoImg1.events({
           return Template.person_labelDataset.open(self.group_id,self.name);
           break;
         case 2:
-          var confirmTitle = '要删除「'+self.name+'」吗?';
+          var confirmTitle = TAPi18n.__('wantToDelete')+'「'+self.name+'」?';
           PUB.confirm(confirmTitle, function() {
             Meteor.call('removePersonById', self._id, function(error, result) {
               if (error) {
                 console.log(error);
-                return PUB.toast('删除失败，请重试！');
+                return PUB.toast(TAPi18n.__('failed'));
               }
               var trainsetObj = {
                 group_id: self.group_id,
@@ -536,29 +536,29 @@ Template.groupPhotoImg1.events({
               sendMqttMessage('/device/'+self.group_id, trainsetObj);
               //重新训练
               retrain(self.group_id);
-              return PUB.toast('已删除');
+              return PUB.toast(TAPi18n.__('done'));
             });
           });
           break;
         case 3:
-          var promptTip = '输入一个新的姓名以重命名此Person';
-          var promptTitle = '重命名「'+self.name+'」';
+          var promptTip = TAPi18n.__('pleaseInputNewName');
+          var promptTitle = TAPi18n.__('renameThisOne')+'「'+self.name+'」';
           navigator.notification.prompt(promptTip, function(results) {
             var newName = results.input1;
             newName = newName.replace(/(^\s*)|(\s*$)/g,"");
             if (results.buttonIndex == 2) {
               if (!newName) {
-                return PUB.toast('请输入姓名');
+                return PUB.toast(TAPi18n.__('pleaseInputNewName'));
               }
               Meteor.call('renamePerson',self._id, newName,function(err, res) {
                 if (err) {
                   console.log('==sr==,error = '+err);
-                  return PUB.toast('重命名失败')
+                  return PUB.toast('failed')
                 }
-                return PUB.toast('已将「'+self.name+'」重命名为「'+newName+'」');
+                return PUB.toast(TAPi18n.__('done'));
               });
             }
-          }, promptTitle, ['取消','重命名'], '');
+          }, promptTitle, [TAPi18n.__('cancel'),TAPi18n.__('renameThisOne')], '');
           break;
         default:
           break;

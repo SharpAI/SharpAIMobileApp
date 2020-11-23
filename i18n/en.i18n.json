@@ -451,9 +451,15 @@
   "addMember":"Add Member",
   "pics":"pics",
   "nameIt":"Set Name",
+  "selectToDelete":"Select to delete",
+  "all":"All",
+  "none":"None",
 
   // TAPi18n.__()
   //dynamic js file contents
+
+  "wantToDelete":"Do you really want to delete",
+  "pleaseInputNewName":"Please input new name:",
   "renameThisOne":"Rename",
   "deleteThisOne":"Delete",
   "seeAllPics":"Review",
