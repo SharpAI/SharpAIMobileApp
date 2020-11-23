@@ -449,9 +449,15 @@
   "pics":"pics",
   "inputName":"Please Input Name",
   "addMember":"Add Member",
+  "pics":"pics",
+  "nameIt":"Set Name",
 
   // TAPi18n.__()
   //dynamic js file contents
+  "renameThisOne":"Rename",
+  "deleteThisOne":"Delete",
+  "seeAllPics":"Review",
+  "pleaseChoice":"Please Choice",
   "addSuccess":"Added to CheckIn History",
   "processing":"Processing...",
   "atLeastOne":"Please choice one picture at least",

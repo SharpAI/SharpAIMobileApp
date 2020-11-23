@@ -25,7 +25,7 @@
       <div class="photos {{is_hover '已标注'}}">
         {{#if isLoading}}
         <div style="position:fixed; width:100%;text-align: center; margin-top:40%; color: black; font-size: 16px;">
-          <img src="/loading.gif" width="24px" height="24px"/> 加载中...
+          <img src="/loading.gif" width="24px" height="24px"/> {{_ "loading"}}
         </div>
         {{else}}
         <ul id="labeledLists" data-type="已标注">
@@ -39,7 +39,7 @@
     {{#if is_type '未标注'}}
       {{#if is_selected}}
       <div class="buttons">
-        <div id="not-label-label" class="btn-default label-btn">标注</div>
+        <div id="not-label-label" class="btn-default label-btn">{{_ "nameIt"}}</div>
         <div id="not-label-del" class="btn-default del-btn" style="background-color: #f56262;color: #ffffff;margin-top: 3px;">删除</div>
       </div>
       {{else}}
@@ -52,12 +52,12 @@
     </div>
     {{/if}}
   </div>
-  
+
 </template>
 
 <template name="groupPhotoImg">
   <li id="{{../_id}}" class="wait-label-item">
-     <img class="lazy" data-original="{{url}}" /> 
+     <img class="lazy" data-original="{{url}}" />
     {{#if has_selected ../_id _id}}
     {{#if is_type '未标注'}}
     <div class="selected"><i class="fa fa-check" aria-hidden="true"></i></div>
@@ -68,21 +68,21 @@
 
 <template name="groupPhotoImg1">
   <li id="{{_id}}" class="labeled-item group-photo-labeled-item {{human_shape}}" data-did="{{deviceId}}" data-gid="{{group_id}}" data-fid="{{faceId}}" data-name="{{name}}">
-    <img class="lazy" data-original="{{url}}" id={{_id}}  data-gid="{{group_id}}" data-fid="{{faceId}}"  data-name="{{name}}"/> 
+    <img class="lazy" data-original="{{url}}" id={{_id}}  data-gid="{{group_id}}" data-fid="{{faceId}}"  data-name="{{name}}"/>
     <h2 class="name">
-      {{name}} 
+      {{name}}
       {{#if isNeedLabelMore}}<img src="/electric_quantity.png" style="width: 26px;height: 26px;background: none;float: none;"/>{{/if}}
     </h2>
     <p>
       <!-- {{#if imgCount}}{{imgCount}} 张照片{{/if}}  -->
-      {{imageCount}} 张照片
-      {{#if isNeedLabelMore}}<span class="label_times labelMoreImage">标记</span>{{/if}}
+      {{imageCount}} {{_ "pics"}}
+      {{#if isNeedLabelMore}}<span class="label_times labelMoreImage">{{_ "nameIt"}}</span>{{/if}}
     </p>
   </li>
 
   <!-- {{#each faces}}
   <li id="{{id}}" class="labeled-item" data-did="{{../deviceId}}" data-gid="{{../group_id}}" data-fid="{{../faceId}}" data-name="{{../name}}">
-     <img class="lazy" data-original="{{url}}" /> 
+     <img class="lazy" data-original="{{url}}" />
      {{#if has_selected id}}
      <div class="selected"><i class="fa fa-check" aria-hidden="true"></i></div>
      {{/if}}
@@ -147,4 +147,3 @@
      <div class="label">{{name}}</div>
   </li>
 </template>
-

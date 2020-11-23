@@ -508,9 +508,9 @@ Template.groupPhotoImg1.events({
 
     // remove or reName Person
     var options = {
-      title: '请选择',
-      buttonLabels: ['查看此人的全部照片','删除此人','重命名此人'],
-      addCancelButtonWithLabel: '取消',
+      title: TAPi18n.__('pleaseChoice'),
+      buttonLabels: [TAPi18n.__('seeAllPics'),TAPi18n.__('deleteThisOne'),TAPi18n.__('renameThisOne')],
+      addCancelButtonWithLabel: TAPi18n.__('cancel'),
       androidEnableCancelButton: true
     };
 

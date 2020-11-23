@@ -457,9 +457,15 @@
   "pics":"张",
   "inputName":"请输入姓名",
   "addMember":"添加组员",
+  "pics":"张照片",
+  "nameIt":"标记",
 
   // TAPi18n.__()
   //dynamic js file contents
+  "renameThisOne":"重命名此人",
+  "deleteThisOne":"删除此人",
+  "seeAllPics":"查看此人的全部照片",
+  "pleaseChoice":"请选择",
   "addSuccess":"已记录到每日出勤报告",
   "processing":"处理中",
   "atLeastOne":"请至少选择一张照片",
