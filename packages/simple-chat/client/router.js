@@ -614,7 +614,7 @@ Template._simpleChatToChat.onRendered(function () {
           images: [],
           to_type: 'group',
           type: 'system',
-          text: '欢迎加入' + page_data.title(),
+          text: 'welcome to join ' + page_data.title(),
           create_time: new Date(),
           is_read: false
         };
@@ -2062,9 +2062,9 @@ Template._simpleChatToChat.events({
         // Session.set('shouldScrollToBottom',true);
         // 用户输入
         // setScrollToBottom();
-        if(instance){
-          instance.atBottom = true;
-        }
+        //if(instance){
+        //  instance.atBottom = true;
+        //}
       });
 
       $('.input-text').val('');
