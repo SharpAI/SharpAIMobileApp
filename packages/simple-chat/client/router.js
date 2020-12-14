@@ -1937,8 +1937,9 @@ Template._simpleChatToChat.events({
           // Session.set('shouldScrollToBottom',true);
           // 用户输入
           // setScrollToBottom();
-          instance.atBottom = true;
-
+          if(instance){
+            instance.atBottom = true;
+          }
         });
       } else {
         Meteor.setTimeout(function () {
@@ -1946,7 +1947,9 @@ Template._simpleChatToChat.events({
           // Session.set('shouldScrollToBottom',true);
           // 用户输入
           // setScrollToBottom();
-          instance.atBottom = true;
+          if(instance){
+            instance.atBottom = true;
+          }
         }, 0);
       }
 
@@ -2059,7 +2062,9 @@ Template._simpleChatToChat.events({
         // Session.set('shouldScrollToBottom',true);
         // 用户输入
         // setScrollToBottom();
-        instance.atBottom = true;
+        if(instance){
+          instance.atBottom = true;
+        }
       });
 
       $('.input-text').val('');
@@ -2087,7 +2092,9 @@ Template._simpleChatToChat.events({
     //  Session.set('shouldScrollToBottom',true);
     //  主动点击有 x 条新消息
     // setScrollToBottom();
-    instance.atBottom = true;
+    if(instance){
+      instance.atBottom = true;
+    }
     Session.set('newMsgCount', 0);
   },
   'touchstart .progress1': function (event) {
