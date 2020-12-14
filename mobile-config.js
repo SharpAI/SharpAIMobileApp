@@ -1,6 +1,6 @@
 App.info({
   id: 'org.sharpai.everywhere',
-  version: '3.0.1.1',
+  version: '3.0.1.4',
   name: 'sharpai',
   description: 'Share everything with everyone',
   author: 'hotShare Design Team',
