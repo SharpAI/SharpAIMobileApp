@@ -2,7 +2,6 @@
  * Created by simba on 5/12/16.
  */
 if(Meteor.isClient && !withNativeMQTTLIB){
-    var myMqtt = Paho.MQTT;
     var undeliveredMessages = [];
     var unsendMessages = [];
     var uninsertMessages = [];
@@ -78,9 +77,8 @@ if(Meteor.isClient && !withNativeMQTTLIB){
                 onFailure:onFailure,
                 reconnect: true
             };
-            //mqtt_connection=myMqtt.connect('ws://tmq.tiegushi.com:80',mqttOptions);
-            mqtt_connection=new Paho.MQTT.Client('mq.tiegushi.com', Number(80), clientId);
-            //mqtt_connection=new Paho.MQTT.Client('183.136.238.174', Number(8083), clientId);
+            mqtt_connection=new Paho.Client(window.localStorage.getItem('Meteor.mqttAddress'), Number(window.localStorage.getItem('Meteor.mqttPort')), clientId);
+            //mqtt_connection=new Paho.Client('183.136.238.174', Number(8083), clientId);
             mqtt_connection.onConnectionLost = onConnectionLost;
             mqtt_connection.onMessageArrived = onMessageArrived;
             mqtt_connection.onMessageDelivered = onMessageDelivered;

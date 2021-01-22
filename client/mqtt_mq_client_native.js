@@ -35,7 +35,7 @@ if (Meteor.isClient && withNativeMQTTLIB) {
 
     initMQTT = function (clientId) {
       // 初始化MQTT时，检查queue队列是否超过emq的queue_len配置，当前配置是2000
-      Meteor.call('getMqttSessionInfo', Meteor.userId(), function(err, result) {
+      /*Meteor.call('getMqttSessionInfo', Meteor.userId(), function(err, result) {
         if (err) {
           console.log(err);
           return;
@@ -44,7 +44,7 @@ if (Meteor.isClient && withNativeMQTTLIB) {
         if (result && result['mqueue_len'] > 1999) {
           Session.set('offlineMsgOverflow', true);
         }
-      });
+      });*/
 
       if (mqtt.host) {
         console.log('already inited');
@@ -52,7 +52,7 @@ if (Meteor.isClient && withNativeMQTTLIB) {
         mqtt.disconnect(function () {
           setTimeout(function () {
             mqtt.connect();
-          }, 1 * 1000);
+          }, 20 * 1000);
         });
         //}
         return;
@@ -67,7 +67,8 @@ if (Meteor.isClient && withNativeMQTTLIB) {
         keepAlive: 10,
         cleanSession: false,
         qos: 1,
-        clientId: clientId
+        clientId: clientId,
+        offlineCaching: false
       };
       console.log('mqtt host is: '+window.localStorage.getItem('Meteor.mqttAddress'));
       //mqtt_connection=new Paho.MQTT.Client('mq.tiegushi.com', Number(80), clientId);
