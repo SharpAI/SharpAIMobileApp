@@ -5,6 +5,7 @@ Template.loginForm.helpers
       if window.localStorage.getItem('Meteor.rootUrl')
         return window.localStorage.getItem('Meteor.rootUrl')
       return __meteor_runtime_config__.DDP_DEFAULT_CONNECTION_URL
+    withLiteVersion: withLiteVersion
 Template.loginForm.events
     'click #toSignup':(e,t)->
       return PUB.page('/signupForm');
@@ -120,8 +121,8 @@ Template.loginForm.events
                   Router.go('/scene')
                 else
                   Router.go('/introductoryPage')
-          ###
           checkShareUrl()
+          ###
           return
       false
 Template.recoveryForm.events

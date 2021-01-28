@@ -118,25 +118,15 @@ Template.signupForm.events
             t.find('#sub-registered').innerText = '创建帐户'
           else
             trackEvent("signupuser","user signup succeed.")
+            ###
             window.plugins.userinfo.setUserInfo Meteor.user()._id, ->
                 console.log 'setUserInfo was succeed!'
                 return
               , ->
                 console.log 'setUserInfo was Error!'
                 return
-            #Router.go '/registerFollow'
-            #ScanBarcodeByBarcodeScanner()
-            # if window.localStorage.getItem("isSecondUse") == 'true'
-            #   Router.go('/')
-            # else
-            if window.localStorage.getItem("enableHomeAI") == 'true'
-              Router.go('/scene')
-            else
-              Meteor.call 'enableHomeAI',(err,res)->
-                if !err and res is true
-                  window.localStorage.setItem("enableHomeAI",'true')
-                  Router.go('/scene')
-                else
-                  Router.go('/introductoryPage')
+            ###
+
+            Router.go('/introductoryPage')
             return
     false

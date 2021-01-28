@@ -3,6 +3,9 @@ var dadaset_view = null;
 var limit = new ReactiveVar(0);
 
 Template.groupPerson.helpers({
+  withLiteVersion: function (){
+    return withLiteVersion;
+  },
   is_type: function(val){
     return type.get() === val;
   },
@@ -18,7 +21,7 @@ Template.groupPerson.helpers({
         arrEnglish.push(item);
     });
     */
-    
+
     Person.find({group_id: group_id},{limit: limit.get(), sort:{name: 1}}).forEach(function(item){
         if(Session.get('is_human_shape') && !!item.human_shape){
           arrEnglish.push(item);
@@ -26,7 +29,7 @@ Template.groupPerson.helpers({
           arrEnglish.push(item);
         }
     });
-    
+
     /*
     Person.find({group_id: group_id},{limit: limit.get(), sort:{createAt: -1}}).forEach(function(item){
       if(item.name && item.name.charCodeAt(0) > 255){
@@ -41,8 +44,8 @@ Template.groupPerson.helpers({
             var val1 = obj1[prop];
             var val2 = obj2[prop];
             // 移除首尾空格
-            val1 = val1.replace(/(^\s*)|(\s*$)/g, ""); 
-            val2 = val2.replace(/(^\s*)|(\s*$)/g, ""); 
+            val1 = val1.replace(/(^\s*)|(\s*$)/g, "");
+            val2 = val2.replace(/(^\s*)|(\s*$)/g, "");
             // 统一英文字符为大写
             val1 = val1.toLocaleUpperCase();
             val2 = val2.toLocaleUpperCase();
@@ -52,14 +55,14 @@ Template.groupPerson.helpers({
                 return 1;
             } else {
                 return 0;
-            }            
-        } 
+            }
+        }
     }
     arrEnglish = arrEnglish.sort(compare("name"));
     arrPinyin = arrPinyin.sort(compare("pinyin"));
     arrEnglish = arrEnglish.concat(arrPinyin);
     */
-    
+
     return arrEnglish;
   },
   is_human_shape:function(){
@@ -114,10 +117,12 @@ Template.groupPerson.onRendered(function(){
 
   // disable img longpress default events
   //this blocks android's image click event, disable it on android
-  if (device.platform != 'Android') {
-    $(document).on('touchstart','img', function(e){
-      e.stopPropagation();
-      e.preventDefault();
-    }); 
+  if(Meteor.isCordova){
+    if (device.platform != 'Android') {
+      $(document).on('touchstart','img', function(e){
+        e.stopPropagation();
+        e.preventDefault();
+      });
+    }
   }
 });

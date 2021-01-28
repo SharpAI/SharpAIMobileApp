@@ -13,6 +13,7 @@
     </div>
 
     <form  class="loginBody" id="login-form">
+      {{#unless withLiteVersion}}
         <span class="server-prefix">{{_ "currentAddress"}}</span>
         <div class="input-group margin-bottom-sm server-box">
             <!--<span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>-->
@@ -20,6 +21,7 @@
             <input style="" type="text" id="server-address" class="form-control" value={{serverAddress}} />
             <button id="set-server" class="ripple-btn" style="color: #fff; border: none;outline: none;">{{_ "setServer"}}</button><br />
         </div>
+        {{/unless}}
 
         <div class="input-group margin-bottom-sm">
             <!--<span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>-->

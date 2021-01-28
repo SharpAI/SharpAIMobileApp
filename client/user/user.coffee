@@ -81,6 +81,7 @@ if Meteor.isClient
 
       Session.set('push_followed_only',false)
       return ''
+    withLiteVersion: withLiteVersion
     getShortTime: (ts,group_id)->
       time_offset = 8
       group = SimpleChat.Groups.findOne({_id: group_id})

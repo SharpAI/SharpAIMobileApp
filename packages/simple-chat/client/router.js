@@ -2227,6 +2227,9 @@ Template._simpleChatToChatItem.onRendered(function () {
 });
 
 Template._simpleChatToChatItem.helpers({
+  withLiteVersion: function(){
+    return true;
+  },
   isMultipleChoice: function () {
     return isMultipleChoice.get();
   },

@@ -15,7 +15,9 @@
         <li role="presentation"><a id="scanimage" role="menuitem" tabindex="-1" ><img class="add-more-drop-item" src="/scan_b.png" height="30" style="margin-left: -15px;">{{_ "scanPicture"}}</a></li>
         {{/if}}
         <li role="presentation"><a id="qrcodeadddevice" role="menuitem" tabindex="-1" ><img class="add-more-drop-item" src="/scan_b.png" height="30" style="margin-left: -15px;">{{_ "scanToAddDevice"}}</a></li>
+        {{#unless withLiteVersion}}
         <li role="presentation"><a id="scanadddevice" role="menuitem" tabindex="-1" ><img class="add-more-drop-item" src="/addDevice.png" height="30" style="margin-left: -15px;">{{_ "scanNetworkToAddDevice"}}</a></li>
+        {{/unless}}
       </ul>
     </div>
   </div>
@@ -59,11 +61,13 @@
       <label>{{_ "groupManagement"}}</label>
       <div class="value"><i class="fa fa-angle-right"></i></div>
     </li>
+    {{#unless withLiteVersion}}
     <li class="viewWorkStatus">
       <div class="icon"><img src="/check_canlder.png"/></div>
       <label>{{_ "checkIns"}}</label>
       <div class="value">{{_ "checkInsPrefix"}} {{getInCount}}{{_ "checkInsPerson"}}<i class="fa fa-angle-right"></i></div>
     </li>
+    {{/unless}}
     <!--
     <li class="goInstallTest">
       <div class="icon"><img src="/install-test.png"/></div>
@@ -76,21 +80,25 @@
       <label>{{_ "memberManagement"}}</label>
       <div class="value"><i class="fa fa-angle-right"></i></div>
     </li>
+    {{#unless withLiteVersion}}
     <li class="goPersonHistory">
       <div class="icon"><i class="fa fa-history"></i></div>
       <label>{{_ "checkInRecords"}}</label>
       <div class="value"><i class="fa fa-angle-right"></i></div>
     </li>
+    {{/unless}}
     <li class="goStranger">
       <div class="icon"><img src="/stranger.png"/></div>
       <label>{{_ "label"}}</label>
       <div class="value"><i class="fa fa-angle-right"></i></div>
     </li>
+    {{#unless withLiteVersion}}
     <li class="goGroupReporter">
       <div class="icon"><i class="fa fa-compass"></i></div>
       <label>{{_ "tabelAppearance"}}</label>
       <div class="value"><i class="fa fa-angle-right"></i></div>
     </li>
+    {{/unless}}
   </ul>
   {{/each}}
   </div>

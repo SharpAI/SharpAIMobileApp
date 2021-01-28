@@ -2,7 +2,9 @@
   <div class="dashboard">
     <div class="head">
       <div>{{_ "setting"}}</div>
-      <div class="rightButton back" style="margin-top:0px;">{{_ "done"}}</div>
+      {{#unless withLiteVersion}}
+        <div class="rightButton back" style="margin-top:0px;">{{_ "done"}}</div>
+      {{/unless}}
     </div>
     <div class="content">
       <div class="userInfo box">

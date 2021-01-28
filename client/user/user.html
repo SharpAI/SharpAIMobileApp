@@ -7,7 +7,9 @@
       <div>
         <strong>{{_ "mySelf"}}</strong>
       </div>
-      <div id="setting" class="rightButton"><i class="fa fa-cog"></i></div>
+      {{#unless withLiteVersion}}
+        <div id="setting" class="rightButton"><i class="fa fa-cog"></i></div>
+      {{/unless}}
     </div>
     <div class="content">
       <div class="top">
@@ -25,25 +27,30 @@
       </div>
         <span class="userName">{{myProfileName}}</span>
     </div>
+    {{#unless withLiteVersion}}
+      <ul class="set-up comFadeIn" style="margin-top: 10px;margin-bottom: 10px;border: none;">
+        <li class="name bindGroupUser">
+            <label style="position: relative;margin-top: 0px;">{{_ "bindFaceID"}}</label>
+            <div class="help-info" style="font-size: 12px;color: #555;">{{_ "detailBindFaceID"}}</div>
+        </li>
+        <li class="name collect">
+            <label style="position: relative;margin-top: 0px;">{{_ "favorite"}}</label>
+            <div class="help-info" style="font-size: 12px;color: #555;">{{_ "favoriteDetail"}}</div>
+        </li>
 
-    <ul class="set-up comFadeIn" style="margin-top: 10px;margin-bottom: 10px;border: none;">
-      <li class="name bindGroupUser">
-          <label style="position: relative;margin-top: 0px;">{{_ "bindFaceID"}}</label>
-          <div class="help-info" style="font-size: 12px;color: #555;">{{_ "detailBindFaceID"}}</div>
-      </li>
-      <li class="name collect">
-          <label style="position: relative;margin-top: 0px;">{{_ "favorite"}}</label>
-          <div class="help-info" style="font-size: 12px;color: #555;">{{_ "favoriteDetail"}}</div>
-      </li>
+        <li class="name enable-follow-notify-only">
+            <label style="position: relative;margin-top: 0px;">{{_ "followedOnlyPushNotification"}}</label>
+            <div class="right-btn" style="background: #fff;">
+              <input id="report_id" class="switch" style="margin-right:5px;outline:none;" type="checkbox" data-checked={{followedOnly}} {{followedOnly}}>
+            </div>
+            <div class="help-info" style="font-size: 12px;color: #555;">{{_ "detealFollowedOnlyPushNotification"}}</div>
+        </li>
+      </ul>
+    {{/unless}}
 
-      <li class="name enable-follow-notify-only">
-          <label style="position: relative;margin-top: 0px;">{{_ "followedOnlyPushNotification"}}</label>
-          <div class="right-btn" style="background: #fff;">
-            <input id="report_id" class="switch" style="margin-right:5px;outline:none;" type="checkbox" data-checked={{followedOnly}} {{followedOnly}}>
-          </div>
-          <div class="help-info" style="font-size: 12px;color: #555;">{{_ "detealFollowedOnlyPushNotification"}}</div>
-      </li>
-    </ul>
+    {{#if withLiteVersion}}
+      {{> dashboard}}
+    {{/if}}
 
     {{#if group}}
     <div class="userCheckinBox">

@@ -269,7 +269,6 @@ if (Meteor.isClient) {
                 }
                 if (!error){
                     Router.go ('/');
-                    checkShareUrl();
                 }
             });
         } else {

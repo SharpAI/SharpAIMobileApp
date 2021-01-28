@@ -51,6 +51,7 @@ if Meteor.isClient
         return false
       else
         return true
+    withLiteVersion: withLiteVersion
     apiServerAddress :->
       if window.localStorage.getItem('Meteor.rootUrl')
         return window.localStorage.getItem('Meteor.rootUrl')

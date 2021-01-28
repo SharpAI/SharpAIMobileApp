@@ -119,6 +119,9 @@ Template.homePage.helpers({
   },
   isShowDownArrow: function(index) {
     return index < SimpleChat.GroupUsers.find({ user_id: Meteor.userId() }).count() - 1;
+  },
+  withLiteVersion: function (){
+    return withLiteVersion;
   }
 });
 
