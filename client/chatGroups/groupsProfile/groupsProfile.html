@@ -43,10 +43,12 @@
                         <label>{{_ "groupDeviceList"}}</label>
                         <div class="value"><i class="fa fa-angle-right"></i></div>
                     </li>
-                    <li id="recognitionCounts">
-                        <label>{{_ "recognitionCounts"}}</label>
-                        <div class="value"><i class="fa fa-angle-right"></i></div>
-                    </li>
+                    {{#unless withLiteVersion}}
+                      <li id="recognitionCounts">
+                          <label>{{_ "recognitionCounts"}}</label>
+                          <div class="value"><i class="fa fa-angle-right"></i></div>
+                      </li>
+                    {{/unless}}
                     {{#if hasTemplate}}
                     <li class="group_template">
                         <label style="top: 20px;">监控组模板</label>

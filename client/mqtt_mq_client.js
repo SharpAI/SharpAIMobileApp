@@ -99,7 +99,7 @@ if(Meteor.isClient && !withNativeMQTTLIB){
                 // Once a connection has been made, make a subscription and send a message.
                 console.log("mqtt onConnect");
                 // get MQTT_TIME_DIFF
-                var url = 'http://'+server_domain_name+'/restapi/date/';
+                /*var url = 'http://'+server_domain_name+'/restapi/date/';
                 $.get(url,function(data){
                     if(data){
                         MQTT_TIME_DIFF = Number(data) - Date.now();
@@ -107,6 +107,7 @@ if(Meteor.isClient && !withNativeMQTTLIB){
                     }
                 });
                 console.log('Connected to mqtt server');
+                */
                 noMessageTimer = Meteor.setTimeout(function(){
                     console.log('no message to receive');
                     Session.set('history_message',false);

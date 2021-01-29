@@ -296,6 +296,7 @@
   "scanPicture":"Scan picture to join group",
   "scanToAddDevice":"Scan QR code to add device",
   "scanNetworkToAddDevice":"Scan network to add device",
+  "setDisplayName":"Set Device Display Name",
   // end
 
   // footer.html
@@ -348,7 +349,7 @@
 
   "groupInfo":"Group Informationn",
   "groupQRCode":"Group QRCode",
-  "groupDeviceList":"Group Device List",
+  "groupDeviceList":"Change Group Device Name",
   "recognitionCounts":"Recognition Status",
   "checkInDuration":"Check-in Duration",
   "notifyToFillSchedule":"Notify to Fill in Daily Schedule",
@@ -366,6 +367,7 @@
   "unfamiliarFaces":"Unfamiliar Face",
   "knownFaces":"Send Notification When See Following Faces",
   "deviceList":"Device Lists",
+  "tapToChangeDisplayName":"Tap device name to change display name",
   "updateConfiguration":"Auto Update Configuration",
   "unknownDevice":"Unknown Device",
   "cameraConfiguration":"Config Camera",

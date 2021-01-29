@@ -12,6 +12,20 @@ if Meteor.isClient
       this.render 'home'
       Session.set 'channel','home'
       return
+    Router.route '/deviceHomePage/:_deviceUUID',()->
+      self=this
+      Meteor.loginWithPassword this.params._deviceUUID,'123456',(error)->
+          console.log('Login Error is ' + JSON.stringify(error))
+          if error and error.reason and error.reason is 'User not found'
+              console.log 'User Not Found, need create'
+          if !error
+              self.render 'timeline'
+              Session.set 'channel','timeline'
+      console.log this.params._deviceUUID
+
+      this.render 'home'
+      Session.set 'channel','home'
+      return
     Router.route '/notice',()->
       this.render 'notice'
       return

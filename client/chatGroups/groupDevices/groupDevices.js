@@ -11,6 +11,9 @@ Template.groupDevices.helpers({
       return '未知'
     }
   },
+  withLiteVersion: function(){
+    return withLiteVersion
+  },
   isChecked: function(autoUpdate){
     if(autoUpdate){
       return 'checked'
