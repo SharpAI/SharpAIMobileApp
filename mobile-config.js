@@ -52,10 +52,11 @@ App.launchScreens({
   'ipad_portrait': 'resource/splash_theme_768_1024.png',
   'ipad_portrait_2x': 'resource/splash_theme_1536_2048.png',
   //'android_ldpi_portrait': 'resource/splash.png',
-  'android_mdpi_portrait': 'resource/splash_theme_320_470.png',
-  'android_hdpi_portrait': 'resource/splash_theme_480_640.png',
-  'android_xhdpi_portrait': 'resource/splash_theme_720_960.png',
-  'android_xxhdpi_portrait': 'resource/splash_theme_1080_1440.png'
+  'android_mdpi_portrait': 'resource/splash_theme_320_480.png',
+  'android_hdpi_portrait': 'resource/splash_theme_480_800.png',
+  'android_xhdpi_portrait': 'resource/splash_theme_720_1280.png',
+  'android_xxhdpi_portrait': 'resource/splash_theme_960_1600.png',
+  'android_xxxhdpi_portrait': 'resource/splash_theme_1280_1920.png'
 });
 
 App.configurePlugin('cordova-plugin-x-socialsharing', {
