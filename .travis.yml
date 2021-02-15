@@ -43,7 +43,7 @@ before_script:
 - git clone https://github.com/SharpAI/SharpAIPlugins.git
 script:
 - cd $TRAVIS_BUILD_DIR/
-- meteor build $HOME --debug --server=$API_SERVER_ADDRESS
+- meteor build $HOME --server=$API_SERVER_ADDRESS
 services:
 - mongodb
 before_deploy:
