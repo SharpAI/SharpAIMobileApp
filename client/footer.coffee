@@ -13,6 +13,7 @@ if Meteor.isClient
     alert 'show'
     return
   Template.footer.helpers
+    withLiteVersion: withLiteVersion
     hasNewLabelMsg: ()->
       Session.get('hasNewLabelMsg')
     display_select_import_way: ()->

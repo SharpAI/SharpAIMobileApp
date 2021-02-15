@@ -42,6 +42,20 @@ window.QRCodeAddDevice = function() {
             "isInDB":false
           }
           console.log("self = "+JSON.stringify(self));
+          if(withLiteVersion){
+            Meteor.call('join-group',result.text,Meteor.user()._id,result.text,"in",function(err,result){
+              console.log('meteor call result:',result)
+              //PUB.toast('success')
+              //sendMqttMessage('/msg/d/'+result.text, msgBody);
+            });
+            setTimeout(function(){
+              Router.go('/user')
+            },10)
+            setTimeout(function(){
+              Router.go('/');
+            },200)
+            return;
+          }
           return window.SELECT_CREATE_GROUP.show(self, function(group_id, group_name) {
             //var msgBody = {_id: new Mongo.ObjectID()._str,group_id:group_id, uuid: result.text, type: 'text', text: 'groupchanged'};
             Meteor.call('join-group',result.text,group_id,result.text,"in",function(err,result){

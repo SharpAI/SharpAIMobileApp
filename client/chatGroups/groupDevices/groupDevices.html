@@ -9,13 +9,13 @@
     <!-- <div class="line" style="height: 20px; text-align:left; padding-left:10px; color:#555;"></div> -->
     <ul id="deviceList" class="set-up comFadeIn">
       {{#if withLiteVersion}}
-        <li class="title"><b>{{_ "tapToChangeDisplayName"}}</b></li>
+        <li class="title" style="list-style-type: none"><b>{{_ "tapToChangeDisplayName"}}</b></li>
       {{else}}
-        <li class="title"><b>{{_ "updateConfiguration"}}</b></li>
+        <li class="title" style="list-style-type: none"><b>{{_ "updateConfiguration"}}</b></li>
       {{/if}}
     {{#each lists}}
       {{#if uuid}}
-      <li id="" class="deviceItem swiperElem">
+      <li id="" class="deviceItem swiperElem" style="list-style-type: none">
         <div>
           <!-- <span class="goEdit"> -->
           <img class="usericon" src="/device.png">

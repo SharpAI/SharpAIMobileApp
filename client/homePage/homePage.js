@@ -179,6 +179,9 @@ Template.homePage.events({
     return PUB.page('/groupPerson/' + this._id);
   },
   'click .goGroupProfile': function (e) {
+    if(withLiteVersion){
+      return PUB.page('/groupDevices/'+ e.currentTarget.id)
+    }
     return PUB.page('/groupsProfile/group/' + e.currentTarget.id);
   },
   'click .goPersonHistory': function (e) {

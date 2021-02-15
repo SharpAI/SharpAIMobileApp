@@ -21,24 +21,26 @@
                 <!--<div class="line" style="height: 20px;text-align:left;padding-left:10px;color:#555;">{{_ "groupInfo"}}</div>-->
                 {{#if isGroup}}
                 <ul class="set-up comFadeIn" style="margin-top: 0px;margin-bottom: 10px;">
-                    <!-- {{#if isGroupCreator}} -->
-                    {{#if isGroupAdmin}}
-                    <li class="name editName">
-                        <label>{{_ "theGroupName"}}</label>
-                        <div class="value">{{groupName}}<i class="fa fa-angle-right"></i></div>
-                    </li>
-                    {{else}}
-                    <li class="name">
-                        <label>{{_ "theGroupName"}}</label>
-                        <div class="value">{{groupName}}<i class="fa fa-angle-right"></i></div>
-                    </li>
-                    {{/if}}
-                    {{#if hasBarCode}}
-                    <li class="barcode">
-                        <label>{{_ "groupQRCode"}}</label>
-                        <div class="value"><img src="{{barcodeUrl}}"><i class="fa fa-angle-right"></i></div>
-                    </li>
-                    {{/if}}
+                    {{#unless withLiteVersion}}
+                      <!-- {{#if isGroupCreator}} -->
+                      {{#if isGroupAdmin}}
+                      <li class="name editName">
+                          <label>{{_ "theGroupName"}}</label>
+                          <div class="value">{{groupName}}<i class="fa fa-angle-right"></i></div>
+                      </li>
+                      {{else}}
+                      <li class="name">
+                          <label>{{_ "theGroupName"}}</label>
+                          <div class="value">{{groupName}}<i class="fa fa-angle-right"></i></div>
+                      </li>
+                      {{/if}}
+                      {{#if hasBarCode}}
+                      <li class="barcode">
+                          <label>{{_ "groupQRCode"}}</label>
+                          <div class="value"><img src="{{barcodeUrl}}"><i class="fa fa-angle-right"></i></div>
+                      </li>
+                      {{/if}}
+                    {{/unless}}
                     <li id="groupDevice">
                         <label>{{_ "groupDeviceList"}}</label>
                         <div class="value"><i class="fa fa-angle-right"></i></div>
@@ -167,13 +169,16 @@
                     <div class="line" style="height: 12px;"></div>
                     {{/if}}
                   {{/unless}}
-                {{#if isGroup}}
-                    {{#if isGroupCreator}}
-                    <div class="deleteAndExit" id="delThisGroup">{{_ "delete"}}</div>
-                    {{else}}
-                    <div class="deleteAndExit" id="quitThisGroup">{{_ "exit"}}</div>
-                    {{/if}}
-                {{/if}}
+
+                {{#unless withLiteVersion}}
+                  {{#if isGroup}}
+                      {{#if isGroupCreator}}
+                      <div class="deleteAndExit" id="delThisGroup">{{_ "delete"}}</div>
+                      {{else}}
+                      <div class="deleteAndExit" id="quitThisGroup">{{_ "exit"}}</div>
+                      {{/if}}
+                  {{/if}}
+                {{/unless}}
             </div>
         </div>
     </div>

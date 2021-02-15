@@ -290,7 +290,7 @@
   // end
 
   // homePage.html
-  "headMonitorGroup":"Groups",
+  "headMonitorGroup":"Devices",
   "createGroup":"Create Group",
   "joinGroup":"Scan QR code to join group",
   "scanPicture":"Scan picture to join group",
@@ -300,7 +300,7 @@
   // end
 
   // footer.html
-  "monitorGroup":"Groups",
+  "monitorGroup":"Devices",
   "timeLine":"Timeline",
   "message":"Message",
   "profile":"Profile",
@@ -333,7 +333,8 @@
   // end
 
   // groupsProfile.html
-  "groupManagement":"Manage Group",
+  "groupManagement":"Manage Devices",
+  "deviceManagement":"Manage Devices",
   // end
 
   // homePage.html

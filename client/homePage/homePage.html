@@ -9,14 +9,16 @@
       </div>
       <ul class="dropdown-menu" role="menu" aria-labelledby="add-more">
         <!-- <li role="presentation"><a id="joinTestChatGroups" role="menuitem" tabindex="-1" ><i class="fa fa-users add-more-drop-item"></i>加入监控组</a></li> -->
+        {{#unless withLiteVersion}}
         <li role="presentation"><a id="createNewChatGroups" role="menuitem" tabindex="-1" ><i class="fa fa-comment add-more-drop-item"></i>{{_ "createGroup"}}</a></li>
         <li role="presentation"><a id="scanbarcode" role="menuitem" tabindex="-1" ><img class="add-more-drop-item" src="/scan_b.png" height="30" style="margin-left: -15px;">{{_ "joinGroup"}}</a></li>
-        {{#if isAndroid}}
-        <li role="presentation"><a id="scanimage" role="menuitem" tabindex="-1" ><img class="add-more-drop-item" src="/scan_b.png" height="30" style="margin-left: -15px;">{{_ "scanPicture"}}</a></li>
-        {{/if}}
+        {{/unless}}
         <li role="presentation"><a id="qrcodeadddevice" role="menuitem" tabindex="-1" ><img class="add-more-drop-item" src="/scan_b.png" height="30" style="margin-left: -15px;">{{_ "scanToAddDevice"}}</a></li>
         {{#unless withLiteVersion}}
-        <li role="presentation"><a id="scanadddevice" role="menuitem" tabindex="-1" ><img class="add-more-drop-item" src="/addDevice.png" height="30" style="margin-left: -15px;">{{_ "scanNetworkToAddDevice"}}</a></li>
+          {{#if isAndroid}}
+          <li role="presentation"><a id="scanimage" role="menuitem" tabindex="-1" ><img class="add-more-drop-item" src="/scan_b.png" height="30" style="margin-left: -15px;">{{_ "scanPicture"}}</a></li>
+          {{/if}}
+          <li role="presentation"><a id="scanadddevice" role="menuitem" tabindex="-1" ><img class="add-more-drop-item" src="/addDevice.png" height="30" style="margin-left: -15px;">{{_ "scanNetworkToAddDevice"}}</a></li>
         {{/unless}}
       </ul>
     </div>
@@ -58,7 +60,11 @@
     </li>
     <li class="goGroupProfile" id="{{_id}}">
       <div class="icon"><img src="/group_set.png"/></div>
-      <label>{{_ "groupManagement"}}</label>
+      {{#if withLiteVersion}}
+        <label>{{_ "deviceManagement"}}</label>
+      {{else}}
+        <label>{{_ "groupManagement"}}</label>
+      {{/if}}
       <div class="value"><i class="fa fa-angle-right"></i></div>
     </li>
     {{#unless withLiteVersion}}
@@ -75,24 +81,24 @@
       <div class="value"><i class="fa fa-angle-right"></i></div>
     </li>
     -->
+    {{#unless withLiteVersion}}
     <li class="goGroupPerson">
       <div class="icon"><img src="/group_users.png"/></div>
       <label>{{_ "memberManagement"}}</label>
       <div class="value"><i class="fa fa-angle-right"></i></div>
     </li>
-    {{#unless withLiteVersion}}
     <li class="goPersonHistory">
       <div class="icon"><i class="fa fa-history"></i></div>
       <label>{{_ "checkInRecords"}}</label>
       <div class="value"><i class="fa fa-angle-right"></i></div>
     </li>
     {{/unless}}
+    {{#unless withLiteVersion}}
     <li class="goStranger">
       <div class="icon"><img src="/stranger.png"/></div>
       <label>{{_ "label"}}</label>
       <div class="value"><i class="fa fa-angle-right"></i></div>
     </li>
-    {{#unless withLiteVersion}}
     <li class="goGroupReporter">
       <div class="icon"><i class="fa fa-compass"></i></div>
       <label>{{_ "tabelAppearance"}}</label>
@@ -100,6 +106,8 @@
     </li>
     {{/unless}}
   </ul>
+
+  {{> timeline}}
   {{/each}}
   </div>
 </div>

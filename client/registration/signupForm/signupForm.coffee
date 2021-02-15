@@ -113,7 +113,7 @@ Template.signupForm.events
           if err
             console.log err
             trackEvent("signupuser","user signup failure.")
-            PUB.toast '注册失败，用户名或邮箱已经注册！'
+            PUB.toast 'Register failed，username or email was already taken'
             t.find('#sub-registered').disabled = false
             t.find('#sub-registered').innerText = '创建帐户'
           else
@@ -127,6 +127,10 @@ Template.signupForm.events
                 return
             ###
 
-            Router.go('/introductoryPage')
+            if withLiteVersion
+              Router.go('/')
+              createMyGroupName()
+            else
+              Router.go('/introductoryPage')
             return
     false

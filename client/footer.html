@@ -8,21 +8,23 @@
                 <div class="footerName">{{_ "monitorGroup"}}</div>
               </a>
             </div>
-            <div class="btn-group">
-              <a id="timeline" class="foot-btn btn btn-default {{focus_style 'timeline'}}">
-                <i class="fa fa-tablet" style="font-size: 26px;"></i>
-                <div class="footerName">{{_ "timeLine"}}</div>
-              </a>
-            </div>
-            <div class="btn-group">
-              <a id="message" class="foot-btn btn btn-default {{focus_style 'message'}}">
-                <i class="fa fa-comment" style="font-size: 24px;"></i>
-                <div class="footerName">{{_ "message"}}</div>
-                {{#if hasNewLabelMsg}}
-                <div style="height:14px; width:14px; background-color:red; position:absolute; top: 10px; right: 25px; border-radius: 50%;"></div>
-                {{/if}}
-              </a>
-            </div>
+            {{#unless withLiteVersion}}
+              <div class="btn-group">
+                <a id="timeline" class="foot-btn btn btn-default {{focus_style 'timeline'}}">
+                  <i class="fa fa-tablet" style="font-size: 26px;"></i>
+                  <div class="footerName">{{_ "timeLine"}}</div>
+                </a>
+              </div>
+              <div class="btn-group">
+                <a id="message" class="foot-btn btn btn-default {{focus_style 'message'}}">
+                  <i class="fa fa-comment" style="font-size: 24px;"></i>
+                  <div class="footerName">{{_ "message"}}</div>
+                  {{#if hasNewLabelMsg}}
+                  <div style="height:14px; width:14px; background-color:red; position:absolute; top: 10px; right: 25px; border-radius: 50%;"></div>
+                  {{/if}}
+                </a>
+              </div>
+            {{/unless}}
             <!--<div class="btn-group">
               <a id="faces" class="foot-btn btn btn-default {{focus_style 'faces'}}">
                 <i class="fa fa-connectdevelop" style="font-size: 22px;margin-top: 8px;vertical-align: top;"></i>
