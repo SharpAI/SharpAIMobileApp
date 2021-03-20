@@ -152,6 +152,42 @@ Template.homePage.events({
     Session.set('deviceDashboardTitle', this.name);
     return PUB.page('/device/dashboard/' + this._id);
   },
+  'click #add-more-web': function(e){
+    var device_serial_no = prompt("Please paste your device serial number");
+    console.log(device_serial_no);
+    if(device_serial_no!=null){
+      var self = {
+        "domain":"local.",
+        "port":8000,
+        "txtRecord":{
+          "macAddress":device_serial_no,
+          "uuid":device_serial_no
+        },"ipv4Addresses":[""],
+        "hostname":"deepeyeBox.local.",
+        "ipv6Addresses":[],
+        "type":"_DeepEye._tcp.",
+        "name":"deepeyeBox",
+        "uuid":device_serial_no,
+        "get_group_only": true,
+        "isInDB":false
+      }
+      return window.SELECT_CREATE_GROUP.show(self, function(group_id, group_name) {
+        //var msgBody = {_id: new Mongo.ObjectID()._str,group_id:group_id, uuid: result.text, type: 'text', text: 'groupchanged'};
+        Meteor.call('join-group',device_serial_no,group_id,device_serial_no,"in",function(err,result){
+          console.log('meteor call result:',result)
+          PUB.toast('Your device is added to Home:'+group_name)
+          //sendMqttMessage('/msg/d/'+result.text, msgBody);
+        });
+        //$.post("http://workaihost.tiegushi.com/restapi/workai-join-group", {uuid: result.text, group_id: group_id, name: result.text, in_out: "in"}, function(data) {
+        //  var msgBody = {_id: new Mongo.ObjectID()._str, uuid: result.text, type: 'text', text: 'groupchanged'};
+        //  sendMqttMessage('/msg/d/'+result.text, msgBody);
+        //});
+        window.SELECT_CREATE_GROUP.close()
+        console.log("group is "+group_name);
+        //Router.go('/');
+      });
+    }
+  },
   'click .goInstallTest':function(e){
     var group_id = this._id;
     //根据group_id得到group下的设备列表
@@ -172,7 +208,7 @@ Template.homePage.events({
           return;
         }
       }
-      return PUB.toast('该监控组下暂无脸脸盒');
+      return PUB.toast('No device in Home');
     });
   },
   'click .goGroupPerson': function (e) {
@@ -214,7 +250,7 @@ Template.homePage.events({
           return;
         }
       }
-      return PUB.toast('该监控组下暂无脸脸盒');
+      return PUB.toast('No Device in Home');
     })
 
   },
