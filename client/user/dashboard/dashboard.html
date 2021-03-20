@@ -2,9 +2,7 @@
   <div class="dashboard">
     <div class="head">
       <div>{{_ "setting"}}</div>
-      {{#unless withLiteVersion}}
-        <div class="rightButton back" style="margin-top:0px;">{{_ "done"}}</div>
-      {{/unless}}
+      <div class="rightButton back" style="margin-top:0px;">{{_ "done"}}</div>
     </div>
     <div class="content">
       <div class="userInfo box">
@@ -18,7 +16,9 @@
         <!--<div class="blacklist boxTitle ripple-label">{{_ "blacklist"}}<span><i class="fa fa-angle-right fa-fw"></i></span></div>-->
       </div>
       <div class="serverSetting box">
+        {{#if isCordova}}
         <div class='apiServerAddress bottomBorder boxTitle ripple-label'>{{_ "apiServer"}}<span>{{apiServerAddress}}<i class="fa fa-angle-right fa-fw"></i></span></div>
+        {{/if}}
         <div class='mqttServerAddress bottomBorder boxTitle ripple-label'>{{_ "mqttBroker"}}<span>{{mqttBrokerAddress}}<i class="fa fa-angle-right fa-fw"></i></span></div>
       </div>
       <div class="appSetting box">

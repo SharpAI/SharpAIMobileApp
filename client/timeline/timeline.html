@@ -18,14 +18,14 @@
       {{#if lists}}
       <div class="sub_head">
         <p style="display: inline-block;">{{_ "myDevices"}}</p>
-        <p style="display: inline-block;position: absolute;right: 10px;">
+        <!--<p style="display: inline-block;position: absolute;right: 10px;">
           <span style="display: inline-block;margin-left: 1rem;color: #888888;">
             <iframe style="border: 0px;" src="/offline_face_box.svg" width="8" height="8"></iframe><small>&nbsp;{{_ "offline"}}</small>
           </span>
           <span style="display: inline-block;margin-left: 1rem;color:#32c6b1;">
             <iframe style="border: 0px;" src="/online_face_box.svg" width="8" height="8"></iframe><small>&nbsp;{{_ "online"}}</small>
           </span>
-        </p>
+        </p>-->
       </div>
       {{#each lists}}
         <div id="{{group_id}}" class="line" style="height: 38px; text-align:left; padding-left:10px; color: #333333;font-weight: bold;">{{group_name}}</div>
@@ -80,9 +80,7 @@
                     {{/if}}
                   </span>
                 {{/if}}
-              {{#unless withLiteVersion}}
                 <div class="value" style="float:right; margin:10px;"><i class="fa fa-angle-right"></i></div>
-              {{/unless}}
           </li>
           {{/if}}
         {{/each}}

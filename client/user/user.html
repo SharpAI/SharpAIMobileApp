@@ -1,23 +1,13 @@
 <template name="user">
   <div class="user" id="userPage">
     <div class="head">
-      <!--<div id="follow" class="leftButton">
-          <span class="fa fa-plus"></span><i class="fa fa-user"></i>
-      </div>-->
       <div>
         <strong>{{_ "mySelf"}}</strong>
       </div>
-      {{#unless withLiteVersion}}
-        <div id="setting" class="rightButton"><i class="fa fa-cog"></i></div>
-      {{/unless}}
+      <div id="setting" class="rightButton"><i class="fa fa-cog"></i></div>
     </div>
     <div class="content">
       <div class="top">
-      <!--<div class="searchForm">
-          <i class="fa fa-search"></i>
-          <label><input id="search-box" type="text" placeholder={{_ "searchMyPosts"}}></label>
-      </div>
-      -->
       <div class="icon">
         {{#if myProfileIcon}}
           <img src="{{myProfileIcon}}" width='80' height='80'>
@@ -47,11 +37,6 @@
         </li>
       </ul>
     {{/unless}}
-
-    {{#if withLiteVersion}}
-      {{> dashboard}}
-    {{/if}}
-
     {{#if group}}
     <div class="userCheckinBox">
       <div class="header">
@@ -127,78 +112,11 @@
           <p style="word-wrap: break-word;white-space: pre-line; margin: 0;"><strong>{{getShortTime ts group.group_id}}</strong>&nbsp;&nbsp; {{content}}</p>
           {{/each}}
         {{else}}
-          添加今日简述...
+          Add todo...
         {{/if}}
       </div>
     </div>
     {{/if}}
-    <!--{{#if hasTwoMoreGroup}}
-        {{#each myGroupWorkStatus}}
-        {{#if workstatus group_id}}
-        <div class="panel panel-default" style="margin-bottom: 0px;">
-          <div class="panel-heading">我的出现({{group_name}})</div>
-          {{#each workstatus group_id}}
-          <div style="font-weight: 400;">
-            <div style="position: relative;padding: 10px 0;border: solid 1px #eee;">
-              <i class="fa fa-circle " style="color: #27d496;font-size: 20px;padding: 10px;margin: auto;position: absolute;"></i>
-                <div  style="display: inline-block;margin-left: 40px;font-weight: 400;">
-                  <div>上班</div><div style="color: #868686">09:00</div>
-                </div>
-                {{#if hasIntime in_time}}
-                <span style="color: #868686;padding: 10px 0;right: 60px;position: absolute;">{{inTime in_time group_id}}</span>
-                <span  class="reReckInTime" style="right: 20px;position: absolute;color: #27d496;padding: 10px 0;" data-groupid="{{group_id}}">重打</span>
-                {{else}}
-                <span class="checkInTime" style="color: #fff;background-color: #3db1fa;padding: 5px 10px;right: 30px;margin-top: 5px; border-radius: 5px;position: absolute;" data-groupid="{{group_id}}" >未打卡</span>
-                {{/if}}
-            </div>
-            <div style="position: relative;padding: 10px 0;">
-              <i class="fa fa-circle " style="color: #f1b725;font-size: 20px;padding: 10px;margin: auto;position: absolute;"></i>
-                <div  style="display: inline-block;margin-left: 40px;font-weight: 400;">
-                  <div>下班</div><div style="color: #868686">18:00</div>
-                </div>
-                {{#if hasOutTime out_time}}
-                <span style="color: #868686;padding: 10px 0;right: 60px;position: absolute;">{{outTime out_time group_id}}</span>
-                <span class="reCheckOutTime" style="right: 20px;position: absolute;color: #27d496;padding: 10px 0;" data-groupid="{{group_id}}">重打</span>
-                {{else}}
-                <span class="checkOutTime" style="color: #fff;background-color: #3db1fa;padding: 5px 10px;right: 30px;margin-top: 5px; border-radius: 5px;position: absolute;" data-groupid="{{group_id}}">未打卡</span>
-                {{/if}}
-            </div>
-          </div>
-          {{/each}}
-        </div>
-        {{/if}}
-        {{/each}}
-        {{else}}
-        <div class="panel panel-default" style="margin-bottom: 0px">
-          <div class="panel-heading">我的出现</div>
-          <div style="font-weight: 400;">
-            <div style="position: relative;padding: 10px 0;border: solid 1px #eee;">
-              <i class="fa fa-circle " style="color: #27d496;font-size: 20px;padding: 10px;margin: auto;position: absolute;"></i>
-                <div  style="display: inline-block;margin-left: 40px;font-weight: 400;">
-                  <div>上班</div><div style="color: #868686">09:00</div>
-                </div>
-                {{#if hasIntime}}
-                <span style="color: #868686;padding: 10px 0;right: 60px;position: absolute;">{{inTime}}</span>
-                <span  class="reReckInTime" style="right: 20px;position: absolute;color: #27d496;padding: 10px 0;">重打</span>
-                {{else}}
-                <span class="checkInTime" style="color: #fff;background-color: #3db1fa;padding: 5px 10px;right: 30px;margin-top: 5px; border-radius: 5px;position: absolute;">未打卡</span>
-                {{/if}}
-            </div>
-            <div style="position: relative;padding: 10px 0;">
-              <i class="fa fa-circle " style="color: #f1b725;font-size: 20px;padding: 10px;margin: auto;position: absolute;"></i>
-                <div  style="display: inline-block;margin-left: 40px;font-weight: 400;">
-                  <div>下班</div><div style="color: #868686">18:00</div>
-                </div>
-                {{#if hasOutTime}}
-                <span style="color: #868686;padding: 10px 0;right: 60px;position: absolute;">{{outTime}}</span>
-                <span class="reCheckOutTime" style="right: 20px;position: absolute;color: #27d496;padding: 10px 0;">重打</span>
-                {{else}}
-                <span class="checkOutTime" style="color: #fff;background-color: #3db1fa;padding: 5px 10px;right: 30px;margin-top: 5px; border-radius: 5px;position: absolute;">未打卡</span>
-                {{/if}}
-            </div>
-          </div>
-        </div>
-    {{/if}}-->
     <div class="modal fade" id="selectDevicesInOut" tabindex="-1" role="dialog" aria-labelledby="selectDevicesInOutLabel">
       <div class="modal-dialog" role="document" style="top:50px; bottom:auto;">
         <div class="modal-content">
@@ -226,105 +144,7 @@
         </div>
       </div>
     </div>
-
-    <!--{{#if showGrayZone draftsCount postsCount}}
-    <div style="height: 20px;background: #eee;"></div>
-    {{/if}}
-    {{#if isLoading}}
-    <div id="loader">
-        <div align="center">{{_ "loading"}}</div>
     </div>
-    {{/if}}-->
-    <!--{{#if hasJoinGroup}}
-    <div class="groupsList">
-      <div class="item_head">
-        <span>我的监控组</span>
-        {{#if hasTwoMore}}
-        <span class="check_all">查看全部></span>
-        {{/if}}
-      </div>
-      {{#each groupList}}
-        <div id="{{group_id}}" class="groupItem eachViewer"  style="background-color:#fff;">
-            {{#if group_icon}}
-            <img class="icon" src="{{group_icon}}">
-            {{else}}
-            <i class="fa fa-users" aria-hidden="true"></i>
-            {{/if}}
-            <span class="groupsName">{{group_name}}</span>
-        </div>
-        <div class="line">
-            <span></span>
-        </div>
-      {{/each}}
-    </div>
-    <div style="height: 20px;background: #eee;"></div>
-    {{/if}}-->
-    </div>
-  </div>
-  {{> footer}}
-</template>
-
-<template name="searchMyPosts">
-  <div class="searchMyPosts">
-    <div class="home">
-    <div class="content" style="margin: 0;padding: 0;background-color: #111;">
-         <table style="margin-top:6px;">
-           <tr>
-             <td>
-               <div class="searchForm">
-                 <i class="fa fa-search"></i>
-                   <label><input id="search-box" type="text" placeholder="{{_ 'searchMyPosts'}}"></label>
-               </div>
-             </td>
-             <td style="width: 64px;text-align:center;">
-               <div class="back">{{_ "cancel"}}</div>
-             </td>
-          </tr>
-        </table>
-        <div id="wrapper" style="margin-top: 70px; margin-bottom: 50px;">
-            <div id="list">
-              {{#if showSearchStatus}}
-                {{#if noSearchResult}}
-                  <center style="color: gray;">{{_ "NoSearchResults"}}</center>
-                {{/if}}
-                {{#if searchLoading}}
-                  <center style="color: gray;">{{_ "Searching"}}<i class="fa fa-spinner fa-pulse"></i></center>
-                {{/if}}
-              {{/if}}
-              {{#if showSearchItems}}
-                {{#each items}}
-                    {{#if showBigImage}}
-                         <div  id="{{_id}}" class="mainImage">
-                            {{#if mainImage}}
-                              {{>padding noRandomBackgroundColor=true}}
-                            {{/if}}
-                            <img class="scale item lazy" data-original="{{mainImage}}" draggable="false" style="min-height: 100%;position:absolute;{{mainImageStyle}}" >
-                            <header>
-                                <h1 class="title">{{title}}</h1>
-                                <h3 class="addontitle">{{addontitle}}</h3>
-                            </header>
-                        </div>
-                        <div class="footer">
-                            <span><img class="icon" src="{{ownerIcon}}" width='25' height='25' style="margin-top: 0px;"></span>
-                            <span class="name">{{ownerName}}</span>
-                            <span class="right">
-                              {{_ "browse"}}{{getBrowseCount browse}}{{_ "times"}}
-                            </span>
-                        </div>
-                    {{else}}
-                            <div id="{{_id}}" class="mainImage" style="font-size:15px;width: 100%;float: left;margin-right: 2%; height: 56px; overflow: hidden;">
-                                <dl style='background: grey;padding: 5px; margin-top: 6px;min-height: 50px;margin-bottom: 1px;'>
-                                    <dd style="font-size: 18px;overflow: hidden;word-wrap: break-word;white-space: nowrap;text-overflow: ellipsis;">{{title}}</dd>
-                                    <dd style="font-size: 15px;overflow: hidden;word-wrap: break-word;white-space: nowrap;text-overflow: ellipsis;color: #ccc">{{addontitle}}</dd>
-                                </dl>
-                            </div>
-                    {{/if}}
-                {{/each}}
-              {{/if}}
-            </div>
-        </div>
-   </div>
-  </div>
   </div>
   {{> footer}}
 </template>

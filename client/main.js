@@ -363,7 +363,7 @@ if (Meteor.isCordova) {
 }
 
 if (Meteor.isClient) {
-  Session.set("DocumentTitle",'来了吗');
+  Session.set("DocumentTitle",'SharpAI');
   Deps.autorun(function(){
     if(Meteor.userId()){
       //Meteor.subscribe("topics");

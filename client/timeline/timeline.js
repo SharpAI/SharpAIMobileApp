@@ -56,9 +56,7 @@ Template.timeline.events({
     return PUB.back();
   },
   'click .deviceItem': function(e){
-    if(!withLiteVersion){
-      Session.set("timelinehref",false)
-      return PUB.page('/timelineAlbum/'+e.currentTarget.id+'?from=timeline');
-    }
+    Session.set("timelinehref",false)
+    return PUB.page('/timelineAlbum/'+e.currentTarget.id+'?from=timeline');
   }
 })
