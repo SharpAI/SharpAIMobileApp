@@ -25,35 +25,35 @@ Meteor.startup(function(){
         },
 
         'connectioningText': function(event, template){
-            var defaultText = "正在连接中";
+            var defaultText = "Connecting";
             if(Meteor.settings && Meteor.settings.public && Meteor.settings.public.connectionBanner && Meteor.settings.public.connectionBanner.connectioningText)
                 return Meteor.settings.public.connectionBanner.connectionLostText;
             else
                 return defaultText;
         },
 		'connectionLostText': function(event, template){
-			var defaultText = "世界上最遥远的距离就是没网，请检查你的网络设置!";
+			var defaultText = "Connection Lost";
 			if(Meteor.settings && Meteor.settings.public && Meteor.settings.public.connectionBanner && Meteor.settings.public.connectionBanner.connectionLostText)
 				return Meteor.settings.public.connectionBanner.connectionLostText;
 			else
 				return defaultText;
 		},
 		'tryReconnectText': function(event, template){
-			var defaultText = "点击重新连接";
+			var defaultText = "Tap to reconnect";
 			if(Meteor.settings && Meteor.settings.public && Meteor.settings.public.connectionBanner && Meteor.settings.public.connectionBanner.tryReconnectText)
 				return Meteor.settings.public.connectionBanner.tryReconnectText;
 			else
 				return defaultText;
 		},
 		'reconnectBeforeCountdownText': function(event, template){
-			var defaultText = "(未连接)尝试自动重连";
+			var defaultText = "(Disconnected)Try to reconnect";
 			if(Meteor.settings && Meteor.settings.public && Meteor.settings.public.connectionBanner && Meteor.settings.public.connectionBanner.reconnectBeforeCountdownText)
 				return Meteor.settings.public.connectionBanner.reconnectBeforeCountdownText;
 			else
 				return defaultText;
 		},
 		'reconnectAfterCountdownText': function(event, template){
-			var defaultText = "秒后.";
+			var defaultText = "seconds later.";
 			if(Meteor.settings && Meteor.settings.public && Meteor.settings.public.connectionBanner && Meteor.settings.public.connectionBanner.reconnectAfterCountdownText)
 				return Meteor.settings.public.connectionBanner.reconnectAfterCountdownText;
 			else
@@ -113,4 +113,3 @@ Meteor.startup(function(){
 		Session.set('MeteorConnection-isConnected', isConnected);
 	});
 });
-	
