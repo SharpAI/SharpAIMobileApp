@@ -3,7 +3,6 @@ if Meteor.isServer
   aliyun = Meteor.npmRequire "aliyun-sdk"
   aliyun_access_key_id = process.env.ALIYUN_ACCESS_KEY_ID
   aliyun_access_key_secret = process.env.ALIYUN_ACCESS_KEY_SECRET
-  @nodemailer = Meteor.npmRequire('nodemailer');
   #if (Meteor.absoluteUrl().toLowerCase().indexOf('host2.tiegushi.com') >= 0)
   process.env['HTTP_FORWARDED_COUNT'] = 1
   console.log("process.env.HTTP_FORWARDED_COUNT="+process.env.HTTP_FORWARDED_COUNT);
