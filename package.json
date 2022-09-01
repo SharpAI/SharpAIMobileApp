@@ -2,19 +2,14 @@
   "scripts": {
     "chimp-watch": "chimp --ddp=http://localhost:3000 --watch --mocha --path=tests/mocha/post-test",
     "chimp-test": "chimp --mocha --path=tests/mocha",
-    "chimp-post-watch": "chimp --ddp=http://localhost:7788 --mocha --browser=firefox --path=tests/mocha/post-watch",
-    "desktop": "meteor-desktop"
+    "chimp-post-watch": "chimp --ddp=http://localhost:7788 --mocha --browser=firefox --path=tests/mocha/post-watch"
   },
   "dependencies": {
     "async": "^2.1.5",
     "eventie": "^1.0.6",
-    "jquery": "^3.5.1",
-    "wolfy87-eventemitter": "^5.2.9"
-  },
-  "devDependencies": {
-    "electron": "6.1.7",
-    "electron-builder": "21.2.0",
-    "eslint": "^5.16.0",
-    "meteor-desktop": "^2.2.5"
+    "jquery": "^3.6.0",
+    "wolfy87-eventemitter": "^5.2.9",
+    "aws-sdk":"^2.1196.0"
   }
 }
+

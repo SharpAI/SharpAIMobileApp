@@ -5,14 +5,13 @@ RUN apt-get update && apt-get install -y curl python2.7 python-pip build-essenti
 
 ENV LANG en_US.utf8
 ENV LC_ALL en_US.UTF-8
+ENV NODE_TLS_REJECT_UNAUTHORIZED 0
+ENV VERSION CE_3.4.3
 
 RUN curl https://install.meteor.com/?release=1.4.1.2 | sh
 ADD ./ /root/SharpAIMobileApp
 WORKDIR /root
-RUN git clone https://github.com/SharpAI/ApiServer.git
-RUN git clone https://github.com/SharpAI/SharpAIPlugins.git
 WORKDIR /root/SharpAIMobileApp
 
-RUN meteor npm install --save jquery wolfy87-eventemitter eventie
-#RUN meteor build --server http://165.232.62.29:3000 ../ && rm ../SharpAIMobileApp.tar.gz
-CMD meteor run --production --mobile-server=165.232.62.29:3000
+RUN meteor npm install
+CMD meteor run
