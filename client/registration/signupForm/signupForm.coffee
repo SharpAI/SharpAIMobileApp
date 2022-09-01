@@ -128,5 +128,9 @@ Template.signupForm.events
             ###
             create_group 'home',(err)->
               Router.go('/')
+            gtag('event', 'register', {
+              'event_category': 'new user',
+              'event_label': 'register success'
+            })
             return
     false
