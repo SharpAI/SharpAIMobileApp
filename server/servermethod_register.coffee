@@ -1,8 +1,5 @@
 if Meteor.isServer
   myCrypto = Npm.require "crypto"
-  aliyun = Meteor.npmRequire "aliyun-sdk"
-  aliyun_access_key_id = process.env.ALIYUN_ACCESS_KEY_ID
-  aliyun_access_key_secret = process.env.ALIYUN_ACCESS_KEY_SECRET
   #if (Meteor.absoluteUrl().toLowerCase().indexOf('host2.tiegushi.com') >= 0)
   process.env['HTTP_FORWARDED_COUNT'] = 1
   console.log("process.env.HTTP_FORWARDED_COUNT="+process.env.HTTP_FORWARDED_COUNT);
@@ -12,49 +9,8 @@ if Meteor.isServer
     user = Meteor.users.findOne({_id: userId})
     return user.profile.reporterSystemAuth
 
-  # 删除阿里云图片
-  @delectAliyunPictureObject = (postId)->
-    # this.unblock()
-    oss = new aliyun.OSS({
-      accessKeyId: aliyun_access_key_id || 'Vh0snNA4Orv3emBj',
-      secretAccessKey: aliyun_access_key_secret || 'd7p2eNO8GuMl1GtIZ0at4wPDyED4Nz',
-      endpoint: 'https://cdn.aliyuncs.com',
-      apiVersion: '2014-11-11'
-    })
-    post =  BackUpPosts.findOne({_id: postId});
-    images = []
-    if post and post.pub
-      post.pub.forEach (item)->
-        if item.isImage
-          uri = item.imgUrl.split('/')
-          filename = uri[uri.length-1]
-          images.push {key:filename}
-      oss.deleteObjects({
-        Bucket: 'tiegushi',
-        Delete: {images,Quiet:true}
-      }, (err,data)->
-        console.log(err, data)
-      )
-  # 发送关注成功邮件
-  @sendSubscribeAutorEmail = (ownerName,email)->
-    text = Assets.getText('email/follower-notify.html')
-    try
-      Email.send {
-        to: email,
-        from: '故事贴<notify@mail.tiegushi.com>',
-        subject: '成功关注作者：'+ownerName + '',
-        body: '成功关注作者：'+ownerName + ',我们会不定期的为您推送关注作者的新文章！',
-        html: text
-      }
-    catch error
-      console.log("sendSubscribeAutorEmail Error===:"+error)
-  @addToUserFavPosts = (postId,userId)->
-    favp = FavouritePosts.findOne({postId: postId, userId: userId})
-    if favp
-      FavouritePosts.update({_id: favp._id}, {$set: {updateAt: new Date()}})
-    else
-      FavouritePosts.insert({postId: postId, userId: userId, createdAt: new Date(), updateAt: new Date()})
-  Meteor.startup ()->
+
+   Meteor.startup ()->
     Meteor.methods
       "isDeviceInDB": (uuid)->
         try
@@ -271,37 +227,8 @@ if Meteor.isServer
             PushTokens.update({type: type,token: token},{$set:{userId: userId}})
           catch error
             console.log error
-
-      "getBCSSigniture": (filename,URI)->
-        content = "MBO" + "\n"+"Method=PUT" + "\n"+"Bucket=travelers-km" + "\n"+"Object=/" + filename + "\n"
-        apiKey = '9Ud6jfxuTwkM0a7G6ZPjXbCe'
-        SecrectKey = 'zhoMHNUqtmQGgR4Il1GqmZiYoP0pX2AT'
-        hash = myCrypto.createHmac('sha1', SecrectKey).update(content).digest()
-        Signture = encodeURIComponent hash.toString('base64')
-        policy = {
-          signture: "MBO:"+apiKey+":"+Signture
-          orignalURI: URI
-        }
-        policy
       "changeMyPassword": (userId, newPassword)->
         Accounts.setPassword userId, newPassword
-      "getAliyunWritePolicy": (filename, URI)->
-        apiKey = 'Vh0snNA4Orv3emBj'
-        SecrectKey = 'd7p2eNO8GuMl1GtIZ0at4wPDyED4Nz'
-        date = new Date()
-        content = 'PUT\n\nimage/jpeg\n' + date.toGMTString() + '\n' + '/tiegushi/'+filename
-        hash = myCrypto.createHmac('sha1', SecrectKey).update(content).digest()
-        Signture = unescape(encodeURIComponent hash.toString('base64'))
-        #console.log 'Content is ' + content + ' Signture ' + Signture
-        authheader = "OSS " + apiKey + ":" + Signture
-        policy = {
-          orignalURI: URI
-          date: date.toGMTString()
-          auth: authheader
-          acceccURI: 'http://oss.tiegushi.com/'+filename
-          readURI: 'http://data.tiegushi.com/'+filename
-        }
-        policy
       "getGeoFromConnection":()->
         clientIp = this.connection.clientAddress
         #clientIp = '173.236.169.5'
