@@ -3,39 +3,30 @@
 <div class="homePage" style="{{noCompany}}">
   <div class="head">
     <strong class="top-home-btn active">{{_ "headMonitorGroup"}}</strong>
-    <div class="rightDropMenu dropdown">
-      <div class="rightButton dropdown-toggle" id="add-more" data-toggle="dropdown">
-        <img src="/add_more.png" height="30" >
+
+    {{#if withLiteVersion}}
+      <div class="rightDropMenu">
+        <div class="rightButton" id="add-more-web">
+          <img src="/add_more.png" height="30" >
+        </div>
       </div>
-      <ul class="dropdown-menu" role="menu" aria-labelledby="add-more">
-        <!-- <li role="presentation"><a id="joinTestChatGroups" role="menuitem" tabindex="-1" ><i class="fa fa-users add-more-drop-item"></i>加入监控组</a></li> -->
-        <li role="presentation"><a id="createNewChatGroups" role="menuitem" tabindex="-1" ><i class="fa fa-comment add-more-drop-item"></i>{{_ "createGroup"}}</a></li>
-        <li role="presentation"><a id="scanbarcode" role="menuitem" tabindex="-1" ><img class="add-more-drop-item" src="/scan_b.png" height="30" style="margin-left: -15px;">{{_ "joinGroup"}}</a></li>
-        {{#if isAndroid}}
-        <li role="presentation"><a id="scanimage" role="menuitem" tabindex="-1" ><img class="add-more-drop-item" src="/scan_b.png" height="30" style="margin-left: -15px;">{{_ "scanPicture"}}</a></li>
-        {{/if}}
-        <li role="presentation"><a id="qrcodeadddevice" role="menuitem" tabindex="-1" ><img class="add-more-drop-item" src="/scan_b.png" height="30" style="margin-left: -15px;">{{_ "scanToAddDevice"}}</a></li>
-        <li role="presentation"><a id="scanadddevice" role="menuitem" tabindex="-1" ><img class="add-more-drop-item" src="/addDevice.png" height="30" style="margin-left: -15px;">{{_ "scanNetworkToAddDevice"}}</a></li>
-      </ul>
-    </div>
+    {{else}}
+      <div class="rightDropMenu dropdown">
+        <div class="rightButton dropdown-toggle" id="add-more" data-toggle="dropdown">
+          <img src="/add_more.png" height="30" >
+        </div>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="add-more">
+          <li role="presentation"><a id="createNewChatGroups" role="menuitem" tabindex="-1" ><i class="fa fa-comment add-more-drop-item"></i>{{_ "createGroup"}}</a></li>
+          <li role="presentation"><a id="scanbarcode" role="menuitem" tabindex="-1" ><img class="add-more-drop-item" src="/scan_b.png" height="30" style="margin-left: -15px;">{{_ "joinGroup"}}</a></li>
+          {{#if isAndroid}}
+          <li role="presentation"><a id="scanimage" role="menuitem" tabindex="-1" ><img class="add-more-drop-item" src="/scan_b.png" height="30" style="margin-left: -15px;">{{_ "scanPicture"}}</a></li>
+          {{/if}}
+          <li role="presentation"><a id="qrcodeadddevice" role="menuitem" tabindex="-1" ><img class="add-more-drop-item" src="/scan_b.png" height="30" style="margin-left: -15px;">{{_ "scanToAddDevice"}}</a></li>
+          <li role="presentation"><a id="scanadddevice" role="menuitem" tabindex="-1" ><img class="add-more-drop-item" src="/addDevice.png" height="30" style="margin-left: -15px;">{{_ "scanNetworkToAddDevice"}}</a></li>
+        </ul>
+      </div>
+    {{/if}}
   </div>
-  <!--<ul class="companyLists">
-    {{#each companys}}
-    <li class="companyItem" style="{{onlyOneCompany}}">
-      <div class="container">
-        <div class="logo">
-          <img src="/img/default-company-logo.png"/>
-        </div>
-        <h2>{{name}}</h2>
-        <p class="times">{{getGroupInOutTime}}</p>
-        <div class="in-out-status">
-          <span class="in-status">{{getInCount}}人</span>
-          <span class="out-status">{{getOutCount}}人</span>
-        </div>
-      </div>
-    </li>
-    {{/each}}
-  </ul>-->
   <div class="content" style="padding-top: 40px;{{hide_content}}">
   {{#each companys}}
   <ul class="companyUl">
@@ -59,11 +50,13 @@
       <label>{{_ "groupManagement"}}</label>
       <div class="value"><i class="fa fa-angle-right"></i></div>
     </li>
+    {{#unless withLiteVersion}}
     <li class="viewWorkStatus">
       <div class="icon"><img src="/check_canlder.png"/></div>
       <label>{{_ "checkIns"}}</label>
       <div class="value">{{_ "checkInsPrefix"}} {{getInCount}}{{_ "checkInsPerson"}}<i class="fa fa-angle-right"></i></div>
     </li>
+    {{/unless}}
     <!--
     <li class="goInstallTest">
       <div class="icon"><img src="/install-test.png"/></div>
@@ -76,21 +69,25 @@
       <label>{{_ "memberManagement"}}</label>
       <div class="value"><i class="fa fa-angle-right"></i></div>
     </li>
+    {{#unless withLiteVersion}}
     <li class="goPersonHistory">
       <div class="icon"><i class="fa fa-history"></i></div>
       <label>{{_ "checkInRecords"}}</label>
       <div class="value"><i class="fa fa-angle-right"></i></div>
     </li>
+    {{/unless}}
     <li class="goStranger">
       <div class="icon"><img src="/stranger.png"/></div>
       <label>{{_ "label"}}</label>
       <div class="value"><i class="fa fa-angle-right"></i></div>
     </li>
+    {{#unless withLiteVersion}}
     <li class="goGroupReporter">
       <div class="icon"><i class="fa fa-compass"></i></div>
       <label>{{_ "tabelAppearance"}}</label>
       <div class="value"><i class="fa fa-angle-right"></i></div>
     </li>
+    {{/unless}}
   </ul>
   {{/each}}
   </div>

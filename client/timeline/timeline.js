@@ -23,6 +23,15 @@ Template.timeline.helpers({
   deviceSupportOnlineOffline: function(online){
     return typeof online ==='boolean'
   },
+  sawPersonRecently: function(uuid){
+    var device = Devices.findOne({uuid:uuid});
+    if(device && device.last_person_ts){
+      if(new Date().getTime() - device.last_person_ts < 5*60*1000){
+        return true;
+      }
+    }
+    return false;
+  },
   lists: function(){
     var lists = [];
     SimpleChat.GroupUsers.find({user_id:Meteor.userId()},{sort:{create_time:-1}}).forEach(function(item){
@@ -36,6 +45,9 @@ Template.timeline.helpers({
       }
     });
     return lists;
+  },
+  withLiteVersion: function(){
+    return withLiteVersion;
   }
 });
 

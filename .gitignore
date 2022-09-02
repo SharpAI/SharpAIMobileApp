@@ -6,3 +6,7 @@
 node_modules
 .eslintrc.js
 .keystore
+./packages/npm-container/.npm
+./packages/meteor-mqtt/.npm
+./packages/meteor-phonegap-push/.npm
+./packages/.npm

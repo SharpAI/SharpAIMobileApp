@@ -8,6 +8,8 @@ if Meteor.isClient
   Template.dashboard.onDestroyed ()->
     $('body').css('height', '100%')
   Template.dashboard.helpers
+    isCordova: ->
+      Meteor.isCordova
     showFollowTips: ->
       if Meteor.user() and Meteor.user().profile and Meteor.user().profile.followTips
           return Meteor.user().profile.followTips isnt false
@@ -51,6 +53,7 @@ if Meteor.isClient
         return false
       else
         return true
+    withLiteVersion: withLiteVersion
     apiServerAddress :->
       if window.localStorage.getItem('Meteor.rootUrl')
         return window.localStorage.getItem('Meteor.rootUrl')

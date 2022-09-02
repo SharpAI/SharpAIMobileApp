@@ -80,7 +80,7 @@ Template.signupForm.events
   'submit #signup-form':(e,t)->
     e.preventDefault()
     if Meteor.status().connected isnt true
-      PUB.toast '当前为离线状态,请检查网络连接'
+      PUB.toast 'Connection lost, please check your network configuration'
       return
     Session.set("signUpName", '')
     Session.set("signUpMail", '')
@@ -91,13 +91,13 @@ Template.signupForm.events
     pass2 = t.find('#signup-repassword').value
     myRegExp = /[a-z0-9-]{1,30}@[a-z0-9-]{1,65}.[a-z]{2,6}/ ;
     if names is ''
-      PUB.toast '用户名不能为空！'
+      PUB.toast 'Please input username'
     else if myRegExp.test(email) is false
-      PUB.toast '邮箱格式有误,请重新输入.'
+      PUB.toast 'Email format is not valid'
     else if pass1 != pass2
-      PUB.toast '密码输入不一致,请重新输入.'
+      PUB.toast 'Password is not the same'
     else if pass1.length < 6
-      PUB.toast '密码至少要6位！'
+      PUB.toast 'Please input password more than 6'
     else
       t.find('#sub-registered').disabled = true
       t.find('#sub-registered').innerText = TAPi18n.__("registing")
@@ -112,31 +112,25 @@ Template.signupForm.events
         (err)->
           if err
             console.log err
-            trackEvent("signupuser","user signup failure.")
-            PUB.toast '注册失败，用户名或邮箱已经注册！'
+            #trackEvent("signupuser","user signup failure.")
+            PUB.toast 'Failed，username or email is already in used！'
             t.find('#sub-registered').disabled = false
-            t.find('#sub-registered').innerText = '创建帐户'
+            t.find('#sub-registered').innerText = 'Create User'
           else
-            trackEvent("signupuser","user signup succeed.")
+            #trackEvent("signupuser","user signup succeed.")
+            ###
             window.plugins.userinfo.setUserInfo Meteor.user()._id, ->
                 console.log 'setUserInfo was succeed!'
                 return
               , ->
                 console.log 'setUserInfo was Error!'
                 return
-            #Router.go '/registerFollow'
-            #ScanBarcodeByBarcodeScanner()
-            # if window.localStorage.getItem("isSecondUse") == 'true'
-            #   Router.go('/')
-            # else
-            if window.localStorage.getItem("enableHomeAI") == 'true'
-              Router.go('/scene')
-            else
-              Meteor.call 'enableHomeAI',(err,res)->
-                if !err and res is true
-                  window.localStorage.setItem("enableHomeAI",'true')
-                  Router.go('/scene')
-                else
-                  Router.go('/introductoryPage')
+            ###
+            create_group 'home',(err)->
+              Router.go('/')
+            gtag('event', 'register', {
+              'event_category': 'new user',
+              'event_label': 'register success'
+            })
             return
     false

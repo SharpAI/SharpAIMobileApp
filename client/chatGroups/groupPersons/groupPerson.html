@@ -5,6 +5,7 @@
       <div id="groupsProfilePageback" class="leftButton back">
         <i class="fa fa-angle-left fa-fw"></i>
       </div>
+      {{#unless withLiteVersion}}
       <div class="check_img_type">
         {{#if is_human_shape}}
           <span class="human_bth type_on">{{_ "shape"}}</span>
@@ -14,6 +15,7 @@
           <span class="face_bth type_on">{{_ "face"}}</span>
         {{/if}}
       </div>
+      {{/unless}}
     </div>
     <div class="con-main" style="bottom: 40px;">
       <div class="photos hover">
@@ -30,9 +32,11 @@
         {{/if}}
       </div>
     </div>
+    {{#unless withLiteVersion}}
     <div class="foot-tips">
       <p style="text-align:jsutify; line-height:20px">{{_ "labelHints"}}</p>
     </div>
+    {{/unless}}
   </div>
 
   {{> _checkGroupDevice}}

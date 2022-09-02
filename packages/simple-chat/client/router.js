@@ -205,13 +205,14 @@ Template._simpleChatToChat.onRendered(function () {
     var devs = Devices.find({
       groupId: group_id
     });
+    /*
     if (isChatTipFinished()) {
       if (devs && devs.count() > 0 && !isGroupWizardFinished(group_id)) {
         popupWizardDialog(group_id);
       } else if (devs && devs.count() == 0 && !isGroupNoDeviceWizardFinished(group_id)) {
         popupNoDeviceWizardDialog(group_id);
       }
-    }
+    }*/
 
   });
 });
@@ -614,7 +615,7 @@ Template._simpleChatToChat.onRendered(function () {
           images: [],
           to_type: 'group',
           type: 'system',
-          text: 'welcome to join ' + page_data.title(),
+          text: 'welcome to join home',
           create_time: new Date(),
           is_read: false
         };
@@ -2227,6 +2228,9 @@ Template._simpleChatToChatItem.onRendered(function () {
 });
 
 Template._simpleChatToChatItem.helpers({
+  withLiteVersion: function(){
+    return true;
+  },
   isMultipleChoice: function () {
     return isMultipleChoice.get();
   },

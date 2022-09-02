@@ -96,6 +96,7 @@ if Meteor.isClient
     Meteor.subscribe('loginuser-in-group',groupid, Meteor.userId())
 
   Template.groupInformation.helpers
+    withLiteVersion: withLiteVersion
     userTypeIsAdmin:()->
       user = Meteor.user()
       if user and user.profile and user.profile.userType is 'admin'

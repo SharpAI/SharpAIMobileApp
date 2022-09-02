@@ -1,0 +1,10 @@
+.meteor/local
+packages/*/.build*
+packages/*/.npm*
+node_modules/*
+.git/*
+node_modules
+./packages/npm-container/.npm
+./packages/meteor-mqtt/.npm
+./packages/meteor-phonegap-push/.npm
+./packages/.npm

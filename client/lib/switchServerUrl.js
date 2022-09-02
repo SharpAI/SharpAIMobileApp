@@ -4,8 +4,8 @@
 var START_WITH_HTTPs = /^https?:/
 var END_WITH_SLASH = /\/$/
 
-var MQTT_ADDRESS = '10.168.1.221'
-var MQTT_PORT = 1883
+var MQTT_ADDRESS = '165.232.62.29'
+var MQTT_PORT = 80
 
 function ensureDDPRawURL(){
   if (Meteor.isCordova) {

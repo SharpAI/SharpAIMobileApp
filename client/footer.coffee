@@ -73,7 +73,7 @@ if Meteor.isClient
       show_foot_url = ['/','/message','/timeline', '/explore', '/user','/faces']
       console.log "document_body_scrollTop=" + Session.get("document_body_scrollTop")
       console.log("show_foot_url", show_foot_url, location, location.pathname, Router.current().route.path())
-      
+
       setTimeout(
         ()->
             if show_foot_url.indexOf(Router.current().route.path()) isnt -1
@@ -97,23 +97,6 @@ if Meteor.isClient
     Session.set('draftAddontitle', '');
     Drafts.remove({})
     Session.set 'NewImgAdd','true'
-  @checkShareUrl = () ->
-    if Meteor.user()
-        window.plugins.userinfo.setUserInfo Meteor.user()._id, (->
-            console.log 'setUserInfo was success '
-            return
-        ), ->
-            console.log 'setUserInfo was Error!'
-            return
-        setTimeout(()->
-            waitImportCount = ShareURLs.find().count()
-            console.log 'waitImportCount :' + waitImportCount
-            if waitImportCount > 0
-              data = ShareURLs.find().fetch()
-              console.log 'CustomDialog show!'
-              #CustomDialog.show data[0]
-        ,100)
-
   @editFromShare = (data)->
     Meteor.defer ()->
       $('.modal-backdrop.in').remove()
@@ -176,69 +159,9 @@ if Meteor.isClient
         return
       PUB.page('/')
     'click #timeline':(e)->
-      if (Session.get("myHotPostsChanged"))
-        Session.set("myHotPostsChanged", false)
-        navigator.notification.confirm(
-          '您改变了热门帖子, 要保存吗?'
-          (index)->
-            if index is 2
-              saveHotPosts()
-            PUB.page('/timeline')
-          '提示'
-          ['暂不','保存']
-        )
-        return
-      PUB.page('/timeline')
-    'click #explore':(e)->
-      if (Session.get("myHotPostsChanged"))
-        Session.set("myHotPostsChanged", false)
-        navigator.notification.confirm(
-          '您改变了热门帖子, 要保存吗?'
-          (index)->
-            if index is 2
-              saveHotPosts()
-            PUB.page('/explore')
-          '提示'
-          ['暂不','保存']
-        )
-        return
-      PUB.page('/explore')
-    'click #faces':(e)->
-      PUB.page('/faces')
-    'click #bell':(e)->
-      Meteor.defer ()->
-        me = Meteor.user()
-        if me and me.profile and me.profile.waitReadCount
-          if me.profile.waitReadCount > 0
-            Meteor.users.update({_id: Meteor.user()._id}, {$set: {'profile.waitReadCount': 0}});
-      if (Session.get("myHotPostsChanged"))
-        Session.set("myHotPostsChanged", false)
-        navigator.notification.confirm(
-          '您改变了热门帖子, 要保存吗?'
-          (index)->
-            if index is 2
-              saveHotPosts()
-            PUB.page('/bell')
-          '提示'
-          ['暂不','保存']
-        )
-        return
-      PUB.page('/bell')
+      Router.go('/timeline')
     'click #user':(e)->
-      $('.importProgressBar, .b-modal, .toEditingProgressBar').remove()
-      if (Session.get("myHotPostsChanged"))
-        Session.set("myHotPostsChanged", false)
-        navigator.notification.confirm(
-          '您改变了热门帖子, 要保存吗?'
-          (index)->
-            if index is 2
-              saveHotPosts()
-            PUB.page('/user')
-          '提示'
-          ['暂不','保存']
-        )
-        return
-      PUB.page('/user')
+      Router.go('/user')
     'click #add': (e)->
       if (Session.get("myHotPostsChanged"))
         Session.set("myHotPostsChanged", false)

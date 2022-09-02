@@ -30,7 +30,7 @@
   "homePage": "Home",
   "discovery": "Discover",
   "message": "Messages",
-  "me": "Me",
+  "me": "Profile",
   "selectPicFromGallery": "Library",
   "importFromPaster": "Import from Web",
   "importFromShareExtension":"Import from Share",
@@ -290,16 +290,17 @@
   // end
 
   // homePage.html
-  "headMonitorGroup":"Groups",
+  "headMonitorGroup":"Home",
   "createGroup":"Create Group",
   "joinGroup":"Scan QR code to join group",
   "scanPicture":"Scan picture to join group",
   "scanToAddDevice":"Scan QR code to add device",
   "scanNetworkToAddDevice":"Scan network to add device",
+  "setDisplayName":"Set Device Display Name",
   // end
 
   // footer.html
-  "monitorGroup":"Groups",
+  "monitorGroup":"Home",
   "timeLine":"Timeline",
   "message":"Message",
   "profile":"Profile",
@@ -318,21 +319,21 @@
   "switchServerURL":"Changing to new server address:",
 
   // user.html
-  "bindFaceID":"Bind to Group Face ID",
-  "detailBindFaceID":"Bind your account to Face ID of group to check your appearence",
+  "bindFaceID":"Bind to Home Face ID",
+  "detailBindFaceID":"Bind your account to Face ID of home to check your appearence",
   "favoriteDetail":"Check your favorite messages",
   "followedOnlyPushNotification":"Subscribe only followed users",
   "detealFollowedOnlyPushNotification":"Subscribe only followed users' push notification(will notify you unknown person's notification)",
   // end
 
   // messageGroup.html
-  "theGroupName":"Group Name",
-  "inputGroupName":"Please input group name",
-  "inputNewGroupName":"Please input new group name",
+  "theGroupName":"Home Name",
+  "inputGroupName":"Please input home name",
+  "inputNewGroupName":"Please input new home name",
   // end
 
   // groupsProfile.html
-  "groupManagement":"Manage Group",
+  "groupManagement":"Manage Devices",
   // end
 
   // homePage.html
@@ -348,7 +349,7 @@
 
   "groupInfo":"Group Informationn",
   "groupQRCode":"Group QRCode",
-  "groupDeviceList":"Group Device List",
+  "groupDeviceList":"Set Device Name",
   "recognitionCounts":"Recognition Status",
   "checkInDuration":"Check-in Duration",
   "notifyToFillSchedule":"Notify to Fill in Daily Schedule",
@@ -366,6 +367,7 @@
   "unfamiliarFaces":"Unfamiliar Face",
   "knownFaces":"Send Notification When See Following Faces",
   "deviceList":"Device Lists",
+  "tapToChangeDisplayName":"Tap device name to change display name",
   "updateConfiguration":"Auto Update Configuration",
   "unknownDevice":"Unknown Device",
   "cameraConfiguration":"Config Camera",
@@ -403,7 +405,7 @@
   "switchToUnknownPerson":"Switch to Unfamiliar Faces",
   "chat":"Chat",
   "noDeviceToFrontPage":"No device in group, use + to add device on the front page please",
-  "toFrontPage":"To Frontpage",
+  "toFrontPage":"To HomePage",
   "whatToSearch":"Input text to search",
   "messageCounts":"new messages",
   "ok":"Ok",

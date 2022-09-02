@@ -1,4 +1,4 @@
-if (Meteor.isClient) {
+if (Meteor.isCordova) {
   console.log('on isCordova');
   Meteor.startup(function () {
     var onDeviceReady2;

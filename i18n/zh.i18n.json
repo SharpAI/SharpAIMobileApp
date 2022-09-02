@@ -303,6 +303,7 @@
   "scanPicture":"扫图片",
   "scanToAddDevice":"扫码添加脸脸盒",
   "scanNetworkToAddDevice":"网络扫描脸脸盒",
+  "setDisplayName":"设置设备名称",
   // end
 
   // footer.html
@@ -356,7 +357,7 @@
 
   "groupInfo":"监控组信息",
   "groupQRCode":"监控组二维码",
-  "groupDeviceList":"监控组设备列表",
+  "groupDeviceList":"设置监控组设备名称",
   "recognitionCounts":"识别统计",
   "checkInDuration":"监控时间设置",
   "notifyToFillSchedule":"提醒填写工作安排",
@@ -375,6 +376,7 @@
   "knownFaces":"以下熟人出现时，通知您",
   "deviceList":"设备列表",
   "updateConfiguration":"自动升级控制",
+  "tapToChangeDisplayName":"点击设备名之后修改",
   "unknownDevice":"未知设备",
   "cameraConfiguration":"摄像头配置",
   "hitSetupCamera":"设置完成后，大约15秒后生效",

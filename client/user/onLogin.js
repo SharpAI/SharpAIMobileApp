@@ -1,4 +1,4 @@
-if (Meteor.isClient) {
+if (Meteor.isCordova) {
   Meteor.startup(function() {
     return Accounts.onLogin(function() {
       if (Meteor.user().profile["new"] === true) {
@@ -8,14 +8,14 @@ if (Meteor.isClient) {
       }
       return Meteor.setTimeout(function() {
         if(isUSVersion){
-          Meteor.call('updateUserLanguage', Meteor.userId(), 'en');  
+          Meteor.call('updateUserLanguage', Meteor.userId(), 'en');
         } else {
           Meteor.call('updateUserLanguage', Meteor.userId(), 'zh');
         }
         console.log("Accounts.onLogin");
         Session.set("token", '');
         Meteor.subscribe("pcomments");
-	      checkShareUrl();
+	      //checkShareUrl();
         if(device.platform === 'Android'){
           window.plugins.shareExtension.getShareData(function(data) {
             console.log("##RDBG getShareData: " + JSON.stringify(data));
@@ -77,4 +77,8 @@ if (Meteor.isClient) {
       }, 3000);
     });
   });
+} else {
+  Accounts.onLogin(function() {
+    Session.setPersistent('persistentLoginStatus', true);
+  })
 }

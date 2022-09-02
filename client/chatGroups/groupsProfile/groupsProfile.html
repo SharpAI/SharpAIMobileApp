@@ -33,20 +33,22 @@
                         <div class="value">{{groupName}}<i class="fa fa-angle-right"></i></div>
                     </li>
                     {{/if}}
-                    {{#if hasBarCode}}
+                    <!--{{#if hasBarCode}}
                     <li class="barcode">
                         <label>{{_ "groupQRCode"}}</label>
                         <div class="value"><img src="{{barcodeUrl}}"><i class="fa fa-angle-right"></i></div>
                     </li>
-                    {{/if}}
+                    {{/if}}-->
                     <li id="groupDevice">
                         <label>{{_ "groupDeviceList"}}</label>
                         <div class="value"><i class="fa fa-angle-right"></i></div>
                     </li>
-                    <li id="recognitionCounts">
-                        <label>{{_ "recognitionCounts"}}</label>
-                        <div class="value"><i class="fa fa-angle-right"></i></div>
-                    </li>
+                    {{#unless withLiteVersion}}
+                      <li id="recognitionCounts">
+                          <label>{{_ "recognitionCounts"}}</label>
+                          <div class="value"><i class="fa fa-angle-right"></i></div>
+                      </li>
+                    {{/unless}}
                     {{#if hasTemplate}}
                     <li class="group_template">
                         <label style="top: 20px;">监控组模板</label>
@@ -78,12 +80,14 @@
                         </div>
                     </li>
                     {{/if}}
-                    {{#if isGroupAdmin}}
-                    <li id="groupInOutTime">
-                        <label>{{_ "checkInDuration"}}</label>
-                        <div class="value">{{getGroupInOutTime}}<i class="fa fa-angle-right"></i></div>
-                    </li>
-                    {{/if}}
+                    {{#unless withLiteVersion}}
+                      {{#if isGroupAdmin}}
+                      <li id="groupInOutTime">
+                          <label>{{_ "checkInDuration"}}</label>
+                          <div class="value">{{getGroupInOutTime}}<i class="fa fa-angle-right"></i></div>
+                      </li>
+                      {{/if}}
+                    {{/unless}}
                     {{#if userTypeIsAdmin}}
                     <li id="clusteringFix">
                         <label>聚类挑错</label>
@@ -92,68 +96,77 @@
                     {{/if}}
                 </ul>
 
-                {{#if isGroupAdmin}}
-                <!--<div class="line" style="height: 20px;text-align:left;padding-left:10px;color:#555;">工作相关</div>-->
-                <ul class="set-up comFadeIn" style="margin-top: 0px;margin-bottom: 10px;">
-                    <li class="">
-                        <label>{{_ "notifyToFillSchedule"}}</label>
-                        <div class="value"><input id="switch_whats_up_send" class="switch" style="margin-top:-6px;outline:none;" type="checkbox" {{checkedIf whats_up_send}}></div>
-                    </li>
-                </ul>
-                {{/if}}
-                <!--<div class="line" style="height: 20px;text-align:left;padding-left:10px;color:#555;">绩效管理</div>
-                <div>
-                    {{> groupCheckInoutInfo}}
-                </div>-->
-                <!--<div class="line" style="height: 20px;text-align:left;padding-left:10px;color:#555;">识别规则</div>-->
-                <ul class="set-up comFadeIn" style="margin-top: 0px;margin-bottom: 10px;">
-                    <li class="">
-                        <label>{{_ "unknownNotification"}}</label>
-                        <div class="value"><input id="switchRejectUnknowMember" class="switch" style="margin-top:-6px;outline:none;" type="checkbox" {{checkedIf rejectUnknowMember}}></div>
-                    </li>
-                    <!-- <li class="groupAccuracy">
-                        <label>识别准确度</label>
-                        <div class="value">{{groupAccuracyType}}<i class="fa fa-angle-right"></i></div>
-                    </li> -->
-                </ul>
-                <!-- <div class="line" style="height: 20px;text-align:left;padding-left:10px;color:#555;">开关设置</div>
-                <ul class="set-up comFadeIn" style="margin-top: 0px;margin-bottom: 10px;">
-                    <li class="">
-                        <label>接收gif动图</label>
-                        <div class="value"><input id="switchReciveGif" class="switch" style="margin-top:-6px;" type="checkbox" {{checkedIf reciveGif}}></div>
-                    </li>
-                    <li class="">
-                        <label>实时邮件</label>
-                        <div class="value"><input id="switchRealTimeEmail" class="switch" style="margin-top:-6px;" type="checkbox" {{checkedIf realTimeEmail}}></div>
-                    </li>
-                </ul> -->
-                <!-- {{#if isGroupAdmin}} -->
-                <ul class="set-up comFadeIn" style="margin-top: 0px;margin-bottom: 10px;">
-                    <li class="groupUserHide">
-                        <label>{{_ "manageNotification"}}</label>
-                        <div class="value"><i class="fa fa-angle-right"></i></div>
-                    </li>
-                </ul>
-                <!-- {{/if}} -->
-                <!--<div class="line" style="height: 20px;text-align:left;padding-left:10px;color:#555;">训练信息</div>
-                <div class="groupPhoto">群相册</div>-->
-                <!--div class="scanPerfBarcode">扫描绩效二维码</div-->
-                <!--div class="checkPerf">查看绩效</div-->
-                {{/if}}
-                 <div class="groupEmail">{{_ "groupReportEmail"}}</div>
-                {{#if isGroupAdmin}}
-                <div class="emptyMessages">{{_ "cleanUpTrainingRecord"}}</div>
-                {{/if}}
-                <div class="line" style="height: 12px;"></div>
-                {{#if userIsAdmin}}
-                <div class="disbaleNormalLabelMsg">
-                    <div style="display: inline-block;">暂不接收label消息</div>
-                    <div style="float: right;">
-                        <input id="switchNormalLabelMsg" class="switch" type="checkbox" {{checkedIf rejectLabelMsg}}>
+                {{#unless withLiteVersion}}
+                  {{#if isGroupAdmin}}
+                  <!--<div class="line" style="height: 20px;text-align:left;padding-left:10px;color:#555;">工作相关</div>-->
+                  <ul class="set-up comFadeIn" style="margin-top: 0px;margin-bottom: 10px;">
+                      <li class="">
+                          <label>{{_ "notifyToFillSchedule"}}</label>
+                          <div class="value"><input id="switch_whats_up_send" class="switch" style="margin-top:-6px;outline:none;" type="checkbox" {{checkedIf whats_up_send}}></div>
+                      </li>
+                  </ul>
+                  {{/if}}
+
+                {{/unless}}
+                  <!--<div class="line" style="height: 20px;text-align:left;padding-left:10px;color:#555;">绩效管理</div>
+                  <div>
+                      {{> groupCheckInoutInfo}}
+                  </div>-->
+                  <!--<div class="line" style="height: 20px;text-align:left;padding-left:10px;color:#555;">识别规则</div>-->
+                  {{#unless withLiteVersion}}
+                  <ul class="set-up comFadeIn" style="margin-top: 0px;margin-bottom: 10px;">
+                      <li class="">
+                          <label>{{_ "unknownNotification"}}</label>
+                          <div class="value"><input id="switchRejectUnknowMember" class="switch" style="margin-top:-6px;outline:none;" type="checkbox" {{checkedIf rejectUnknowMember}}></div>
+                      </li>
+                      <!-- <li class="groupAccuracy">
+                          <label>识别准确度</label>
+                          <div class="value">{{groupAccuracyType}}<i class="fa fa-angle-right"></i></div>
+                      </li> -->
+                  </ul>
+                  {{/unless}}
+                  <!-- <div class="line" style="height: 20px;text-align:left;padding-left:10px;color:#555;">开关设置</div>
+                  <ul class="set-up comFadeIn" style="margin-top: 0px;margin-bottom: 10px;">
+                      <li class="">
+                          <label>接收gif动图</label>
+                          <div class="value"><input id="switchReciveGif" class="switch" style="margin-top:-6px;" type="checkbox" {{checkedIf reciveGif}}></div>
+                      </li>
+                      <li class="">
+                          <label>实时邮件</label>
+                          <div class="value"><input id="switchRealTimeEmail" class="switch" style="margin-top:-6px;" type="checkbox" {{checkedIf realTimeEmail}}></div>
+                      </li>
+                  </ul> -->
+                  <!-- {{#if isGroupAdmin}} -->
+                  {{#unless withLiteVersion}}
+                    <ul class="set-up comFadeIn" style="margin-top: 0px;margin-bottom: 10px;">
+                        <li class="groupUserHide">
+                            <label>{{_ "manageNotification"}}</label>
+                            <div class="value"><i class="fa fa-angle-right"></i></div>
+                        </li>
+                    </ul>
+                  {{/unless}}
+                  <!-- {{/if}} -->
+                  <!--<div class="line" style="height: 20px;text-align:left;padding-left:10px;color:#555;">训练信息</div>
+                  <div class="groupPhoto">群相册</div>-->
+                  <!--div class="scanPerfBarcode">扫描绩效二维码</div-->
+                  <!--div class="checkPerf">查看绩效</div-->
+                  {{/if}}
+                  {{#unless withLiteVersion}}
+                     <div class="groupEmail">{{_ "groupReportEmail"}}</div>
+                    {{#if isGroupAdmin}}
+                    <div class="emptyMessages">{{_ "cleanUpTrainingRecord"}}</div>
+                    {{/if}}
+                    <div class="line" style="height: 12px;"></div>
+                    {{#if userIsAdmin}}
+                    <div class="disbaleNormalLabelMsg">
+                        <div style="display: inline-block;">暂不接收label消息</div>
+                        <div style="float: right;">
+                            <input id="switchNormalLabelMsg" class="switch" type="checkbox" {{checkedIf rejectLabelMsg}}>
+                        </div>
                     </div>
-                </div>
-                <div class="line" style="height: 12px;"></div>
-                {{/if}}
+                    <div class="line" style="height: 12px;"></div>
+                    {{/if}}
+                  {{/unless}}
                 {{#if isGroup}}
                     {{#if isGroupCreator}}
                     <div class="deleteAndExit" id="delThisGroup">{{_ "delete"}}</div>
